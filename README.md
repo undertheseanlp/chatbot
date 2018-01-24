@@ -1,5 +1,18 @@
-# underthesea live demo
+# Chatbot (Just for fun)
 
-Aug 2017
+To install dependencies
 
-* add word_segmentation demo
+```
+cd chatbot
+conda create -n chatbot python=3.5
+source activate chatbot
+pip install -r requirements.txt
+```
+
+To run chatbot
+
+```
+cd chatbot
+source activate chatbot
+python manage.py runserver 0.0.0.0:8000
+```
