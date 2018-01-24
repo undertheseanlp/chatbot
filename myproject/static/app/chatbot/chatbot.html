@@ -1,0 +1,10 @@
+<div id="chat-container" class="container">
+  <div id="chat-dialog">
+    <p ng-repeat="s in sentences">
+      <b>{{ s.agent }}:</b> {{ s.text }}
+    </p>
+  </div>
+  <br/>
+  {{ sentences }}
+  <input class="form-control" id="chat-input" ng-model="userText" placeholder="{{ suggestion }}" my-enter="addTalk()">
+</div>

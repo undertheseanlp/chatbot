@@ -1,0 +1,16 @@
+#chat-container {
+    border: solid 2px black;
+    padding: 20px;
+}
+
+#chat-dialog {
+    height: 300px;
+    overflow: scroll
+}
+
+#chat-input {
+    width: 100%;
+}
+
+
+
