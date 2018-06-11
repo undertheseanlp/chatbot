@@ -1,10 +1,10 @@
-# Chatbot (Just for fun)
+# Vietnamese Chatbot
 
 To install dependencies
 
 ```
 cd chatbot
-conda create -n chatbot python=3.5
+conda create -n chatbot python=3.6
 source activate chatbot
 pip install -r requirements.txt
 ```
