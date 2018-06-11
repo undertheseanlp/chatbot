@@ -11,6 +11,7 @@ def tests():
         "bạn tên gì",  # reask
         "bạn tên gì",  # reask
         "cậu bao nhiêu tuổi?",
+        "bạn mấy tuổi",
         "cậu bao nhiêu tuổi rồi ?",
     ]
     for message in messages:
