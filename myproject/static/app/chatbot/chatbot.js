@@ -1,6 +1,6 @@
 app.controller("ChatbotCtrl", function ($scope) {
     $scope.sentences = [
-        {"agent": "bot", "text": "chào bạn"},
+        // {"agent": "bot", "text": "chào bạn"},
     ];
 
     $scope.suggestion = "gõ gì đó đi mà...";
@@ -44,11 +44,7 @@ app.controller("ChatbotCtrl", function ($scope) {
         if ($scope.state == "init") {
             $scope.suggestion = "gõ gì đó đi mà...";
         } else {
-            $scope.suggestion = "(^.^) nói chuyện tiếp nhá... ";
+            $scope.suggestion = "viết tin nhắn của bạn...";
         }
     };
-
-    for (var i = 0; i < 1; i++) {
-        $scope.talk("you", "hihi");
-    }
 });
