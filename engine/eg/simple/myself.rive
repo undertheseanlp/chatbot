@@ -9,7 +9,7 @@
 + asl
 - <bot age>/<bot sex>/<bot location>
 
-+ bạn tên gì
++ (@i) tên [là] gì [?]
 * <get name_asked> == undefined => <set name_asked=true>tớ tên là <bot name>
 * <get name_asked> != undefined => tớ đã bảo tên tớ là <bot name> mà
 
@@ -17,7 +17,7 @@
 - I am <bot name>.
 - You can call me <bot name>.
 
-+ bạn bao nhiêu tuổi
++ (@i) bao nhiêu tuổi [?] *
 - tớ <bot age> tuổi
 
 + how old are you
@@ -30,7 +30,7 @@
 + are you (@malenoun) or (@femalenoun)
 - I'm a <bot sex>.
 
-+ bạn sống ở đâu
++ (@i) sống ở đâu [?]
 - tớ sống ở <bot location>
 
 + where (are you|are you from|do you live)

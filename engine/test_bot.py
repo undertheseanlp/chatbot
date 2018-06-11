@@ -5,10 +5,13 @@ def tests():
     print("$ python chatbot_test.py")
     messages = [
         "bạn tên gì",
+        "mày tên là gì ?",
         "bạn bao nhiêu tuổi",
         "bạn sống ở đâu",
         "bạn tên gì",  # reask
         "bạn tên gì",  # reask
+        "cậu bao nhiêu tuổi?",
+        "cậu bao nhiêu tuổi rồi ?",
     ]
     for message in messages:
         print("You>", message)
