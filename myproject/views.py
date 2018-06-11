@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import json
 
+from engine import bot
+
 
 def index(request):
     return render(request, 'index.html')
@@ -13,8 +15,8 @@ def chatbot(request):
     result = {}
     try:
         text = json.loads(request.body.decode("utf-8"))["text"]
-        tags = uts.word_sent(text)
-        result["output"] = tags
+        response_message = bot.reply("localuser", text)
+        result["output"] = response_message
     except:
         result = {"error": "Bad request!"}
     return JsonResponse(result)

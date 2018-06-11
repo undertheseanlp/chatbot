@@ -1,6 +1,6 @@
 <div id="chat-container" class="container">
   <div id="chat-dialog">
-    <p ng-repeat="s in sentences">
+    <p ng-repeat="s in sentences track by $index">
       <b>{{ s.agent }}:</b> {{ s.text }}
     </p>
   </div>

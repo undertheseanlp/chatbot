@@ -1,0 +1,31 @@
+from engine import bot
+
+
+def tests():
+    print("$ python chatbot_test.py")
+    messages = [
+        "bạn tên gì",
+        "bạn bao nhiêu tuổi",
+        "bạn sống ở đâu",
+        "bạn tên gì",  # reask
+        "bạn tên gì",  # reask
+    ]
+    for message in messages:
+        print("You>", message)
+        reply = bot.reply("localuser", message)
+        print("Bot>", reply)
+
+
+def start_bot():
+    while True:
+        msg = input('You> ')
+        if msg == '/quit':
+            quit()
+
+        reply = bot.reply("localuser", msg)
+        print('Bot>', reply)
+
+
+if __name__ == '__main__':
+    # start_bot()
+    tests()
