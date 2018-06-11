@@ -13,9 +13,9 @@
 * <get name_asked> == undefined => <set name_asked=true>tớ tên là <bot name>
 * <get name_asked> != undefined => tớ đã bảo tên tớ là <bot name> mà
 
-+ (tên cậu là gì|cậu là ai|ai đấy)
-- I am <bot name>.
-- You can call me <bot name>.
++ (tên cậu là gì|cậu là ai|ai đấy) [?]
+- Tớ là <bot name>.
+- Cậu có thể gọi tớ là <bot name>.
 
 + (@i) (bao nhiêu|mấy) tuổi [rồi] [?]
 - tớ <bot age> tuổi
