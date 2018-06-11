@@ -17,10 +17,7 @@
 - I am <bot name>.
 - You can call me <bot name>.
 
-+ (@i) mấy tuổi [?]
-- tớ <bot age> tuổi
-
-+ (@i) bao nhiêu tuổi [?] *
++ (@i) (bao nhiêu|mấy) tuổi [rồi] [?]
 - tớ <bot age> tuổi
 
 + how old are you
