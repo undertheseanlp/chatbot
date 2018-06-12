@@ -1,5 +1,6 @@
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
 
+// không hiểu
 + *
 - tớ không chắc tớ hiểu câu nói gì
 - cậu nói tiếp đi
@@ -7,11 +8,12 @@
 - hay nhỉ
 - cái đấy có thực sự quan trọng không?
 
-+ [*] (sorry|apologize|apology) [*]
-- Please don't apologize.
-- Apologies are not necessary.
-- I've told you that apologies are not required.
-- It did not bother me. Please continue.
+// xin lỗi
++ [*] (xin lỗi) [*]
+- xin cậu đừng xin lỗi.
+- xin lỗi không cần thiết
+- tớ chưa nói với cậu là không cần xin lỗi nhỉ
+- không sao đâu. cậu nói tiếp đi
 
 + tôi nhớ *
 - bạn có thường xuyên nhớ <star>?
@@ -76,6 +78,7 @@
 - Don't you know?
 - How likely, would you estimate?
 
+// chào hỏi
 + (chào|xin chào|hey|howdy|hola|hai|yo) [*]
 - chào cậu. tớ là Hoài An
 - hi hi. chào cậu
@@ -295,26 +298,30 @@
 - You have a particular reason in mind, don't you?
 - Who do you think you're talking about?
 
-+ [*] (fuck|fucker|shit|damn|shut up|bitch) [*]
-- Does it make you feel strong to use that kind of language?
-- Are you venting your feelings now?
-- Are you angry?
-- Does this topic make you feel angry?
-- Is something making you feel angry?
-- Does using that kind of language make you feel better?
+// nói bậy
 
-+ (kém|ngu|đần)
++ [*] (mẹ mày|địt|như cứt|cứt) [*]
+- cậu đang tức à?
+- cậu đang trút cảm xúc à
+- tức gì đấy?
+
+// chê
++ (kém|ngu|đần|dốt)
 - đừng mắng tớ thế. tớ vẫn đang học hỏi mỗi ngày
 - cậu thô lỗ thế
 - đừng tưởng cậu giỏi hơn người ta mà tinh vi
 
-+ (kém|ngu) (quá|thật|đấy|lắm)
++ (kém|ngu|đần|dốt) (quá|thật|đấy|lắm)
 @ kém
 
-+ (giỏi|tốt)
++ (đồ) (kém|ngu|đần|dốt)
+@ kém
+
+// khen
++ (giỏi|tốt|thông minh)
 - cảm ơn cậu đã khen tớ. ngày nào tớ cũng đọc sách
 - cảm ơn ^-^
-- cậu cũng thế
+- cậu cũng <star>
 
 + (giỏi|tốt) (quá|thật|đấy|lắm)
 @ giỏi

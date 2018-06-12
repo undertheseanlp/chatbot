@@ -20,7 +20,16 @@ def tests():
         "vũ anh là ai",
         "kém quá",
         "giỏi thật",
+        "đồ ngu",
+        "mẹ mày",
+        "như cứt"
     ]
+    APOLOGY = ["xin lỗi"]
+    COLLECTION = [
+        APOLOGY
+    ]
+    for collection in COLLECTION:
+        messages.extend(collection)
     for message in messages:
         print("You>", message)
         reply = bot.reply("localuser", message)
