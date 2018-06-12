@@ -94,7 +94,7 @@
 - chào cậu. lần khác nói tiếp nhé
 
 // agreement
-+ (okie|ok)
++ (okie|ok|ừ)
 - nói gì vui vui tiếp bây giờ nhỉ?
 
 + [*] computer [*]
