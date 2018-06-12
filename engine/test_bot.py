@@ -15,9 +15,6 @@ def tests():
         "bạn mấy tuổi",
         "cậu bao nhiêu tuổi rồi ?",
         "cậu là ai",
-        "có biết anh vũ anh không",
-        "có biết anh vũ anh không?",
-        "vũ anh là ai",
         "kém quá",
         "giỏi thật",
         "Hoài An",
@@ -27,9 +24,13 @@ def tests():
         "như cứt"
     ]
     APOLOGY = ["xin lỗi"]
+    GREETING = ["tạm biệt"]
     HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi", "a", "a"]
+    MASTER = ["có biết anh vũ anh không",
+              "có biết anh vũ anh không?",
+              "vũ anh là ai"]
     COLLECTION = [
-        SIMPLE, APOLOGY, HACK
+        SIMPLE, GREETING, MASTER, APOLOGY, HACK
     ]
     # COLLECTION = [
     #     HACK
