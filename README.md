@@ -24,6 +24,7 @@ Python Packages
 
 ```
 Django==1.11.1
+rivescript==1.14.9
 ```
 
 ### 1.2 Download and Setup Environment
