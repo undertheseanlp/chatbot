@@ -30,7 +30,7 @@ def chatbot(request):
         log_text = "{} {} {}{}".format(ip, time, "USER:", text)
         log(log_text)
         response_message = bot.reply("localuser", text)
-        log_text = "{} {} {}{}".format(ip, time, "BOT:", response_message)
+        log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
         log(log_text)
         result["output"] = response_message
     except Exception as e:
