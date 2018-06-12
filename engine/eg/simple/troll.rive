@@ -23,10 +23,10 @@
 
 > topic annoying
 	+ *
-	- ...{weight=5}
+	- ...{weight=20}
 	- cậu hãy xin lỗi đi, không thì thôi
 
-	+ [*] (xin lỗi) [*]
+	+ [*] (xin lỗi|sorry) [*]
 	- được rồi. chúng ta nói chuyện tiếp nhé{topic=random}{weight=3}
 	- lần này tớ bỏ qua nhé ;){topic=random}
 < topic
