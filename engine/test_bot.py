@@ -3,7 +3,7 @@ from engine import bot
 
 def tests():
     print("$ python chatbot_test.py")
-    messages = [
+    SIMPLE = [
         "bạn tên gì",
         "mày tên là gì ?",
         "bạn bao nhiêu tuổi",
@@ -25,9 +25,14 @@ def tests():
         "như cứt"
     ]
     APOLOGY = ["xin lỗi"]
+    HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi", "a", "a"]
     COLLECTION = [
-        APOLOGY
+        SIMPLE, APOLOGY, HACK
     ]
+    # COLLECTION = [
+    #     HACK
+    # ]
+    messages = []
     for collection in COLLECTION:
         messages.extend(collection)
     for message in messages:

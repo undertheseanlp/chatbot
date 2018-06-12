@@ -25,6 +25,7 @@
 ! var author   = Stephen King
 ! var job      = robot
 ! var website  = www.rivescript.com
+! global you   = cậu
 
 // Substitutions
 ! sub &quot;    = "
