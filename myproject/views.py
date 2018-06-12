@@ -27,7 +27,7 @@ def chatbot(request):
         text = json.loads(request.body.decode("utf-8"))["text"]
         ip = request.META["REMOTE_ADDR"]
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
-        log_text = "{} {} {}{}".format(ip, time, "USER:", text)
+        log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)
         response_message = bot.reply("localuser", text)
         log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
