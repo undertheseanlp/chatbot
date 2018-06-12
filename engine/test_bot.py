@@ -14,7 +14,11 @@ def tests():
         "cậu bao nhiêu tuổi",
         "bạn mấy tuổi",
         "cậu bao nhiêu tuổi rồi ?",
-        "cậu là ai"
+        "cậu là ai",
+        "có biết anh vũ anh không",
+        "vũ anh là ai",
+        "kém quá",
+        "giỏi thật",
     ]
     for message in messages:
         print("You>", message)
