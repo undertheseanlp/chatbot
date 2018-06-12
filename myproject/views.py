@@ -33,7 +33,8 @@ def chatbot(request):
         log_text = "{} {} {}{}".format(ip, time, "BOT:", response_message)
         log(log_text)
         result["output"] = response_message
-    except:
+    except Exception as e:
+        print(e)
         result = {"error": "Bad request!"}
     return JsonResponse(result)
 
