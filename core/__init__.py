@@ -10,13 +10,17 @@ def post_process(text):
 def test_post_process():
     tests = [
         (":))", ":)"),
-        ("=))", "=)"),
-        ("=)))", "=)"),
+        ("=))", ":)"),
+        ("=)))", ":)"),
     ]
     for test in tests:
-        input, expected = test
-        actual = post_process(input)
-        assert actual == expected
+        try:
+            input, expected = test
+            actual = post_process(input)
+            assert actual == expected
+        except Exception as e:
+            print(input, expected, actual)
+            raise(e)
 
 
 if __name__ == '__main__':
