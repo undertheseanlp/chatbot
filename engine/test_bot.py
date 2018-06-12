@@ -20,6 +20,8 @@ def tests():
         "vũ anh là ai",
         "kém quá",
         "giỏi thật",
+        "Hoài An",
+        "Hoài An à",
         "đồ ngu",
         "mẹ mày",
         "như cứt"

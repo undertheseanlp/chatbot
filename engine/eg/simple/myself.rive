@@ -1,10 +1,10 @@
 // Tell the user stuff about ourself.
 
 + <bot name>
-- Yes?
+- Ừ!
 
 + <bot name> *
-- Yes? {@<star>}
+- Ừ? {@<star>}
 
 + asl
 - <bot age>/<bot sex>/<bot location>
