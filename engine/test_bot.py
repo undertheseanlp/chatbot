@@ -28,6 +28,11 @@ def tests():
         "đồ ngu",
         "bot ngu"
     ]
+    INFORMATION = [
+        "cậu là nam hay nữ vậy",
+        "cậu là nam hay nữ thế",
+        "cậu là nam hay nữ"
+    ]
     APOLOGY = ["xin lỗi"]
     GREETING = ["tạm biệt"]
     AGREEMENT = ["ok"]
@@ -39,12 +44,13 @@ def tests():
         ":))", "=)", "b"
     ]
     COLLECTION = [
-        SIMPLE, GREETING, MASTER, HACK,
+        SIMPLE, INFORMATION,
+        GREETING, MASTER, HACK,
         CURSE, APOLOGY, AGREEMENT,
         SPECIAL_CHARACTERS
     ]
     # COLLECTION = [
-    #     SPECIAL_CHARACTERS
+    #     INFORMATION
     # ]
     messages = []
     for collection in COLLECTION:

@@ -179,6 +179,8 @@
 ! person i       = you
 
 // Set arrays
+! array male       = nam|trai|con trai|đàn ông|boy|man
+! array female     = nữ|gái|con gái|đàn bà|phụ nữ|girl|woman
 ! array malenoun   = male guy boy dude boi man men gentleman gentlemen
 ! array femalenoun = female girl chick woman women lady babe
 ! array mennoun    = males guys boys dudes bois men gentlemen
