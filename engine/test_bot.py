@@ -36,7 +36,7 @@ def tests():
               "có biết anh vũ anh không?",
               "vũ anh là ai"]
     SPECIAL_CHARACTERS = [
-        ":))", "b"
+        ":))", "=)", "b"
     ]
     COLLECTION = [
         SIMPLE, GREETING, MASTER, HACK,
