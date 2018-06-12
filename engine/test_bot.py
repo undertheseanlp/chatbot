@@ -1,3 +1,4 @@
+from core import post_process
 from engine import bot
 
 
@@ -25,20 +26,24 @@ def tests():
     ]
     APOLOGY = ["xin lỗi"]
     GREETING = ["tạm biệt"]
-    HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi", "a", "a"]
+    HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi"]
     MASTER = ["có biết anh vũ anh không",
               "có biết anh vũ anh không?",
               "vũ anh là ai"]
+    SPECIAL_CHARACTERS = [
+        ":))", "b"
+    ]
     COLLECTION = [
-        SIMPLE, GREETING, MASTER, APOLOGY, HACK
+        SIMPLE, GREETING, MASTER, APOLOGY, HACK, SPECIAL_CHARACTERS
     ]
     # COLLECTION = [
-    #     HACK
+    #     SPECIAL_CHARACTERS
     # ]
     messages = []
     for collection in COLLECTION:
         messages.extend(collection)
     for message in messages:
+        message = post_process(message)
         print("You>", message)
         reply = bot.reply("localuser", message)
         print("Bot>", reply)

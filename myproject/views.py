@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import json
 from datetime import datetime
+
+from core import post_process
 from engine import bot
 
 
@@ -29,6 +31,7 @@ def chatbot(request):
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
         log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)
+        text = post_process(text)
         response_message = bot.reply("localuser", text)
         log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
         log(log_text)
@@ -37,6 +40,7 @@ def chatbot(request):
         print(e)
         result = {"error": "Bad request!"}
     return JsonResponse(result)
+
 
 if __name__ == '__main__':
     log("hihi")
