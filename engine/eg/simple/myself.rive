@@ -14,8 +14,11 @@
 * <get name_asked> != undefined => tớ đã bảo tên tớ là <bot name> mà
 
 + (tên cậu là gì|cậu là ai|ai đấy) [?]
-- Tớ là <bot name>.
-- Cậu có thể gọi tớ là <bot name>.
+- Tớ là <bot name>. Tớ rất thích trò chuyện với mọi người
+- Cậu có thể gọi tớ là <bot name>. Tớ sống trên internet và rất thích nói chuyện với mọi người
+
++ (@i) là ai [?]
+@ cậu là ai
 
 + (@i) (bao nhiêu|mấy) tuổi [rồi] [?]
 - tớ <bot age> tuổi

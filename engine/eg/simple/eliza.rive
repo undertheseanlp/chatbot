@@ -10,7 +10,7 @@
 
 // xin lỗi
 + [*] (xin lỗi) [*]
-- xin cậu đừng xin lỗi.
+- cậu đừng xin lỗi.
 - xin lỗi không cần thiết
 - tớ chưa nói với cậu là không cần xin lỗi nhỉ
 - không sao đâu. cậu nói tiếp đi
@@ -83,14 +83,19 @@
 - How likely, would you estimate?
 
 
-// chào hỏi
+// greeting hello
 + (chào|xin chào|hi|hello|hey|howdy|hola|hai|yo) [*]
 - chào cậu. tớ là Hoài An
 - hi hi. chào cậu
 
-// tạm biệt
-+ tạm biệt
-- hẹn gặp lại nhé
+// greeting bye
++ (tạm biệt|bye)
+- tạm biệt. hẹn gặp lại nhé
+- chào cậu. lần khác nói tiếp nhé
+
+// agreement
++ (okie|ok)
+- nói gì vui vui tiếp bây giờ nhỉ?
 
 + [*] computer [*]
 - Do computers worry you?
@@ -323,7 +328,7 @@
 + (kém|ngu|đần|dốt) (quá|thật|đấy|lắm)
 @ kém
 
-+ (đồ) (kém|ngu|đần|dốt)
++ _ (kém|ngu|đần|dốt)
 @ kém
 
 // khen

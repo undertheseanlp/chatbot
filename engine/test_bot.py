@@ -9,6 +9,7 @@ def tests():
         "mày tên là gì ?",
         "bạn bao nhiêu tuổi",
         "bạn sống ở đâu",
+        "bạn là ai",
         "bạn tên gì",  # reask
         "bạn tên gì",  # reask
         "cậu bao nhiêu tuổi?",
@@ -20,12 +21,16 @@ def tests():
         "giỏi thật",
         "Hoài An",
         "Hoài An à",
-        "đồ ngu",
         "mẹ mày",
         "như cứt"
     ]
+    CURSE = [
+        "đồ ngu",
+        "bot ngu"
+    ]
     APOLOGY = ["xin lỗi"]
     GREETING = ["tạm biệt"]
+    AGREEMENT = ["ok"]
     HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi"]
     MASTER = ["có biết anh vũ anh không",
               "có biết anh vũ anh không?",
@@ -34,7 +39,9 @@ def tests():
         ":))", "b"
     ]
     COLLECTION = [
-        SIMPLE, GREETING, MASTER, APOLOGY, HACK, SPECIAL_CHARACTERS
+        SIMPLE, GREETING, MASTER, HACK,
+        CURSE, APOLOGY, AGREEMENT,
+        SPECIAL_CHARACTERS
     ]
     # COLLECTION = [
     #     SPECIAL_CHARACTERS
