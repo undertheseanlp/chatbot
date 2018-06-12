@@ -16,6 +16,7 @@ def tests():
         "cậu bao nhiêu tuổi rồi ?",
         "cậu là ai",
         "có biết anh vũ anh không",
+        "có biết anh vũ anh không?",
         "vũ anh là ai",
         "kém quá",
         "giỏi thật",
