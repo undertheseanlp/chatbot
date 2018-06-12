@@ -13,7 +13,7 @@
 * <input1> == <input4> => tại sao <env you> cứ nói thế nhỉ
 * <input1> == <input3> => tớ bắt đầu thấy dấu hiệu rồi đấy
 * <input1> == <input2> => đấy, <env you> lại vừa nói lại!
-- bạn vừa nói thế rồi mà
+- <env you> vừa nói thế rồi mà
 
 // Don't repeat me!
 + <reply>
