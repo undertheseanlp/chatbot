@@ -1,11 +1,6 @@
 # Darksky
 import json
-import time
-from datetime import datetime
 from os import listdir, mkdir
-
-import moment
-from delorean import Delorean
 from os.path import dirname, join
 
 import requests
