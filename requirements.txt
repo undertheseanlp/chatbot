@@ -3,3 +3,4 @@ dj-database-url==0.4.1
 rivescript==1.14.9
 whitenoise==3.2
 moment==0.8.2
+requests==2.18.4
