@@ -1,26 +1,70 @@
+// ==================================================================================================
 // A generic set of chatting responses. This set mimicks the classic Eliza bot.
+// Author: Vũ Anh
+// Date: 06/2018
+// ==================================================================================================
 
-// không hiểu
+
+// =================================================
+// RANDOM
+// =================================================
 + *
+- cậu nói tiếp đi{weight=20}
+- thú vị thật đấy{weight=10}
+- hay nhỉ{weight=5}
 - tớ không chắc tớ hiểu câu nói gì
-- cậu nói tiếp đi
-- thú vị thật đấy
-- hay nhỉ
 - cái đấy có thực sự quan trọng không?
 
-// xin lỗi
+// =================================================
+// GREETING_HELLO
+// =================================================
++ (chào|xin chào|hi|hello|hey|howdy|hola|hai|yo) [*]
+- chào cậu. tớ là Hoài An
+- hi hi. chào cậu
+
+// =================================================
+// GREETING_BYE
+// =================================================
++ (tạm biệt|bye)
+- tạm biệt. hẹn gặp lại nhé
+- chào cậu. lần khác nói tiếp nhé
+
+// =================================================
+// GREETING_HRU
+// =================================================
++ (@i) (có) khỏe không
+- tớ vẫn khỏe, chat chit suốt ngày. hi hi
+
++ (@i) (dạo này) thế nào
+@ cậu có khỏe không
+
++ khỏe không
+@ cậu có khỏe không
+
+// =================================================
+// EMOTION: LAUGH
+// =================================================
++ (smile|hihi|haha|hi hi|he he)
+- vui nhỉ{weight=30}
+- cậu có gì vui thế
+
+// =================================================
+// CONVERSATION: APOLOGY
+// =================================================
 + [*] (xin lỗi) [*]
 - cậu đừng xin lỗi.
 - xin lỗi không cần thiết
 - tớ chưa nói với cậu là không cần xin lỗi nhỉ
 - không sao đâu. cậu nói tiếp đi
 
+// =================================================
+// CONVERSATION: AGREEMENT
+// =================================================
++ (okie|ok|ừ)
+- nói gì vui vui tiếp bây giờ nhỉ?
+
 + tôi nhớ *
 - bạn có thường xuyên nhớ <star>?
-
-+ smile
-- vui nhỉ
-- cậu có gì vui thế
 
 + i remember *
 - Do you often think of <star>?
@@ -81,21 +125,6 @@
 - You aren't sure?
 - Don't you know?
 - How likely, would you estimate?
-
-
-// greeting hello
-+ (chào|xin chào|hi|hello|hey|howdy|hola|hai|yo) [*]
-- chào cậu. tớ là Hoài An
-- hi hi. chào cậu
-
-// greeting bye
-+ (tạm biệt|bye)
-- tạm biệt. hẹn gặp lại nhé
-- chào cậu. lần khác nói tiếp nhé
-
-// agreement
-+ (okie|ok|ừ)
-- nói gì vui vui tiếp bây giờ nhỉ?
 
 + [*] computer [*]
 - Do computers worry you?
