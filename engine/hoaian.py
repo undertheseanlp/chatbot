@@ -7,7 +7,7 @@ engine_folder = join(dirname(__file__), "eg", "hoaian")
 bot.load_directory(engine_folder)
 bot.sort_replies()
 
-class SimpleBot:
+class HoaiAn:
     @staticmethod
     def reply(text):
         text = post_process(text)

@@ -1,0 +1,19 @@
+// Example of a Python object macro.
+
+! version = 2.0
+
+> object weather python
+    # This function returns an int, and shows that the results
+    # from python object macros are always casted to str.
+    from core.weather import summary
+    return summary()
+< object
+
++ thời tiết hôm nay
+- <call>weather</call>
+
++ thời tiết hôm nay [như] [thế nào]
+@ thời tiết hôm nay
+
++ hôm nay thời tiết [thế nào]
+@ thời tiết hôm nay

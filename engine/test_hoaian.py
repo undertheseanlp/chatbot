@@ -1,4 +1,4 @@
-from engine.simple_bot import SimpleBot
+from engine.hoaian import HoaiAn
 
 
 def tests():
@@ -45,25 +45,26 @@ def tests():
     EXCEPTION = [
         ":))", "=)", "b"
     ]
-    COLLECTION = [
-        GREETING_HELLO, GREETING_BYE, GREETING_HRU,
-        LAUGH,
-        AGREEMENT, APOLOGY,
-        SIMPLE,
-        ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER ,
-        HACK,
-        CURSE,
-        EXCEPTION
-    ]
     # COLLECTION = [
-    #     INFORMATION
+    #     GREETING_HELLO, GREETING_BYE, GREETING_HRU,
+    #     LAUGH,
+    #     AGREEMENT, APOLOGY,
+    #     SIMPLE,
+    #     ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER ,
+    #     HACK,
+    #     CURSE,
+    #     EXCEPTION
     # ]
+    ADD = ["get score"]
+    COLLECTION = [
+        ADD
+    ]
     messages = []
     for collection in COLLECTION:
         messages.extend(collection)
     for message in messages:
         print("You>", message)
-        reply = SimpleBot.reply(message)
+        reply = HoaiAn.reply(message)
         print("Bot>", reply)
 
 
@@ -73,7 +74,7 @@ def start_bot():
         if msg == '/quit':
             quit()
 
-        reply = SimpleBot.reply("localuser", msg)
+        reply = HoaiAn.reply("localuser", msg)
         print('Bot>', reply)
 
 

@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from datetime import datetime
 
-from engine.simple_weather_bot import SimpleWeatherBot
+from engine.hoaian import HoaiAn
 
 
 def index(request):
@@ -30,7 +30,7 @@ def chatbot(request):
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
         log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)
-        response_message = SimpleWeatherBot.reply(text)
+        response_message = HoaiAn.reply(text)
         log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
         log(log_text)
         result["output"] = response_message
