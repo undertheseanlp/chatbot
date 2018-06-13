@@ -4,7 +4,7 @@ from core import post_process
 from core.weather import summary
 
 bot = RiveScript(utf8=True)
-engine_folder = join(dirname(__file__), "eg", "simple")
+engine_folder = join(dirname(__file__), "eg", "hoaian")
 bot.load_directory(engine_folder)
 bot.sort_replies()
 
