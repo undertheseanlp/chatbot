@@ -10,16 +10,10 @@ from os.path import dirname, join
 
 import requests
 
+from core.location import LOCATIONS
 from core.timeutil import TimeUtil
 
 token = "358f3308204f06c44d3ea28ed7e14cfe"
-
-LOCATIONS = [
-    ("Q1858", "Ha Noi", 21.0278, 105.8342),
-    ("Q36175", "Thanh Hoa", 20.1291, 105.3131),
-    ("Q25281", "Dat Lat", 11.9416, 108.4383),
-    ("Q1854", "Ho Chi Minh City", 10.8231, 106.6297)
-]
 
 
 class WeatherAPI:

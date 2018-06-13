@@ -1,5 +1,4 @@
-from core import post_process
-from engine import bot
+from engine.simple_bot import SimpleBot
 
 
 def tests():
@@ -56,9 +55,8 @@ def tests():
     for collection in COLLECTION:
         messages.extend(collection)
     for message in messages:
-        message = post_process(message)
         print("You>", message)
-        reply = bot.reply("localuser", message)
+        reply = SimpleBot.reply(message)
         print("Bot>", reply)
 
 
@@ -68,7 +66,7 @@ def start_bot():
         if msg == '/quit':
             quit()
 
-        reply = bot.reply("localuser", msg)
+        reply = SimpleBot.reply("localuser", msg)
         print('Bot>', reply)
 
 

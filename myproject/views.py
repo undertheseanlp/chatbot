@@ -6,8 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from datetime import datetime
 
-from core import post_process
-from engine import bot
+from engine.simple_weather_bot import SimpleWeatherBot
 
 
 def index(request):
@@ -31,8 +30,7 @@ def chatbot(request):
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
         log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)
-        text = post_process(text)
-        response_message = bot.reply("localuser", text)
+        response_message = SimpleWeatherBot.reply(text)
         log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
         log(log_text)
         result["output"] = response_message

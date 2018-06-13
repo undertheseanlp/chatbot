@@ -1,5 +1,6 @@
+from core.location import LOCATIONS
 from core.timeutil import TimeUtil
-from core.weather_darksky import LOCATIONS, WeatherRepository
+from core.weather_darksky import WeatherRepository
 
 for location in LOCATIONS:
     location_id, name, lat, long = location
