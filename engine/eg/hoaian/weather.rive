@@ -6,14 +6,16 @@
 > object weather python
     from core.weather import summary
     time_string = " ".join(args)
-    if time_string in ["hôm qua"]:
-      time_string = "HÔM_QUA"
-    if time_string in ["hôm nay", "chiều nay", "sáng nay", "trưa nay", "tối nay"]:
-      time_string ="HÔM_NAY"
-    if time_string in ["ngày mai", "sáng mai", "trưa mai", "chiều mai", "tối mai"]:
-      time_string = "NGÀY_MAI"
-    if time_string in ["ngày kia"]:
-      time_string = "NGÀY_KIA"
+    TIME_PATTERNS = (
+      ("HÔM_QUA", ["hôm qua"]),
+      ("HÔM_NAY", ["hôm nay", "chiều nay", "sáng nay", "trưa nay", "tối nay"]),
+      ("NGÀY_MAI", ["ngày mai", "sáng mai", "trưa mai", "chiều mai", "tối mai"]),
+      ("NGÀY_KIA", ["ngày kia"])
+    )
+    for pattern in TIME_PATTERNS:
+      keyword, words = pattern
+      if time_string in words:
+        time_string = keyword
     return summary(time_string=time_string)
 < object
 
