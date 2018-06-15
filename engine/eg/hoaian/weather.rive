@@ -1,20 +1,38 @@
 // Example of a Python object macro.
 
 ! version = 2.0
-
+! array time       = chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
 > object weather python
     from core.weather import summary
-    return summary()
+    time_string = " ".join(args)
+    if time_string in ["hôm qua"]:
+      time_string = "HÔM_QUA"
+    if time_string in ["hôm nay", "chiều nay", "sáng nay", "trưa nay", "tối nay"]:
+      time_string ="HÔM_NAY"
+    if time_string in ["ngày mai"]:
+      time_string = "NGÀY_MAI"
+    if time_string in ["ngày kia"]:
+      time_string = "NGÀY_KIA"
+    return summary(time_string=time_string)
 < object
 
-+ command thời tiết hôm nay
-- <call>weather </call>
++ command thời tiết (@time)
+- <call>weather <star></call>
 
-+ thời tiết hôm nay
-@ command thời tiết hôm nay
++ thời tiết (@time)
+@ command thời tiết <star>
 
-+ thời tiết hôm nay [như] [thế nào]
-@ thời tiết hôm nay
++ thời tiết (@time) [như] [thế nào]
+@ thời tiết <star>
 
-+ hôm nay thời tiết [thế nào]
++ (@time) thời tiết [thế nào]
+@ thời tiết <star>
+
++ (@time) [*] mưa hay nắng [*]
+@ thời tiết <star>
+
++ (@time) [*] (mưa không|nắng không|nóng không) [*]
+@ thời tiết <star>
+
++ [*] (đẹp trời|trời đẹp) [*]
 @ thời tiết hôm nay

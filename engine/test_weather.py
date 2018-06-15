@@ -4,13 +4,15 @@ Bot = HoaiAn
 
 def tests():
     WEATHER = [
+        "thời tiết hôm qua thế nào",
         "thời tiết hôm nay",
         "thời tiết hôm nay thế nào",
         "thời tiết hôm nay như thế nào",
-        "thời tiết hôm nay thế nào?",
-        "thời tiết hôm nay như thế nào?",
         "hôm nay thời tiết thế nào",
-        "hôm nay thời tiết thế nào?"
+        "thời tiết ngày mai thế nào",
+        "hôm nay mưa hay nắng",
+        "hôm nay đẹp trời",
+        "hôm nay trời có mưa không"
     ]
     COLLECTION = [
         WEATHER

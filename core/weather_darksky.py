@@ -1,7 +1,7 @@
 # Darksky
 import json
 from os import listdir, mkdir
-from os.path import dirname, join
+from os.path import dirname, join, getmtime
 
 import requests
 
@@ -30,13 +30,31 @@ class WeatherRepository:
 
     @staticmethod
     def get_weather(location_id, timestamp):
-        if WeatherRepository.exist(location_id, timestamp):
+        if WeatherRepository.update(location_id, timestamp):
             return WeatherRepository.load(location_id, timestamp)
         else:
             data = WeatherAPI.get_weather(location_id, timestamp)
             WeatherRepository.save(location_id, timestamp, data)
             return data
 
+    @staticmethod
+    def update(location_id, timestamp):
+        if not WeatherRepository.exist(location_id, timestamp):
+            return False
+        modify_time = int(getmtime(join(WeatherRepository.REPO_PATH, location_id, "{}.txt".format(timestamp))))
+        seconds_a_day = 24 * 60 * 60
+        if timestamp < TimeUtil.start_of_day("HÔM_NAY"):
+            if modify_time > timestamp + seconds_a_day:
+                return True
+            else:
+                return False
+        else:
+            now = TimeUtil.timestamp_now()
+            three_hours = 3 * 60 * 60
+            if modify_time + three_hours > now:
+                return True
+            else:
+                return False
     @staticmethod
     def exist(location_id, timestamp):
         REPO_PATH = WeatherRepository.REPO_PATH

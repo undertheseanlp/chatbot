@@ -45,20 +45,20 @@ def tests():
     EXCEPTION = [
         ":))", "=)", "b"
     ]
-    # COLLECTION = [
-    #     GREETING_HELLO, GREETING_BYE, GREETING_HRU,
-    #     LAUGH,
-    #     AGREEMENT, APOLOGY,
-    #     SIMPLE,
-    #     ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER ,
-    #     HACK,
-    #     CURSE,
-    #     EXCEPTION
-    # ]
-    ADD = ["get score"]
     COLLECTION = [
-        ADD
+        GREETING_HELLO, GREETING_BYE, GREETING_HRU,
+        LAUGH,
+        AGREEMENT, APOLOGY,
+        SIMPLE,
+        ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER ,
+        HACK,
+        CURSE,
+        EXCEPTION
     ]
+    # ADD = ["get score"]
+    # COLLECTION = [
+    #     ADD
+    # ]
     messages = []
     for collection in COLLECTION:
         messages.extend(collection)

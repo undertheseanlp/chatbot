@@ -4,12 +4,18 @@ from datetime import datetime
 import moment
 
 locale = "Asia/Ho_Chi_Minh"
+
+
 class TimeUtil:
     @staticmethod
     def timestamp(year, month, day):
         tmp = moment.date(datetime(year, month, day)).locale(locale).date
         timestamp = int(time.mktime(tmp.timetuple()))
         return timestamp
+
+    @staticmethod
+    def timestamp_now():
+        return int(time.time())
 
     @staticmethod
     def start_of_day(time_string):
@@ -31,3 +37,10 @@ class TimeUtil:
             raise Exception("Cannot resolve time from string {}".format(time_string))
         return TimeUtil.timestamp(today.year, today.month, day)
 
+    @staticmethod
+    def end_of_day(time_string):
+        """
+        moment: either HÔM_KIA, HÔM_QUA, HÔM_NAY, NGÀY_MAI, NGÀY_KIA
+        """
+        seconds_a_day = 86400
+        return TimeUtil.start_of_day(time_string) + seconds_a_day - 1

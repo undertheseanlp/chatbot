@@ -44,7 +44,13 @@ def summary(location_name="Ha Noi", time_string="HÔM_NAY", duration=""):
     weather_data = WeatherRepository.get_weather(location_id=location["id"], timestamp=timestamp)
     weather = analyze(weather_data, duration)
     output = ""
-    output += "hôm nay trời "
+
+    if time_string == "HÔM_NAY":
+        output += "hôm nay trời "
+    elif time_string == "NGÀY_MAI":
+        output += "ngày mai trời "
+    elif time_string == "HÔM_QUA":
+        output += "hôm qua trời "
     output += weather["temperature_summary"].replace("_", " ").lower()
     output += ", "
     output += weather["rain_summary"].replace("_", " ").lower()
