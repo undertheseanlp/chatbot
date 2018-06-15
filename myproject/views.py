@@ -30,7 +30,7 @@ def chatbot(request):
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
         log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)
-        response_message = HoaiAn.reply(text)
+        response_message = HoaiAn.reply("localuser", text)
         log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
         log(log_text)
         result["output"] = response_message

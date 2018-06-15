@@ -4,7 +4,6 @@ from engine.hoaian import HoaiAn
 def tests():
     print("$ python chatbot_test.py")
     SIMPLE = [
-
         "kém quá",
         "giỏi thật",
         "mẹ mày",
@@ -64,7 +63,7 @@ def tests():
         messages.extend(collection)
     for message in messages:
         print("You>", message)
-        reply = HoaiAn.reply(message)
+        reply = HoaiAn.reply("localuser", message)
         print("Bot>", reply)
 
 

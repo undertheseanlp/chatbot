@@ -1,7 +1,8 @@
 // Example of a Python object macro.
 
 ! version = 2.0
-! array time       = chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
+! array time             = chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
+! array weather_keywords = mưa|nóng|nắng|bão|thời tiết
 > object weather python
     from core.weather import summary
     time_string = " ".join(args)
@@ -22,17 +23,11 @@
 + thời tiết (@time)
 @ command thời tiết <star>
 
-+ thời tiết (@time) [như] [thế nào]
-@ thời tiết <star>
++ [*] (@time) [*] (@weather_keywords) [*]
+@ thời tiết <star1>
 
-+ (@time) thời tiết [thế nào]
-@ thời tiết <star>
-
-+ (@time) [*] mưa hay nắng [*]
-@ thời tiết <star>
-
-+ (@time) [*] (mưa|nóng|nắng|bão) [*]
-@ thời tiết <star>
++ [*] (@weather_keywords) [*] (@time) [*]
+@ thời tiết <star2>
 
 + [*] (đẹp trời|trời đẹp) [*]
 @ thời tiết hôm nay
