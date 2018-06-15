@@ -9,7 +9,7 @@
       time_string = "HÔM_QUA"
     if time_string in ["hôm nay", "chiều nay", "sáng nay", "trưa nay", "tối nay"]:
       time_string ="HÔM_NAY"
-    if time_string in ["ngày mai"]:
+    if time_string in ["ngày mai", "sáng mai", "trưa mai", "chiều mai", "tối mai"]:
       time_string = "NGÀY_MAI"
     if time_string in ["ngày kia"]:
       time_string = "NGÀY_KIA"
@@ -31,7 +31,7 @@
 + (@time) [*] mưa hay nắng [*]
 @ thời tiết <star>
 
-+ (@time) [*] (mưa không|nắng không|nóng không) [*]
++ (@time) [*] (mưa|nóng|nắng|bão) [*]
 @ thời tiết <star>
 
 + [*] (đẹp trời|trời đẹp) [*]
