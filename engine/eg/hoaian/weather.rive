@@ -1,7 +1,7 @@
 // Example of a Python object macro.
 
 ! version = 2.0
-! array time             = chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
+! array time             = mai|chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
 ! array weather_keywords = mưa|nóng|nắng|bão|thời tiết
 > object weather python
     from core.weather import summary
@@ -9,7 +9,7 @@
     TIME_PATTERNS = (
       ("HÔM_QUA", ["hôm qua"]),
       ("HÔM_NAY", ["hôm nay", "chiều nay", "sáng nay", "trưa nay", "tối nay"]),
-      ("NGÀY_MAI", ["ngày mai", "sáng mai", "trưa mai", "chiều mai", "tối mai"]),
+      ("NGÀY_MAI", ["mai", "ngày mai", "sáng mai", "trưa mai", "chiều mai", "tối mai"]),
       ("NGÀY_KIA", ["ngày kia"])
     )
     for pattern in TIME_PATTERNS:

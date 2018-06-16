@@ -16,7 +16,8 @@ def tests():
         "hôm nay trời có mưa không",
         "dự đoán hôm nay thời tiết",
         "dự đoán thời tiết hôm nay",
-        "dự báo thời tiết hôm nay thế nào?"
+        "dự báo thời tiết hôm nay thế nào?",
+        "mai Hà Nội có mưa không thế?"
     ]
     COMPARE = [
         "hôm nay nắng hơn hôm qua không?"
