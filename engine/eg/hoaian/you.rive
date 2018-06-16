@@ -1,0 +1,21 @@
+// ===================================================================================================
+// Basic Information
+// Author: Vũ Anh
+// Date: 06/2018
+// ===================================================================================================
+> object Name python
+    name = " ".join(args)
+    tokens = name.split()
+    tokens = [token.capitalize() for token in tokens]
+    name = " ".join(tokens)
+    return name
+
+< object
++ @pronoun_you tên là (*)
+- <set name=<star>>Chào <call>Name <star></call>{weight=10}
+
++ chào
+- chào <get name>
+
++ hi
+- chào <get name>
