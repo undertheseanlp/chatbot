@@ -15,7 +15,8 @@
 - <set name=<star>>Chào <call>Name <star></call>{weight=10}
 
 + chào
-- chào <get name>
+* <get name> != undefined => chào <get name>
+- chào cậu
 
 + hi
-- chào <get name>
+@ chào
