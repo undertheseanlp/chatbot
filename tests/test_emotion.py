@@ -19,7 +19,8 @@ def tests():
         "bot ngu",
         "con bot ngu này",
         "ngu thật",
-        "ngu vậy"
+        "ngu vậy",
+        "cái loz"
     ]
     COMPLIMENT = [
         "giỏi thật",

@@ -43,7 +43,7 @@
 // VULGARITY
 // nói bậy
 // =================================================
-! array vulgarity_words = mẹ mày|địt|như cứt|cứt|dm|dmm|cc|ccc|fuck|đụ
+! array vulgarity_words = mẹ mày|địt|như cứt|cứt|dm|dmm|cc|ccc|fuck|đụ|lồn|loz
 + [*] @vulgarity_words [*]
 - ăn nói cẩn thận đấy
 - dừng lại đi.
