@@ -1,0 +1,50 @@
+// ===================================================================================================
+// Emotion Control
+// Author: Vũ Anh
+// Date: 06/2018
+// ===================================================================================================
+
+// =================================================
+// ANGRY
+// =================================================
+! array angry_words = mẹ|im đi
++ @angry_words
+- có gì làm cậu bực à
+- xin lỗi nếu tớ làm cậu bực
+
+// =================================================
+// CURSE
+// =================================================
+! array curse_words       = kém|ngu|đần|dốt
++ @curse_words
+- đừng mắng tớ thế. tớ vẫn đang học hỏi mỗi ngày{weight=3}
+- cậu thô lỗ thế
+- đừng tưởng cậu giỏi hơn người ta mà tinh vi
+
++ @curse_words _
+@ kém
+
++ _ @curse_words
+@ kém
+
++ [*] bot ngu [*]
+@ kém
+
+// khen
++ (giỏi|tốt|thông minh)
+- cảm ơn cậu đã khen tớ. ngày nào tớ cũng đọc sách
+- cảm ơn ^-^
+- cậu cũng <star>
+
++ (giỏi|tốt) (quá|thật|đấy|lắm)
+@ giỏi
+
+// =================================================
+// VULGARITY
+// nói bậy
+// =================================================
+! array vulgarity_words = mẹ mày|địt|như cứt|cứt|dm|dmm|cc|ccc|fuck|đụ
++ [*] @vulgarity_words [*]
+- ăn nói cẩn thận đấy
+- dừng lại đi.
+- biến đi

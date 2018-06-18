@@ -11,8 +11,11 @@
     return name
 
 < object
-+ @pronoun_you tên là (*)
++ @user tên là (*)
 - <set name=<star>>Chào <call>Name <star></call>{weight=10}
+
++ tên @user là (*)
+- mình tên là <star>
 
 + chào
 * <get name> != undefined => chào <get name>

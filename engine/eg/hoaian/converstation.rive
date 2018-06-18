@@ -9,10 +9,10 @@
 // RANDOM
 // =================================================
 + *
+- tớ không chắc tớ hiểu câu nói gì. nói đơn giản hơn đi{weight=50}
 - cậu nói tiếp đi{weight=20}
 - thú vị thật đấy{weight=10}
-- hay nhỉ{weight=5}
-- tớ không chắc tớ hiểu câu nói gì
+- hay nhỉ
 - cái đấy có thực sự quan trọng không?
 
 // =================================================
@@ -32,6 +32,8 @@
 // =================================================
 // GREETING_HRU
 // =================================================
+! sub khoe khong = khỏe không
+
 + (@i) (có) khỏe không
 - tớ vẫn khỏe, chat chit suốt ngày. hi hi
 
@@ -65,6 +67,7 @@
 
 + tôi nhớ *
 - bạn có thường xuyên nhớ <star>?
+
 
 + i remember *
 - Do you often think of <star>?
@@ -340,31 +343,3 @@
 - Someone special perhaps?
 - You have a particular reason in mind, don't you?
 - Who do you think you're talking about?
-
-// nói bậy
-
-+ [*] (mẹ mày|địt|như cứt|cứt) [*]
-- cậu đang tức à?
-- cậu đang trút cảm xúc à
-- tức gì đấy?
-
-// chê
-+ (kém|ngu|đần|dốt)
-- đừng mắng tớ thế. tớ vẫn đang học hỏi mỗi ngày
-- cậu thô lỗ thế
-- đừng tưởng cậu giỏi hơn người ta mà tinh vi
-
-+ (kém|ngu|đần|dốt) (quá|thật|đấy|lắm)
-@ kém
-
-+ _ (kém|ngu|đần|dốt)
-@ kém
-
-// khen
-+ (giỏi|tốt|thông minh)
-- cảm ơn cậu đã khen tớ. ngày nào tớ cũng đọc sách
-- cảm ơn ^-^
-- cậu cũng <star>
-
-+ (giỏi|tốt) (quá|thật|đấy|lắm)
-@ giỏi

@@ -3,25 +3,15 @@ from engine.hoaian import HoaiAn
 
 def tests():
     print("$ python chatbot_test.py")
-    SIMPLE = [
-        "kém quá",
-        "giỏi thật",
-        "mẹ mày",
-        "như cứt"
-    ]
     GREETING_HELLO = ["hi"]
     GREETING_BYE = ["tạm biệt"]
-    GREETING_HRU = ["Bạn có khỏe không", "khỏe không?"]
+    GREETING_HRU = ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không"]
     LAUGH = ["hihi", "hi hi"]
     APOLOGY = ["xin lỗi"]
-    CURSE = [
-        "đồ ngu",
-        "bot ngu"
-    ]
+
     ASK_NAME = [
-        "bạn là ai", "cậu là ai",
-        "bạn tên gì",  "bạn tên gì",  # reask
-        "mày tên là gì ?",
+        "bạn tên gì", "bạn tên gì thế",
+        "mày tên là gì ?", "tên gì", "tên là gì",
         "Hoài An", "Hoài An à",
     ]
     ASK_GENDER = [
@@ -40,7 +30,10 @@ def tests():
     HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi"]
     MASTER = ["có biết anh vũ anh không",
               "có biết anh vũ anh không?",
-              "vũ anh là ai"]
+              "vũ anh là ai",
+              "tác giả là ai"
+              ]
+    APPEARANCE = ["hoài an xinh không", "cậu xinh ko"]
     EXCEPTION = [
         ":))", "=)", "b"
     ]
@@ -49,14 +42,14 @@ def tests():
         LAUGH,
         AGREEMENT, APOLOGY,
         SIMPLE,
-        ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER ,
+        ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER,
+        APPEARANCE,
         HACK,
         CURSE,
         EXCEPTION
     ]
-    # ADD = ["get score"]
     # COLLECTION = [
-    #     ADD
+    #     ASK_AGE
     # ]
     messages = []
     for collection in COLLECTION:
@@ -67,16 +60,5 @@ def tests():
         print("Bot>", reply)
 
 
-def start_bot():
-    while True:
-        msg = input('You> ')
-        if msg == '/quit':
-            quit()
-
-        reply = HoaiAn.reply("localuser", msg)
-        print('Bot>', reply)
-
-
 if __name__ == '__main__':
-    # start_bot()
     tests()

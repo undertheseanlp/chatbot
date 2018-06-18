@@ -4,8 +4,13 @@ import re
 def post_process(text):
     text = re.sub(r"\){2,}", ")", text)
     text = text.replace("=)", ":)")
+    text = text.replace("+", "cộng")
+    text = text.replace("-", "trừ")
+    text = text.replace("*", "nhân")
+    text = text.replace("/", "chia")
+    text = text.replace("oẻ", "ỏe")
+    text = text.replace("ko", "không")
     return text
-
 
 def test_post_process():
     tests = [

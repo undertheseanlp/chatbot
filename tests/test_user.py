@@ -10,7 +10,7 @@ def tests():
     ]
 
     COLLECTION = [
-       SAY_NAME
+        SAY_NAME
     ]
     messages = []
     for collection in COLLECTION:
@@ -21,16 +21,5 @@ def tests():
         print("Bot>", reply)
 
 
-def start_bot():
-    while True:
-        msg = input('You> ')
-        if msg == '/quit':
-            quit()
-
-        reply = HoaiAn.reply("localuser", msg)
-        print('Bot>', reply)
-
-
 if __name__ == '__main__':
-    # start_bot()
     tests()

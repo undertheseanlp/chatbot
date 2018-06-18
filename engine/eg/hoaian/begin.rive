@@ -88,7 +88,6 @@
 ! sub ur        = your
 ! sub r         = are
 ! sub n         = and
-! sub im        = i am
 ! sub wat       = what
 ! sub wats      = what is
 ! sub ohh       = oh
@@ -192,5 +191,5 @@
 ! array yes        = yes yeah yep yup ya yea
 ! array no         = no nah nope nay
 ! array i          = cậu bạn mày
-! array pronoun_you = mình tớ tao
+! array user = tớ mình tao
 ! array number_ask = bao nhiêu mấy

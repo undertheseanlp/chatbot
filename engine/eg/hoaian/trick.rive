@@ -1,0 +1,23 @@
+// =================================================
+// SIMPLE MATH
+// =================================================
+! sub +       = cộng
+
++ [*] 1 cộng 1 [*]
+- 2
+- Một cộng một đương nhiên bằng hai
+- Một quả trứng cộng một quả trứng sẽ ra hai quả trứng
+
++ [*] (cộng|trừ|nhân|chia) [*]
+- Tớ không thích học toán lắm
+- Toán không phải môn học ưa thích của tớ
+- Đùa. Lại toán nữa à
+
+// =================================================
+// SHORT CHARACTER
+// =================================================
+
++ (a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z)
+- tớ không hiểu. ý cậu là gì khi nói "<star>"
+- cậu gõ nhầm gì à, tớ không hiểu "<star>" có nghĩa là gì
+- ...

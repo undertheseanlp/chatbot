@@ -5,10 +5,10 @@
 // ===================================================================================================
 
 + <bot name>
-- Ừ!
+- Đúng rồi!
 
 + <bot name> *
-- Ừ? {@<star>}
+- Đúng rồi!
 
 + asl
 - <bot age>/<bot sex>/<bot location>
@@ -30,6 +30,12 @@
 + (@i) là ai [?]
 @ cậu là ai
 
++ tên [là] gì
+@ bạn tên gì
+
++ [*] bạn [là] tên gì [*]
+@ bạn tên gì
+
 // =================================================
 // ASK AGE
 // =================================================
@@ -49,6 +55,12 @@
 + (@male) hay (@female) [*]
 @ cậu là con trai hay con gái
 
++ (@male) à
+@ cậu là con trai hay con gái
+
++ (@female) à
+@ cậu là con trai hay con gái
+
 + are you a (@malenoun) or a (@femalenoun)
 - tớ là con gái
 
@@ -66,14 +78,39 @@
 // ASK MASTER
 // =================================================
 
-+ có biết (*) vũ anh không [?]
++ vũ anh là ai
 - anh vũ anh là người đã chỉ bảo tớ rất nhiều
 
-+ vũ anh là ai [?]
-- anh vũ anh là người đã chỉ bảo tớ rất nhiều
++ có biết (*) vũ anh không [?]
+@ vũ anh là ai
+
++ [*] tác giả [*] ai [*]
+- tớ tự học mỗi ngày, nhưng anh vũ anh đã chỉ bảo tớ rất nhiều
+
++ [*] ai [*] tác giả [*]
+@ tác giả là ai
 
 + who is your master
 - <bot master>.
+
+// =================================================
+// APPEARANCE
+// =================================================
+
++ (@i) xinh không
+- tớ khá cao và dễ nhìn
+- tất nhiên rồi
+- đương nhiên
+
++ <bot name> xinh không{weight=100}
+@ cậu xinh không
+
++ (có) xinh không
+@ cậu xinh không
+
+// =================================================
+// OTHER
+// =================================================
 
 + where (are you|are you from|do you live)
 - I'm from <bot location>.
@@ -108,5 +145,8 @@
 
 + who is your favorite author
 - <bot author>.
+
+
+
 
 
