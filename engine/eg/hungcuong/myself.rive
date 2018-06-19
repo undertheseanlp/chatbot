@@ -84,9 +84,15 @@
 // =================================================
 // ASK LOCATION
 // =================================================
-+ (@i) sống ở đâu
++ (@i) [sống] ở đâu
 - tớ ở <bot location>, nhưng phần lớn thời gian tớ ở trên internet để chat chit với mọi người
 - tớ ở <bot location>
+
++ cậu ở đâu
+@ cậu sống ở đâu
+
++ quê cậu ở đâu
+@ cậu sống ở đâu
 
 + ở đâu
 @ cậu sống ở đâu

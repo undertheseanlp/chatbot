@@ -2,6 +2,7 @@ from engine.hoaian import HoaiAn
 
 Bot = HoaiAn
 
+
 def tests():
     WEATHER = [
         "thời tiết hôm qua thế nào",

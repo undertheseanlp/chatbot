@@ -5,7 +5,7 @@ from util import sync_engine
 turn = "hungcuong"
 message = "command start"
 count = 0
-n = 50
+n = 20
 while count < n:
     if turn == "hoaian":
         message = HoaiAn.reply("hungcuong", message)

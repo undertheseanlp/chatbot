@@ -12,8 +12,7 @@ class HoaiAn:
     @staticmethod
     def reply(uid, text):
         if hoaian_bot.get_uservar(uid, "facts") is None:
-            print("set fact hoai an the hell")
-            hoaian_bot.set_uservars(uid, {"facts": FACTS})
+            hoaian_bot.set_uservars(uid, {"facts": FACTS.copy()})
         text = post_process(text)
         response = hoaian_bot.reply(uid, text)
         return response

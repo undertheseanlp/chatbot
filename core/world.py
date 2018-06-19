@@ -1,1 +1,5 @@
-FACTS = set(["user name", "user age"])
+FACTS = set([
+    "user name",
+    "user age",
+    "user location"
+])
