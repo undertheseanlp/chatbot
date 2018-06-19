@@ -19,20 +19,24 @@ def tests():
         "bot ngu",
         "con bot ngu này",
         "ngu thật",
-        "ngu vậy"
+        "ngu vậy",
+        "cái đồ đần này"
     ]
     COMPLIMENT = [
         "giỏi thật",
     ]
+    BOREDOM = [
+        "chán vãi"
+    ]
     COLLECTION = [
         ANGRY,
         VULGARITY,
-        CURSE,
+        CURSE, BOREDOM,
         COMPLIMENT
     ]
 
     # COLLECTION = [
-    #     VULGARITY
+    #     BOREDOM
     # ]
 
     messages = []

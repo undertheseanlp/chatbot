@@ -9,11 +9,17 @@
 // RANDOM
 // =================================================
 + *
-- tớ không chắc tớ hiểu câu nói gì. nói đơn giản hơn đi{weight=50}
+- tớ không chắc tớ hiểu câu nói gì. có lẽ cậu nên nói đơn giản hơn đi{weight=50}
 - cậu nói tiếp đi{weight=20}
-- thú vị thật đấy{weight=10}
-- hay nhỉ
+
+// Unknown Answer
++ [*] (sao|thế nào|ai|ở đâu|là gì) [*]
 - cái đấy có thực sự quan trọng không?
+- tớ không biết, nhưng tớ sẽ search thử trên mạng
+- câu này khó quá tớ không biết nói sao
+
++ question_mark
+- Có điều gì cậu chưa hiểu à?
 
 // =================================================
 // GREETING_HELLO
@@ -43,28 +49,7 @@
 + khỏe không
 @ cậu có khỏe không
 
-// =================================================
-// EMOTION: LAUGH
-// =================================================
-+ (smile|hihi|haha|hi hi|he he)
-- vui nhỉ{weight=30}
-- cậu có gì vui thế
-
-// =================================================
-// CONVERSATION: APOLOGY
-// =================================================
-+ [*] (xin lỗi) [*]
-- cậu đừng xin lỗi.
-- xin lỗi không cần thiết
-- tớ chưa nói với cậu là không cần xin lỗi nhỉ
-- không sao đâu. cậu nói tiếp đi
-
-// =================================================
-// CONVERSATION: AGREEMENT
-// =================================================
-+ (okie|ok|ừ)
-- nói gì vui vui tiếp bây giờ nhỉ?
-
+// ==================================================================================================
 + tôi nhớ *
 - bạn có thường xuyên nhớ <star>?
 

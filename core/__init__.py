@@ -10,6 +10,8 @@ def post_process(text):
     text = text.replace("/", "chia")
     text = text.replace("oẻ", "ỏe")
     text = text.replace("ko", "không")
+    if text == "?":
+        text = "question_mark"
     return text
 
 def test_post_process():

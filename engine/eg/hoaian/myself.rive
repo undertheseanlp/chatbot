@@ -39,12 +39,18 @@
 // =================================================
 // ASK AGE
 // =================================================
-+ (@i) (bao nhiêu|mấy) tuổi [rồi] [?]
++ (@i) (bao nhiêu|mấy) tuổi [*]
+- tớ <bot age> tuổi
+
++ <bot name> (bao nhiêu|mấy) tuổi [*]
 - tớ <bot age> tuổi
 
 + how old are you
 - I'm <bot age> years old.
 @ cậu mấy tuổi
+
++ mấy tuổi
+- cậu bao nhiêu tuổi
 
 // =================================================
 // ASK GENDER
@@ -70,9 +76,12 @@
 // =================================================
 // ASK LOCATION
 // =================================================
-+ (@i) sống ở đâu [?]
++ (@i) sống ở đâu
 - tớ ở <bot location>, nhưng phần lớn thời gian tớ ở trên internet để chat chit với mọi người
 - tớ ở <bot location>
+
++ ở đâu
+@ cậu sống ở đâu
 
 // =================================================
 // ASK MASTER
@@ -90,6 +99,9 @@
 + [*] ai [*] tác giả [*]
 @ tác giả là ai
 
++ [*] ai [*] tạo ra [*]
+@ tác giả là ai
+
 + who is your master
 - <bot master>.
 
@@ -97,15 +109,12 @@
 // APPEARANCE
 // =================================================
 
-+ (@i) xinh không
++ [*] (@i) [*] xinh không [*]
 - tớ khá cao và dễ nhìn
 - tất nhiên rồi
 - đương nhiên
 
-+ <bot name> xinh không{weight=100}
-@ cậu xinh không
-
-+ (có) xinh không
++ [*] <bot name> [*] xinh không [*]
 @ cậu xinh không
 
 // =================================================

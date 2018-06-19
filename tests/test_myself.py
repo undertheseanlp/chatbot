@@ -3,9 +3,7 @@ from engine.hoaian import HoaiAn
 
 def tests():
     print("$ python chatbot_test.py")
-    GREETING_HELLO = ["hi"]
-    GREETING_BYE = ["tạm biệt"]
-    GREETING_HRU = ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không"]
+
     LAUGH = ["hihi", "hi hi"]
     APOLOGY = ["xin lỗi"]
 
@@ -25,7 +23,7 @@ def tests():
         "bạn mấy tuổi",
         "cậu bao nhiêu tuổi rồi ?",
     ]
-    ASK_LOCATION = ["bạn sống ở đâu"]
+    ASK_LOCATION = ["bạn sống ở đâu", "ở đâu"]
     AGREEMENT = ["ok"]
     HACK = ["a", "a", "a", "b", "a", "a", "a", "a", "a", "a", "xin lỗi"]
     MASTER = ["có biết anh vũ anh không",
@@ -33,23 +31,20 @@ def tests():
               "vũ anh là ai",
               "tác giả là ai"
               ]
-    APPEARANCE = ["hoài an xinh không", "cậu xinh ko"]
+    APPEARANCE = ["hoài an xinh không", "cậu xinh ko", "cậu có xinh không"]
     EXCEPTION = [
         ":))", "=)", "b"
     ]
     COLLECTION = [
-        GREETING_HELLO, GREETING_BYE, GREETING_HRU,
         LAUGH,
         AGREEMENT, APOLOGY,
-        SIMPLE,
         ASK_NAME, ASK_GENDER, ASK_AGE, ASK_LOCATION, MASTER,
         APPEARANCE,
         HACK,
-        CURSE,
         EXCEPTION
     ]
     # COLLECTION = [
-    #     ASK_AGE
+    #     APPEARANCE
     # ]
     messages = []
     for collection in COLLECTION:
