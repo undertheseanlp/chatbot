@@ -77,7 +77,7 @@
 // VULGARITY
 // nói bậy
 // =================================================
-! array vulgarity_words = mẹ mày|địt|như cứt|cứt|dm|dmm|cc|ccc|fuck|đụ
+! array vulgarity_words = mẹ mày|địt|như cứt|cứt|dm|dmm|cc|ccc|fuck|đụ|lồn|loz
 + [*] @vulgarity_words [*]
 - cậu dùng từ cho cẩn thận
 - ê, ăn nói cẩn thận đấy
