@@ -5,7 +5,7 @@ def tests():
     print("$ python chatbot_test.py")
     GREETING_HELLO = ["hi"]
     GREETING_BYE = ["tạm biệt"]
-    GREETING_HRU = ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không"]
+    GREETING_HRU = ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không", "bạn khỏe không"]
     UNKNOWN_ANSWER = [
         "Roger là ai"
     ]
@@ -20,9 +20,9 @@ def tests():
         UNKNOWN_ANSWER,
         CONFUSE
     ]
-    COLLECTION = [
-        TOPIC_FINDING
-    ]
+    # COLLECTION = [
+    #     TOPIC_FINDING
+    # ]
     messages = []
     for collection in COLLECTION:
         messages.extend(collection)
