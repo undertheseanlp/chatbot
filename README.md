@@ -59,6 +59,8 @@ source activate chatbot
 python manage.py runserver 0.0.0.0:8000
 ```
 
+Then go to http://localhost:8000 to start chat with bot
+
 ## 3. References
 
 To be updated
