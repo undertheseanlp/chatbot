@@ -16,10 +16,10 @@
 - <env you> vừa nói thế rồi mà
 
 // Don't repeat me!
-+ <reply>
-- Is there an owl in here?
-- What? I just said that.
-- Didn't I just say that?
+// + <reply>
+// - Is there an owl in here?
+// - What? I just said that.
+// - Didn't I just say that?
 
 > topic annoying
 	+ *

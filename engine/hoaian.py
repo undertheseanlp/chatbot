@@ -9,6 +9,7 @@ bot.sort_replies()
 
 
 class HoaiAn:
+    bot = bot
     @staticmethod
     def reply(uid, text):
         text = post_process(text)

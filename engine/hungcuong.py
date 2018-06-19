@@ -9,6 +9,8 @@ bot.sort_replies()
 
 
 class HungCuong:
+
+    bot = bot
     @staticmethod
     def reply(uid, text):
         text = post_process(text)
