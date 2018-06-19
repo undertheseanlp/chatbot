@@ -11,7 +11,7 @@ hoaian_bot.sort_replies()
 class HoaiAn:
     @staticmethod
     def reply(uid, text):
-        if not hoaian_bot.get_uservar(uid, "facts"):
+        if hoaian_bot.get_uservar(uid, "facts") is None:
             print("set fact hoai an the hell")
             hoaian_bot.set_uservars(uid, {"facts": FACTS})
         text = post_process(text)

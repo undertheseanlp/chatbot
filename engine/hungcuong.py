@@ -12,7 +12,7 @@ hungcuong_bot.sort_replies()
 class HungCuong:
     @staticmethod
     def reply(uid, text):
-        if not hungcuong_bot.get_uservar(uid, "facts"):
+        if hungcuong_bot.get_uservar(uid, "facts") is None:
             print("the hell")
             hungcuong_bot.set_uservars(uid, {"facts": FACTS})
         text = post_process(text)
