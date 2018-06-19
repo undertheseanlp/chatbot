@@ -11,10 +11,6 @@
     return name
 < object
 
-> object seek_user_information python
-    return "cậu ở đâu?"
-< object
-
 + @user tên là (*)
 - <set name=<star>>Chào <call>Name <star></call>{weight=10}
 
@@ -28,5 +24,18 @@
 + hi
 @ chào
 
-+ @user [_] con trai
-@ <call>seek_user_information</call>
+> topic seek_user_name
+	+ *
+	@ <star>{topic=random}
+
+	+ tớ không biết
+	- ơ lạ nhỉ, tên mình mà không biết{topic=random}
+< topic
+
+> topic seek_user_age
+	+ *
+	@ <star>{topic=random}
+
+	+ tớ không biết
+	- ơ lạ nhỉ, tuổi mình mà không biết{topic=random}
+< topic

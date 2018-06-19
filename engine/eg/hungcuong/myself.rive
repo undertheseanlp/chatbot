@@ -20,21 +20,29 @@
 @ bạn tên gì
 
 + (@i) tên [là] gì [?]
-* <get name_asked> == undefined => <set name_asked=true>{random}tớ tên là <bot name>|tớ không biết{/random}
+// * <get name_asked> == undefined => <set name_asked=true>{random}tớ tên là <bot name>|tớ không biết{/random}
+// * <get name_asked> == undefined => <set name_asked=true> tớ không biết
+* <get name_asked> == undefined => <set name_asked=true>tớ tên là <bot name>
 * <get name_asked> != undefined => tớ đã bảo tên tớ là <bot name> mà
 
-+ (tên cậu là gì|cậu là ai|ai đấy) [?]
-- Tớ là <bot name>. Tớ rất thích trò chuyện với mọi người
-- Cậu có thể gọi tớ là <bot name>. Tớ sống trên internet và rất thích nói chuyện với mọi người
++ tớ có thể biết tên cậu không
+@ bạn tên gì
 
-+ (@i) là ai [?]
-@ cậu là ai
++ tên cậu là gì nhỉ
+@ bạn tên gì
 
 + tên [là] gì
 @ bạn tên gì
 
 + [*] bạn [là] tên gì [*]
 @ bạn tên gì
+
++ (tên cậu là gì|cậu là ai|ai đấy)
+- Tớ là <bot name>. Tớ rất thích trò chuyện với mọi người
+- Cậu có thể gọi tớ là <bot name>. Tớ sống trên internet và rất thích nói chuyện với mọi người
+
++ (@i) là ai [?]
+@ cậu là ai
 
 // =================================================
 // ASK AGE

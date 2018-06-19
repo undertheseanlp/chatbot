@@ -7,6 +7,11 @@
 // =================================================
 // RANDOM
 // =================================================
+> object topicfinding python
+    from core.engine import brain
+    return brain(rs)
+< object
+
 + *
 - tớ không chắc tớ hiểu câu nói gì. có lẽ cậu nên nói đơn giản hơn đi{weight=10}
 @ command topic finding
@@ -16,8 +21,7 @@
 
 // Topic finding
 + command topic finding
-- cậu nói tiếp đi
-- cậu tên gì{weight=10}
+- <call>topicfinding</call>
 
 // Unknown Answer
 + [*] (sao|thế nào|ai|ở đâu|là gì) [*]

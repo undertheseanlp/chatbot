@@ -12,14 +12,17 @@ def tests():
     CONFUSE = [
         "?"
     ]
+    TOPIC_FINDING = [
+        "command topic finding"
+    ]
     COLLECTION = [
         GREETING_HELLO, GREETING_BYE, GREETING_HRU,
         UNKNOWN_ANSWER,
         CONFUSE
     ]
-    # COLLECTION = [
-    #     APPEARANCE
-    # ]
+    COLLECTION = [
+        TOPIC_FINDING
+    ]
     messages = []
     for collection in COLLECTION:
         messages.extend(collection)
