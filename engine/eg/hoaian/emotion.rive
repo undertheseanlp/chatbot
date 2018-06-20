@@ -45,7 +45,7 @@
 // =================================================
 // CURSE
 // =================================================
-! array curse_words       = kém|ngu|đần|dốt|dở
+! array curse_words       = kém|ngu|đần|dốt|dở|điên
 + @curse_words
 - đừng chê tớ thế. tớ vẫn đang học hỏi mỗi ngày{weight=3}
 - cậu chưa hiểu tớ đâu{weight=2}
