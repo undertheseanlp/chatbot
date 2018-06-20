@@ -14,20 +14,33 @@
     return summary(time_string=time_string)
 < object
 
-! array time = mai|chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
-! array weather_keywords = mưa|nóng|nắng|bão|thời tiết|trời
+> object settopic python
+    from core.weather import settopic
+    return settopic(rs)
+<
 
-+ command thời tiết (@time)
-- <call>weather <star></call>
++ [*] (mưa|nóng|nắng|bão|thời tiết|trời) [*]{weight=10}
+- <call>settopic weather</call>
 
-+ thời tiết (@time){weight=3}
-@ command thời tiết <star>
+> topic weather
+    + *
+    - <star>
 
-+ [*] (@time) [*] (@weather_keywords) [*]
-@ thời tiết <star1>
+    ! array time = mai|chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia
+    ! array weather_keywords = mưa|nóng|nắng|bão|thời tiết|trời
 
-+ [*] (@weather_keywords) [*] (@time) [*]
-@ thời tiết <star2>
+    + command thời tiết (@time)
+    - <call>weather <star></call>
 
-+ [*] (đẹp trời|trời đẹp) [*]
-@ thời tiết hôm nay
+    + thời tiết (@time){weight=3}
+    @ command thời tiết <star>
+
+    + [*] (@time) [*] (@weather_keywords) [*]
+    @ thời tiết <star1>
+
+    + [*] (@weather_keywords) [*] (@time) [*]
+    @ thời tiết <star2>
+
+    + [*] (đẹp trời|trời đẹp) [*]
+    @ thời tiết hôm nay
+< topic

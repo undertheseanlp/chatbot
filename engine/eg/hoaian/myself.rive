@@ -84,17 +84,17 @@
 // =================================================
 // ASK LOCATION
 // =================================================
-+ (@i) [sống] ở đâu
++ [@i] [sống] ở đâu
 - tớ ở <bot location>, nhưng phần lớn thời gian tớ ở trên internet để chat chit với mọi người
 - tớ ở <bot location>
 
-+ cậu ở đâu
++ quê [@i] ở đâu
 @ cậu sống ở đâu
 
-+ quê cậu ở đâu
++ [@i] quê ở đâu
 @ cậu sống ở đâu
 
-+ ở đâu
++ @i từ đâu tới
 @ cậu sống ở đâu
 
 // =================================================
@@ -130,6 +130,33 @@
 
 + [*] <bot name> [*] xinh không [*]
 @ cậu xinh không
+
+// =================================================
+// ASK TODAY
+// =================================================
+
++ [ngày] hôm nay [_] thế nào
+- tớ bận rộn nói chuyện với mọi người
+
++ [ngày] hôm nay [_] [_] [có] vui không
+@ ngày hôm nay thế nào
+
++ [@i] * không
+- tớ <star>
+
+// =================================================
+// ASK KNOWLEDGE
+// =================================================
++ [@i] biết gì
+- tớ biết nhiều thứ
+- cũng tùy vào cậu hỏi về lĩnh vực nào
+
++ [@i] [có thể] làm gì
+- tớ có thể nói chuyện với cậu mỗi ngày
+- tớ hi vọng có thể làm cậu vui
+
++ [@i] có những chức năng gì
+@ có thể làm gì
 
 // =================================================
 // OTHER

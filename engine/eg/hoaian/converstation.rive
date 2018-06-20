@@ -13,8 +13,12 @@
 < object
 
 + *
-- tớ không chắc tớ hiểu câu nói gì. có lẽ cậu nên nói đơn giản hơn đi{weight=10}
-@ command topic finding{weight=-2}
+
+- tớ không chắc tớ hiểu câu nói gì{weight=2}
+- có lẽ cậu nên nói đơn giản hơn đi{weight=2}
+- ...{weight=2}
+- {@ truyện cười}
+// @ command topic finding
 
 + command start
 - chào cậu<set greeting=true>
@@ -24,7 +28,7 @@
 - <call>topicfinding</call>
 
 // Unknown Answer
-+ [*] (sao|thế nào|ai|ở đâu|là gì) [*]{weight=-1}
++ [*] (sao|thế nào|ai|ở đâu|là gì) [*]
 - cái đấy có thực sự quan trọng không?
 - tớ không biết, nhưng tớ sẽ search thử trên mạng
 - câu này khó quá tớ không biết nói sao
