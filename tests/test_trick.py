@@ -11,12 +11,16 @@ def tests():
     SHORT_CHARACTER = [
         "b"
     ]
-    COLLECTION = [
-        MATH,
-        SHORT_CHARACTER
+    JOKE = [
+        "kể cho tớ cậu truyện cười đi"
     ]
     COLLECTION = [
-        SHORT_CHARACTER
+        MATH,
+        SHORT_CHARACTER,
+        JOKE
+    ]
+    COLLECTION = [
+        JOKE
     ]
 
     messages = []
