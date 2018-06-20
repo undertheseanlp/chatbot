@@ -13,9 +13,10 @@
 < object
 
 + *
-- tớ không chắc tớ hiểu câu nói gì. có lẽ cậu nên nói đơn giản hơn đi{weight=10}
-@ command topic finding
+- tớ không chắc tớ hiểu câu nói gì{weight=5}
+- có lẽ cậu nên nói đơn giản hơn đi{weight=3}
 @ truyện cười
+// @ command topic finding
 
 + command start
 - chào cậu<set greeting=true>
