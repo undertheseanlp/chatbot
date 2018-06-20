@@ -21,7 +21,8 @@ def tests():
         "mai Hà Nội có mưa không thế?"
     ]
     COMPARE = [
-        "hôm nay nắng hơn hôm qua không?"
+        "hôm nay nắng hơn hôm qua không?",
+
     ]
     COLLECTION = [
         WEATHER,
