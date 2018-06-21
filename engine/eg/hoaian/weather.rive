@@ -26,5 +26,5 @@
 + [*] (@weather_keywords) [*] (@time) [*]{weight=2}
 @ command thời tiết <star2>
 
-+ [*] (đẹp trời|trời đẹp) [*]
++ [*] (đẹp trời|trời đẹp) [*]{weight=2}
 @ thời tiết hôm nay
