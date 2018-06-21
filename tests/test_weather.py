@@ -38,4 +38,5 @@ def tests():
 
 
 if __name__ == '__main__':
+    HoaiAn.init()
     tests()

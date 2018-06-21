@@ -2,7 +2,6 @@ from engine.hoaian import HoaiAn
 
 
 def tests():
-    print("$ python chatbot_test.py")
     GREETING_HELLO = ["hi"]
     GREETING_BYE = ["tạm biệt"]
     GREETING_HRU = ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không", "bạn khỏe không"]
