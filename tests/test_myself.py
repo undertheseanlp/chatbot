@@ -29,7 +29,8 @@ def tests():
         "sống ở đâu",
         "ở đâu",
         "cậu quê ở đâu",
-        "cậu từ đâu tới"
+        "cậu từ đâu tới",
+        "cậu đến từ đâu"
     ]
     ASK_TODAY = [
         "hôm nay cậu vui không",
@@ -50,7 +51,7 @@ def tests():
         "hoài an xinh không", "cậu xinh ko", "cậu có xinh không"
     ]
     EXCEPTION = [
-        ":))", "=)", "b"
+        ":))", "=)"
     ]
     COLLECTION = [
         LAUGH,
@@ -62,9 +63,9 @@ def tests():
         APPEARANCE,
         EXCEPTION
     ]
-    COLLECTION = [
-        ASK_KNOWLEDGE
-    ]
+    # COLLECTION = [
+    #     ASK_KNOWLEDGE
+    # ]
     messages = []
     for collection in COLLECTION:
         messages.extend(collection)

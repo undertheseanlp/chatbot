@@ -13,8 +13,7 @@
 < object
 
 + *
-
-- tớ không chắc tớ hiểu câu nói gì{weight=2}
+- tớ không chắc tớ hiểu cậu nói gì{weight=2}
 - có lẽ cậu nên nói đơn giản hơn đi{weight=2}
 - ...{weight=2}
 - {@ truyện cười}
@@ -28,10 +27,10 @@
 - <call>topicfinding</call>
 
 // Unknown Answer
-+ [*] (sao|thế nào|ai|ở đâu|là gì) [*]
-- cái đấy có thực sự quan trọng không?
-- tớ không biết, nhưng tớ sẽ search thử trên mạng
-- câu này khó quá tớ không biết nói sao
+// + [*] (sao|thế nào|ai|ở đâu|là gì) [*]
+// - cái đấy có thực sự quan trọng không?
+// - tớ không biết, nhưng tớ sẽ search thử trên mạng
+// - câu này khó quá tớ không biết nói sao
 
 + question_mark
 - Có điều gì cậu chưa hiểu à?
@@ -43,6 +42,15 @@
 * <get greeting> == true => {@ command topic finding}
 - chào cậu<set greeting=true>
 - hi hi. chào cậu<set greeting=true>
+
+// =================================================
+// GREETING WAVE
+// =================================================
++ này
+- ơi
+
++ [*] hỏi cái [*]
+- cậu hỏi đi
 
 // =================================================
 // GREETING_BYE

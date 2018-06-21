@@ -23,6 +23,9 @@
 - cậu thật tốt bụng
 - tớ cũng nghĩ thế
 
++ được
+- cảm ơn
+
 // =================================================
 // AGREEMENT
 // =================================================
@@ -32,6 +35,9 @@
 
 + (giỏi|tốt) (quá|thật|đấy|lắm)
 @ giỏi
+
++ hay [_]
+- cảm ơn cậu
 
 // =================================================
 // ANGRY
@@ -52,6 +58,9 @@
 - cậu thô lỗ thế
 - đừng tưởng cậu giỏi hơn người ta mà tinh vi
 
+! array curse_words_2       = ngố|ngốc
++ [*] @curse_words [*]
+- dần dần tớ sẽ thông minh
 
 + [_] [_] [_] @curse_words [_] [_] [_]
 @ kém
@@ -83,3 +92,21 @@
 - ê, ăn nói cẩn thận đấy
 - dừng lại ngay.
 - biến đi
+
+// =================================================
+// SAD
+// buồn
+// =================================================
+! array sad_words = buồn|hu hu |huhu|khóc
++ [*] @sad_words [*]
+- cậu đừng buồn, tớ luôn ở đây trò chuyện cùng cậu
+- đừng buồn mà
+- có tớ ở đây rồi
+- mọi chuyện rồi sẽ ổn thôi
+
+// =================================================
+// LONELY
+// buồn
+// =================================================
++ [*] (cô đơn) [*]
+- tớ luôn ở đây trò chuyện cùng cậu

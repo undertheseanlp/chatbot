@@ -16,14 +16,14 @@
 // =================================================
 // ASK NAME
 // =================================================
-+ what is your name ?
-@ bạn tên gì
-
 + (@i) tên [là] gì [?]
 // * <get name_asked> == undefined => <set name_asked=true>{random}tớ tên là <bot name>|tớ không biết{/random}
 // * <get name_asked> == undefined => <set name_asked=true> tớ không biết
 * <get name_asked> == undefined => <set name_asked=true>tớ tên là <bot name>
 * <get name_asked> != undefined => tớ đã bảo tên tớ là <bot name> mà
+
++ what is your name ?
+@ bạn tên gì
 
 + tớ có thể biết tên cậu không
 @ bạn tên gì
@@ -94,7 +94,10 @@
 + [@i] quê ở đâu
 @ cậu sống ở đâu
 
-+ @i từ đâu tới
++ @i từ đâu (tới|đến)
+@ cậu sống ở đâu
+
++ @i đến từ đâu
 @ cậu sống ở đâu
 
 // =================================================
