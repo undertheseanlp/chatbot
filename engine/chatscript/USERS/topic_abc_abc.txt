@@ -1,0 +1,23 @@
+USERS/topic_abc_abc.txt
+jul2116 Jun21'18-16:25:48 0 0 |
+1 0 0 DY 0 22 22 0 # start, input#, no rejoinder, #0topics, #1topics, layer2
+~introductions #pending
+#`end topics
+$singleresponse=1
+$botprompt=abc: 
+$userprompt=abc: >
+$cs_control_main=~control
+$cs_token=67337983
+$cs_login=abc
+$cs_bot=Abc
+$cs_randindex=3211
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context 
+#`end user
+ Welcome to ChatScript.
+#`end chatbot

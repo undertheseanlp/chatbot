@@ -1,0 +1,4 @@
+# underlying conversation system
+RAWDATA/HOAIAN/
+# quibble ability
+RAWDATA/QUIBBLE/

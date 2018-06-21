@@ -1,0 +1,8 @@
+﻿Command: :reset
+Start: user:_ bot: ip: rand:1540 () 0 ==>   When:Jun21'18-16:21:45 Version:8.31 Build0:Jun21'18-16:18:59 Build1:Jun21'18-16:19:08 0:Jun21'18-16:21:45 F:0 P:0 
+Command: :reset
+Start: user:_ bot: ip: rand:1540 () 0 ==>   When:Jun21'18-16:21:46 Version:8.31 Build0:Jun21'18-16:18:59 Build1:Jun21'18-16:19:08 0:Jun21'18-16:21:46 F:0 P:0 
+Command: :retry
+Respond: user:_ bot: ip: () 1  ? ==>   When:Jun21'18-16:21:48   F:1 
+Command: :retry ?
+Respond: user:_ bot: ip: () 1  ? ==>   When:Jun21'18-16:21:53   F:1 

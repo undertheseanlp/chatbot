@@ -1,0 +1,25 @@
+USERS/topic_ll_harry.txt
+jul2116 Jun21'18-16:31:37 0 0 |
+1 0 ~introductions !Mb Uk?Kk  DY 0 22 22 0 # start, input#, rejoindertopic,rejoinderid (a:  ( ~yes ) Welcome back! ),checksum
+~introductions #pending
+~introductions + 1 Uk?Kk ca 0 0 0 
+#`end topics
+$cs_randindex=2205
+$cs_bot=Harry
+$cs_login=ll
+$cs_token=67337983
+$cs_control_main=~control
+$userprompt=ll: >
+$botprompt=harry: 
+$singleresponse=1
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context 
+#`end user
+ Welcome to ChatScript.
+ Have you been here before?
+#`end chatbot

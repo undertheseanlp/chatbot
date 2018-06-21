@@ -1,0 +1,30 @@
+﻿USERS/topic_df_harry.txt
+jul2116 Jun21'18-16:31:25 Jun21'18-16:31:30 0 |
+1 3 0 DY 0 22 22 0 # start, input#, no rejoinder, #0topics, #1topics, layer2
+~introductions #pending
+~introductions + 1 Uk?Kk ca 2 0 0 
+#`end topics
+$cs_randindex=1935
+$cs_bot=Harry
+$cs_login=df
+$cs_token=67337983
+$cs_control_main=~control
+$userprompt=df: >
+$botprompt=harry: 
+$singleresponse=1
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context ~honest_response 3 GRUNT ~honest_response 1 GRUNT 
+ exit
+ 
+ 
+#`end user
+ Welcome to ChatScript.
+ Indeed.
+ Have you been here before?
+ Right.
+#`end chatbot

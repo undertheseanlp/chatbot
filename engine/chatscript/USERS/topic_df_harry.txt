@@ -1,0 +1,33 @@
+USERS/topic_df_harry.txt
+jul2116 Jun21'18-16:31:25 Jun21'18-16:31:32 0 |
+1 4 ~childhood ZMb BX!F!Is*Ok3  DY 0 22 22 0 # start, input#, rejoindertopic,rejoinderid (a:  ( ~yes ) Was it fun? ),checksum
+~introductions ~childhood #pending
+~childhood + 2 BX!F!Is*Ok3 iaaa 4 0 0 
+~introductions + 1 Uk?Kk ca 2 0 0 
+#`end topics
+$singleresponse=1
+$botprompt=harry: 
+$userprompt=df: >
+$cs_control_main=~control
+$cs_token=67337983
+$cs_login=df
+$cs_bot=Harry
+$cs_randindex=1935
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context ~honest_response 1 GRUNT ~honest_response 3 GRUNT 
+ exit
+ 
+ 
+ quit
+#`end user
+ Welcome to ChatScript.
+ Indeed.
+ Have you been here before?
+ Right.
+ Did you run away from home when you were little?
+#`end chatbot

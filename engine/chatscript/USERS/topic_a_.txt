@@ -1,0 +1,16 @@
+USERS/topic_a_.txt
+jul2116 Jun21'18-16:24:09 0 0 |
+1 0 0 DY 0 22 22 0 # start, input#, no rejoinder, #0topics, #1topics, layer2
+#pending
+#`end topics
+$cs_login=a
+$cs_randindex=1542
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context 
+#`end user
+#`end chatbot

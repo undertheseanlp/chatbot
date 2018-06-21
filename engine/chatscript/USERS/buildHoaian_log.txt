@@ -1,0 +1,78 @@
+﻿ChatScript Version 8.31  compiled Jun 18 2018 23:03:05
+
+>>Reading folder RAWDATA/HOAIAN/
+
+----Reading file simplecontrol.top
+Reading outputmacro: ^harry
+Reading table ^tbl:defaultbot
+Reading topic ~control
+Reading topic ~xpostprocess
+
+----Reading file keywordless.top
+Reading topic ~keywordless
+
+----Reading file childhood.top
+Reading topic ~childhood
+
+----Reading file abc.top
+Reading topic ~abc
+
+----Reading file introductions.top
+Reading topic ~introductions
+
+<<end folder RAWDATA/HOAIAN
+
+>>Reading folder RAWDATA/QUIBBLE/
+
+----Reading file eliza_how.top
+Reading topic ~quibble_howmuch
+Reading topic ~quibble_how
+
+----Reading file eliza_who.top
+Reading topic ~quibble_who
+
+----Reading file eliza_when.top
+Reading topic ~quibble_when
+
+----Reading file eliza_because.top
+Reading topic ~quibble_because
+
+----Reading file eliza_misc.top
+Reading topic ~quibble_misc
+
+----Reading file eliza_do.top
+Reading topic ~quibble_do
+
+----Reading file quibble.top
+Reading topic ~quibble_all
+
+----Reading file eliza_or.top
+Reading topic ~quibble_or
+
+----Reading file eliza_not.top
+Reading topic ~quibble_not
+
+----Reading file eliza_where.top
+Reading topic ~quibble_where
+
+----Reading file eliza_what.top
+Reading topic ~quibble_what
+
+----Reading file eliza_can.top
+Reading topic ~quibble_will
+Reading topic ~quibble_can
+
+----Reading file eliza_why.top
+Reading topic ~quibble_why
+
+----Reading file honest.top
+Reading topic ~intent
+Reading topic ~honest_response
+
+<<end folder RAWDATA/QUIBBLE
+No errors or warnings
+
+
+
+Finished compile
+

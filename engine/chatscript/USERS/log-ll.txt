@@ -1,0 +1,8 @@
+﻿Start: user:ll bot:harry ip: rand:2205 (~introductions) 0 ==> Welcome to ChatScript.  When:Jun21'18-16:31:37 Version:8.31 Build0:Jun21'18-16:25:40 Build1:Jun21'18-16:31:24 0:Jun21'18-16:31:37 F:0 P:0 Why:~introductions.1.0.~control.0.0 
+Command: :build abc
+Start: user:ll bot:harry ip: rand:2205 (~introductions) 0 ==> Have you been here before?  When:Jun21'18-16:31:44 Version:8.31 Build0:Jun21'18-16:25:40 Build1:Jun21'18-16:31:24 0:Jun21'18-16:31:37 F:0 P:0 Why:~introductions.2.0.~control.0.0 
+Command: :build Abc
+Command: :reset
+Start: user:ll bot: ip: rand:2205 () 0 ==>   When:Jun21'18-16:32:28 Version:8.31 Build0:Jun21'18-16:25:40 Build1:Jun21'18-16:31:47 0:Jun21'18-16:32:28 F:0 P:0 
+Command: :build Abc
+Start: user:ll bot:abc ip: rand:2205 (~introductions) 0 ==> Welcome to ChatScript.  When:Jun21'18-16:32:31 Version:8.31 Build0:Jun21'18-16:25:40 Build1:Jun21'18-16:32:30 0:Jun21'18-16:32:31 F:0 P:0 Why:~introductions.1.0.~control.0.0 
