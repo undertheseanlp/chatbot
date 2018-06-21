@@ -1,7 +1,7 @@
 # Vietnamese Chatbot
 
 ![](https://img.shields.io/badge/made%20with-%E2%9D%A4-red.svg)
-![](https://img.shields.io/badge/powered%20by-rivescript-blue.svg)
+![](https://img.shields.io/badge/powered%20by-chatscript-blue.svg)
 ![](https://img.shields.io/badge/build-passing-green.svg)
 
 This repository contains starter code for creating a simple *Vietnamese Chatbot*. It is a part of [underthesea](https://github.com/magizbox/underthesea) project. The code gives an end-to-end working example for creating simple chatbot engine, integrating with django and deploying as a web application. It can easily be extended to create your own custom-defined application. 
