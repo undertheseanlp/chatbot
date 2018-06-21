@@ -22,7 +22,7 @@ Live Demo: [http://bit.ly/underthesea-chatbot](http://bit.ly/underthesea-chatbot
 
 This code is writen in python. The dependencies are:
 
-* `Operating Systems: Linux (Ubuntu, CentOS), Mac`
+* `Operating Systems: Linux, Mac`
 * `Python 3.5+`
 * `conda 4+`
 
@@ -30,7 +30,6 @@ Python Packages
 
 ```
 Django==1.11.1
-rivescript==1.14.9
 ```
 
 ### 1.2 Download and Setup Environment
