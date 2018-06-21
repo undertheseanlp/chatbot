@@ -7,6 +7,7 @@ def tests():
     SAY_NAME = [
         "mình tên là cường",
         "tớ tên là nhật tinh anh",
+        "tớ 24 tuổi"
     ]
 
     COLLECTION = [

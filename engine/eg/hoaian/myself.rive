@@ -14,7 +14,7 @@
 - <bot age>/<bot sex>/<bot location>
 
 // =================================================
-// ASK NAME
+// ASK_NAME
 // =================================================
 + (@i) tên [là] gì [?]
 // * <get name_asked> == undefined => <set name_asked=true>{random}tớ tên là <bot name>|tớ không biết{/random}
