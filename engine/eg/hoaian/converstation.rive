@@ -13,9 +13,9 @@
 < object
 
 + *
-- tớ không chắc tớ hiểu cậu nói gì{weight=2}
-- có lẽ cậu nên nói đơn giản hơn đi{weight=2}
 - ...{weight=2}
+- tớ không chắc tớ hiểu cậu nói gì
+- có lẽ cậu nên nói đơn giản hơn đi
 - {@ truyện cười}
 // @ command topic finding
 
@@ -27,10 +27,10 @@
 - <call>topicfinding</call>
 
 // Unknown Answer
-// + [*] (sao|thế nào|ai|ở đâu|là gì) [*]
-// - cái đấy có thực sự quan trọng không?
-// - tớ không biết, nhưng tớ sẽ search thử trên mạng
-// - câu này khó quá tớ không biết nói sao
++ [*] (sao|thế nào|ai|ở đâu|là gì) [*]
+- cái đấy có thực sự quan trọng không?
+- tớ không biết, nhưng tớ sẽ search thử trên mạng
+- câu này khó quá tớ không biết nói sao
 
 + question_mark
 - Có điều gì cậu chưa hiểu à?
@@ -74,11 +74,18 @@
 + khỏe không
 @ cậu có khỏe không
 
-// ==================================================================================================
+// =================================================
+// CONFIRM
+// =================================================
++ [*] (vậy hả|thật sao) [*]
+- đúng vậy{weight=2}
+- cậu không tin tớ à
+
+
 + tôi nhớ *
 - bạn có thường xuyên nhớ <star>?
 
-
+// ==================================================================================================
 + i remember *
 - Do you often think of <star>?
 - Does thinking of <star> bring anything else to mind?

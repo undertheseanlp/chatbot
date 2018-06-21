@@ -2,8 +2,6 @@ from engine.hoaian import HoaiAn
 
 
 def tests():
-    print("$ python chatbot_test.py")
-
     LAUGH = ["hihi", "hi hi"]
     APOLOGY = ["xin lỗi"]
 

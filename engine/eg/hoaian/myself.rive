@@ -126,13 +126,21 @@
 // APPEARANCE
 // =================================================
 
-+ [*] (@i) [*] xinh không [*]
++ [*] (@i) [*] xinh không [*]{weight=10}{topic=appearance}
 - tớ khá cao và dễ nhìn
 - tất nhiên rồi
 - đương nhiên
 
-+ [*] <bot name> [*] xinh không [*]
++ [*] <bot name> [*] xinh không [*]{weight=2}
 @ cậu xinh không
+
+> topic apperance
+  + *
+	@ <star>{topic=random}
+
+	+ [*] xinh [*] nào
+	- tớ khá cao và dễ nhìn
+< topic
 
 // =================================================
 // ASK TODAY
