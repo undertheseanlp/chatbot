@@ -13,9 +13,11 @@
 < object
 
 + *
-- tớ không chắc tớ hiểu câu nói gì. có lẽ cậu nên nói đơn giản hơn đi{weight=10}
-@ command topic finding
-@ truyện cười
+- ...{weight=2}
+- tớ không chắc tớ hiểu cậu nói gì
+- có lẽ cậu nên nói đơn giản hơn đi
+- {@ truyện cười}
+// @ command topic finding
 
 + command start
 - chào cậu<set greeting=true>
@@ -42,6 +44,15 @@
 - hi hi. chào cậu<set greeting=true>
 
 // =================================================
+// GREETING WAVE
+// =================================================
++ này
+- ơi
+
++ [*] hỏi cái [*]
+- cậu hỏi đi
+
+// =================================================
 // GREETING_BYE
 // =================================================
 + [*] (tạm biệt|bye) [*]
@@ -63,11 +74,18 @@
 + khỏe không
 @ cậu có khỏe không
 
-// ==================================================================================================
+// =================================================
+// CONFIRM
+// =================================================
++ [*] (vậy hả|thật sao) [*]
+- đúng vậy{weight=2}
+- cậu không tin tớ à
+
+
 + tôi nhớ *
 - bạn có thường xuyên nhớ <star>?
 
-
+// ==================================================================================================
 + i remember *
 - Do you often think of <star>?
 - Does thinking of <star> bring anything else to mind?

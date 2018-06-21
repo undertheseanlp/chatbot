@@ -14,16 +14,16 @@
 - <bot age>/<bot sex>/<bot location>
 
 // =================================================
-// ASK NAME
+// ASK_NAME
 // =================================================
-+ what is your name ?
-@ bạn tên gì
-
 + (@i) tên [là] gì [?]
 // * <get name_asked> == undefined => <set name_asked=true>{random}tớ tên là <bot name>|tớ không biết{/random}
 // * <get name_asked> == undefined => <set name_asked=true> tớ không biết
 * <get name_asked> == undefined => <set name_asked=true>tớ tên là <bot name>
 * <get name_asked> != undefined => tớ đã bảo tên tớ là <bot name> mà
+
++ what is your name ?
+@ bạn tên gì
 
 + tớ có thể biết tên cậu không
 @ bạn tên gì
@@ -41,7 +41,7 @@
 - Tớ là <bot name>. Tớ rất thích trò chuyện với mọi người
 - Cậu có thể gọi tớ là <bot name>. Tớ sống trên internet và rất thích nói chuyện với mọi người
 
-+ (@i) là ai [?]
++ [*] (@i) là ai [?] [*]
 @ cậu là ai
 
 // =================================================
@@ -94,7 +94,10 @@
 + [@i] quê ở đâu
 @ cậu sống ở đâu
 
-+ @i từ đâu tới
++ @i từ đâu (tới|đến)
+@ cậu sống ở đâu
+
++ @i đến từ đâu
 @ cậu sống ở đâu
 
 // =================================================
@@ -123,13 +126,21 @@
 // APPEARANCE
 // =================================================
 
-+ [*] (@i) [*] xinh không [*]
++ [*] (@i) [*] xinh không [*]{weight=10}{topic=appearance}
 - tớ khá cao và dễ nhìn
 - tất nhiên rồi
 - đương nhiên
 
-+ [*] <bot name> [*] xinh không [*]
++ [*] <bot name> [*] xinh không [*]{weight=2}
 @ cậu xinh không
+
+> topic apperance
+  + *
+	@ <star>{topic=random}
+
+	+ [*] xinh [*] nào
+	- tớ khá cao và dễ nhìn
+< topic
 
 // =================================================
 // ASK TODAY
