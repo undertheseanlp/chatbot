@@ -2,7 +2,9 @@ from engine.hoaian import HoaiAn
 
 
 def tests():
-    LAUGH = ["hihi", "hi hi"]
+    LAUGH = [
+        "hihi",
+        "hi hi"]
     APOLOGY = ["xin lỗi"]
 
     ASK_NAME = [

@@ -1,6 +1,7 @@
 import socket
 
 
+
 def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
     try:
         user = "anhv"
@@ -16,7 +17,7 @@ def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
             chunk = s.recv(1024)
             if chunk == b'':
                 break
-            msg = msg + chunk.decode("utf-8")
+            msg = msg + chunk.decode("utf-8", errors="ignore")
         s.close()
         return msg
     except Exception as e:
@@ -41,5 +42,5 @@ class HoaiAn:
 
 if __name__ == '__main__':
     HoaiAn.init()
-    response = HoaiAn.reply("chào")
+    response = HoaiAn.reply("a", "tên")
     print(response)
