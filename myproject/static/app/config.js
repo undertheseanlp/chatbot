@@ -1,0 +1,3 @@
+ChatbotConfiguration = {
+  "showMessage": false
+};
