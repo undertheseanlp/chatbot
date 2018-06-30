@@ -1,7 +1,5 @@
 app.controller("ChatbotCtrl", function ($scope) {
   $scope.sentences = [];
-  $scope.showMessage = ChatbotConfiguration.showMessage;
-  console.log($scope.showMessage);
   function generateUUID() { // Public Domain/MIT
     var d = new Date().getTime();
     if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
