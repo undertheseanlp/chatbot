@@ -5,6 +5,7 @@ from core import time_detection
 import datetime
 
 def weather_api(time, loc, weather):
+    print(time, loc, weather)
     locationDetect = location_detection.LocationDetector()
     time_convert = convert_time([time])
     loc_lat_long = locationDetect.detect_location(loc)

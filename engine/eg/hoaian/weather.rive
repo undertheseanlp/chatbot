@@ -39,10 +39,6 @@
 ! array time = mai|chiều nay|sáng nay|trưa nay|tối nay|hôm qua|hôm nay|ngày mai|ngày kia|tuần sau
 ! array weather_keywords = mưa|nóng|nắng|bão|thời tiết|trời|nhiệt độ|gió
 
-! time = undefined
-! loc = undefined
-! weather = undefined
-
 + command (@weather_keywords) (@time){weight=10}
 - <call>weather_detect <star1> <star2></call>
 
@@ -73,7 +69,7 @@
 ^ <set loc= <star1>>
 ^ <call>weather_detect <<get time>> <<get loc>> <<get weather>></call>
 
-+ [*] [@time] (ở|tại|khu|phía)  * [có] (@weather_keywords) [*]{weight=10}
++ [*] (@time) [ở|tại|khu|phía] * [có] (@weather_keywords) [*]{weight=10}
 - <set time=<star1>>
 ^ <set weather=<star3>>
 ^ <set loc= <star2>>
