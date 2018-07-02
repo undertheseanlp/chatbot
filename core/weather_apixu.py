@@ -10,8 +10,8 @@ def weather_api(time, loc, weather):
     time_convert = convert_time([time])
     loc_lat_long = locationDetect.detect_location(loc)
 
-    response_api = query_api({"loc": [loc_lat_long], "time": time_convert, "weather": [weather]})
-    response = return_msg(response_api)
+    response_api = query_api({"loc": [loc_lat_long], "time": time_convert, "weather": ["thời tiết"]})
+    response = response_msg(response_api, weather, time)
     return response
 
 def convert_time(data):
@@ -227,6 +227,7 @@ def filter_msg( data, weather, locs, times):
     return res
 
 def return_msg(filter_msg):
+    print("filter message : ", filter_msg)
     msg = ''
     for i in range(len(filter_msg['data'])):
         msg += " Tại " + str(filter_msg['data'][i]['địa điểm']).title() + " " + str(
@@ -239,4 +240,40 @@ def return_msg(filter_msg):
             else:
                 msg += str(k) + " : " + str(v)
             msg += ", "
+    return msg
+
+def response_msg(filter_msg, weather, time):
+    
+    dict_temperature = ['nhiệt độ', 'nóng', 'lạnh', 'rét', 'nắng']
+    dict_rain = ['mưa', 'bão']
+
+    loc = str(filter_msg['data'][0]['địa điểm']).title()
+    weather_data = filter_msg['data'][0]['thời tiết']
+    weather_response = ""
+    rain_response = ""
+    temperature_response = ""
+    temperature = float(filter_msg['data'][0]['thời tiết']['nhiệt độ trung bình (độ C)'])
+    if temperature > 34:
+        temperature_response = "rất nóng"
+    elif temperature > 28:
+        temperature_response = "nóng"
+    elif temperature > 20:
+        temperature_response = "mát mẻ"
+    elif temperature > 14:
+        temperature_response = "lạnh"
+    temperature_response += " nhiệt độ khoảng " + str(temperature) + " độ C"
+    rain = float(filter_msg['data'][0]['thời tiết']['tổng lượng mưa (mm)'])
+    if rain == 0.0:
+        rain_response += "không mưa"
+    else:
+        rain_response += "có mưa"
+
+    if weather in dict_rain:
+        weather_response += rain_response
+    elif weather in dict_temperature:
+        weather_response += temperature_response
+    else :
+        weather_response += temperature_response + ", " + rain_response
+    msg = loc + " " + time + " " + weather_response
+
     return msg
