@@ -243,7 +243,7 @@ def return_msg(filter_msg):
     return msg
 
 def response_msg(filter_msg, weather, time):
-    
+
     dict_temperature = ['nhiệt độ', 'nóng', 'lạnh', 'rét', 'nắng']
     dict_rain = ['mưa', 'bão']
 
