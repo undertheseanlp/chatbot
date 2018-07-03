@@ -5,13 +5,13 @@ from core import time_detection
 import datetime
 
 def weather_api(time, loc, weather):
-    print(time, loc, weather)
     locationDetect = location_detection.LocationDetector()
     time_convert = convert_time([time])
     loc_lat_long = locationDetect.detect_location(loc)
 
     response_api = query_api({"loc": [loc_lat_long], "time": time_convert, "weather": ["thời tiết"]})
-    response = response_msg(response_api, weather, time)
+    filter_response = filter_msg(response_api, ["thời tiết"], [loc_lat_long], time_convert)
+    response = response_msg(filter_response, weather, time)
     return response
 
 def convert_time(data):
@@ -20,9 +20,7 @@ def convert_time(data):
     data_time = []
     for time in data :
         sub_time = timeDetector.detect_time(time)
-        print(sub_time)
         sub_date = dateDetector.detect_date(time)
-        print(sub_date)
         for i in sub_time :
             for j in sub_date:
                 sub_data = {}
@@ -135,7 +133,6 @@ def fill_time(data):
     return data_time
 
 def query_api(data):
-    print("query api :", data)
     res = []
     current_time = datetime.datetime.now()
     current_day = current_time.day
@@ -153,7 +150,7 @@ def query_api(data):
                 res.append(api.get_data_current_weather(args))
             else :
                 res.append(api.get_history_weather(args))
-    return filter_msg(res,weather,locs,times)
+    return res
 
 
 def filter_msg( data, weather, locs, times):
@@ -192,7 +189,6 @@ def filter_msg( data, weather, locs, times):
             elif k in ["mưa", "lượng mưa"]:
                 for z in i:
                     if "lượng mưa" in z or "điều kiện thời tiết" in z:
-                        print(z)
                         d["thời tiết"][z] = i[z]
             elif k in ["mây"]:
                 for z in i:
@@ -227,7 +223,6 @@ def filter_msg( data, weather, locs, times):
     return res
 
 def return_msg(filter_msg):
-    print("filter message : ", filter_msg)
     msg = ''
     for i in range(len(filter_msg['data'])):
         msg += " Tại " + str(filter_msg['data'][i]['địa điểm']).title() + " " + str(
