@@ -12,7 +12,7 @@ def tests():
         "b"
     ]
     JOKE = [
-        "kể cho tớ cậu truyện cười đi"
+        "kể cho tớ câ truyện cười đi"
     ]
     COLLECTION = [
         MATH,
