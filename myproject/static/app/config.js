@@ -1,3 +1,0 @@
-ChatbotConfiguration = {
-  "showMessage": false
-};
