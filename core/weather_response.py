@@ -1,9 +1,11 @@
 from core import apixuChatBot as api
 import datetime
 
+
 def make_msg(data):
     response = query_api({"loc": data['LOC'], "time": data['TIME'], "weather": data['WEATHER']})
     return response
+
 
 def query_api(data):
     res = []
@@ -14,19 +16,24 @@ def query_api(data):
     locs = data['loc']
     times = data['time']
     weather = data['weather']
-    for loc in locs :
-        for time in times :
-            args = {"q":"{},{}".format(loc['lat'],loc['lng']),"dt":"{}-{}-{}".format(time['year'],time['month'],time['day'])}
-            if datetime.date(current_year,current_month,current_day) < datetime.date(int(time['year']),int(time['month']),int(time['day'])) :
+    for loc in locs:
+        for time in times:
+            args = {"q": "{},{}".format(loc['lat'], loc['lng']),
+                    "dt": "{}-{}-{}".format(time['year'], time['month'], time['day'])}
+            if datetime.date(current_year, current_month, current_day) < datetime.date(int(time['year']),
+                                                                                       int(time['month']),
+                                                                                       int(time['day'])):
                 res.append(api.get_forecast_weather(args))
-            elif datetime.date(current_year,current_month,current_day) == datetime.date(int(time['year']),int(time['month']),int(time['day'])):
+            elif datetime.date(current_year, current_month, current_day) == datetime.date(int(time['year']),
+                                                                                          int(time['month']),
+                                                                                          int(time['day'])):
                 res.append(api.get_data_current_weather(args))
-            else :
+            else:
                 res.append(api.get_history_weather(args))
-    return filter_msg(res,weather,locs,times)
+    return filter_msg(res, weather, locs, times)
 
 
-def filter_msg( data, weather, locs, times):
+def filter_msg(data, weather, locs, times):
     w = ['nắng', 'mưa', 'nhiệt độ', 'mây', 'độ ẩm', 'gió', 'tầm nhìn', 'áp suất khí quyển', 'uv', 'lượng mưa',
          'hướng gió', 'nóng', 'lạnh', 'rét', 'thời tiết']
     er = []
@@ -95,6 +102,7 @@ def filter_msg( data, weather, locs, times):
         filter_data.append(d)
     res['data'] = filter_data
     return res
+
 
 def return_msg(filter_msg):
     msg = ''

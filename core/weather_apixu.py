@@ -4,6 +4,7 @@ from core import date_detection
 from core import time_detection
 import datetime
 
+
 def weather_api(time, loc, weather):
     locationDetect = location_detection.LocationDetector()
     time_convert = convert_time([time])
@@ -14,14 +15,15 @@ def weather_api(time, loc, weather):
     response = response_msg(filter_response, weather, time)
     return response
 
+
 def convert_time(data):
     timeDetector = time_detection.TimeDetector()
     dateDetector = date_detection.DateDetector()
     data_time = []
-    for time in data :
+    for time in data:
         sub_time = timeDetector.detect_time(time)
         sub_date = dateDetector.detect_date(time)
-        for i in sub_time :
+        for i in sub_time:
             for j in sub_date:
                 sub_data = {}
                 sub_data.update(i)
@@ -36,24 +38,24 @@ def fill_time(data):
     data_time = []
     current_time = datetime.datetime.now()
     for date in data:
-        if date['month'] != None :
+        if date['month'] != None:
             months.append(date['month'])
-        if date['year'] != None :
+        if date['year'] != None:
             years.append(date['year'])
     for date in data:
-        if date['day'] == None and date['month'] == None and date['year'] == None :
-            if len(data) > 1 :
+        if date['day'] == None and date['month'] == None and date['year'] == None:
+            if len(data) > 1:
                 continue
-            else :
+            else:
                 data_time.append({
-                    "day" : current_time.day ,
-                    "month" : current_time.month ,
-                    "year" : current_time.year,
-                    "hour" : date['hour'],
-                    "minute" : date['minute']
+                    "day": current_time.day,
+                    "month": current_time.month,
+                    "year": current_time.year,
+                    "hour": date['hour'],
+                    "minute": date['minute']
                 })
-        elif date['day'] == None and date['month'] != None and date['year'] == None :
-            if len(years) > 0 :
+        elif date['day'] == None and date['month'] != None and date['year'] == None:
+            if len(years) > 0:
                 data_time.append({
                     "day": "1",
                     "month": date['month'],
@@ -61,7 +63,7 @@ def fill_time(data):
                     "hour": date['hour'],
                     "minute": date['minute']
                 })
-            else :
+            else:
                 data_time.append({
                     "day": "1",
                     "month": date['month'],
@@ -69,7 +71,7 @@ def fill_time(data):
                     "hour": date['hour'],
                     "minute": date['minute']
                 })
-        elif date['day'] == None and date['month'] != None and date['year'] != None :
+        elif date['day'] == None and date['month'] != None and date['year'] != None:
             data_time.append({
                 "day": "1",
                 "month": date['month'],
@@ -77,9 +79,9 @@ def fill_time(data):
                 "hour": date['hour'],
                 "minute": date['minute']
             })
-        elif date['day'] != None and date['month'] == None and date['year'] == None :
-            if len(months) > 0 :
-                if len(years) > 0 :
+        elif date['day'] != None and date['month'] == None and date['year'] == None:
+            if len(months) > 0:
+                if len(years) > 0:
                     data_time.append({
                         "day": date['day'],
                         "month": months[0],
@@ -87,7 +89,7 @@ def fill_time(data):
                         "hour": date['hour'],
                         "minute": date['minute']
                     })
-                else :
+                else:
                     data_time.append({
                         "day": date['day'],
                         "month": months[0],
@@ -95,7 +97,7 @@ def fill_time(data):
                         "hour": date['hour'],
                         "minute": date['minute']
                     })
-            else :
+            else:
                 data_time.append({
                     "day": date['day'],
                     "month": current_time.month,
@@ -103,7 +105,7 @@ def fill_time(data):
                     "hour": date['hour'],
                     "minute": date['minute']
                 })
-        elif date['day'] != None and date['month'] != None and date['year'] == None :
+        elif date['day'] != None and date['month'] != None and date['year'] == None:
             if len(years) > 0:
                 data_time.append({
                     "day": date['day'],
@@ -112,7 +114,7 @@ def fill_time(data):
                     "hour": date['hour'],
                     "minute": date['minute']
                 })
-            else :
+            else:
                 data_time.append({
                     "day": date['day'],
                     "month": date['month'],
@@ -120,7 +122,7 @@ def fill_time(data):
                     "hour": date['hour'],
                     "minute": date['minute']
                 })
-        elif date['day'] == None and date['month'] == None and date['year'] != None :
+        elif date['day'] == None and date['month'] == None and date['year'] != None:
             data_time.append({
                 "day": "1",
                 "month": "1",
@@ -128,9 +130,10 @@ def fill_time(data):
                 "hour": date['hour'],
                 "minute": date['minute']
             })
-        elif date['day'] != None and date['month'] != None and date['year'] != None :
+        elif date['day'] != None and date['month'] != None and date['year'] != None:
             data_time.append(date)
     return data_time
+
 
 def query_api(data):
     res = []
@@ -141,19 +144,24 @@ def query_api(data):
     locs = data['loc']
     times = data['time']
     weather = data['weather']
-    for loc in locs :
-        for time in times :
-            args = {"q":"{},{}".format(loc['lat'],loc['lng']),"dt":"{}-{}-{}".format(time['year'],time['month'],time['day'])}
-            if datetime.date(current_year,current_month,current_day) < datetime.date(int(time['year']),int(time['month']),int(time['day'])) :
+    for loc in locs:
+        for time in times:
+            args = {"q": "{},{}".format(loc['lat'], loc['lng']),
+                    "dt": "{}-{}-{}".format(time['year'], time['month'], time['day'])}
+            if datetime.date(current_year, current_month, current_day) < datetime.date(int(time['year']),
+                                                                                       int(time['month']),
+                                                                                       int(time['day'])):
                 res.append(api.get_forecast_weather(args))
-            elif datetime.date(current_year,current_month,current_day) == datetime.date(int(time['year']),int(time['month']),int(time['day'])):
+            elif datetime.date(current_year, current_month, current_day) == datetime.date(int(time['year']),
+                                                                                          int(time['month']),
+                                                                                          int(time['day'])):
                 res.append(api.get_data_current_weather(args))
-            else :
+            else:
                 res.append(api.get_history_weather(args))
     return res
 
 
-def filter_msg( data, weather, locs, times):
+def filter_msg(data, weather, locs, times):
     w = ['nắng', 'mưa', 'nhiệt độ', 'mây', 'độ ẩm', 'gió', 'tầm nhìn', 'áp suất khí quyển', 'uv', 'lượng mưa',
          'hướng gió', 'nóng', 'lạnh', 'rét', 'thời tiết']
     er = []
@@ -222,6 +230,7 @@ def filter_msg( data, weather, locs, times):
     res['data'] = filter_data
     return res
 
+
 def return_msg(filter_msg):
     msg = ''
     for i in range(len(filter_msg['data'])):
@@ -237,8 +246,8 @@ def return_msg(filter_msg):
             msg += ", "
     return msg
 
-def response_msg(filter_msg, weather, time):
 
+def response_msg(filter_msg, weather, time):
     dict_temperature = ['nhiệt độ', 'nóng', 'lạnh', 'rét', 'nắng']
     dict_rain = ['mưa', 'bão']
 
@@ -267,7 +276,7 @@ def response_msg(filter_msg, weather, time):
         weather_response += rain_response
     elif weather in dict_temperature:
         weather_response += temperature_response
-    else :
+    else:
         weather_response += temperature_response + ", " + rain_response
     msg = loc + " " + time + " " + weather_response
 
