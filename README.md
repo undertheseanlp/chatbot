@@ -6,7 +6,7 @@
 
 This repository contains starter code for creating a simple *Vietnamese Chatbot*. It is a part of [underthesea](https://github.com/magizbox/underthesea) project. The code gives an end-to-end working example for creating simple chatbot engine, integrating with django and deploying as a web application. It can easily be extended to create your own custom-defined application. 
 
-Live Demo: [http://bit.ly/underthesea-chatbot](http://bit.ly/underthesea-chatbot)
+Live Demo: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
 
 ## Table of contents
 
