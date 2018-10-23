@@ -14,13 +14,13 @@ Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, đ�
 * Hồ Thanh Luân ([hothanhluan1996@gmail.com](hothanhluan1996@gmail.com))
 * Nguyễn Thị Hậu ([nguyenhau1996mta@gmail.com](nguyenhau1996mta@gmail.com))
 
+**Live Demo**: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
+
 **Tham gia đóng góp**
 
  Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
  
 Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm phát triển với vai trò là [Developer](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor), xin hãy đọc kỹ [Hướng dẫn tham gia đóng góp](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor).
-
-Live Demo: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
 
 ## Mục lục
 
