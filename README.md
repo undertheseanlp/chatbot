@@ -7,8 +7,6 @@
 
 Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, được phát triển bởi nhóm nghiên cứu xử lý ngôn ngữ tự nhiên tiếng Việt - [underthesea](https://github.com/undertheseanlp). Chứa mã nguồn các thử nghiệm cho việc xây dựng một chatbot đơn giản, tích hợp với django và có thể triển khai dưới dạng một ứng dụng Web.
 
-Live Demo: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
-
 **Nhóm tác giả**
 
 * Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
@@ -22,13 +20,24 @@ Live Demo: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#
  
 Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm phát triển với vai trò là [Developer](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor), xin hãy đọc kỹ [Hướng dẫn tham gia đóng góp](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor).
 
-## Table of contents
+Live Demo: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
 
+## Mục lục
+
+* [Giới thiệu về Hoài An](#giới-thiệu-về-hoài-an)
 * [1. Installation](#1-installation)
   * [1.1 Requirements](#11-requirements)
   * [1.2 Download and Setup Environment](#12-download-and-setup-environment)
 * [2. Usage](#2-usage)
 * [3. References](#3-references)
+
+## Giới thiệu về Hoài An 
+
+Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
+
+![](images/chatlog.png)
+ 
+Chat với Hoài An tại: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
 
 ## 1. Installation
 
