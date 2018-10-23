@@ -14,7 +14,7 @@ Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, đ�
 * Hồ Thanh Luân ([hothanhluan1996@gmail.com](hothanhluan1996@gmail.com))
 * Nguyễn Thị Hậu ([nguyenhau1996mta@gmail.com](nguyenhau1996mta@gmail.com))
 
-**Live Demo**: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
+**Live Demo**: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
 
 **Tham gia đóng góp**
 
@@ -37,7 +37,7 @@ Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu
 
 ![](images/chatlog.png)
  
-Chat với Hoài An tại: [http://undertheseanlp.com:8000/#!/](http://undertheseanlp.com:8000/#!/)
+Chat với Hoài An tại: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
 
 ## 1. Installation
 
