@@ -25,47 +25,34 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 ## Mục lục
 
 * [Giới thiệu về Hoài An](#giới-thiệu-về-hoài-an)
-* [1. Installation](#1-installation)
-  * [1.1 Requirements](#11-requirements)
-  * [1.2 Download and Setup Environment](#12-download-and-setup-environment)
-* [2. Usage](#2-usage)
-* [3. References](#3-references)
+* [Yêu cầu hệ thống](#yêu-cầu-hệ-thống)
+* [Thiết lập môi trường](#thiết-lập-môi-trường)
+* [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
+* [Bản quyền](#bản-quyền)
 
 ## Giới thiệu về Hoài An 
 
-Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
+Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người. Cùng chat với Hoàn An tại [đường dẫn]((http://undertheseanlp.com:8000/#!/)) này nhé.
 
 ![](images/chatlog.png)
- 
-Chat với Hoài An tại: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
 
-## 1. Installation
-
-### 1.1 Requirements
-
-This code is writen in python. The dependencies are:
+## Yêu cầu hệ thống
 
 * `Operating Systems: Linux (Ubuntu, CentOS), Mac`
 * `Python 3.5+`
 * `conda 4+`
+* `Django==1.11.1`
+* `rivescript==1.14.9`
 
-Python Packages
+## Thiết lập môi trường
 
-```
-Django==1.11.1
-rivescript==1.14.9
-```
-
-### 1.2 Download and Setup Environment
-
-
-Clone project using git
+Tải project bằng cách sử dụng lệnh `git clone`
 
 ```
 $ git clone https://github.com/undertheseanlp/chatbot.git
 ```
 
-Create environment and install requirements
+Tạo môi trường mới và cài đặt các gói liên quan
 
 ```
 cd chatbot
@@ -74,10 +61,9 @@ source activate chatbot
 pip install -r requirements.txt
 ```
 
-## 2. Usage
+## Hướng dẫn sử dụng
 
-
-To run chatbot
+Để chạy chatbot, gõ các câu lệnh 
 
 ```
 cd chatbot
@@ -85,10 +71,8 @@ source activate chatbot
 python manage.py runserver 0.0.0.0:8000
 ```
 
-Then go to http://localhost:8000 to start chat with bot
+Sau đó, mở trình duyệt, vào đường dẫn http://localhost:8000 để bắt đầu chat với bot 
 
-## 3. References
+## Bản quyền
 
-To be updated
-
-Last update: 06/2018
+Mã nguồn của dự án được phân phối theo giấy phép [GPL-3.0](LICENSE.txt).
