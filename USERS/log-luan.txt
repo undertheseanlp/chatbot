@@ -1,0 +1,70 @@
+﻿Start: user:luan bot:harry ip: rand:1813 (~introductions) 0 ==> Welcome to ChatScript.  When:Oct24'18-23:48:38 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:0 P:0
+Respond: user:luan bot:harry ip: (~introductions) 1   hi ==> Have you been here before?  When:Oct24'18-23:48:42 Why:~introductions.2.0.~control.9.0   F:10 
+Respond: user:luan bot:harry ip: (~childhood) 2   xin chao ==> Did you run away from home when you were little?  When:Oct24'18-23:48:46 Why:~childhood.0.0.~control.9.0   F:10 
+Respond: user:luan bot:harry ip: (~childhood) 3   yupp ==> Was it fun?  When:Oct24'18-23:48:57 Why:~childhood.0.1   F:4 
+Respond: user:luan bot:harry ip: (~childhood) 4   yupp ==> I ran away once, but my parents found me and dragged me back.  When:Oct24'18-23:49:00 Why:~childhood.1.0=RUNAWAY.~keywordless.2.0   F:5 
+Respond: user:luan bot:harry ip: (~childhood) 5   what's your father name? ==> What scared you as a kid?  When:Oct24'18-23:49:28 Why:~childhood.2.0.~control.9.0   F:3 
+Respond: user:luan bot:harry ip: (~childhood) 6   nope ==> No? How interesting.  When:Oct24'18-23:49:33 Why:~honest_response.1.0.~quibble_all.12.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 7   yeah ==> I was scared of machines. I had vivid dreams of the Terminator robots.  When:Oct24'18-23:49:39 Why:~childhood.3.0=SCARE.~keywordless.2.0   F:1 
+Start: user:luan bot:harry ip: rand:1821 (~introductions) 7 ==> Hello, again.  When:Oct24'18-23:50:09 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:0 P:Oct24'18-23:49:39
+Respond: user:luan bot:harry ip: (~childhood) 8   hu ==> Did you have a happy childhood?  When:Oct24'18-23:50:12 Why:~childhood.4.0.~control.9.0   F:2 
+Respond: user:luan bot:harry ip: (~childhood) 9   yupp ==> Are you sure?  When:Oct24'18-23:50:19 Why:~honest_response.2.0.~quibble_all.12.0   F:5 
+Respond: user:luan bot:harry ip: (~childhood) 10   yupp ==> I don't know what to say.  When:Oct24'18-23:50:21 Why:~control.9.0   F:4 
+Respond: user:luan bot:harry ip: (~childhood) 11   could you sing ==> I don't know what to say.  When:Oct24'18-23:50:31 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 12   could you fance ==> I don't know. I've never tried it.  When:Oct24'18-23:50:38 Why:~quibble_can.71.0.~quibble_all.10.0   F:17 
+Respond: user:luan bot:harry ip: (~childhood) 13   could you dance? ==> I don't know what to say.  When:Oct24'18-23:50:48 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 14   could you cry? ==> I don't know what to say.  When:Oct24'18-23:50:56 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 15   haha ==> I don't know what to say.  When:Oct24'18-23:50:59 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 16   d ==> I don't know what to say.  When:Oct24'18-23:51:00 Why:~control.9.0   F:0 
+Respond: user:luan bot:harry ip: (~childhood) 17   d ==> I don't know what to say.  When:Oct24'18-23:51:00 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 18   d ==> I don't know what to say.  When:Oct24'18-23:51:01 Why:~control.9.0   F:0 
+Respond: user:luan bot:harry ip: (~childhood) 19   d ==> Cool.  When:Oct24'18-23:51:01 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 20   e ==> Fine.  When:Oct24'18-23:51:03 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 21   a ==> I don't know what to say.  When:Oct24'18-23:51:05 Why:~control.9.0   F:2 
+Respond: user:luan bot:harry ip: (~childhood) 22   weather ==> I don't know what to say.  When:Oct24'18-23:51:09 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 23     ==> I don't know what to say.  When:Oct24'18-23:51:11 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 24     ==> I don't know what to say.  When:Oct24'18-23:51:11 Why:~control.9.0   F:0 
+Respond: user:luan bot:harry ip: (~childhood) 25     ==> I don't know what to say.  When:Oct24'18-23:51:12 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~childhood) 26     ==> I don't know what to say.  When:Oct24'18-23:51:12 Why:~control.9.0   F:0 
+Respond: user:luan bot:harry ip: (~childhood) 27     ==> OK.  When:Oct24'18-23:51:12 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:0 
+Respond: user:luan bot:harry ip: (~childhood) 28     ==> Indeed.  When:Oct24'18-23:51:12 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:0 
+Respond: user:luan bot:harry ip: (~childhood) 29     ==> I don't know what to say.  When:Oct24'18-23:51:12 Why:~control.9.0   F:1 
+Start: user:luan bot:harry ip: rand:1843 (~introductions) 29 ==> Glad you came back.  When:Oct31'18-23:17:18 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Oct24'18-23:51:12
+Respond: user:luan bot:harry ip: (~introductions) 30   song o dau ==> I don't know what to say.  When:Oct31'18-23:17:24 Why:~control.9.0   F:9 
+Respond: user:luan bot:harry ip: (~introductions) 31   ban ten la gi ==> I don't know what to say.  When:Oct31'18-23:17:33 Why:~control.9.0   F:4 
+Respond: user:luan bot:harry ip: (~introductions) 32   bß��n tên là gì ==> I don't know what to say.  When:Oct31'18-23:17:49 Why:~control.9.0   F:39 
+Respond: user:luan bot:harry ip: (~introductions) 33   what's your name ==> My name is Harry.  When:Oct31'18-23:18:05 Why:~introductions.3.0.~control.9.0   F:2 
+Start: user:luan bot:harry ip: rand:1847 (~introductions) 33 ==> Hello, again.  When:Oct31'18-23:18:59 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Oct31'18-23:18:05
+Respond: user:luan bot:harry ip: (~introductions) 34   what is your name ==> I don't really keep track of that.  When:Oct31'18-23:19:07 Why:~honest_response.31.0.~quibble_all.12.0   F:530 
+Respond: user:luan bot:harry ip: (~introductions) 35   how are you ==> I don't know what to say.  When:Oct31'18-23:19:16 Why:~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~introductions) 36   ban ten la gi ==> Right.  When:Oct31'18-23:19:20 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:3 
+Respond: user:luan bot:harry ip: (~introductions) 37   ban song o dau? ==> I don't remember.  When:Oct31'18-23:19:29 Why:~honest_response.33.0.~quibble_all.12.0   F:9 
+Respond: user:luan bot:harry ip: (~introductions) 38   ban bao nhieu tuoi? ==> I don't know what to say.  When:Oct31'18-23:19:38 Why:~control.9.0   F:34 
+Start: user:luan bot:harry ip: rand:1852 (~introductions) 38 ==> Welcome back  When:Oct31'18-23:20:39 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Oct31'18-23:19:38
+Respond: user:luan bot:harry ip: (~introductions) 39   what is you name? ==> I don't know what to say.  When:Oct31'18-23:20:45 Why:~control.9.0   F:479 
+Respond: user:luan bot:harry ip: (~introductions) 40   ban bao nhieu tuoi? ==> I don't know what to say.  When:Oct31'18-23:20:55 Why:~control.9.0   F:36 
+Respond: user:luan bot:harry ip: (~introductions) 41      ==> I don't know what to say.  When:Oct31'18-23:21:56 Why:~control.9.0   F:1 
+Start: user:luan bot:harry ip: rand:1856 (~introductions) 41 ==> Hi, again.  When:Nov01'18-00:13:03 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Oct31'18-23:21:56
+Respond: user:luan bot:harry ip: (~introductions) 42   Hi ==> I don't know what to say.  When:Nov01'18-00:13:07 Why:~control.9.0   F:19 
+Respond: user:luan bot:harry ip: (~introductions) 43   what is you name ==> Probably nothing.  When:Nov01'18-00:13:17 Why:~quibble_what.98.0.~quibble_all.2.0   F:536 
+Respond: user:luan bot:harry ip: (~introductions) 44   what is your name ==> I don't know what to say.  When:Nov01'18-00:14:18 Why:~control.9.0   F:581 
+Command: :build harry
+Start: user:luan bot:harry ip: rand:1861 (~introductions) 44 ==> Hi.  When:Nov01'18-00:14:57 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Nov01'18-00:14:18
+Command: :reset
+Start: user:luan bot:harry ip: rand:1813 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-00:15:02 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Nov01'18-00:14:18
+Respond: user:luan bot:harry ip: (~introductions) 1   how old are you ==> Right.  When:Nov01'18-00:15:09 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:luan bot:harry ip: (~introductions) 2   what is your name ==> My name is Harry.  When:Nov01'18-00:15:22 Why:~introductions.3.0.~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~introductions) 3   here ==> OK.  When:Nov01'18-00:16:06 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:luan bot:harry ip: (~introductions) 4   been here ==> I'll have to think about that.  When:Nov01'18-00:16:20 Why:~honest_response.33.0.~quibble_all.12.0   F:2 
+Command: :build harry
+Start: user:luan bot:harry ip: rand:1818 (~introductions) 4 ==> Hi, again.  When:Nov01'18-00:19:27 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Nov01'18-00:16:20
+Command: :reset
+Start: user:luan bot:harry ip: rand:1813 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-00:19:31 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Nov01'18-00:16:20
+Respond: user:luan bot:harry ip: (~introductions) 1   what is your name ==> My name is Harry.  When:Nov01'18-00:19:39 Why:~introductions.3.0.~control.9.0   F:2 
+Respond: user:luan bot:harry ip: (~introductions) 2   how old are you ==> Have you been here before?  When:Nov01'18-00:19:45 Why:~introductions.2.0.~control.9.0   F:1 
+Command: :build harry
+Start: user:luan bot:harry ip: rand:1816 (~introductions) 2 ==> Welcome back  When:Nov01'18-00:20:26 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Nov01'18-00:19:45
+Command: :reset
+Start: user:luan bot:harry ip: rand:1813 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-00:20:28 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct24'18-23:48:38 F:1540399859-4.9.0 P:Nov01'18-00:19:45
+Respond: user:luan bot:harry ip: (~introductions) 1   what is your name ==> My name is Harry.  When:Nov01'18-00:20:33 Why:~introductions.3.0.~control.9.0   F:1 
+Respond: user:luan bot:harry ip: (~introductions) 2   how old are you ==> Have you been here before?  When:Nov01'18-00:20:42 Why:~introductions.2.0.~control.9.0   F:1 

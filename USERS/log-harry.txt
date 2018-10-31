@@ -1,0 +1,24 @@
+Start: user:harry bot:harry ip: rand:2411 (~introductions) 0 ==> Welcome to ChatScript.  When:Oct23'18-23:04:04 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Oct23'18-23:04:04 F:0 P:0
+Respond: user:harry bot:harry ip: (~introductions) 1   HELLO ==> Have you been here before?  When:Oct23'18-23:04:11 Why:~introductions.2.0.~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~introductions) 2   NOPE ==> Then welcome to your first time.  When:Oct23'18-23:04:15 Why:~introductions.2.2   F:0 
+Respond: user:harry bot:harry ip: (~introductions) 3   certainly ==> Are we actually agreeing?  When:Oct23'18-23:04:40 Why:~honest_response.2.0.~quibble_all.12.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 4   nope ==> Did you run away from home when you were little?  When:Oct23'18-23:04:51 Why:~childhood.0.0.~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 5   yupp ==> Was it fun?  When:Oct23'18-23:05:00 Why:~childhood.0.1   F:4 
+Respond: user:harry bot:harry ip: (~childhood) 6   yupp ==> I ran away once, but my parents found me and dragged me back.  When:Oct23'18-23:05:03 Why:~childhood.1.0=RUNAWAY.~keywordless.2.0   F:5 
+Respond: user:harry bot:harry ip: (~childhood) 7   d ==> Cool.  When:Oct23'18-23:05:05 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 8   d ==> Fine.  When:Oct23'18-23:05:06 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 9   d ==> What scared you as a kid?  When:Oct23'18-23:05:06 Why:~childhood.2.0.~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 10   d ==> I was scared of machines. I had vivid dreams of the Terminator robots.  When:Oct23'18-23:05:06 Why:~childhood.3.0=SCARE.~control.9.0   F:0 
+Respond: user:harry bot:harry ip: (~childhood) 11   d ==> Did you have a happy childhood?  When:Oct23'18-23:05:06 Why:~childhood.4.0.~control.9.0   F:0 
+Respond: user:harry bot:harry ip: (~childhood) 12   d ==> Right.  When:Oct23'18-23:05:06 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 13   d ==> Indeed.  When:Oct23'18-23:05:07 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 14   d ==> I don't know what to say.  When:Oct23'18-23:05:07 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 15   d ==> I don't know what to say.  When:Oct23'18-23:05:07 Why:~control.9.0   F:0 
+Respond: user:harry bot:harry ip: (~childhood) 16   d ==> I don't know what to say.  When:Oct23'18-23:05:07 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 17   e ==> I don't know what to say.  When:Oct23'18-23:05:07 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 18   e ==> OK.  When:Oct23'18-23:05:08 Why:~honest_response.45.0=GRUNT.~quibble_all.12.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 19   e ==> I don't know what to say.  When:Oct23'18-23:05:08 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 20   e ==> I don't know what to say.  When:Oct23'18-23:05:08 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 21   e ==> I don't know what to say.  When:Oct23'18-23:05:08 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 22   e ==> I don't know what to say.  When:Oct23'18-23:05:08 Why:~control.9.0   F:1 
+Respond: user:harry bot:harry ip: (~childhood) 23   e ==> I don't know what to say.  When:Oct23'18-23:05:09 Why:~control.9.0   F:1 

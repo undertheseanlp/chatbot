@@ -1,0 +1,42 @@
+USERS/topic_lht_harry.txt
+jul2116 Oct31'18-23:37:12 Oct31'18-23:40:37 0 |
+5 7 0 DY 0 22 22 0 # start, input#, no rejoinder, #0topics, #1topics, layer2
+~introductions ~childhood #pending
+~childhood + 2 BX!F!Is*Ok3 maaa 6 0 0 
+~introductions + 1 Uk?Kk da 4 0 0 
+#`end topics
+$cs_randindex=3117
+$cs_bot=Harry
+$cs_login=lht
+$cs_token=75726591
+$cs_control_main=~control
+$userprompt=lht: >
+$botprompt=HARRY: 
+$singleresponse=1
+$shutup=1
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context ~honest_response 7 GRUNT ~honest_response 4 GRUNT ~childhood 6 RUNAWAY 
+ what is your name?
+ how old are you
+ how old are you
+ ban bao nhieu tuoi
+ what is your name
+ ban bao nhieu tuoi
+ how old are you
+#`end user
+ Welcome to ChatScript.
+ My name is Harry.
+ Have you been here before?
+ Welcome back
+ Did you run away from home when you were little?
+ Indeed.
+ Hi.
+ I'm sorry. I don't know.
+ I ran away once, but my parents found me and dragged me back.
+ Right.
+#`end chatbot
