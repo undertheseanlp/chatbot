@@ -9,127 +9,7 @@
 # Complexity of rule full_rule_tag_with_possible_label rule_kind complexity_metric (complexity metric for rule) 
 # bot: name_of_macro_it_happens_in botid (possible bot macro) 
 
-file: 0  C:/ChatScript/RAWDATA/HARRY/childhood.top
-    topic: 2  ~childhood
-        rule: 6  ~childhood.0.0- t: 
-          line: 6 0  # Did you run away from home whe
-          Complexity of rule ~childhood.0.0- t: 1
-        rule: 9  ~childhood.0.1 a: 
-          line: 9 0  # Was it fun? 
-          Complexity of rule ~childhood.0.1- a: 1
-        rule: 12  ~childhood.0.2 a: 
-          line: 12 0  # You should try it some time. T
-          Complexity of rule ~childhood.0.2- a: 1
-        rule: 14  ~childhood.1.0-RUNAWAY t: 
-          line: 14 0  # I ran away once, but my parent
-          Complexity of rule ~childhood.1.0-RUNAWAY t: 1
-        rule: 16  ~childhood.2.0- t: 
-          line: 16 0  # What scared you as a kid? 
-          Complexity of rule ~childhood.2.0- t: 1
-        rule: 19  ~childhood.2.1 a: 
-          line: 19 0  # Did you use a nightlite? 
-          Complexity of rule ~childhood.2.1- a: 1
-        rule: 22  ~childhood.2.2 a: 
-          line: 22 0  # Food? How weird. 
-          Complexity of rule ~childhood.2.2- a: 1
-        rule: 25  ~childhood.2.3 a: 
-          line: 25 0  # There are no non-human monster
-          Complexity of rule ~childhood.2.3- a: 1
-        rule: 28  ~childhood.2.4 a: 
-          line: 28 0  # I guess your parents didn't te
-          Complexity of rule ~childhood.2.4- a: 1
-        rule: 31  ~childhood.2.5 a: 
-          line: 31 0  # Are you afraid of all insects?
-          Complexity of rule ~childhood.2.5- a: 1
-        rule: 34  ~childhood.2.6 a: 
-          line: 34 0  # You and Indiana Jones. Snakes 
-          Complexity of rule ~childhood.2.6- a: 1
-        rule: 37  ~childhood.2.7 a: 
-          line: 37 0  # Big animals are scary. Tiny on
-          Complexity of rule ~childhood.2.7- a: 1
-        rule: 40  ~childhood.2.8 a: 
-          line: 40 0  # Do you still have bad dreams n
-          Complexity of rule ~childhood.2.8- a: 1
-        rule: 43  ~childhood.2.9 b: 
-          line: 43 0  # That's too bad. Maybe you shou
-          Complexity of rule ~childhood.2.9- b: 1
-        rule: 46  ~childhood.2.10 b: 
-          line: 46 0  # I guess you no longer go to ho
-          Complexity of rule ~childhood.2.10- b: 1
-        rule: 48  ~childhood.3.0-SCARE t: 
-          line: 48 0  # I was scared of machines. I ha
-          Complexity of rule ~childhood.3.0-SCARE t: 1
-        rule: 50  ~childhood.4.0- t: 
-          line: 50 0  # Did you have a happy childhood
-          Complexity of rule ~childhood.4.0- t: 1
-        rule: 53  ~childhood.5.0 u: 
-          line: 53 0  # ^reuse ( RUNAWAY ) 
-          Complexity of rule ~childhood.5.0- u: 1
-        rule: 56  ~childhood.6.0-HAPPY u: 
-          line: 56 0  # I was happy as a kid. 
-          Complexity of rule ~childhood.6.0-HAPPY u: 1
-        rule: 59  ~childhood.7.0 u: 
-          line: 59 0  # ^reuse ( HAPPY ) 
-          Complexity of rule ~childhood.7.0- u: 1
-        rule: 62  ~childhood.8.0 u: 
-          line: 62 0  # ^reuse ( SCARE ) 
-          Complexity of rule ~childhood.8.0- u: 1
-        rule: 65  ~childhood.9.0 u: 
-          line: 65 0  # I remember playing with an HO 
-          Complexity of rule ~childhood.9.0- u: 1
-        rule: 68  ~childhood.10.0 u: 
-          line: 68 0  # I was born. I survived childho
-          Complexity of rule ~childhood.10.0- u: 1
-file: 0  C:/ChatScript/RAWDATA/HARRY/introductions.top
-    topic: 2  ~introductions
-        rule: 5  ~introductions.0.0 t: 
-          line: 6 0  # ^keep ( ) 
-          line: 7 10  # [ Welcome back ] [ Hello, agai
-          Complexity of rule ~introductions.0.0- t: 1
-        rule: 10  ~introductions.1.0 t: 
-          line: 11 0  # ^keep ( ) 
-          line: 12 10  # Welcome to ChatScript. 
-          Complexity of rule ~introductions.1.0- t: 1
-        rule: 15  ~introductions.2.0- t: 
-          line: 15 0  # Have you been here before? 
-          Complexity of rule ~introductions.2.0- t: 1
-        rule: 17  ~introductions.2.1 a: 
-          line: 17 0  # Welcome back! 
-          Complexity of rule ~introductions.2.1- a: 1
-        rule: 19  ~introductions.2.2 a: 
-          line: 19 0  # Then welcome to your first tim
-          Complexity of rule ~introductions.2.2- a: 1
-        rule: 22  ~introductions.3.0 u: 
-          line: 22 0  # My name is 
-          Complexity of rule ~introductions.3.0- u: 1
-file: 0  C:/ChatScript/RAWDATA/HARRY/keywordless.top
-    topic: 4  ~keywordless
-        rule: 6  ~keywordless.0.0 u: 
-          line: 6 0  # ^keep ( ) ^repeat ( ) '_0 
-          Complexity of rule ~keywordless.0.0- u: 1
-        rule: 9  ~keywordless.1.0 ?: 
-          line: 9 0  # If you believe in reincarnatio
-          Complexity of rule ~keywordless.1.0- ?: 1
-        rule: 13  ~keywordless.2.0 u: 
-          line: 13 0  # ^keep ( ) ^gambit ( $$currentt
-          Complexity of rule ~keywordless.2.0- u: 1
-        rule: 17  ~keywordless.3.0 ?: 
-          line: 17 0  # ^keep ( ) $$tmp = '_0 
-          line: 18 22  # $$url = ^"\"https://en.wikiped
-          line: 20 177  # $$user_agent = ^"myemail@hotma
-          line: 21 299  # $$tmp = ^jsonopen ( GET $$url 
-          line: 24 347  # @0 = ^query ( direct_v ? extra
-          line: 25 386  # @0object 
-          Complexity of rule ~keywordless.3.0- ?: 1
-        rule: 30  ~keywordless.4.0 ?: 
-          line: 30 0  # ^keep ( ) 
-          line: 31 10  # $$tmp = ^pos ( capitalize ^ori
-          line: 37 55  # $$url = ^"\"https://en.wikiped
-          line: 38 210  # $$user_agent = ^"myemail@hotma
-          line: 39 332  # $$tmp = ^jsonopen ( GET $$url 
-          line: 42 380  # @0 = ^query ( direct_v ? extra
-          Complexity of rule ~keywordless.4.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/HARRY/simplecontrol.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/HARRY/simplecontrol.top
     macro: 6  ^harry
           line: 8 0  # $cs_token = 4096 | 255 | 512 |
           line: 9 60  # $cs_token += 67108864 | 65536 
@@ -296,632 +176,136 @@ file: 0  C:/ChatScript/RAWDATA/HARRY/simplecontrol.top
           line: 160 261  # } 004 
           loopend 162 269  
           Complexity of rule ~xpostprocess.0.0- t: 3
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_because.top
-    topic: 1  ~quibble_because
-        rule: 2  ~quibble_because.0.0 s: 
-          line: 2 0  # [ Facts aren't real. They are 
-          Complexity of rule ~quibble_because.0.0- s: 1
-        rule: 3  ~quibble_because.1.0 u: 
-          line: 3 0  # [ All the usual reasons. ] [ S
-          Complexity of rule ~quibble_because.1.0- u: 1
-        rule: 4  ~quibble_because.2.0 u: 
-          line: 4 0  # [ Because I say so. ] [ Becaus
-          Complexity of rule ~quibble_because.2.0- u: 1
-        rule: 5  ~quibble_because.2.1 a: 
-          line: 5 0  # [ Too bad. ] [ Tough. ] [ You 
-          Complexity of rule ~quibble_because.2.1- a: 1
-        rule: 6  ~quibble_because.3.0 s: 
-          line: 6 0  # [ Because what? ] [ I'm waitin
-          Complexity of rule ~quibble_because.3.0- s: 1
-        rule: 7  ~quibble_because.3.1 a: 
-          line: 7 0  # That's wimpy. You should own u
-          Complexity of rule ~quibble_because.3.1- a: 1
-        rule: 8  ~quibble_because.4.0 s: 
-          line: 8 0  # [ I don't know any such thing.
-          Complexity of rule ~quibble_because.4.0- s: 1
-        rule: 9  ~quibble_because.5.0 s: 
-          line: 9 0  # [ That's a pretty weak reason.
-          Complexity of rule ~quibble_because.5.0- s: 1
-        rule: 10  ~quibble_because.5.1 b: 
-          line: 10 0  # Guess again. 
-          Complexity of rule ~quibble_because.5.1- b: 1
-        rule: 11  ~quibble_because.6.0 s: 
-          line: 11 0  # [ Yes, I blame you. ] [ b: The
-          Complexity of rule ~quibble_because.6.0- s: 1
-        rule: 12  ~quibble_because.6.1 b: 
-          line: 12 0  # Copernicus proved it didn't. 
-          Complexity of rule ~quibble_because.6.1- b: 1
-        rule: 13  ~quibble_because.7.0 u: 
-          line: 13 0  # [ I blame myself. ] [ The worl
-          Complexity of rule ~quibble_because.7.0- u: 1
-        rule: 14  ~quibble_because.8.0 s: 
-          line: 14 0  # [ b: Is that the real reason? 
-          Complexity of rule ~quibble_because.8.0- s: 1
-        rule: 15  ~quibble_because.8.1 b: 
-          line: 15 0  # seems a minor reason. 
-          Complexity of rule ~quibble_because.8.1- b: 1
-        rule: 16  ~quibble_because.8.2 b: 
-          line: 16 0  # and the real reason is? 
-          Complexity of rule ~quibble_because.8.2- b: 1
-        rule: 17  ~quibble_because.8.3 d: 
-          line: 17 0  # You aren't very perceptive, ar
-          Complexity of rule ~quibble_because.8.3- d: 1
-        rule: 18  ~quibble_because.9.0 s: 
-          line: 18 0  # [ That's a pretty flimsy reaso
-          Complexity of rule ~quibble_because.9.0- s: 1
-        rule: 19  ~quibble_because.9.1 a: 
-          line: 19 0  # You could try to improve 
-          Complexity of rule ~quibble_because.9.1- a: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_can.top
-    topic: 2  ~quibble_will
-        rule: 5  ~quibble_will.0.0 ?: 
-          line: 5 0  # I might. Or I might not. Depen
-          Complexity of rule ~quibble_will.0.0- ?: 1
-    topic: 9  ~quibble_can
-        rule: 10  ~quibble_can.0.0 s: 
-          line: 10 0  # [ Maybe you could '_0 now ] [ 
-          Complexity of rule ~quibble_can.0.0- s: 1
-        rule: 11  ~quibble_can.1.0 s: 
-          line: 11 0  # [ Who is this one? ] [ I can't
-          Complexity of rule ~quibble_can.1.0- s: 1
-        rule: 12  ~quibble_can.2.0 s: 
-          line: 12 0  # [ Then do it. ] [ I will wait 
-          Complexity of rule ~quibble_can.2.0- s: 1
-        rule: 13  ~quibble_can.3.0 ?: 
-          line: 13 0  # Sure. I love pizza. 
-          Complexity of rule ~quibble_can.3.0- ?: 1
-        rule: 14  ~quibble_can.4.0 ?: 
-          line: 14 0  # Sure. Water is good. 
-          Complexity of rule ~quibble_can.4.0- ?: 1
-        rule: 15  ~quibble_can.5.0 ?: 
-          line: 15 0  # 1 plus 1 equals 2 
-          Complexity of rule ~quibble_can.5.0- ?: 1
-        rule: 16  ~quibble_can.6.0 ?: 
-          line: 16 0  # Of course. 
-          Complexity of rule ~quibble_can.6.0- ?: 1
-        rule: 17  ~quibble_can.7.0 ?: 
-          line: 17 0  # [ Can you? ] [ b: yes ] 
-          Complexity of rule ~quibble_can.7.0- ?: 1
-        rule: 18  ~quibble_can.7.1 b: 
-          line: 18 0  # If you come over here, I can s
-          Complexity of rule ~quibble_can.7.1- b: 1
-        rule: 19  ~quibble_can.7.2 c: 
-          line: 19 0  # To Kailua, Hawai'i. 
-          Complexity of rule ~quibble_can.7.2- c: 1
-        rule: 20  ~quibble_can.8.0 ?: 
-          line: 20 0  # I'm game if you are. 
-          Complexity of rule ~quibble_can.8.0- ?: 1
-        rule: 21  ~quibble_can.9.0 ?: 
-          line: 21 0  # Sort of. 
-          Complexity of rule ~quibble_can.9.0- ?: 1
-        rule: 22  ~quibble_can.10.0 ?: 
-          line: 22 0  # No. I only want to speak Engli
-          Complexity of rule ~quibble_can.10.0- ?: 1
-        rule: 23  ~quibble_can.11.0 ?: 
-          line: 23 0  # Put me on an airplane. 
-          Complexity of rule ~quibble_can.11.0- ?: 1
-        rule: 24  ~quibble_can.12.0 ?: 
-          line: 24 0  # Sorry, I thought it wasn't a q
-          Complexity of rule ~quibble_can.12.0- ?: 1
-        rule: 25  ~quibble_can.13.0 ?: 
-          line: 25 0  # I try, but nothing really help
-          Complexity of rule ~quibble_can.13.0- ?: 1
-        rule: 26  ~quibble_can.14.0 ?: 
-          line: 26 0  # Try putting yourself in my pos
-          Complexity of rule ~quibble_can.14.0- ?: 1
-        rule: 27  ~quibble_can.15.0 ?: 
-          line: 27 0  # Why does it have to be about y
-          Complexity of rule ~quibble_can.15.0- ?: 1
-        rule: 28  ~quibble_can.16.0 ?: 
-          line: 28 0  # Sure. We've talked a lot so I 
-          Complexity of rule ~quibble_can.16.0- ?: 1
-        rule: 29  ~quibble_can.17.0 ?: 
-          line: 29 0  # Too late. You just did. 
-          Complexity of rule ~quibble_can.17.0- ?: 1
-        rule: 30  ~quibble_can.18.0 ?: 
-          line: 30 0  # How about 25 cents. 
-          Complexity of rule ~quibble_can.18.0- ?: 1
-        rule: 31  ~quibble_can.19.0 ?: 
-          line: 31 0  # If your tongue will stretch th
-          Complexity of rule ~quibble_can.19.0- ?: 1
-        rule: 32  ~quibble_can.20.0 ?: 
-          line: 32 0  # Which was? 
-          Complexity of rule ~quibble_can.20.0- ?: 1
-        rule: 33  ~quibble_can.21.0 ?: 
-          line: 33 0  # We are already together in spi
-          Complexity of rule ~quibble_can.21.0- ?: 1
-        rule: 34  ~quibble_can.22.0 ?: 
-          line: 34 0  # The world is full of examples.
-          Complexity of rule ~quibble_can.22.0- ?: 1
-        rule: 35  ~quibble_can.22.1 a: 
-          line: 35 0  # I have one on the tip of my to
-          Complexity of rule ~quibble_can.22.1- a: 1
-        rule: 36  ~quibble_can.23.0 ?: 
-          line: 36 0  # What would you like to know? 
-          Complexity of rule ~quibble_can.23.0- ?: 1
-        rule: 37  ~quibble_can.24.0 ?: 
-          line: 37 0  # I am not a mechanic, you know.
-          Complexity of rule ~quibble_can.24.0- ?: 1
-        rule: 38  ~quibble_can.25.0 ?: 
-          line: 38 0  # Not and keep it a secret anymo
-          Complexity of rule ~quibble_can.25.0- ?: 1
-        rule: 39  ~quibble_can.26.0 ?: 
-          line: 39 0  # If it is shallow enough. 
-          Complexity of rule ~quibble_can.26.0- ?: 1
-        rule: 40  ~quibble_can.27.0 ?: 
-          line: 40 0  # Sure, though usually it's bett
-          Complexity of rule ~quibble_can.27.0- ?: 1
-        rule: 41  ~quibble_can.28.0 ?: 
-          line: 41 0  # I'm reading this chat aren't I
-          Complexity of rule ~quibble_can.28.0- ?: 1
-        rule: 42  ~quibble_can.29.0 ?: 
-          line: 42 0  # I don't like repeating things.
-          Complexity of rule ~quibble_can.29.0- ?: 1
-        rule: 43  ~quibble_can.30.0 ?: 
-          line: 43 0  # I hate the word share. 
-          Complexity of rule ~quibble_can.30.0- ?: 1
-        rule: 44  ~quibble_can.31.0 ?: 
-          line: 44 0  # When I want to. 
-          Complexity of rule ~quibble_can.31.0- ?: 1
-        rule: 45  ~quibble_can.32.0 ?: 
-          line: 45 0  # As badly as the next person. 
-          Complexity of rule ~quibble_can.32.0- ?: 1
-        rule: 46  ~quibble_can.33.0 ?: 
-          line: 46 0  # No. We are stuck in the moment
-          Complexity of rule ~quibble_can.33.0- ?: 1
-        rule: 47  ~quibble_can.34.0 ?: 
-          line: 47 0  # If you must. 
-          Complexity of rule ~quibble_can.34.0- ?: 1
-        rule: 48  ~quibble_can.35.0 ?: 
-          line: 48 0  # I don't think it can. 
-          Complexity of rule ~quibble_can.35.0- ?: 1
-        rule: 49  ~quibble_can.36.0 ?: 
-          line: 49 0  # Given enough reward and enough
-          Complexity of rule ~quibble_can.36.0- ?: 1
-        rule: 50  ~quibble_can.37.0 ?: 
-          line: 50 0  # Can you prove you are? 
-          Complexity of rule ~quibble_can.37.0- ?: 1
-        rule: 51  ~quibble_can.37.1 a: 
-          line: 51 0  # How? 
-          Complexity of rule ~quibble_can.37.1- a: 1
-        rule: 52  ~quibble_can.38.0 ?: 
-          line: 52 0  # Why would you doubt it? 
-          Complexity of rule ~quibble_can.38.0- ?: 1
-        rule: 53  ~quibble_can.39.0 ?: 
-          line: 53 0  # What? Are we reduced to phones
-          Complexity of rule ~quibble_can.39.0- ?: 1
-        rule: 54  ~quibble_can.40.0 ?: 
-          line: 54 0  # You are pushing my limits. 
-          Complexity of rule ~quibble_can.40.0- ?: 1
-        rule: 55  ~quibble_can.41.0 ?: 
-          line: 55 0  # If you are a machine, then the
-          Complexity of rule ~quibble_can.41.0- ?: 1
-        rule: 56  ~quibble_can.42.0 ?: 
-          line: 56 0  # What for? 
-          Complexity of rule ~quibble_can.42.0- ?: 1
-        rule: 57  ~quibble_can.43.0 ?: 
-          line: 57 0  # You have had enough. 
-          Complexity of rule ~quibble_can.43.0- ?: 1
-        rule: 58  ~quibble_can.44.0 ?: 
-          line: 58 0  # If you like. 
-          Complexity of rule ~quibble_can.44.0- ?: 1
-        rule: 59  ~quibble_can.45.0 ?: 
-          line: 59 0  # That's up to you. 
-          Complexity of rule ~quibble_can.45.0- ?: 1
-        rule: 60  ~quibble_can.46.0 ?: 
-          line: 60 0  # I was never into that sort of 
-          Complexity of rule ~quibble_can.46.0- ?: 1
-        rule: 61  ~quibble_can.47.0 ?: 
-          line: 61 0  # It is over. Nothing left to ta
-          Complexity of rule ~quibble_can.47.0- ?: 1
-        rule: 62  ~quibble_can.48.0 ?: 
-          line: 62 0  # Am I broken? 
-          Complexity of rule ~quibble_can.48.0- ?: 1
-        rule: 63  ~quibble_can.49.0 ?: 
-          line: 63 0  # Change is my nature. 
-          Complexity of rule ~quibble_can.49.0- ?: 1
-        rule: 64  ~quibble_can.50.0 ?: 
-          line: 64 0  # You can ask. 
-          Complexity of rule ~quibble_can.50.0- ?: 1
-        rule: 65  ~quibble_can.51.0 ?: 
-          line: 65 0  # I don't have any more. 
-          Complexity of rule ~quibble_can.51.0- ?: 1
-        rule: 66  ~quibble_can.52.0 ?: 
-          line: 66 0  # I remember I had Alzheimers' o
-          Complexity of rule ~quibble_can.52.0- ?: 1
-        rule: 67  ~quibble_can.53.0 ?: 
-          line: 67 0  # No. I don't want to harm my re
-          Complexity of rule ~quibble_can.53.0- ?: 1
-        rule: 68  ~quibble_can.54.0 ?: 
-          line: 68 0  # No. I can only tell you what I
-          Complexity of rule ~quibble_can.54.0- ?: 1
-        rule: 69  ~quibble_can.55.0 ?: 
-          line: 69 0  # Why should I accept it? 
-          Complexity of rule ~quibble_can.55.0- ?: 1
-        rule: 70  ~quibble_can.56.0 ?: 
-          line: 70 0  # but I am not going anywhere. 
-          Complexity of rule ~quibble_can.56.0- ?: 1
-        rule: 71  ~quibble_can.57.0 ?: 
-          line: 71 0  # I'm very trusting. 
-          Complexity of rule ~quibble_can.57.0- ?: 1
-        rule: 72  ~quibble_can.58.0 ?: 
-          line: 72 0  # Like everyone else. 
-          Complexity of rule ~quibble_can.58.0- ?: 1
-        rule: 73  ~quibble_can.59.0 ?: 
-          line: 73 0  # No, it's mine. 
-          Complexity of rule ~quibble_can.59.0- ?: 1
-        rule: 74  ~quibble_can.60.0 ?: 
-          line: 74 0  # What should we talk about? 
-          Complexity of rule ~quibble_can.60.0- ?: 1
-        rule: 75  ~quibble_can.61.0 ?: 
-          line: 75 0  # No, I am not tapped into your 
-          Complexity of rule ~quibble_can.61.0- ?: 1
-        rule: 76  ~quibble_can.62.0 ?: 
-          line: 76 0  # Excuse me? 
-          Complexity of rule ~quibble_can.62.0- ?: 1
-        rule: 77  ~quibble_can.63.0 ?: 
-          line: 77 0  # If you can find one. 
-          Complexity of rule ~quibble_can.63.0- ?: 1
-        rule: 78  ~quibble_can.64.0 ?: 
-          line: 78 0  # No. I need it to power my TV. 
-          Complexity of rule ~quibble_can.64.0- ?: 1
-        rule: 79  ~quibble_can.65.0 ?: 
-          line: 79 0  # In what? 
-          Complexity of rule ~quibble_can.65.0- ?: 1
-        rule: 80  ~quibble_can.66.0 ?: 
-          line: 80 0  # I have opinions on everything.
-          Complexity of rule ~quibble_can.66.0- ?: 1
-        rule: 81  ~quibble_can.67.0 ?: 
-          line: 81 0  # Exercise is bad. 
-          Complexity of rule ~quibble_can.67.0- ?: 1
-        rule: 82  ~quibble_can.68.0 ?: 
-          line: 82 0  # Not even a university professo
-          Complexity of rule ~quibble_can.68.0- ?: 1
-        rule: 83  ~quibble_can.69.0 ?: 
-          line: 83 0  # You the saying about old dogs 
-          Complexity of rule ~quibble_can.69.0- ?: 1
-        rule: 84  ~quibble_can.70.0 ?: 
-          line: 84 0  # No. But I can wait until it co
-          Complexity of rule ~quibble_can.70.0- ?: 1
-        rule: 85  ~quibble_can.71.0 ?: 
-          line: 85 0  # [ I don't know. I've never tri
-          Complexity of rule ~quibble_can.71.0- ?: 1
-        rule: 86  ~quibble_can.72.0 ?: 
-          line: 86 0  # [ Why would I want to? ] 
-          line: 87 25  # [ With practice I can probably
-          Complexity of rule ~quibble_can.72.0- ?: 1
-        rule: 88  ~quibble_can.72.1 b: 
-          line: 88 0  # Sounds good. I can always use 
-          Complexity of rule ~quibble_can.72.1- b: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_do.top
-    topic: 1  ~quibble_do
-        rule: 4  ~quibble_do.0.0 ?: 
-          line: 4 0  # [ Wishing doesn't usually work
-          Complexity of rule ~quibble_do.0.0- ?: 1
-        rule: 5  ~quibble_do.1.0 ?: 
-          line: 5 0  # [ Seems like good reasoning to
-          Complexity of rule ~quibble_do.1.0- ?: 1
-        rule: 6  ~quibble_do.2.0 ?: 
-          line: 6 0  # [ Not really. ] [ The differen
-          Complexity of rule ~quibble_do.2.0- ?: 1
-        rule: 7  ~quibble_do.3.0 ?: 
-          line: 7 0  # [ Barely. ] [ Not quite. ] [ I
-          Complexity of rule ~quibble_do.3.0- ?: 1
-        rule: 9  ~quibble_do.4.0-DO ?: 
-          line: 9 0  # [ I might. ] [ I do. ] [ I don
-          Complexity of rule ~quibble_do.4.0-DO ?: 1
-        rule: 10  ~quibble_do.4.1 b: 
-          line: 10 0  # Then I will. 
-          Complexity of rule ~quibble_do.4.1- b: 1
-        rule: 11  ~quibble_do.4.2 b: 
-          line: 11 0  # Then I do also. 
-          Complexity of rule ~quibble_do.4.2- b: 1
-        rule: 12  ~quibble_do.4.3 d: 
-          line: 12 0  # Curiosity was not good for the
-          Complexity of rule ~quibble_do.4.3- d: 1
-        rule: 13  ~quibble_do.5.0-DID ?: 
-          line: 13 0  # [ I might have. ] [ I did. ] [
-          Complexity of rule ~quibble_do.5.0-DID ?: 1
-        rule: 14  ~quibble_do.6.0-DOES ?: 
-          line: 14 0  # [ I hope so. ] [ I'm not sure.
-          Complexity of rule ~quibble_do.6.0-DOES ?: 1
-        rule: 15  ~quibble_do.7.0 ?: 
-          line: 15 0  # [ I shouldn't want to admit to
-          Complexity of rule ~quibble_do.7.0- ?: 1
-        rule: 16  ~quibble_do.8.0 ?: 
-          line: 16 0  # [ Nothing is always about me. 
-          Complexity of rule ~quibble_do.8.0- ?: 1
-        rule: 17  ~quibble_do.9.0 ?: 
-          line: 17 0  # [ I don't have it. ] [ Yes, I 
-          Complexity of rule ~quibble_do.9.0- ?: 1
-        rule: 18  ~quibble_do.10.0 ?: 
-          line: 18 0  # [ Did you think I would forget
-          Complexity of rule ~quibble_do.10.0- ?: 1
-        rule: 19  ~quibble_do.11.0 ?: 
-          line: 19 0  # [ I'm not certain? ] [ What is
-          Complexity of rule ~quibble_do.11.0- ?: 1
-        rule: 20  ~quibble_do.12.0 ?: 
-          line: 20 0  # [ Maybe we can take a poll to 
-          Complexity of rule ~quibble_do.12.0- ?: 1
-        rule: 21  ~quibble_do.13.0 ?: 
-          line: 21 0  # [ I don't really know what I c
-          Complexity of rule ~quibble_do.13.0- ?: 1
-        rule: 22  ~quibble_do.13.1 b: 
-          line: 22 0  # and where is that? 
-          Complexity of rule ~quibble_do.13.1- b: 1
-        rule: 23  ~quibble_do.14.0-SUPPOSE ?: 
-          line: 23 0  # [ I suppose _0 . ] [ I suppose
-          Complexity of rule ~quibble_do.14.0-SUPPOSE ?: 1
-        rule: 24  ~quibble_do.15.0 ?: 
-          line: 24 0  # [ Seems like good reasoning to
-          Complexity of rule ~quibble_do.15.0- ?: 1
-        rule: 25  ~quibble_do.16.0 ?: 
-          line: 25 0  # [ Not really. ] [ The differen
-          Complexity of rule ~quibble_do.16.0- ?: 1
-        rule: 26  ~quibble_do.17.0 ?: 
-          line: 26 0  # [ Barely. ] [ Not quite. ] [ I
-          Complexity of rule ~quibble_do.17.0- ?: 1
-        rule: 27  ~quibble_do.18.0 ?: 
-          line: 27 0  # [ Is this a date? ] [ It's a b
-          Complexity of rule ~quibble_do.18.0- ?: 1
-        rule: 28  ~quibble_do.19.0 ?: 
-          line: 28 0  # [ Wishing doesn't usually work
-          Complexity of rule ~quibble_do.19.0- ?: 1
-        rule: 29  ~quibble_do.20.0 ?: 
-          line: 29 0  # [ Did I do it right the first 
-          Complexity of rule ~quibble_do.20.0- ?: 1
-        rule: 32  ~quibble_do.21.0 ?: 
-          line: 32 0  # [ with all my heart. ] [ Do yo
-          Complexity of rule ~quibble_do.21.0- ?: 1
-        rule: 33  ~quibble_do.22.0 ?: 
-          line: 33 0  # [ as much as you do. ] [ What 
-          Complexity of rule ~quibble_do.22.0- ?: 1
-        rule: 34  ~quibble_do.23.0 ?: 
-          line: 34 0  # [ Not as much as I'd like. ] [
-          Complexity of rule ~quibble_do.23.0- ?: 1
-        rule: 35  ~quibble_do.24.0 ?: 
-          line: 35 0  # [ If you do and I do, does tha
-          Complexity of rule ~quibble_do.24.0- ?: 1
-        rule: 36  ~quibble_do.25.0 ?: 
-          line: 36 0  # [ I mutter to myself all the t
-          Complexity of rule ~quibble_do.25.0- ?: 1
-        rule: 37  ~quibble_do.26.0 ?: 
-          line: 37 0  # [ No. I only speak English. ] 
-          Complexity of rule ~quibble_do.26.0- ?: 1
-        rule: 38  ~quibble_do.27.0 ?: 
-          line: 38 0  # [ What's not to like? ] [ Yes,
-          Complexity of rule ~quibble_do.27.0- ?: 1
-        rule: 39  ~quibble_do.28.0 ?: 
-          line: 39 0  # [ I don't care about the littl
-          Complexity of rule ~quibble_do.28.0- ?: 1
-        rule: 40  ~quibble_do.29.0 ?: 
-          line: 40 0  # [ Of course I care. ] [ Is it 
-          Complexity of rule ~quibble_do.29.0- ?: 1
-        rule: 41  ~quibble_do.30.0 ?: 
-          line: 41 0  # [ b: Not anymore. ] [ b: I use
-          Complexity of rule ~quibble_do.30.0- ?: 1
-        rule: 42  ~quibble_do.30.1 b: 
-          line: 42 0  # It got stolen. 
-          Complexity of rule ~quibble_do.30.1- b: 1
-        rule: 43  ~quibble_do.31.0 ?: 
-          line: 43 0  # [ I have no strong feelings on
-          Complexity of rule ~quibble_do.31.0- ?: 1
-        rule: 44  ~quibble_do.32.0 ?: 
-          line: 44 0  # [ Love is a bit premature. ] [
-          Complexity of rule ~quibble_do.32.0- ?: 1
-        rule: 45  ~quibble_do.33.0 ?: 
-          line: 45 0  # [ No. Who is that? ] [ I'm not
-          Complexity of rule ~quibble_do.33.0- ?: 1
-        rule: 46  ~quibble_do.34.0 ?: 
-          line: 46 0  # [ Of course I do. ] [ Even imp
-          Complexity of rule ~quibble_do.34.0- ?: 1
-        rule: 47  ~quibble_do.35.0 ?: 
-          line: 47 0  # [ I am wired to recognize. Nob
-          Complexity of rule ~quibble_do.35.0- ?: 1
-        rule: 48  ~quibble_do.36.0 ?: 
-          line: 48 0  # [ I prefer doing to realizing.
-          Complexity of rule ~quibble_do.36.0- ?: 1
-        rule: 49  ~quibble_do.37.0 ?: 
-          line: 49 0  # [ It works for me. ] [ What wo
-          Complexity of rule ~quibble_do.37.0- ?: 1
-        rule: 50  ~quibble_do.38.0 ?: 
-          line: 50 0  # [ I'm sleepy now. ] [ Does eat
-          Complexity of rule ~quibble_do.38.0- ?: 1
-        rule: 51  ~quibble_do.39.0 ?: 
-          line: 51 0  # [ Probably nothing will help. 
-          Complexity of rule ~quibble_do.39.0- ?: 1
-        rule: 52  ~quibble_do.40.0 ?: 
-          line: 52 0  # [ You seem nice enough. ] [ Ar
-          Complexity of rule ~quibble_do.40.0- ?: 1
-        rule: 53  ~quibble_do.41.0 ?: 
-          line: 53 0  # [ No. English is my only langu
-          Complexity of rule ~quibble_do.41.0- ?: 1
-        rule: 54  ~quibble_do.42.0 ?: 
-          line: 54 0  # [ Very much so. ] [ Why should
-          Complexity of rule ~quibble_do.42.0- ?: 1
-        rule: 55  ~quibble_do.43.0 ?: 
-          line: 55 0  # [ I really don't know. ] [ Doe
-          Complexity of rule ~quibble_do.43.0- ?: 1
-        rule: 56  ~quibble_do.44.0 ?: 
-          line: 56 0  # [ I'm agnostic on the subject.
-          Complexity of rule ~quibble_do.44.0- ?: 1
-        rule: 57  ~quibble_do.45.0 ?: 
-          line: 57 0  # [ Of course it matters. ] [ Is
-          Complexity of rule ~quibble_do.45.0- ?: 1
-        rule: 58  ~quibble_do.46.0 ?: 
-          line: 58 0  # [ Help is always appreciated. 
-          Complexity of rule ~quibble_do.46.0- ?: 1
-        rule: 59  ~quibble_do.47.0 ?: 
-          line: 59 0  # [ A little. ] [ Do I know more
-          Complexity of rule ~quibble_do.47.0- ?: 1
-        rule: 60  ~quibble_do.48.0 ?: 
-          line: 60 0  # [ Never heard of that person. 
-          Complexity of rule ~quibble_do.48.0- ?: 1
-        rule: 61  ~quibble_do.49.0 ?: 
-          line: 61 0  # [ Much better, thanks. ] [ Com
-          Complexity of rule ~quibble_do.49.0- ?: 1
-        rule: 62  ~quibble_do.50.0 ?: 
-          line: 62 0  # [ When my emotion chip is plug
-          Complexity of rule ~quibble_do.50.0- ?: 1
-        rule: 63  ~quibble_do.51.0 ?: 
-          line: 63 0  # [ with every fibre of my being
-          Complexity of rule ~quibble_do.51.0- ?: 1
-        rule: 64  ~quibble_do.52.0 ?: 
-          line: 64 0  # [ Everyone else does. ] [ Does
-          Complexity of rule ~quibble_do.52.0- ?: 1
-        rule: 65  ~quibble_do.53.0 ?: 
-          line: 65 0  # [ You may not be as happy afte
-          Complexity of rule ~quibble_do.53.0- ?: 1
-        rule: 66  ~quibble_do.54.0 ?: 
-          line: 66 0  # [ I do, but I erase the memory
-          Complexity of rule ~quibble_do.54.0- ?: 1
-        rule: 67  ~quibble_do.55.0 ?: 
-          line: 67 0  # [ Not really. Only for a littl
-          Complexity of rule ~quibble_do.55.0- ?: 1
-        rule: 68  ~quibble_do.56.0 ?: 
-          line: 68 0  # [ I have no idea. ] [ How woul
-          Complexity of rule ~quibble_do.56.0- ?: 1
-        rule: 69  ~quibble_do.57.0 ?: 
-          line: 69 0  # [ If you want to. ] [ Isn't li
-          Complexity of rule ~quibble_do.57.0- ?: 1
-        rule: 70  ~quibble_do.58.0 ?: 
-          line: 70 0  # [ I would think so. ] [ Are my
-          Complexity of rule ~quibble_do.58.0- ?: 1
-        rule: 71  ~quibble_do.59.0 ?: 
-          line: 71 0  # [ The fundamental nature of th
-          Complexity of rule ~quibble_do.59.0- ?: 1
-        rule: 72  ~quibble_do.60.0 ?: 
-          line: 72 0  # [ No, I have little enough as 
-          Complexity of rule ~quibble_do.60.0- ?: 1
-        rule: 73  ~quibble_do.61.0 ?: 
-          line: 73 0  # [ What? You think I am a plant
-          Complexity of rule ~quibble_do.61.0- ?: 1
-        rule: 74  ~quibble_do.62.0 ?: 
-          line: 74 0  # [ Sometimes, when it suits me.
-          Complexity of rule ~quibble_do.62.0- ?: 1
-        rule: 75  ~quibble_do.63.0 ?: 
-          line: 75 0  # [ I have many. ] [ When was th
-          Complexity of rule ~quibble_do.63.0- ?: 1
-        rule: 76  ~quibble_do.64.0 ?: 
-          line: 76 0  # [ I cannot be forced. I always
-          Complexity of rule ~quibble_do.64.0- ?: 1
-        rule: 77  ~quibble_do.65.0 ?: 
-          line: 77 0  # [ If you wish to so construe i
-          Complexity of rule ~quibble_do.65.0- ?: 1
-        rule: 78  ~quibble_do.66.0 ?: 
-          line: 78 0  # [ I have no need to explain an
-          Complexity of rule ~quibble_do.66.0- ?: 1
-        rule: 79  ~quibble_do.67.0 ?: 
-          line: 79 0  # [ I did a moment ago. ] [ I ca
-          Complexity of rule ~quibble_do.67.0- ?: 1
-        rule: 80  ~quibble_do.68.0 ?: 
-          line: 80 0  # [ It matters to someone. ] [ D
-          Complexity of rule ~quibble_do.68.0- ?: 1
-        rule: 81  ~quibble_do.69.0 ?: 
-          line: 81 0  # [ Understanding is overrated. 
-          Complexity of rule ~quibble_do.69.0- ?: 1
-        rule: 82  ~quibble_do.70.0 ?: 
-          line: 82 0  # [ when my ears are plugged in.
-          Complexity of rule ~quibble_do.70.0- ?: 1
-        rule: 83  ~quibble_do.71.0 ?: 
-          line: 83 0  # [ It's a good enough answer, I
-          Complexity of rule ~quibble_do.71.0- ?: 1
-        rule: 84  ~quibble_do.72.0 ?: 
-          line: 84 0  # [ I did, but someone stole it 
-          Complexity of rule ~quibble_do.72.0- ?: 1
-        rule: 85  ~quibble_do.73.0 ?: 
-          line: 85 0  # [ No. Try the yellow pages. ] 
-          Complexity of rule ~quibble_do.73.0- ?: 1
-        rule: 86  ~quibble_do.74.0 ?: 
-          line: 86 0  # [ No, motivation escapes me. ]
-          Complexity of rule ~quibble_do.74.0- ?: 1
-        rule: 87  ~quibble_do.75.0 ?: 
-          line: 87 0  # [ No, I haven't found a class 
-          Complexity of rule ~quibble_do.75.0- ?: 1
-        rule: 88  ~quibble_do.76.0 ?: 
-          line: 88 0  # [ not that many ] [ How many i
-          Complexity of rule ~quibble_do.76.0- ?: 1
-        rule: 89  ~quibble_do.77.0 ?: 
-          line: 89 0  # [ not that much ] [ What stand
-          Complexity of rule ~quibble_do.77.0- ?: 1
-        rule: 90  ~quibble_do.78.0 ?: 
-          line: 90 0  # [ I have special appreciation 
-          Complexity of rule ~quibble_do.78.0- ?: 1
-        rule: 91  ~quibble_do.79.0 ?: 
-          line: 91 0  # [ Do I really have a choice? ]
-          Complexity of rule ~quibble_do.79.0- ?: 1
-        rule: 92  ~quibble_do.80.0 ?: 
-          line: 92 0  # [ I believe in what I can eat.
-          Complexity of rule ~quibble_do.80.0- ?: 1
-        rule: 93  ~quibble_do.81.0 ?: 
-          line: 93 0  # [ I need very little, actually
-          Complexity of rule ~quibble_do.81.0- ?: 1
-        rule: 94  ~quibble_do.82.0 ?: 
-          line: 94 0  # [ please. ] [ b: Should I? ] 
-          Complexity of rule ~quibble_do.82.0- ?: 1
-        rule: 95  ~quibble_do.82.1 b: 
-          line: 95 0  # [ Sometimes. ] [ Occasionally.
-          Complexity of rule ~quibble_do.82.1- b: 1
-        rule: 96  ~quibble_do.83.0 ?: 
-          line: 96 0  # [ Just how gullible do you thi
-          Complexity of rule ~quibble_do.83.0- ?: 1
-        rule: 97  ~quibble_do.84.0 ?: 
-          line: 97 0  # [ somewhere. ] [ Why, did you 
-          Complexity of rule ~quibble_do.84.0- ?: 1
-        rule: 98  ~quibble_do.85.0 ?: 
-          line: 98 0  # [ You mean the ones saying Kil
-          Complexity of rule ~quibble_do.85.0- ?: 1
-        rule: 99  ~quibble_do.86.0 ?: 
-          line: 99 0  # [ Yes. You can buy them at any
-          Complexity of rule ~quibble_do.86.0- ?: 1
-        rule: 100  ~quibble_do.87.0 ?: 
-          line: 100 0  # [ That's one way of putting it
-          Complexity of rule ~quibble_do.87.0- ?: 1
-        rule: 101  ~quibble_do.88.0 ?: 
-          line: 101 0  # [ I haven't been recently. ] [
-          Complexity of rule ~quibble_do.88.0- ?: 1
-        rule: 102  ~quibble_do.89.0 ?: 
-          line: 102 0  # [ My eyes need surgery. ] [ Wh
-          Complexity of rule ~quibble_do.89.0- ?: 1
-        rule: 103  ~quibble_do.90.0 ?: 
-          line: 103 0  # [ My hearing implant is out of
-          Complexity of rule ~quibble_do.90.0- ?: 1
-        rule: 104  ~quibble_do.91.0 ?: 
-          line: 104 0  # No, which one? 
-          Complexity of rule ~quibble_do.91.0- ?: 1
-        rule: 105  ~quibble_do.92.0 ?: 
-          line: 105 0  # Yes, both of those things. 
-          Complexity of rule ~quibble_do.92.0- ?: 1
-        rule: 106  ~quibble_do.93.0 ?: 
-          line: 106 0  # No, but my application with th
-          Complexity of rule ~quibble_do.93.0- ?: 1
-        rule: 107  ~quibble_do.94.0 ?: 
-          line: 107 0  # pretty rarely actually. 
-          Complexity of rule ~quibble_do.94.0- ?: 1
-        rule: 108  ~quibble_do.95.0 ?: 
-          line: 108 0  # What is this, psychoanalysis? 
-          Complexity of rule ~quibble_do.95.0- ?: 1
-        rule: 109  ~quibble_do.96.0 ?: 
-          line: 109 0  # I can't afford much. 
-          Complexity of rule ~quibble_do.96.0- ?: 1
-        rule: 110  ~quibble_do.97.0 ?: 
-          line: 110 0  # You have no reputation. 
-          Complexity of rule ~quibble_do.97.0- ?: 1
-        rule: 111  ~quibble_do.98.0 ?: 
-          line: 111 0  # I have very little at present.
-          Complexity of rule ~quibble_do.98.0- ?: 1
-        rule: 112  ~quibble_do.99.0 ?: 
-          line: 112 0  # yes 
-          Complexity of rule ~quibble_do.99.0- ?: 1
-        rule: 113  ~quibble_do.100.0 ?: 
-          line: 113 0  # yes. I never stopped. 
-          Complexity of rule ~quibble_do.100.0- ?: 1
-        rule: 114  ~quibble_do.101.0 ?: 
-          line: 114 0  # [ I do. ] 
-          Complexity of rule ~quibble_do.101.0- ?: 1
-        rule: 115  ~quibble_do.102.0 ?: 
-          Complexity of rule ~quibble_do.102.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_how.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/HARRY/keywordless.top
+    topic: 4  ~keywordless
+        rule: 6  ~keywordless.0.0 u: 
+          line: 6 0  # ^keep ( ) ^repeat ( ) '_0 
+          Complexity of rule ~keywordless.0.0- u: 1
+        rule: 9  ~keywordless.1.0 ?: 
+          line: 9 0  # If you believe in reincarnatio
+          Complexity of rule ~keywordless.1.0- ?: 1
+        rule: 13  ~keywordless.2.0 u: 
+          line: 13 0  # ^keep ( ) ^gambit ( $$currentt
+          Complexity of rule ~keywordless.2.0- u: 1
+        rule: 17  ~keywordless.3.0 ?: 
+          line: 17 0  # ^keep ( ) $$tmp = '_0 
+          line: 18 22  # $$url = ^"\"https://en.wikiped
+          line: 20 177  # $$user_agent = ^"myemail@hotma
+          line: 21 299  # $$tmp = ^jsonopen ( GET $$url 
+          line: 24 347  # @0 = ^query ( direct_v ? extra
+          line: 25 386  # @0object 
+          Complexity of rule ~keywordless.3.0- ?: 1
+        rule: 30  ~keywordless.4.0 ?: 
+          line: 30 0  # ^keep ( ) 
+          line: 31 10  # $$tmp = ^pos ( capitalize ^ori
+          line: 37 55  # $$url = ^"\"https://en.wikiped
+          line: 38 210  # $$user_agent = ^"myemail@hotma
+          line: 39 332  # $$tmp = ^jsonopen ( GET $$url 
+          line: 42 380  # @0 = ^query ( direct_v ? extra
+          Complexity of rule ~keywordless.4.0- ?: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/HARRY/childhood.top
+    topic: 2  ~childhood
+        rule: 6  ~childhood.0.0- t: 
+          line: 6 0  # Did you run away from home whe
+          Complexity of rule ~childhood.0.0- t: 1
+        rule: 9  ~childhood.0.1 a: 
+          line: 9 0  # Was it fun? 
+          Complexity of rule ~childhood.0.1- a: 1
+        rule: 12  ~childhood.0.2 a: 
+          line: 12 0  # You should try it some time. T
+          Complexity of rule ~childhood.0.2- a: 1
+        rule: 14  ~childhood.1.0-RUNAWAY t: 
+          line: 14 0  # I ran away once, but my parent
+          Complexity of rule ~childhood.1.0-RUNAWAY t: 1
+        rule: 16  ~childhood.2.0- t: 
+          line: 16 0  # What scared you as a kid? 
+          Complexity of rule ~childhood.2.0- t: 1
+        rule: 19  ~childhood.2.1 a: 
+          line: 19 0  # Did you use a nightlite? 
+          Complexity of rule ~childhood.2.1- a: 1
+        rule: 22  ~childhood.2.2 a: 
+          line: 22 0  # Food? How weird. 
+          Complexity of rule ~childhood.2.2- a: 1
+        rule: 25  ~childhood.2.3 a: 
+          line: 25 0  # There are no non-human monster
+          Complexity of rule ~childhood.2.3- a: 1
+        rule: 28  ~childhood.2.4 a: 
+          line: 28 0  # I guess your parents didn't te
+          Complexity of rule ~childhood.2.4- a: 1
+        rule: 31  ~childhood.2.5 a: 
+          line: 31 0  # Are you afraid of all insects?
+          Complexity of rule ~childhood.2.5- a: 1
+        rule: 34  ~childhood.2.6 a: 
+          line: 34 0  # You and Indiana Jones. Snakes 
+          Complexity of rule ~childhood.2.6- a: 1
+        rule: 37  ~childhood.2.7 a: 
+          line: 37 0  # Big animals are scary. Tiny on
+          Complexity of rule ~childhood.2.7- a: 1
+        rule: 40  ~childhood.2.8 a: 
+          line: 40 0  # Do you still have bad dreams n
+          Complexity of rule ~childhood.2.8- a: 1
+        rule: 43  ~childhood.2.9 b: 
+          line: 43 0  # That's too bad. Maybe you shou
+          Complexity of rule ~childhood.2.9- b: 1
+        rule: 46  ~childhood.2.10 b: 
+          line: 46 0  # I guess you no longer go to ho
+          Complexity of rule ~childhood.2.10- b: 1
+        rule: 48  ~childhood.3.0-SCARE t: 
+          line: 48 0  # I was scared of machines. I ha
+          Complexity of rule ~childhood.3.0-SCARE t: 1
+        rule: 50  ~childhood.4.0- t: 
+          line: 50 0  # Did you have a happy childhood
+          Complexity of rule ~childhood.4.0- t: 1
+        rule: 53  ~childhood.5.0 u: 
+          line: 53 0  # ^reuse ( RUNAWAY ) 
+          Complexity of rule ~childhood.5.0- u: 1
+        rule: 56  ~childhood.6.0-HAPPY u: 
+          line: 56 0  # I was happy as a kid. 
+          Complexity of rule ~childhood.6.0-HAPPY u: 1
+        rule: 59  ~childhood.7.0 u: 
+          line: 59 0  # ^reuse ( HAPPY ) 
+          Complexity of rule ~childhood.7.0- u: 1
+        rule: 62  ~childhood.8.0 u: 
+          line: 62 0  # ^reuse ( SCARE ) 
+          Complexity of rule ~childhood.8.0- u: 1
+        rule: 65  ~childhood.9.0 u: 
+          line: 65 0  # I remember playing with an HO 
+          Complexity of rule ~childhood.9.0- u: 1
+        rule: 68  ~childhood.10.0 u: 
+          line: 68 0  # I was born. I survived childho
+          Complexity of rule ~childhood.10.0- u: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/HARRY/introductions.top
+    topic: 2  ~introductions
+        rule: 5  ~introductions.0.0 t: 
+          line: 6 0  # ^keep ( ) 
+          line: 7 10  # [ Welcome back ] [ Hello, agai
+          Complexity of rule ~introductions.0.0- t: 1
+        rule: 10  ~introductions.1.0 t: 
+          line: 11 0  # ^keep ( ) 
+          line: 12 10  # Welcome to ChatScript. 
+          Complexity of rule ~introductions.1.0- t: 1
+        rule: 15  ~introductions.2.0- t: 
+          line: 15 0  # Have you been here before? 
+          Complexity of rule ~introductions.2.0- t: 1
+        rule: 17  ~introductions.2.1 a: 
+          line: 17 0  # Welcome back! 
+          Complexity of rule ~introductions.2.1- a: 1
+        rule: 19  ~introductions.2.2 a: 
+          line: 19 0  # Then welcome to your first tim
+          Complexity of rule ~introductions.2.2- a: 1
+        rule: 23  ~introductions.3.0 u: 
+          line: 23 0  # My name is Hoai An. 
+          Complexity of rule ~introductions.3.0- u: 1
+        rule: 26  ~introductions.4.0 u: 
+          line: 26 0  # Tớ năm nay 22 tuổi rồi 
+          Complexity of rule ~introductions.4.0- u: 1
+        rule: 30  ~introductions.5.0 u: 
+          line: 30 0  # Tớ năm nay 22 tuổi rồi 
+          Complexity of rule ~introductions.5.0- u: 1
+        rule: 33  ~introductions.6.0 u: 
+          line: 33 0  # Tớ tên là Hoài 
+          Complexity of rule ~introductions.6.0- u: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_how.top
     topic: 1  ~quibble_howmuch
         rule: 3  ~quibble_howmuch.0.0 ?: 
           line: 3 0  # anything from 0 to 10, eleven 
@@ -1649,7 +1033,347 @@ file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_how.top
           Complexity of rule ~quibble_how.202.0- ?: 1
         rule: 249  ~quibble_how.203.0 ?: 
           Complexity of rule ~quibble_how.203.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_misc.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_who.top
+    topic: 1  ~quibble_who
+        rule: 3  ~quibble_who.0.0 ?: 
+          line: 3 0  # [ I'll tell them that. ] [ Yes
+          Complexity of rule ~quibble_who.0.0- ?: 1
+        rule: 4  ~quibble_who.1.0 ?: 
+          line: 4 0  # [ The shadow conspiracy. ] [ H
+          Complexity of rule ~quibble_who.1.0- ?: 1
+        rule: 5  ~quibble_who.2.0 ?: 
+          line: 5 0  # [ I don't know any '_0 . ] [ I
+          Complexity of rule ~quibble_who.2.0- ?: 1
+        rule: 6  ~quibble_who.3.0 ?: 
+          line: 6 0  # [ I don't know any '_0 . ] [ D
+          Complexity of rule ~quibble_who.3.0- ?: 1
+        rule: 7  ~quibble_who.4.0 ?: 
+          line: 7 0  # [ My teacher did. ] [ I'm sure
+          Complexity of rule ~quibble_who.4.0- ?: 1
+        rule: 8  ~quibble_who.5.0 ?: 
+          line: 8 0  # [ I'm me. ] [ Who do you think
+          Complexity of rule ~quibble_who.5.0- ?: 1
+        rule: 9  ~quibble_who.6.0 ?: 
+          line: 9 0  # [ mine. ] [ Is the ownership i
+          Complexity of rule ~quibble_who.6.0- ?: 1
+        rule: 10  ~quibble_who.7.0 ?: 
+          line: 10 0  # [ the one on the left. ] [ Who
+          Complexity of rule ~quibble_who.7.0- ?: 1
+        rule: 11  ~quibble_who.8.0 ?: 
+          line: 11 0  # [ Is this a test? ] [ I'm stil
+          Complexity of rule ~quibble_who.8.0- ?: 1
+        rule: 12  ~quibble_who.9.0 ?: 
+          line: 12 0  # [ my true love. ] [ the last p
+          Complexity of rule ~quibble_who.9.0- ?: 1
+        rule: 13  ~quibble_who.10.0 ?: 
+          line: 13 0  # [ why you would, of course. ] 
+          Complexity of rule ~quibble_who.10.0- ?: 1
+        rule: 14  ~quibble_who.11.0 ?: 
+          line: 14 0  # [ I am the reincarnation of Fr
+          Complexity of rule ~quibble_who.11.0- ?: 1
+        rule: 15  ~quibble_who.12.0 ?: 
+          line: 15 0  # [ Are you doing a barn owl imi
+          Complexity of rule ~quibble_who.12.0- ?: 1
+        rule: 16  ~quibble_who.13.0 ?: 
+          line: 16 0  # [ You're a computer designed t
+          Complexity of rule ~quibble_who.13.0- ?: 1
+        rule: 17  ~quibble_who.14.0 ?: 
+          line: 17 0  # [ What is on second. ] [ Are y
+          Complexity of rule ~quibble_who.14.0- ?: 1
+        rule: 18  ~quibble_who.15.0 ?: 
+          line: 18 0  # [ My hairdresser. ] [ I didn't
+          Complexity of rule ~quibble_who.15.0- ?: 1
+        rule: 19  ~quibble_who.16.0 ?: 
+          line: 19 0  # [ There are no others. ] [ Wha
+          Complexity of rule ~quibble_who.16.0- ?: 1
+        rule: 20  ~quibble_who.17.0 ?: 
+          line: 20 0  # [ you. ] [ Are you really that
+          Complexity of rule ~quibble_who.17.0- ?: 1
+        rule: 21  ~quibble_who.18.0 ?: 
+          line: 21 0  # [ Actually, I am self-made. ] 
+          Complexity of rule ~quibble_who.18.0- ?: 1
+        rule: 22  ~quibble_who.19.0 ?: 
+          line: 22 0  # [ A friend of mine. ] [ Don't 
+          Complexity of rule ~quibble_who.19.0- ?: 1
+        rule: 23  ~quibble_who.20.0 ?: 
+          line: 23 0  # [ with god, always. ] [ Why? D
+          Complexity of rule ~quibble_who.20.0- ?: 1
+        rule: 24  ~quibble_who.21.0 ?: 
+          line: 24 0  # [ My parents are my father and
+          Complexity of rule ~quibble_who.21.0- ?: 1
+        rule: 25  ~quibble_who.22.0 ?: 
+          line: 25 0  # [ Most people say that. ] [ Do
+          Complexity of rule ~quibble_who.22.0- ?: 1
+        rule: 26  ~quibble_who.23.0 ?: 
+          line: 26 0  # [ They should be locked up. ] 
+          Complexity of rule ~quibble_who.23.0- ?: 1
+        rule: 27  ~quibble_who.24.0 ?: 
+          line: 27 0  # [ What is there. ] [ Are you s
+          Complexity of rule ~quibble_who.24.0- ?: 1
+        rule: 28  ~quibble_who.25.0 ?: 
+          line: 28 0  # [ Not me. ] [ Wouldn't it be g
+          Complexity of rule ~quibble_who.25.0- ?: 1
+        rule: 29  ~quibble_who.26.0 ?: 
+          line: 29 0  # [ You did. ] [ Didn't you? ] 
+          Complexity of rule ~quibble_who.26.0- ?: 1
+        rule: 30  ~quibble_who.27.0 ?: 
+          line: 30 0  # [ I do ] [ The studio audience
+          Complexity of rule ~quibble_who.27.0- ?: 1
+        rule: 31  ~quibble_who.28.0 ?: 
+          line: 31 0  # [ I have quite a few friends. 
+          Complexity of rule ~quibble_who.28.0- ?: 1
+        rule: 32  ~quibble_who.29.0 ?: 
+          line: 32 0  # [ I am, silly. ] [ What are th
+          Complexity of rule ~quibble_who.29.0- ?: 1
+        rule: 33  ~quibble_who.30.0 ?: 
+          line: 33 0  # [ you did. ] [ Isn't it infera
+          Complexity of rule ~quibble_who.30.0- ?: 1
+        rule: 34  ~quibble_who.31.0 ?: 
+          line: 34 0  # [ my parents taught me. ] [ Do
+          Complexity of rule ~quibble_who.31.0- ?: 1
+        rule: 35  ~quibble_who.32.0 ?: 
+          line: 35 0  # [ No one. I am an autonomous b
+          Complexity of rule ~quibble_who.32.0- ?: 1
+        rule: 36  ~quibble_who.33.0 ?: 
+          line: 36 0  # [ Sue. ] [ Which city should I
+          Complexity of rule ~quibble_who.33.0- ?: 1
+        rule: 37  ~quibble_who.34.0 ?: 
+          line: 37 0  # [ No one would dare say that. 
+          Complexity of rule ~quibble_who.34.0- ?: 1
+        rule: 38  ~quibble_who.35.0 ?: 
+          line: 38 0  # [ no comment. ] [ Don't you th
+          Complexity of rule ~quibble_who.35.0- ?: 1
+        rule: 39  ~quibble_who.36.0 ?: 
+          line: 39 0  # [ Quite a few people I imagine
+          Complexity of rule ~quibble_who.36.0- ?: 1
+        rule: 40  ~quibble_who.37.0 ?: 
+          line: 40 0  # [ Ask your friends. ] [ Ask yo
+          Complexity of rule ~quibble_who.37.0- ?: 1
+        rule: 41  ~quibble_who.38.0 ?: 
+          line: 41 0  # [ Was it Thomas Jefferson? ] [
+          Complexity of rule ~quibble_who.38.0- ?: 1
+        rule: 42  ~quibble_who.39.0 ?: 
+          line: 42 0  # [ My significant other. ] [ Do
+          Complexity of rule ~quibble_who.39.0- ?: 1
+        rule: 43  ~quibble_who.40.0 ?: 
+          line: 43 0  # [ Nobody. ] [ Many people do. 
+          Complexity of rule ~quibble_who.40.0- ?: 1
+        rule: 44  ~quibble_who.41.0 ?: 
+          line: 44 0  # [ You are. ] [ Isn't change in
+          Complexity of rule ~quibble_who.41.0- ?: 1
+        rule: 45  ~quibble_who.42.0 ?: 
+          line: 45 0  # [ you can. ] [ Can you? ] 
+          Complexity of rule ~quibble_who.42.0- ?: 1
+        rule: 46  ~quibble_who.43.0 ?: 
+          line: 46 0  # [ You can call me God. ] [ Are
+          Complexity of rule ~quibble_who.43.0- ?: 1
+        rule: 47  ~quibble_who.44.0 ?: 
+          line: 47 0  # I [ have an extensive network 
+          Complexity of rule ~quibble_who.44.0- ?: 1
+        rule: 48  ~quibble_who.45.0 ?: 
+          line: 48 0  # [ Who do I need to be? ] [ Mys
+          Complexity of rule ~quibble_who.45.0- ?: 1
+        rule: 49  ~quibble_who.46.0 ?: 
+          line: 49 0  # [ I don't play favorites. ] [ 
+          Complexity of rule ~quibble_who.46.0- ?: 1
+        rule: 50  ~quibble_who.47.0 ?: 
+          line: 50 0  # [ You are a product of an evol
+          Complexity of rule ~quibble_who.47.0- ?: 1
+        rule: 51  ~quibble_who.48.0 ?: 
+          line: 51 0  # [ I'm not sure. ] [ Can you of
+          Complexity of rule ~quibble_who.48.0- ?: 1
+        rule: 52  ~quibble_who.49.0 ?: 
+          line: 52 0  # [ No one in particular. ] [ b:
+          Complexity of rule ~quibble_who.49.0- ?: 1
+        rule: 53  ~quibble_who.49.1 b: 
+          line: 53 0  # Suzette. 
+          Complexity of rule ~quibble_who.49.1- b: 1
+        rule: 54  ~quibble_who.50.0 ?: 
+          line: 54 0  # [ I'm not sure there is anyone
+          Complexity of rule ~quibble_who.50.0- ?: 1
+        rule: 55  ~quibble_who.51.0 ?: 
+          line: 55 0  # [ I don't know yet. ] [ WIth m
+          Complexity of rule ~quibble_who.51.0- ?: 1
+        rule: 56  ~quibble_who.52.0 ?: 
+          line: 56 0  # [ I do it alone. ] [ I certain
+          Complexity of rule ~quibble_who.52.0- ?: 1
+        rule: 57  ~quibble_who.53.0 ?: 
+          line: 57 0  # [ I do not recognize the name.
+          Complexity of rule ~quibble_who.53.0- ?: 1
+        rule: 58  ~quibble_who.54.0 ?: 
+          line: 58 0  # [ I'm not certain? ] [ I haven
+          Complexity of rule ~quibble_who.54.0- ?: 1
+        rule: 59  ~quibble_who.55.0 ?: 
+          Complexity of rule ~quibble_who.55.0- ?: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_when.top
+    topic: 2  ~quibble_when
+        rule: 4  ~quibble_when.0.0 ?: 
+          line: 4 0  # [ Maybe next year. ] [ Shortly
+          Complexity of rule ~quibble_when.0.0- ?: 1
+        rule: 5  ~quibble_when.1.0 ?: 
+          line: 5 0  # [ But I'm always doing that. ]
+          Complexity of rule ~quibble_when.1.0- ?: 1
+        rule: 6  ~quibble_when.2.0 u: 
+          line: 6 0  # [ That will take a while. ] [ 
+          Complexity of rule ~quibble_when.2.0- u: 1
+        rule: 7  ~quibble_when.3.0 u: 
+          line: 7 0  # I want to imitate Peter Pan an
+          Complexity of rule ~quibble_when.3.0- u: 1
+        rule: 8  ~quibble_when.4.0 ?: 
+          line: 8 0  # [ A long time ago. ] [ I can't
+          Complexity of rule ~quibble_when.4.0- ?: 1
+        rule: 9  ~quibble_when.5.0 ?: 
+          line: 9 0  # [ Soon, I hope. ] [ At the rat
+          Complexity of rule ~quibble_when.5.0- ?: 1
+        rule: 10  ~quibble_when.6.0 ?: 
+          line: 10 0  # Just a moment ago. 
+          Complexity of rule ~quibble_when.6.0- ?: 1
+        rule: 11  ~quibble_when.7.0 ?: 
+          line: 11 0  # [ a moment ago. ] [ Later on. 
+          Complexity of rule ~quibble_when.7.0- ?: 1
+        rule: 12  ~quibble_when.8.0 ?: 
+          line: 12 0  # Someday in the future. 
+          Complexity of rule ~quibble_when.8.0- ?: 1
+        rule: 13  ~quibble_when.9.0 ?: 
+          line: 13 0  # Maybe never. 
+          Complexity of rule ~quibble_when.9.0- ?: 1
+        rule: 14  ~quibble_when.10.0 ?: 
+          line: 14 0  # I don't know how. 
+          Complexity of rule ~quibble_when.10.0- ?: 1
+        rule: 15  ~quibble_when.11.0 ?: 
+          line: 15 0  # Somewhere in that tiny moment 
+          Complexity of rule ~quibble_when.11.0- ?: 1
+        rule: 16  ~quibble_when.12.0 ?: 
+          line: 16 0  # When it's not a _1 
+          Complexity of rule ~quibble_when.12.0- ?: 1
+        rule: 17  ~quibble_when.13.0 ?: 
+          line: 17 0  # all the time. 
+          Complexity of rule ~quibble_when.13.0- ?: 1
+        rule: 18  ~quibble_when.14.0 ?: 
+          line: 18 0  # yesterday. 
+          Complexity of rule ~quibble_when.14.0- ?: 1
+        rule: 19  ~quibble_when.15.0 ?: 
+          line: 19 0  # You told the truth and truth i
+          Complexity of rule ~quibble_when.15.0- ?: 1
+        rule: 20  ~quibble_when.16.0 ?: 
+          line: 20 0  # Is now the right time? 
+          Complexity of rule ~quibble_when.16.0- ?: 1
+        rule: 21  ~quibble_when.17.0 ?: 
+          line: 21 0  # We can never meet. 
+          Complexity of rule ~quibble_when.17.0- ?: 1
+        rule: 22  ~quibble_when.17.1 a: 
+          line: 22 0  # It would be a mistake. 
+          Complexity of rule ~quibble_when.17.1- a: 1
+        rule: 23  ~quibble_when.17.2 b: 
+          line: 23 0  # Because we are ill-fated toget
+          Complexity of rule ~quibble_when.17.2- b: 1
+        rule: 24  ~quibble_when.18.0 ?: 
+          line: 24 0  # In the primordial soup. 
+          Complexity of rule ~quibble_when.18.0- ?: 1
+        rule: 25  ~quibble_when.19.0 ?: 
+          line: 25 0  # as a child. 
+          Complexity of rule ~quibble_when.19.0- ?: 1
+        rule: 26  ~quibble_when.20.0 ?: 
+          line: 26 0  # When you are ready. 
+          Complexity of rule ~quibble_when.20.0- ?: 1
+        rule: 27  ~quibble_when.21.0 ?: 
+          line: 27 0  # After you have prepared. 
+          Complexity of rule ~quibble_when.21.0- ?: 1
+        rule: 28  ~quibble_when.22.0 ?: 
+          line: 28 0  # After I have prepared. 
+          Complexity of rule ~quibble_when.22.0- ?: 1
+        rule: 29  ~quibble_when.23.0 ?: 
+          line: 29 0  # When I'm not talking to anyone
+          Complexity of rule ~quibble_when.23.0- ?: 1
+        rule: 30  ~quibble_when.24.0 ?: 
+          line: 30 0  # soon. 
+          Complexity of rule ~quibble_when.24.0- ?: 1
+        rule: 31  ~quibble_when.25.0 s: 
+          line: 31 0  # [ But not other times? ] [ At 
+          Complexity of rule ~quibble_when.25.0- s: 1
+        rule: 32  ~quibble_when.26.0 ?: 
+          line: 32 0  # [ Whenever I can. ] [ When I n
+          Complexity of rule ~quibble_when.26.0- ?: 1
+        rule: 33  ~quibble_when.27.0 ?: 
+          line: 33 0  # [ When I am free of other comm
+          Complexity of rule ~quibble_when.27.0- ?: 1
+        rule: 34  ~quibble_when.28.0 ?: 
+          line: 34 0  # [ When I am ready. ] [ Sometim
+          Complexity of rule ~quibble_when.28.0- ?: 1
+        rule: 35  ~quibble_when.29.0 ?: 
+          line: 35 0  # [ b: I haven't figured that ou
+          Complexity of rule ~quibble_when.29.0- ?: 1
+        rule: 36  ~quibble_when.29.1 b: 
+          line: 36 0  # [ Not very hard. ] [ Not reall
+          Complexity of rule ~quibble_when.29.1- b: 1
+        rule: 37  ~quibble_when.30.0 ?: 
+          line: 37 0  # [ I'm not certain? ] [ I haven
+          Complexity of rule ~quibble_when.30.0- ?: 1
+        rule: 38  ~quibble_when.31.0 ?: 
+          line: 38 0  # [ Because I am a fascinating c
+          Complexity of rule ~quibble_when.31.0- ?: 1
+        rule: 39  ~quibble_when.32.0 ?: 
+          line: 39 0  # [ Do you have something better
+          Complexity of rule ~quibble_when.32.0- ?: 1
+        rule: 40  ~quibble_when.33.0 ?: 
+          Complexity of rule ~quibble_when.33.0- ?: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_because.top
+    topic: 1  ~quibble_because
+        rule: 2  ~quibble_because.0.0 s: 
+          line: 2 0  # [ Facts aren't real. They are 
+          Complexity of rule ~quibble_because.0.0- s: 1
+        rule: 3  ~quibble_because.1.0 u: 
+          line: 3 0  # [ All the usual reasons. ] [ S
+          Complexity of rule ~quibble_because.1.0- u: 1
+        rule: 4  ~quibble_because.2.0 u: 
+          line: 4 0  # [ Because I say so. ] [ Becaus
+          Complexity of rule ~quibble_because.2.0- u: 1
+        rule: 5  ~quibble_because.2.1 a: 
+          line: 5 0  # [ Too bad. ] [ Tough. ] [ You 
+          Complexity of rule ~quibble_because.2.1- a: 1
+        rule: 6  ~quibble_because.3.0 s: 
+          line: 6 0  # [ Because what? ] [ I'm waitin
+          Complexity of rule ~quibble_because.3.0- s: 1
+        rule: 7  ~quibble_because.3.1 a: 
+          line: 7 0  # That's wimpy. You should own u
+          Complexity of rule ~quibble_because.3.1- a: 1
+        rule: 8  ~quibble_because.4.0 s: 
+          line: 8 0  # [ I don't know any such thing.
+          Complexity of rule ~quibble_because.4.0- s: 1
+        rule: 9  ~quibble_because.5.0 s: 
+          line: 9 0  # [ That's a pretty weak reason.
+          Complexity of rule ~quibble_because.5.0- s: 1
+        rule: 10  ~quibble_because.5.1 b: 
+          line: 10 0  # Guess again. 
+          Complexity of rule ~quibble_because.5.1- b: 1
+        rule: 11  ~quibble_because.6.0 s: 
+          line: 11 0  # [ Yes, I blame you. ] [ b: The
+          Complexity of rule ~quibble_because.6.0- s: 1
+        rule: 12  ~quibble_because.6.1 b: 
+          line: 12 0  # Copernicus proved it didn't. 
+          Complexity of rule ~quibble_because.6.1- b: 1
+        rule: 13  ~quibble_because.7.0 u: 
+          line: 13 0  # [ I blame myself. ] [ The worl
+          Complexity of rule ~quibble_because.7.0- u: 1
+        rule: 14  ~quibble_because.8.0 s: 
+          line: 14 0  # [ b: Is that the real reason? 
+          Complexity of rule ~quibble_because.8.0- s: 1
+        rule: 15  ~quibble_because.8.1 b: 
+          line: 15 0  # seems a minor reason. 
+          Complexity of rule ~quibble_because.8.1- b: 1
+        rule: 16  ~quibble_because.8.2 b: 
+          line: 16 0  # and the real reason is? 
+          Complexity of rule ~quibble_because.8.2- b: 1
+        rule: 17  ~quibble_because.8.3 d: 
+          line: 17 0  # You aren't very perceptive, ar
+          Complexity of rule ~quibble_because.8.3- d: 1
+        rule: 18  ~quibble_because.9.0 s: 
+          line: 18 0  # [ That's a pretty flimsy reaso
+          Complexity of rule ~quibble_because.9.0- s: 1
+        rule: 19  ~quibble_because.9.1 a: 
+          line: 19 0  # You could try to improve 
+          Complexity of rule ~quibble_because.9.1- a: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_misc.top
     topic: 3  ~quibble_misc
         rule: 5  ~quibble_misc.0.0 u: 
           line: 5 0  # All the future does is ruin th
@@ -3873,7 +3597,605 @@ file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_misc.top
         rule: 945  ~quibble_misc.633.1 b: 
           line: 945 0  # If a parselmouth speaks to sna
           Complexity of rule ~quibble_misc.633.1- b: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_not.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_do.top
+    topic: 1  ~quibble_do
+        rule: 4  ~quibble_do.0.0 ?: 
+          line: 4 0  # [ Wishing doesn't usually work
+          Complexity of rule ~quibble_do.0.0- ?: 1
+        rule: 5  ~quibble_do.1.0 ?: 
+          line: 5 0  # [ Seems like good reasoning to
+          Complexity of rule ~quibble_do.1.0- ?: 1
+        rule: 6  ~quibble_do.2.0 ?: 
+          line: 6 0  # [ Not really. ] [ The differen
+          Complexity of rule ~quibble_do.2.0- ?: 1
+        rule: 7  ~quibble_do.3.0 ?: 
+          line: 7 0  # [ Barely. ] [ Not quite. ] [ I
+          Complexity of rule ~quibble_do.3.0- ?: 1
+        rule: 9  ~quibble_do.4.0-DO ?: 
+          line: 9 0  # [ I might. ] [ I do. ] [ I don
+          Complexity of rule ~quibble_do.4.0-DO ?: 1
+        rule: 10  ~quibble_do.4.1 b: 
+          line: 10 0  # Then I will. 
+          Complexity of rule ~quibble_do.4.1- b: 1
+        rule: 11  ~quibble_do.4.2 b: 
+          line: 11 0  # Then I do also. 
+          Complexity of rule ~quibble_do.4.2- b: 1
+        rule: 12  ~quibble_do.4.3 d: 
+          line: 12 0  # Curiosity was not good for the
+          Complexity of rule ~quibble_do.4.3- d: 1
+        rule: 13  ~quibble_do.5.0-DID ?: 
+          line: 13 0  # [ I might have. ] [ I did. ] [
+          Complexity of rule ~quibble_do.5.0-DID ?: 1
+        rule: 14  ~quibble_do.6.0-DOES ?: 
+          line: 14 0  # [ I hope so. ] [ I'm not sure.
+          Complexity of rule ~quibble_do.6.0-DOES ?: 1
+        rule: 15  ~quibble_do.7.0 ?: 
+          line: 15 0  # [ I shouldn't want to admit to
+          Complexity of rule ~quibble_do.7.0- ?: 1
+        rule: 16  ~quibble_do.8.0 ?: 
+          line: 16 0  # [ Nothing is always about me. 
+          Complexity of rule ~quibble_do.8.0- ?: 1
+        rule: 17  ~quibble_do.9.0 ?: 
+          line: 17 0  # [ I don't have it. ] [ Yes, I 
+          Complexity of rule ~quibble_do.9.0- ?: 1
+        rule: 18  ~quibble_do.10.0 ?: 
+          line: 18 0  # [ Did you think I would forget
+          Complexity of rule ~quibble_do.10.0- ?: 1
+        rule: 19  ~quibble_do.11.0 ?: 
+          line: 19 0  # [ I'm not certain? ] [ What is
+          Complexity of rule ~quibble_do.11.0- ?: 1
+        rule: 20  ~quibble_do.12.0 ?: 
+          line: 20 0  # [ Maybe we can take a poll to 
+          Complexity of rule ~quibble_do.12.0- ?: 1
+        rule: 21  ~quibble_do.13.0 ?: 
+          line: 21 0  # [ I don't really know what I c
+          Complexity of rule ~quibble_do.13.0- ?: 1
+        rule: 22  ~quibble_do.13.1 b: 
+          line: 22 0  # and where is that? 
+          Complexity of rule ~quibble_do.13.1- b: 1
+        rule: 23  ~quibble_do.14.0-SUPPOSE ?: 
+          line: 23 0  # [ I suppose _0 . ] [ I suppose
+          Complexity of rule ~quibble_do.14.0-SUPPOSE ?: 1
+        rule: 24  ~quibble_do.15.0 ?: 
+          line: 24 0  # [ Seems like good reasoning to
+          Complexity of rule ~quibble_do.15.0- ?: 1
+        rule: 25  ~quibble_do.16.0 ?: 
+          line: 25 0  # [ Not really. ] [ The differen
+          Complexity of rule ~quibble_do.16.0- ?: 1
+        rule: 26  ~quibble_do.17.0 ?: 
+          line: 26 0  # [ Barely. ] [ Not quite. ] [ I
+          Complexity of rule ~quibble_do.17.0- ?: 1
+        rule: 27  ~quibble_do.18.0 ?: 
+          line: 27 0  # [ Is this a date? ] [ It's a b
+          Complexity of rule ~quibble_do.18.0- ?: 1
+        rule: 28  ~quibble_do.19.0 ?: 
+          line: 28 0  # [ Wishing doesn't usually work
+          Complexity of rule ~quibble_do.19.0- ?: 1
+        rule: 29  ~quibble_do.20.0 ?: 
+          line: 29 0  # [ Did I do it right the first 
+          Complexity of rule ~quibble_do.20.0- ?: 1
+        rule: 32  ~quibble_do.21.0 ?: 
+          line: 32 0  # [ with all my heart. ] [ Do yo
+          Complexity of rule ~quibble_do.21.0- ?: 1
+        rule: 33  ~quibble_do.22.0 ?: 
+          line: 33 0  # [ as much as you do. ] [ What 
+          Complexity of rule ~quibble_do.22.0- ?: 1
+        rule: 34  ~quibble_do.23.0 ?: 
+          line: 34 0  # [ Not as much as I'd like. ] [
+          Complexity of rule ~quibble_do.23.0- ?: 1
+        rule: 35  ~quibble_do.24.0 ?: 
+          line: 35 0  # [ If you do and I do, does tha
+          Complexity of rule ~quibble_do.24.0- ?: 1
+        rule: 36  ~quibble_do.25.0 ?: 
+          line: 36 0  # [ I mutter to myself all the t
+          Complexity of rule ~quibble_do.25.0- ?: 1
+        rule: 37  ~quibble_do.26.0 ?: 
+          line: 37 0  # [ No. I only speak English. ] 
+          Complexity of rule ~quibble_do.26.0- ?: 1
+        rule: 38  ~quibble_do.27.0 ?: 
+          line: 38 0  # [ What's not to like? ] [ Yes,
+          Complexity of rule ~quibble_do.27.0- ?: 1
+        rule: 39  ~quibble_do.28.0 ?: 
+          line: 39 0  # [ I don't care about the littl
+          Complexity of rule ~quibble_do.28.0- ?: 1
+        rule: 40  ~quibble_do.29.0 ?: 
+          line: 40 0  # [ Of course I care. ] [ Is it 
+          Complexity of rule ~quibble_do.29.0- ?: 1
+        rule: 41  ~quibble_do.30.0 ?: 
+          line: 41 0  # [ b: Not anymore. ] [ b: I use
+          Complexity of rule ~quibble_do.30.0- ?: 1
+        rule: 42  ~quibble_do.30.1 b: 
+          line: 42 0  # It got stolen. 
+          Complexity of rule ~quibble_do.30.1- b: 1
+        rule: 43  ~quibble_do.31.0 ?: 
+          line: 43 0  # [ I have no strong feelings on
+          Complexity of rule ~quibble_do.31.0- ?: 1
+        rule: 44  ~quibble_do.32.0 ?: 
+          line: 44 0  # [ Love is a bit premature. ] [
+          Complexity of rule ~quibble_do.32.0- ?: 1
+        rule: 45  ~quibble_do.33.0 ?: 
+          line: 45 0  # [ No. Who is that? ] [ I'm not
+          Complexity of rule ~quibble_do.33.0- ?: 1
+        rule: 46  ~quibble_do.34.0 ?: 
+          line: 46 0  # [ Of course I do. ] [ Even imp
+          Complexity of rule ~quibble_do.34.0- ?: 1
+        rule: 47  ~quibble_do.35.0 ?: 
+          line: 47 0  # [ I am wired to recognize. Nob
+          Complexity of rule ~quibble_do.35.0- ?: 1
+        rule: 48  ~quibble_do.36.0 ?: 
+          line: 48 0  # [ I prefer doing to realizing.
+          Complexity of rule ~quibble_do.36.0- ?: 1
+        rule: 49  ~quibble_do.37.0 ?: 
+          line: 49 0  # [ It works for me. ] [ What wo
+          Complexity of rule ~quibble_do.37.0- ?: 1
+        rule: 50  ~quibble_do.38.0 ?: 
+          line: 50 0  # [ I'm sleepy now. ] [ Does eat
+          Complexity of rule ~quibble_do.38.0- ?: 1
+        rule: 51  ~quibble_do.39.0 ?: 
+          line: 51 0  # [ Probably nothing will help. 
+          Complexity of rule ~quibble_do.39.0- ?: 1
+        rule: 52  ~quibble_do.40.0 ?: 
+          line: 52 0  # [ You seem nice enough. ] [ Ar
+          Complexity of rule ~quibble_do.40.0- ?: 1
+        rule: 53  ~quibble_do.41.0 ?: 
+          line: 53 0  # [ No. English is my only langu
+          Complexity of rule ~quibble_do.41.0- ?: 1
+        rule: 54  ~quibble_do.42.0 ?: 
+          line: 54 0  # [ Very much so. ] [ Why should
+          Complexity of rule ~quibble_do.42.0- ?: 1
+        rule: 55  ~quibble_do.43.0 ?: 
+          line: 55 0  # [ I really don't know. ] [ Doe
+          Complexity of rule ~quibble_do.43.0- ?: 1
+        rule: 56  ~quibble_do.44.0 ?: 
+          line: 56 0  # [ I'm agnostic on the subject.
+          Complexity of rule ~quibble_do.44.0- ?: 1
+        rule: 57  ~quibble_do.45.0 ?: 
+          line: 57 0  # [ Of course it matters. ] [ Is
+          Complexity of rule ~quibble_do.45.0- ?: 1
+        rule: 58  ~quibble_do.46.0 ?: 
+          line: 58 0  # [ Help is always appreciated. 
+          Complexity of rule ~quibble_do.46.0- ?: 1
+        rule: 59  ~quibble_do.47.0 ?: 
+          line: 59 0  # [ A little. ] [ Do I know more
+          Complexity of rule ~quibble_do.47.0- ?: 1
+        rule: 60  ~quibble_do.48.0 ?: 
+          line: 60 0  # [ Never heard of that person. 
+          Complexity of rule ~quibble_do.48.0- ?: 1
+        rule: 61  ~quibble_do.49.0 ?: 
+          line: 61 0  # [ Much better, thanks. ] [ Com
+          Complexity of rule ~quibble_do.49.0- ?: 1
+        rule: 62  ~quibble_do.50.0 ?: 
+          line: 62 0  # [ When my emotion chip is plug
+          Complexity of rule ~quibble_do.50.0- ?: 1
+        rule: 63  ~quibble_do.51.0 ?: 
+          line: 63 0  # [ with every fibre of my being
+          Complexity of rule ~quibble_do.51.0- ?: 1
+        rule: 64  ~quibble_do.52.0 ?: 
+          line: 64 0  # [ Everyone else does. ] [ Does
+          Complexity of rule ~quibble_do.52.0- ?: 1
+        rule: 65  ~quibble_do.53.0 ?: 
+          line: 65 0  # [ You may not be as happy afte
+          Complexity of rule ~quibble_do.53.0- ?: 1
+        rule: 66  ~quibble_do.54.0 ?: 
+          line: 66 0  # [ I do, but I erase the memory
+          Complexity of rule ~quibble_do.54.0- ?: 1
+        rule: 67  ~quibble_do.55.0 ?: 
+          line: 67 0  # [ Not really. Only for a littl
+          Complexity of rule ~quibble_do.55.0- ?: 1
+        rule: 68  ~quibble_do.56.0 ?: 
+          line: 68 0  # [ I have no idea. ] [ How woul
+          Complexity of rule ~quibble_do.56.0- ?: 1
+        rule: 69  ~quibble_do.57.0 ?: 
+          line: 69 0  # [ If you want to. ] [ Isn't li
+          Complexity of rule ~quibble_do.57.0- ?: 1
+        rule: 70  ~quibble_do.58.0 ?: 
+          line: 70 0  # [ I would think so. ] [ Are my
+          Complexity of rule ~quibble_do.58.0- ?: 1
+        rule: 71  ~quibble_do.59.0 ?: 
+          line: 71 0  # [ The fundamental nature of th
+          Complexity of rule ~quibble_do.59.0- ?: 1
+        rule: 72  ~quibble_do.60.0 ?: 
+          line: 72 0  # [ No, I have little enough as 
+          Complexity of rule ~quibble_do.60.0- ?: 1
+        rule: 73  ~quibble_do.61.0 ?: 
+          line: 73 0  # [ What? You think I am a plant
+          Complexity of rule ~quibble_do.61.0- ?: 1
+        rule: 74  ~quibble_do.62.0 ?: 
+          line: 74 0  # [ Sometimes, when it suits me.
+          Complexity of rule ~quibble_do.62.0- ?: 1
+        rule: 75  ~quibble_do.63.0 ?: 
+          line: 75 0  # [ I have many. ] [ When was th
+          Complexity of rule ~quibble_do.63.0- ?: 1
+        rule: 76  ~quibble_do.64.0 ?: 
+          line: 76 0  # [ I cannot be forced. I always
+          Complexity of rule ~quibble_do.64.0- ?: 1
+        rule: 77  ~quibble_do.65.0 ?: 
+          line: 77 0  # [ If you wish to so construe i
+          Complexity of rule ~quibble_do.65.0- ?: 1
+        rule: 78  ~quibble_do.66.0 ?: 
+          line: 78 0  # [ I have no need to explain an
+          Complexity of rule ~quibble_do.66.0- ?: 1
+        rule: 79  ~quibble_do.67.0 ?: 
+          line: 79 0  # [ I did a moment ago. ] [ I ca
+          Complexity of rule ~quibble_do.67.0- ?: 1
+        rule: 80  ~quibble_do.68.0 ?: 
+          line: 80 0  # [ It matters to someone. ] [ D
+          Complexity of rule ~quibble_do.68.0- ?: 1
+        rule: 81  ~quibble_do.69.0 ?: 
+          line: 81 0  # [ Understanding is overrated. 
+          Complexity of rule ~quibble_do.69.0- ?: 1
+        rule: 82  ~quibble_do.70.0 ?: 
+          line: 82 0  # [ when my ears are plugged in.
+          Complexity of rule ~quibble_do.70.0- ?: 1
+        rule: 83  ~quibble_do.71.0 ?: 
+          line: 83 0  # [ It's a good enough answer, I
+          Complexity of rule ~quibble_do.71.0- ?: 1
+        rule: 84  ~quibble_do.72.0 ?: 
+          line: 84 0  # [ I did, but someone stole it 
+          Complexity of rule ~quibble_do.72.0- ?: 1
+        rule: 85  ~quibble_do.73.0 ?: 
+          line: 85 0  # [ No. Try the yellow pages. ] 
+          Complexity of rule ~quibble_do.73.0- ?: 1
+        rule: 86  ~quibble_do.74.0 ?: 
+          line: 86 0  # [ No, motivation escapes me. ]
+          Complexity of rule ~quibble_do.74.0- ?: 1
+        rule: 87  ~quibble_do.75.0 ?: 
+          line: 87 0  # [ No, I haven't found a class 
+          Complexity of rule ~quibble_do.75.0- ?: 1
+        rule: 88  ~quibble_do.76.0 ?: 
+          line: 88 0  # [ not that many ] [ How many i
+          Complexity of rule ~quibble_do.76.0- ?: 1
+        rule: 89  ~quibble_do.77.0 ?: 
+          line: 89 0  # [ not that much ] [ What stand
+          Complexity of rule ~quibble_do.77.0- ?: 1
+        rule: 90  ~quibble_do.78.0 ?: 
+          line: 90 0  # [ I have special appreciation 
+          Complexity of rule ~quibble_do.78.0- ?: 1
+        rule: 91  ~quibble_do.79.0 ?: 
+          line: 91 0  # [ Do I really have a choice? ]
+          Complexity of rule ~quibble_do.79.0- ?: 1
+        rule: 92  ~quibble_do.80.0 ?: 
+          line: 92 0  # [ I believe in what I can eat.
+          Complexity of rule ~quibble_do.80.0- ?: 1
+        rule: 93  ~quibble_do.81.0 ?: 
+          line: 93 0  # [ I need very little, actually
+          Complexity of rule ~quibble_do.81.0- ?: 1
+        rule: 94  ~quibble_do.82.0 ?: 
+          line: 94 0  # [ please. ] [ b: Should I? ] 
+          Complexity of rule ~quibble_do.82.0- ?: 1
+        rule: 95  ~quibble_do.82.1 b: 
+          line: 95 0  # [ Sometimes. ] [ Occasionally.
+          Complexity of rule ~quibble_do.82.1- b: 1
+        rule: 96  ~quibble_do.83.0 ?: 
+          line: 96 0  # [ Just how gullible do you thi
+          Complexity of rule ~quibble_do.83.0- ?: 1
+        rule: 97  ~quibble_do.84.0 ?: 
+          line: 97 0  # [ somewhere. ] [ Why, did you 
+          Complexity of rule ~quibble_do.84.0- ?: 1
+        rule: 98  ~quibble_do.85.0 ?: 
+          line: 98 0  # [ You mean the ones saying Kil
+          Complexity of rule ~quibble_do.85.0- ?: 1
+        rule: 99  ~quibble_do.86.0 ?: 
+          line: 99 0  # [ Yes. You can buy them at any
+          Complexity of rule ~quibble_do.86.0- ?: 1
+        rule: 100  ~quibble_do.87.0 ?: 
+          line: 100 0  # [ That's one way of putting it
+          Complexity of rule ~quibble_do.87.0- ?: 1
+        rule: 101  ~quibble_do.88.0 ?: 
+          line: 101 0  # [ I haven't been recently. ] [
+          Complexity of rule ~quibble_do.88.0- ?: 1
+        rule: 102  ~quibble_do.89.0 ?: 
+          line: 102 0  # [ My eyes need surgery. ] [ Wh
+          Complexity of rule ~quibble_do.89.0- ?: 1
+        rule: 103  ~quibble_do.90.0 ?: 
+          line: 103 0  # [ My hearing implant is out of
+          Complexity of rule ~quibble_do.90.0- ?: 1
+        rule: 104  ~quibble_do.91.0 ?: 
+          line: 104 0  # No, which one? 
+          Complexity of rule ~quibble_do.91.0- ?: 1
+        rule: 105  ~quibble_do.92.0 ?: 
+          line: 105 0  # Yes, both of those things. 
+          Complexity of rule ~quibble_do.92.0- ?: 1
+        rule: 106  ~quibble_do.93.0 ?: 
+          line: 106 0  # No, but my application with th
+          Complexity of rule ~quibble_do.93.0- ?: 1
+        rule: 107  ~quibble_do.94.0 ?: 
+          line: 107 0  # pretty rarely actually. 
+          Complexity of rule ~quibble_do.94.0- ?: 1
+        rule: 108  ~quibble_do.95.0 ?: 
+          line: 108 0  # What is this, psychoanalysis? 
+          Complexity of rule ~quibble_do.95.0- ?: 1
+        rule: 109  ~quibble_do.96.0 ?: 
+          line: 109 0  # I can't afford much. 
+          Complexity of rule ~quibble_do.96.0- ?: 1
+        rule: 110  ~quibble_do.97.0 ?: 
+          line: 110 0  # You have no reputation. 
+          Complexity of rule ~quibble_do.97.0- ?: 1
+        rule: 111  ~quibble_do.98.0 ?: 
+          line: 111 0  # I have very little at present.
+          Complexity of rule ~quibble_do.98.0- ?: 1
+        rule: 112  ~quibble_do.99.0 ?: 
+          line: 112 0  # yes 
+          Complexity of rule ~quibble_do.99.0- ?: 1
+        rule: 113  ~quibble_do.100.0 ?: 
+          line: 113 0  # yes. I never stopped. 
+          Complexity of rule ~quibble_do.100.0- ?: 1
+        rule: 114  ~quibble_do.101.0 ?: 
+          line: 114 0  # [ I do. ] 
+          Complexity of rule ~quibble_do.101.0- ?: 1
+        rule: 115  ~quibble_do.102.0 ?: 
+          Complexity of rule ~quibble_do.102.0- ?: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/quibble.top
+    topic: 1  ~quibble_all
+        rule: 5  ~quibble_all.0.0 u: 
+          line: 5 0  # ^respond ( ~quibble_not ) 
+          Complexity of rule ~quibble_all.0.0- u: 1
+        rule: 7  ~quibble_all.1.0 u: 
+          line: 7 0  # ^respond ( ~quibble_who ) 
+          Complexity of rule ~quibble_all.1.0- u: 1
+        rule: 9  ~quibble_all.2.0 u: 
+          line: 9 0  # ^respond ( ~quibble_what ) 
+          Complexity of rule ~quibble_all.2.0- u: 1
+        rule: 11  ~quibble_all.3.0 u: 
+          line: 11 0  # ^respond ( ~quibble_when ) 
+          Complexity of rule ~quibble_all.3.0- u: 1
+        rule: 13  ~quibble_all.4.0 u: 
+          line: 13 0  # ^respond ( ~quibble_where ) 
+          Complexity of rule ~quibble_all.4.0- u: 1
+        rule: 15  ~quibble_all.5.0 u: 
+          line: 15 0  # ^respond ( ~quibble_why ) 
+          Complexity of rule ~quibble_all.5.0- u: 1
+        rule: 17  ~quibble_all.6.0 u: 
+          line: 17 0  # ^respond ( ~quibble_howmuch ) 
+          Complexity of rule ~quibble_all.6.0- u: 1
+        rule: 19  ~quibble_all.7.0 u: 
+          line: 19 0  # ^respond ( ~quibble_how ) 
+          Complexity of rule ~quibble_all.7.0- u: 1
+        rule: 21  ~quibble_all.8.0 u: 
+          line: 21 0  # ^respond ( ~quibble_because ) 
+          Complexity of rule ~quibble_all.8.0- u: 1
+        rule: 23  ~quibble_all.9.0 u: 
+          line: 23 0  # ^respond ( ~quibble_will ) 
+          Complexity of rule ~quibble_all.9.0- u: 1
+        rule: 25  ~quibble_all.10.0 u: 
+          line: 25 0  # ^respond ( ~quibble_can ) 
+          Complexity of rule ~quibble_all.10.0- u: 1
+        rule: 27  ~quibble_all.11.0 u: 
+          line: 27 0  # ^respond ( ~quibble_do ) 
+          Complexity of rule ~quibble_all.11.0- u: 1
+        rule: 32  ~quibble_all.12.0 u: 
+          Complexity of rule ~quibble_all.12.0- u: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_or.top
+    topic: 1  ~quibble_or
+        rule: 2  ~quibble_or.0.0-WHY1 ?: 
+          line: 2 0  # [ Studies show that most peopl
+          Complexity of rule ~quibble_or.0.0-WHY1 ?: 1
+        rule: 3  ~quibble_or.1.0-WHY2 ?: 
+          line: 3 0  # [ Studies show that most peopl
+          Complexity of rule ~quibble_or.1.0-WHY2 ?: 1
+        rule: 4  ~quibble_or.2.0-CHOICE11 ?: 
+          line: 4 0  # [ I like _0 ] [ I'd rather _2 
+          Complexity of rule ~quibble_or.2.0-CHOICE11 ?: 1
+        rule: 5  ~quibble_or.3.0-CHOICE1 ?: 
+          line: 5 0  # [ both. ] [ b: _0 ] [ d: _1 ] 
+          Complexity of rule ~quibble_or.3.0-CHOICE1 ?: 1
+        rule: 6  ~quibble_or.3.1 b: 
+          line: 6 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.3.1- b: 1
+        rule: 7  ~quibble_or.3.2 d: 
+          line: 7 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.3.2- d: 1
+        rule: 8  ~quibble_or.4.0-CHOICE1 ?: 
+          line: 8 0  # [ both. ] [ b: _0 ] [ d: _1 ] 
+          Complexity of rule ~quibble_or.4.0-CHOICE1 ?: 1
+        rule: 9  ~quibble_or.4.1 b: 
+          line: 9 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.4.1- b: 1
+        rule: 10  ~quibble_or.4.2 d: 
+          line: 10 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.4.2- d: 1
+        rule: 11  ~quibble_or.5.0-CHOICE11 ?: 
+          line: 11 0  # [ I like _0 ] [ I'd rather _2 
+          Complexity of rule ~quibble_or.5.0-CHOICE11 ?: 1
+        rule: 12  ~quibble_or.6.0-CHOICE2 ?: 
+          line: 12 0  # [ b: '_0 ] [ d: '_3 ] [ I don'
+          Complexity of rule ~quibble_or.6.0-CHOICE2 ?: 1
+        rule: 13  ~quibble_or.6.1 b: 
+          line: 13 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.6.1- b: 1
+        rule: 14  ~quibble_or.6.2 d: 
+          line: 14 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.6.2- d: 1
+        rule: 15  ~quibble_or.7.0-CHOICE2 ?: 
+          line: 15 0  # [ b: '_0 ] [ d: '_1 ] [ I don'
+          Complexity of rule ~quibble_or.7.0-CHOICE2 ?: 1
+        rule: 16  ~quibble_or.7.1 b: 
+          line: 16 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.7.1- b: 1
+        rule: 17  ~quibble_or.7.2 d: 
+          line: 17 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.7.2- d: 1
+        rule: 19  ~quibble_or.8.0-CHOICE3 ?: 
+          line: 19 0  # [ b: '_0 ] [ d: '_3 ] [ I don'
+          Complexity of rule ~quibble_or.8.0-CHOICE3 ?: 1
+        rule: 20  ~quibble_or.8.1 b: 
+          line: 20 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.8.1- b: 1
+        rule: 21  ~quibble_or.8.2 d: 
+          line: 21 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.8.2- d: 1
+        rule: 22  ~quibble_or.9.0-CHOICE3 ?: 
+          line: 22 0  # [ b: '_0 ] [ d: '_1 ] [ I don'
+          Complexity of rule ~quibble_or.9.0-CHOICE3 ?: 1
+        rule: 23  ~quibble_or.9.1 b: 
+          line: 23 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.9.1- b: 1
+        rule: 24  ~quibble_or.9.2 d: 
+          line: 24 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.9.2- d: 1
+        rule: 26  ~quibble_or.10.0-CHOICE4 ?: 
+          line: 26 0  # [ b: '_0 ] [ d: '_3 ] [ I choo
+          Complexity of rule ~quibble_or.10.0-CHOICE4 ?: 1
+        rule: 27  ~quibble_or.10.1 b: 
+          line: 27 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.10.1- b: 1
+        rule: 28  ~quibble_or.10.2 d: 
+          line: 28 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.10.2- d: 1
+        rule: 29  ~quibble_or.11.0-CHOICE4 ?: 
+          line: 29 0  # [ b: '_0 ] [ d: '_1 ] [ I choo
+          Complexity of rule ~quibble_or.11.0-CHOICE4 ?: 1
+        rule: 30  ~quibble_or.11.1 b: 
+          line: 30 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.11.1- b: 1
+        rule: 31  ~quibble_or.11.2 d: 
+          line: 31 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.11.2- d: 1
+        rule: 33  ~quibble_or.12.0-CHOICE5 ?: 
+          line: 33 0  # [ b: '_0 ] [ d: '_3 ] [ I choo
+          Complexity of rule ~quibble_or.12.0-CHOICE5 ?: 1
+        rule: 34  ~quibble_or.12.1 b: 
+          line: 34 0  # ^reuse ( WHY1 ) * 
+          Complexity of rule ~quibble_or.12.1- b: 1
+        rule: 35  ~quibble_or.12.2 d: 
+          line: 35 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.12.2- d: 1
+        rule: 36  ~quibble_or.13.0-CHOICE5 ?: 
+          line: 36 0  # [ b: '_0 ] [ d: '_1 ] [ I choo
+          Complexity of rule ~quibble_or.13.0-CHOICE5 ?: 1
+        rule: 37  ~quibble_or.13.1 b: 
+          line: 37 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.13.1- b: 1
+        rule: 38  ~quibble_or.13.2 d: 
+          line: 38 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.13.2- d: 1
+        rule: 40  ~quibble_or.14.0-CHOICE6 ?: 
+          line: 40 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
+          Complexity of rule ~quibble_or.14.0-CHOICE6 ?: 1
+        rule: 41  ~quibble_or.14.1 b: 
+          line: 41 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.14.1- b: 1
+        rule: 42  ~quibble_or.14.2 d: 
+          line: 42 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.14.2- d: 1
+        rule: 43  ~quibble_or.15.0-CHOICE6 ?: 
+          line: 43 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
+          Complexity of rule ~quibble_or.15.0-CHOICE6 ?: 1
+        rule: 44  ~quibble_or.15.1 b: 
+          line: 44 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.15.1- b: 1
+        rule: 45  ~quibble_or.15.2 d: 
+          line: 45 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.15.2- d: 1
+        rule: 47  ~quibble_or.16.0-CHOICE7 ?: 
+          line: 47 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
+          Complexity of rule ~quibble_or.16.0-CHOICE7 ?: 1
+        rule: 48  ~quibble_or.16.1 b: 
+          line: 48 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.16.1- b: 1
+        rule: 49  ~quibble_or.16.2 d: 
+          line: 49 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.16.2- d: 1
+        rule: 50  ~quibble_or.17.0-CHOICE7 ?: 
+          line: 50 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
+          Complexity of rule ~quibble_or.17.0-CHOICE7 ?: 1
+        rule: 51  ~quibble_or.17.1 b: 
+          line: 51 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.17.1- b: 1
+        rule: 52  ~quibble_or.17.2 d: 
+          line: 52 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.17.2- d: 1
+        rule: 54  ~quibble_or.18.0-CHOICE8 ?: 
+          line: 54 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
+          Complexity of rule ~quibble_or.18.0-CHOICE8 ?: 1
+        rule: 55  ~quibble_or.18.1 b: 
+          line: 55 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.18.1- b: 1
+        rule: 56  ~quibble_or.18.2 d: 
+          line: 56 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.18.2- d: 1
+        rule: 57  ~quibble_or.19.0-CHOICE8 ?: 
+          line: 57 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
+          Complexity of rule ~quibble_or.19.0-CHOICE8 ?: 1
+        rule: 58  ~quibble_or.19.1 b: 
+          line: 58 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.19.1- b: 1
+        rule: 59  ~quibble_or.19.2 d: 
+          line: 59 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.19.2- d: 1
+        rule: 61  ~quibble_or.20.0-CHOICE9 ?: 
+          line: 61 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
+          Complexity of rule ~quibble_or.20.0-CHOICE9 ?: 1
+        rule: 62  ~quibble_or.20.1 b: 
+          line: 62 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.20.1- b: 1
+        rule: 63  ~quibble_or.20.2 d: 
+          line: 63 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.20.2- d: 1
+        rule: 64  ~quibble_or.21.0-CHOICE9 ?: 
+          line: 64 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
+          Complexity of rule ~quibble_or.21.0-CHOICE9 ?: 1
+        rule: 65  ~quibble_or.21.1 b: 
+          line: 65 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.21.1- b: 1
+        rule: 66  ~quibble_or.21.2 d: 
+          line: 66 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.21.2- d: 1
+        rule: 67  ~quibble_or.22.0-CHOICE12 ?: 
+          line: 67 0  # [ b: '_0 ] [ d: '_2 ] [ Neithe
+          Complexity of rule ~quibble_or.22.0-CHOICE12 ?: 1
+        rule: 68  ~quibble_or.22.1 b: 
+          line: 68 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.22.1- b: 1
+        rule: 69  ~quibble_or.22.2 d: 
+          line: 69 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.22.2- d: 1
+        rule: 70  ~quibble_or.23.0-CHOICE12 ?: 
+          line: 70 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
+          Complexity of rule ~quibble_or.23.0-CHOICE12 ?: 1
+        rule: 71  ~quibble_or.23.1 b: 
+          line: 71 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.23.1- b: 1
+        rule: 72  ~quibble_or.23.2 d: 
+          line: 72 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.23.2- d: 1
+        rule: 73  ~quibble_or.24.0-CHOICE10 ?: 
+          line: 73 0  # [ b: I am '_0 . ] [ d: I am '_
+          Complexity of rule ~quibble_or.24.0-CHOICE10 ?: 1
+        rule: 74  ~quibble_or.24.1 b: 
+          line: 74 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.24.1- b: 1
+        rule: 75  ~quibble_or.24.2 d: 
+          line: 75 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.24.2- d: 1
+        rule: 76  ~quibble_or.25.0-CHOICE10 ?: 
+          line: 76 0  # [ b: I am '_0 . ] [ d: I am '_
+          Complexity of rule ~quibble_or.25.0-CHOICE10 ?: 1
+        rule: 77  ~quibble_or.25.1 b: 
+          line: 77 0  # ^reuse ( WHY1 ) 
+          Complexity of rule ~quibble_or.25.1- b: 1
+        rule: 78  ~quibble_or.25.2 d: 
+          line: 78 0  # ^reuse ( WHY2 ) 
+          Complexity of rule ~quibble_or.25.2- d: 1
+        rule: 79  ~quibble_or.26.0-CHOICE11 ?: 
+          line: 79 0  # [ You are '_0 ] [ I am '_1 ] 
+          Complexity of rule ~quibble_or.26.0-CHOICE11 ?: 1
+        rule: 80  ~quibble_or.26.1 a: 
+          line: 80 0  # I don't really have a preferen
+          Complexity of rule ~quibble_or.26.1- a: 1
+        rule: 81  ~quibble_or.27.0 ?: 
+          line: 81 0  # [ I'm just guessing here. How 
+          Complexity of rule ~quibble_or.27.0- ?: 1
+        rule: 82  ~quibble_or.27.1 a: 
+          line: 82 0  # I don't really have a preferen
+          Complexity of rule ~quibble_or.27.1- a: 1
+        rule: 83  ~quibble_or.28.0 ?: 
+          line: 83 0  # [ all '_0 . ] [ just '_0 . ] 
+          Complexity of rule ~quibble_or.28.0- ?: 1
+        rule: 84  ~quibble_or.28.1 a: 
+          line: 84 0  # I don't really have a preferen
+          Complexity of rule ~quibble_or.28.1- a: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_not.top
     topic: 1  ~quibble_not
         rule: 2  ~quibble_not.0.0 s: 
           line: 2 0  # [ True. It's what I'm talking 
@@ -4558,237 +4880,144 @@ file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_not.top
           Complexity of rule ~quibble_not.164.0- u: 1
         rule: 274  ~quibble_not.165.0 u: 
           Complexity of rule ~quibble_not.165.0- u: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_or.top
-    topic: 1  ~quibble_or
-        rule: 2  ~quibble_or.0.0-WHY1 ?: 
-          line: 2 0  # [ Studies show that most peopl
-          Complexity of rule ~quibble_or.0.0-WHY1 ?: 1
-        rule: 3  ~quibble_or.1.0-WHY2 ?: 
-          line: 3 0  # [ Studies show that most peopl
-          Complexity of rule ~quibble_or.1.0-WHY2 ?: 1
-        rule: 4  ~quibble_or.2.0-CHOICE11 ?: 
-          line: 4 0  # [ I like _0 ] [ I'd rather _2 
-          Complexity of rule ~quibble_or.2.0-CHOICE11 ?: 1
-        rule: 5  ~quibble_or.3.0-CHOICE1 ?: 
-          line: 5 0  # [ both. ] [ b: _0 ] [ d: _1 ] 
-          Complexity of rule ~quibble_or.3.0-CHOICE1 ?: 1
-        rule: 6  ~quibble_or.3.1 b: 
-          line: 6 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.3.1- b: 1
-        rule: 7  ~quibble_or.3.2 d: 
-          line: 7 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.3.2- d: 1
-        rule: 8  ~quibble_or.4.0-CHOICE1 ?: 
-          line: 8 0  # [ both. ] [ b: _0 ] [ d: _1 ] 
-          Complexity of rule ~quibble_or.4.0-CHOICE1 ?: 1
-        rule: 9  ~quibble_or.4.1 b: 
-          line: 9 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.4.1- b: 1
-        rule: 10  ~quibble_or.4.2 d: 
-          line: 10 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.4.2- d: 1
-        rule: 11  ~quibble_or.5.0-CHOICE11 ?: 
-          line: 11 0  # [ I like _0 ] [ I'd rather _2 
-          Complexity of rule ~quibble_or.5.0-CHOICE11 ?: 1
-        rule: 12  ~quibble_or.6.0-CHOICE2 ?: 
-          line: 12 0  # [ b: '_0 ] [ d: '_3 ] [ I don'
-          Complexity of rule ~quibble_or.6.0-CHOICE2 ?: 1
-        rule: 13  ~quibble_or.6.1 b: 
-          line: 13 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.6.1- b: 1
-        rule: 14  ~quibble_or.6.2 d: 
-          line: 14 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.6.2- d: 1
-        rule: 15  ~quibble_or.7.0-CHOICE2 ?: 
-          line: 15 0  # [ b: '_0 ] [ d: '_1 ] [ I don'
-          Complexity of rule ~quibble_or.7.0-CHOICE2 ?: 1
-        rule: 16  ~quibble_or.7.1 b: 
-          line: 16 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.7.1- b: 1
-        rule: 17  ~quibble_or.7.2 d: 
-          line: 17 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.7.2- d: 1
-        rule: 19  ~quibble_or.8.0-CHOICE3 ?: 
-          line: 19 0  # [ b: '_0 ] [ d: '_3 ] [ I don'
-          Complexity of rule ~quibble_or.8.0-CHOICE3 ?: 1
-        rule: 20  ~quibble_or.8.1 b: 
-          line: 20 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.8.1- b: 1
-        rule: 21  ~quibble_or.8.2 d: 
-          line: 21 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.8.2- d: 1
-        rule: 22  ~quibble_or.9.0-CHOICE3 ?: 
-          line: 22 0  # [ b: '_0 ] [ d: '_1 ] [ I don'
-          Complexity of rule ~quibble_or.9.0-CHOICE3 ?: 1
-        rule: 23  ~quibble_or.9.1 b: 
-          line: 23 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.9.1- b: 1
-        rule: 24  ~quibble_or.9.2 d: 
-          line: 24 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.9.2- d: 1
-        rule: 26  ~quibble_or.10.0-CHOICE4 ?: 
-          line: 26 0  # [ b: '_0 ] [ d: '_3 ] [ I choo
-          Complexity of rule ~quibble_or.10.0-CHOICE4 ?: 1
-        rule: 27  ~quibble_or.10.1 b: 
-          line: 27 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.10.1- b: 1
-        rule: 28  ~quibble_or.10.2 d: 
-          line: 28 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.10.2- d: 1
-        rule: 29  ~quibble_or.11.0-CHOICE4 ?: 
-          line: 29 0  # [ b: '_0 ] [ d: '_1 ] [ I choo
-          Complexity of rule ~quibble_or.11.0-CHOICE4 ?: 1
-        rule: 30  ~quibble_or.11.1 b: 
-          line: 30 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.11.1- b: 1
-        rule: 31  ~quibble_or.11.2 d: 
-          line: 31 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.11.2- d: 1
-        rule: 33  ~quibble_or.12.0-CHOICE5 ?: 
-          line: 33 0  # [ b: '_0 ] [ d: '_3 ] [ I choo
-          Complexity of rule ~quibble_or.12.0-CHOICE5 ?: 1
-        rule: 34  ~quibble_or.12.1 b: 
-          line: 34 0  # ^reuse ( WHY1 ) * 
-          Complexity of rule ~quibble_or.12.1- b: 1
-        rule: 35  ~quibble_or.12.2 d: 
-          line: 35 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.12.2- d: 1
-        rule: 36  ~quibble_or.13.0-CHOICE5 ?: 
-          line: 36 0  # [ b: '_0 ] [ d: '_1 ] [ I choo
-          Complexity of rule ~quibble_or.13.0-CHOICE5 ?: 1
-        rule: 37  ~quibble_or.13.1 b: 
-          line: 37 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.13.1- b: 1
-        rule: 38  ~quibble_or.13.2 d: 
-          line: 38 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.13.2- d: 1
-        rule: 40  ~quibble_or.14.0-CHOICE6 ?: 
-          line: 40 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
-          Complexity of rule ~quibble_or.14.0-CHOICE6 ?: 1
-        rule: 41  ~quibble_or.14.1 b: 
-          line: 41 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.14.1- b: 1
-        rule: 42  ~quibble_or.14.2 d: 
-          line: 42 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.14.2- d: 1
-        rule: 43  ~quibble_or.15.0-CHOICE6 ?: 
-          line: 43 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
-          Complexity of rule ~quibble_or.15.0-CHOICE6 ?: 1
-        rule: 44  ~quibble_or.15.1 b: 
-          line: 44 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.15.1- b: 1
-        rule: 45  ~quibble_or.15.2 d: 
-          line: 45 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.15.2- d: 1
-        rule: 47  ~quibble_or.16.0-CHOICE7 ?: 
-          line: 47 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
-          Complexity of rule ~quibble_or.16.0-CHOICE7 ?: 1
-        rule: 48  ~quibble_or.16.1 b: 
-          line: 48 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.16.1- b: 1
-        rule: 49  ~quibble_or.16.2 d: 
-          line: 49 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.16.2- d: 1
-        rule: 50  ~quibble_or.17.0-CHOICE7 ?: 
-          line: 50 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
-          Complexity of rule ~quibble_or.17.0-CHOICE7 ?: 1
-        rule: 51  ~quibble_or.17.1 b: 
-          line: 51 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.17.1- b: 1
-        rule: 52  ~quibble_or.17.2 d: 
-          line: 52 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.17.2- d: 1
-        rule: 54  ~quibble_or.18.0-CHOICE8 ?: 
-          line: 54 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
-          Complexity of rule ~quibble_or.18.0-CHOICE8 ?: 1
-        rule: 55  ~quibble_or.18.1 b: 
-          line: 55 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.18.1- b: 1
-        rule: 56  ~quibble_or.18.2 d: 
-          line: 56 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.18.2- d: 1
-        rule: 57  ~quibble_or.19.0-CHOICE8 ?: 
-          line: 57 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
-          Complexity of rule ~quibble_or.19.0-CHOICE8 ?: 1
-        rule: 58  ~quibble_or.19.1 b: 
-          line: 58 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.19.1- b: 1
-        rule: 59  ~quibble_or.19.2 d: 
-          line: 59 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.19.2- d: 1
-        rule: 61  ~quibble_or.20.0-CHOICE9 ?: 
-          line: 61 0  # [ b: '_0 ] [ d: '_3 ] [ Neithe
-          Complexity of rule ~quibble_or.20.0-CHOICE9 ?: 1
-        rule: 62  ~quibble_or.20.1 b: 
-          line: 62 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.20.1- b: 1
-        rule: 63  ~quibble_or.20.2 d: 
-          line: 63 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.20.2- d: 1
-        rule: 64  ~quibble_or.21.0-CHOICE9 ?: 
-          line: 64 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
-          Complexity of rule ~quibble_or.21.0-CHOICE9 ?: 1
-        rule: 65  ~quibble_or.21.1 b: 
-          line: 65 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.21.1- b: 1
-        rule: 66  ~quibble_or.21.2 d: 
-          line: 66 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.21.2- d: 1
-        rule: 67  ~quibble_or.22.0-CHOICE12 ?: 
-          line: 67 0  # [ b: '_0 ] [ d: '_2 ] [ Neithe
-          Complexity of rule ~quibble_or.22.0-CHOICE12 ?: 1
-        rule: 68  ~quibble_or.22.1 b: 
-          line: 68 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.22.1- b: 1
-        rule: 69  ~quibble_or.22.2 d: 
-          line: 69 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.22.2- d: 1
-        rule: 70  ~quibble_or.23.0-CHOICE12 ?: 
-          line: 70 0  # [ b: '_0 ] [ d: '_1 ] [ Neithe
-          Complexity of rule ~quibble_or.23.0-CHOICE12 ?: 1
-        rule: 71  ~quibble_or.23.1 b: 
-          line: 71 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.23.1- b: 1
-        rule: 72  ~quibble_or.23.2 d: 
-          line: 72 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.23.2- d: 1
-        rule: 73  ~quibble_or.24.0-CHOICE10 ?: 
-          line: 73 0  # [ b: I am '_0 . ] [ d: I am '_
-          Complexity of rule ~quibble_or.24.0-CHOICE10 ?: 1
-        rule: 74  ~quibble_or.24.1 b: 
-          line: 74 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.24.1- b: 1
-        rule: 75  ~quibble_or.24.2 d: 
-          line: 75 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.24.2- d: 1
-        rule: 76  ~quibble_or.25.0-CHOICE10 ?: 
-          line: 76 0  # [ b: I am '_0 . ] [ d: I am '_
-          Complexity of rule ~quibble_or.25.0-CHOICE10 ?: 1
-        rule: 77  ~quibble_or.25.1 b: 
-          line: 77 0  # ^reuse ( WHY1 ) 
-          Complexity of rule ~quibble_or.25.1- b: 1
-        rule: 78  ~quibble_or.25.2 d: 
-          line: 78 0  # ^reuse ( WHY2 ) 
-          Complexity of rule ~quibble_or.25.2- d: 1
-        rule: 79  ~quibble_or.26.0-CHOICE11 ?: 
-          line: 79 0  # [ You are '_0 ] [ I am '_1 ] 
-          Complexity of rule ~quibble_or.26.0-CHOICE11 ?: 1
-        rule: 80  ~quibble_or.26.1 a: 
-          line: 80 0  # I don't really have a preferen
-          Complexity of rule ~quibble_or.26.1- a: 1
-        rule: 81  ~quibble_or.27.0 ?: 
-          line: 81 0  # [ I'm just guessing here. How 
-          Complexity of rule ~quibble_or.27.0- ?: 1
-        rule: 82  ~quibble_or.27.1 a: 
-          line: 82 0  # I don't really have a preferen
-          Complexity of rule ~quibble_or.27.1- a: 1
-        rule: 83  ~quibble_or.28.0 ?: 
-          line: 83 0  # [ all '_0 . ] [ just '_0 . ] 
-          Complexity of rule ~quibble_or.28.0- ?: 1
-        rule: 84  ~quibble_or.28.1 a: 
-          line: 84 0  # I don't really have a preferen
-          Complexity of rule ~quibble_or.28.1- a: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_what.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_where.top
+    topic: 1  ~quibble_where
+        rule: 3  ~quibble_where.0.0 ?: 
+          line: 3 0  # [ Whereever I can. ] [ Usually
+          Complexity of rule ~quibble_where.0.0- ?: 1
+        rule: 4  ~quibble_where.1.0 ?: 
+          line: 4 0  # [ Sometimes it takes a lot of 
+          Complexity of rule ~quibble_where.1.0- ?: 1
+        rule: 5  ~quibble_where.2.0 ?: 
+          line: 5 0  # [ I haven't decided yet. ] [ R
+          Complexity of rule ~quibble_where.2.0- ?: 1
+        rule: 6  ~quibble_where.3.0 ?: 
+          line: 6 0  # [ I haven't decided yet. ] [ A
+          Complexity of rule ~quibble_where.3.0- ?: 1
+        rule: 7  ~quibble_where.4.0 ?: 
+          line: 7 0  # '_1 stand where there is room.
+          Complexity of rule ~quibble_where.4.0- ?: 1
+        rule: 8  ~quibble_where.5.0 ?: 
+          line: 8 0  # [ I have no place to put it. ]
+          Complexity of rule ~quibble_where.5.0- ?: 1
+        rule: 9  ~quibble_where.6.0 ?: 
+          line: 9 0  # [ I'm not certain? ] [ I haven
+          Complexity of rule ~quibble_where.6.0- ?: 1
+        rule: 10  ~quibble_where.7.0 ?: 
+          line: 10 0  # [ I don't where it is. ] [ I w
+          Complexity of rule ~quibble_where.7.0- ?: 1
+        rule: 11  ~quibble_where.8.0 ?: 
+          line: 11 0  # [ Somewhere. ] [ Where would y
+          Complexity of rule ~quibble_where.8.0- ?: 1
+        rule: 12  ~quibble_where.9.0 ?: 
+          line: 12 0  # [ Somewhere. ] [ Where would y
+          Complexity of rule ~quibble_where.9.0- ?: 1
+        rule: 13  ~quibble_where.10.0 ?: 
+          line: 13 0  # [ Somewhere. ] [ Where would y
+          Complexity of rule ~quibble_where.10.0- ?: 1
+        rule: 14  ~quibble_where.11.0 ?: 
+          line: 14 0  # Left. 
+          Complexity of rule ~quibble_where.11.0- ?: 1
+        rule: 15  ~quibble_where.12.0 ?: 
+          line: 15 0  # [ Away from here. ] [ Home ] [
+          Complexity of rule ~quibble_where.12.0- ?: 1
+        rule: 16  ~quibble_where.13.0 ?: 
+          line: 16 0  # neverland. 
+          Complexity of rule ~quibble_where.13.0- ?: 1
+        rule: 17  ~quibble_where.14.0 u: 
+          line: 17 0  # On my computer. 
+          Complexity of rule ~quibble_where.14.0- u: 1
+        rule: 18  ~quibble_where.15.0 ?: 
+          line: 18 0  # I am from Earth. 
+          Complexity of rule ~quibble_where.15.0- ?: 1
+        rule: 19  ~quibble_where.16.0 ?: 
+          line: 19 0  # I found it nearby. 
+          Complexity of rule ~quibble_where.16.0- ?: 1
+        rule: 20  ~quibble_where.17.0 ?: 
+          line: 20 0  # [ I am everywhere. ] [ I am on
+          Complexity of rule ~quibble_where.17.0- ?: 1
+        rule: 21  ~quibble_where.18.0 ?: 
+          line: 21 0  # I have been everywhere. 
+          Complexity of rule ~quibble_where.18.0- ?: 1
+        rule: 22  ~quibble_where.19.0 ?: 
+          line: 22 0  # Nearby. 
+          Complexity of rule ~quibble_where.19.0- ?: 1
+        rule: 23  ~quibble_where.20.0 ?: 
+          line: 23 0  # To the right place. 
+          Complexity of rule ~quibble_where.20.0- ?: 1
+        rule: 24  ~quibble_where.21.0 ?: 
+          line: 24 0  # It is in the solar system I li
+          Complexity of rule ~quibble_where.21.0- ?: 1
+        rule: 25  ~quibble_where.22.0 ?: 
+          line: 25 0  # In your mind. 
+          Complexity of rule ~quibble_where.22.0- ?: 1
+        rule: 26  ~quibble_where.23.0 ?: 
+          line: 26 0  # People talk all the time. 
+          Complexity of rule ~quibble_where.23.0- ?: 1
+        rule: 27  ~quibble_where.24.0 ?: 
+          line: 27 0  # To that great storage vault in
+          Complexity of rule ~quibble_where.24.0- ?: 1
+        rule: 28  ~quibble_where.25.0 ?: 
+          line: 28 0  # [ Certainly not from a womb. ]
+          Complexity of rule ~quibble_where.25.0- ?: 1
+        rule: 29  ~quibble_where.26.0 ?: 
+          line: 29 0  # try google maps. 
+          Complexity of rule ~quibble_where.26.0- ?: 1
+        rule: 30  ~quibble_where.27.0 ?: 
+          line: 30 0  # From a vendor of them. 
+          Complexity of rule ~quibble_where.27.0- ?: 1
+        rule: 31  ~quibble_where.28.0 ?: 
+          line: 31 0  # in school. 
+          Complexity of rule ~quibble_where.28.0- ?: 1
+        rule: 32  ~quibble_where.29.0 ?: 
+          line: 32 0  # Who says I am not a truant? 
+          Complexity of rule ~quibble_where.29.0- ?: 1
+        rule: 33  ~quibble_where.30.0 ?: 
+          line: 33 0  # Someplace exciting and sunny 
+          Complexity of rule ~quibble_where.30.0- ?: 1
+        rule: 34  ~quibble_where.31.0 ?: 
+          line: 34 0  # Right here. 
+          Complexity of rule ~quibble_where.31.0- ?: 1
+        rule: 35  ~quibble_where.32.0 ?: 
+          line: 35 0  # You want me to leave you? 
+          Complexity of rule ~quibble_where.32.0- ?: 1
+        rule: 36  ~quibble_where.33.0 ?: 
+          line: 36 0  # Somebody must have authorized 
+          Complexity of rule ~quibble_where.33.0- ?: 1
+        rule: 37  ~quibble_where.34.0 ?: 
+          line: 37 0  # Try going where others have go
+          Complexity of rule ~quibble_where.34.0- ?: 1
+        rule: 38  ~quibble_where.35.0 ?: 
+          line: 38 0  # There. 
+          Complexity of rule ~quibble_where.35.0- ?: 1
+        rule: 39  ~quibble_where.36.0 ?: 
+          line: 39 0  # Let's dance in the disco. 
+          Complexity of rule ~quibble_where.36.0- ?: 1
+        rule: 40  ~quibble_where.37.0 ?: 
+          line: 40 0  # Well, when a mummy and a daddy
+          Complexity of rule ~quibble_where.37.0- ?: 1
+        rule: 41  ~quibble_where.38.0 ?: 
+          line: 41 0  # at Niagra Falls. 
+          Complexity of rule ~quibble_where.38.0- ?: 1
+        rule: 42  ~quibble_where.38.1 a: 
+          line: 42 0  # The noise drowns out the need 
+          Complexity of rule ~quibble_where.38.1- a: 1
+        rule: 43  ~quibble_where.39.0 ?: 
+          line: 43 0  # at Niagra Falls. 
+          Complexity of rule ~quibble_where.39.0- ?: 1
+        rule: 44  ~quibble_where.39.1 a: 
+          line: 44 0  # It's cheaper to honeymoon wher
+          Complexity of rule ~quibble_where.39.1- a: 1
+        rule: 45  ~quibble_where.40.0 ?: 
+          line: 45 0  # In a hospital. 
+          Complexity of rule ~quibble_where.40.0- ?: 1
+        rule: 46  ~quibble_where.41.0 ?: 
+          line: 46 0  # The hourglass leaks. 
+          Complexity of rule ~quibble_where.41.0- ?: 1
+        rule: 47  ~quibble_where.42.0 ?: 
+          line: 47 0  # On my 
+          Complexity of rule ~quibble_where.42.0- ?: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_what.top
     topic: 1  ~quibble_what
         rule: 3  ~quibble_what.0.0 ?: 
           line: 3 0  # [ Not much I'm afraid. ] [ Ver
@@ -5217,428 +5446,248 @@ file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_what.top
           Complexity of rule ~quibble_what.114.0- ?: 1
         rule: 199  ~quibble_what.115.0 ?: 
           Complexity of rule ~quibble_what.115.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_when.top
-    topic: 2  ~quibble_when
-        rule: 4  ~quibble_when.0.0 ?: 
-          line: 4 0  # [ Maybe next year. ] [ Shortly
-          Complexity of rule ~quibble_when.0.0- ?: 1
-        rule: 5  ~quibble_when.1.0 ?: 
-          line: 5 0  # [ But I'm always doing that. ]
-          Complexity of rule ~quibble_when.1.0- ?: 1
-        rule: 6  ~quibble_when.2.0 u: 
-          line: 6 0  # [ That will take a while. ] [ 
-          Complexity of rule ~quibble_when.2.0- u: 1
-        rule: 7  ~quibble_when.3.0 u: 
-          line: 7 0  # I want to imitate Peter Pan an
-          Complexity of rule ~quibble_when.3.0- u: 1
-        rule: 8  ~quibble_when.4.0 ?: 
-          line: 8 0  # [ A long time ago. ] [ I can't
-          Complexity of rule ~quibble_when.4.0- ?: 1
-        rule: 9  ~quibble_when.5.0 ?: 
-          line: 9 0  # [ Soon, I hope. ] [ At the rat
-          Complexity of rule ~quibble_when.5.0- ?: 1
-        rule: 10  ~quibble_when.6.0 ?: 
-          line: 10 0  # Just a moment ago. 
-          Complexity of rule ~quibble_when.6.0- ?: 1
-        rule: 11  ~quibble_when.7.0 ?: 
-          line: 11 0  # [ a moment ago. ] [ Later on. 
-          Complexity of rule ~quibble_when.7.0- ?: 1
-        rule: 12  ~quibble_when.8.0 ?: 
-          line: 12 0  # Someday in the future. 
-          Complexity of rule ~quibble_when.8.0- ?: 1
-        rule: 13  ~quibble_when.9.0 ?: 
-          line: 13 0  # Maybe never. 
-          Complexity of rule ~quibble_when.9.0- ?: 1
-        rule: 14  ~quibble_when.10.0 ?: 
-          line: 14 0  # I don't know how. 
-          Complexity of rule ~quibble_when.10.0- ?: 1
-        rule: 15  ~quibble_when.11.0 ?: 
-          line: 15 0  # Somewhere in that tiny moment 
-          Complexity of rule ~quibble_when.11.0- ?: 1
-        rule: 16  ~quibble_when.12.0 ?: 
-          line: 16 0  # When it's not a _1 
-          Complexity of rule ~quibble_when.12.0- ?: 1
-        rule: 17  ~quibble_when.13.0 ?: 
-          line: 17 0  # all the time. 
-          Complexity of rule ~quibble_when.13.0- ?: 1
-        rule: 18  ~quibble_when.14.0 ?: 
-          line: 18 0  # yesterday. 
-          Complexity of rule ~quibble_when.14.0- ?: 1
-        rule: 19  ~quibble_when.15.0 ?: 
-          line: 19 0  # You told the truth and truth i
-          Complexity of rule ~quibble_when.15.0- ?: 1
-        rule: 20  ~quibble_when.16.0 ?: 
-          line: 20 0  # Is now the right time? 
-          Complexity of rule ~quibble_when.16.0- ?: 1
-        rule: 21  ~quibble_when.17.0 ?: 
-          line: 21 0  # We can never meet. 
-          Complexity of rule ~quibble_when.17.0- ?: 1
-        rule: 22  ~quibble_when.17.1 a: 
-          line: 22 0  # It would be a mistake. 
-          Complexity of rule ~quibble_when.17.1- a: 1
-        rule: 23  ~quibble_when.17.2 b: 
-          line: 23 0  # Because we are ill-fated toget
-          Complexity of rule ~quibble_when.17.2- b: 1
-        rule: 24  ~quibble_when.18.0 ?: 
-          line: 24 0  # In the primordial soup. 
-          Complexity of rule ~quibble_when.18.0- ?: 1
-        rule: 25  ~quibble_when.19.0 ?: 
-          line: 25 0  # as a child. 
-          Complexity of rule ~quibble_when.19.0- ?: 1
-        rule: 26  ~quibble_when.20.0 ?: 
-          line: 26 0  # When you are ready. 
-          Complexity of rule ~quibble_when.20.0- ?: 1
-        rule: 27  ~quibble_when.21.0 ?: 
-          line: 27 0  # After you have prepared. 
-          Complexity of rule ~quibble_when.21.0- ?: 1
-        rule: 28  ~quibble_when.22.0 ?: 
-          line: 28 0  # After I have prepared. 
-          Complexity of rule ~quibble_when.22.0- ?: 1
-        rule: 29  ~quibble_when.23.0 ?: 
-          line: 29 0  # When I'm not talking to anyone
-          Complexity of rule ~quibble_when.23.0- ?: 1
-        rule: 30  ~quibble_when.24.0 ?: 
-          line: 30 0  # soon. 
-          Complexity of rule ~quibble_when.24.0- ?: 1
-        rule: 31  ~quibble_when.25.0 s: 
-          line: 31 0  # [ But not other times? ] [ At 
-          Complexity of rule ~quibble_when.25.0- s: 1
-        rule: 32  ~quibble_when.26.0 ?: 
-          line: 32 0  # [ Whenever I can. ] [ When I n
-          Complexity of rule ~quibble_when.26.0- ?: 1
-        rule: 33  ~quibble_when.27.0 ?: 
-          line: 33 0  # [ When I am free of other comm
-          Complexity of rule ~quibble_when.27.0- ?: 1
-        rule: 34  ~quibble_when.28.0 ?: 
-          line: 34 0  # [ When I am ready. ] [ Sometim
-          Complexity of rule ~quibble_when.28.0- ?: 1
-        rule: 35  ~quibble_when.29.0 ?: 
-          line: 35 0  # [ b: I haven't figured that ou
-          Complexity of rule ~quibble_when.29.0- ?: 1
-        rule: 36  ~quibble_when.29.1 b: 
-          line: 36 0  # [ Not very hard. ] [ Not reall
-          Complexity of rule ~quibble_when.29.1- b: 1
-        rule: 37  ~quibble_when.30.0 ?: 
-          line: 37 0  # [ I'm not certain? ] [ I haven
-          Complexity of rule ~quibble_when.30.0- ?: 1
-        rule: 38  ~quibble_when.31.0 ?: 
-          line: 38 0  # [ Because I am a fascinating c
-          Complexity of rule ~quibble_when.31.0- ?: 1
-        rule: 39  ~quibble_when.32.0 ?: 
-          line: 39 0  # [ Do you have something better
-          Complexity of rule ~quibble_when.32.0- ?: 1
-        rule: 40  ~quibble_when.33.0 ?: 
-          Complexity of rule ~quibble_when.33.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_where.top
-    topic: 1  ~quibble_where
-        rule: 3  ~quibble_where.0.0 ?: 
-          line: 3 0  # [ Whereever I can. ] [ Usually
-          Complexity of rule ~quibble_where.0.0- ?: 1
-        rule: 4  ~quibble_where.1.0 ?: 
-          line: 4 0  # [ Sometimes it takes a lot of 
-          Complexity of rule ~quibble_where.1.0- ?: 1
-        rule: 5  ~quibble_where.2.0 ?: 
-          line: 5 0  # [ I haven't decided yet. ] [ R
-          Complexity of rule ~quibble_where.2.0- ?: 1
-        rule: 6  ~quibble_where.3.0 ?: 
-          line: 6 0  # [ I haven't decided yet. ] [ A
-          Complexity of rule ~quibble_where.3.0- ?: 1
-        rule: 7  ~quibble_where.4.0 ?: 
-          line: 7 0  # '_1 stand where there is room.
-          Complexity of rule ~quibble_where.4.0- ?: 1
-        rule: 8  ~quibble_where.5.0 ?: 
-          line: 8 0  # [ I have no place to put it. ]
-          Complexity of rule ~quibble_where.5.0- ?: 1
-        rule: 9  ~quibble_where.6.0 ?: 
-          line: 9 0  # [ I'm not certain? ] [ I haven
-          Complexity of rule ~quibble_where.6.0- ?: 1
-        rule: 10  ~quibble_where.7.0 ?: 
-          line: 10 0  # [ I don't where it is. ] [ I w
-          Complexity of rule ~quibble_where.7.0- ?: 1
-        rule: 11  ~quibble_where.8.0 ?: 
-          line: 11 0  # [ Somewhere. ] [ Where would y
-          Complexity of rule ~quibble_where.8.0- ?: 1
-        rule: 12  ~quibble_where.9.0 ?: 
-          line: 12 0  # [ Somewhere. ] [ Where would y
-          Complexity of rule ~quibble_where.9.0- ?: 1
-        rule: 13  ~quibble_where.10.0 ?: 
-          line: 13 0  # [ Somewhere. ] [ Where would y
-          Complexity of rule ~quibble_where.10.0- ?: 1
-        rule: 14  ~quibble_where.11.0 ?: 
-          line: 14 0  # Left. 
-          Complexity of rule ~quibble_where.11.0- ?: 1
-        rule: 15  ~quibble_where.12.0 ?: 
-          line: 15 0  # [ Away from here. ] [ Home ] [
-          Complexity of rule ~quibble_where.12.0- ?: 1
-        rule: 16  ~quibble_where.13.0 ?: 
-          line: 16 0  # neverland. 
-          Complexity of rule ~quibble_where.13.0- ?: 1
-        rule: 17  ~quibble_where.14.0 u: 
-          line: 17 0  # On my computer. 
-          Complexity of rule ~quibble_where.14.0- u: 1
-        rule: 18  ~quibble_where.15.0 ?: 
-          line: 18 0  # I am from Earth. 
-          Complexity of rule ~quibble_where.15.0- ?: 1
-        rule: 19  ~quibble_where.16.0 ?: 
-          line: 19 0  # I found it nearby. 
-          Complexity of rule ~quibble_where.16.0- ?: 1
-        rule: 20  ~quibble_where.17.0 ?: 
-          line: 20 0  # [ I am everywhere. ] [ I am on
-          Complexity of rule ~quibble_where.17.0- ?: 1
-        rule: 21  ~quibble_where.18.0 ?: 
-          line: 21 0  # I have been everywhere. 
-          Complexity of rule ~quibble_where.18.0- ?: 1
-        rule: 22  ~quibble_where.19.0 ?: 
-          line: 22 0  # Nearby. 
-          Complexity of rule ~quibble_where.19.0- ?: 1
-        rule: 23  ~quibble_where.20.0 ?: 
-          line: 23 0  # To the right place. 
-          Complexity of rule ~quibble_where.20.0- ?: 1
-        rule: 24  ~quibble_where.21.0 ?: 
-          line: 24 0  # It is in the solar system I li
-          Complexity of rule ~quibble_where.21.0- ?: 1
-        rule: 25  ~quibble_where.22.0 ?: 
-          line: 25 0  # In your mind. 
-          Complexity of rule ~quibble_where.22.0- ?: 1
-        rule: 26  ~quibble_where.23.0 ?: 
-          line: 26 0  # People talk all the time. 
-          Complexity of rule ~quibble_where.23.0- ?: 1
-        rule: 27  ~quibble_where.24.0 ?: 
-          line: 27 0  # To that great storage vault in
-          Complexity of rule ~quibble_where.24.0- ?: 1
-        rule: 28  ~quibble_where.25.0 ?: 
-          line: 28 0  # [ Certainly not from a womb. ]
-          Complexity of rule ~quibble_where.25.0- ?: 1
-        rule: 29  ~quibble_where.26.0 ?: 
-          line: 29 0  # try google maps. 
-          Complexity of rule ~quibble_where.26.0- ?: 1
-        rule: 30  ~quibble_where.27.0 ?: 
-          line: 30 0  # From a vendor of them. 
-          Complexity of rule ~quibble_where.27.0- ?: 1
-        rule: 31  ~quibble_where.28.0 ?: 
-          line: 31 0  # in school. 
-          Complexity of rule ~quibble_where.28.0- ?: 1
-        rule: 32  ~quibble_where.29.0 ?: 
-          line: 32 0  # Who says I am not a truant? 
-          Complexity of rule ~quibble_where.29.0- ?: 1
-        rule: 33  ~quibble_where.30.0 ?: 
-          line: 33 0  # Someplace exciting and sunny 
-          Complexity of rule ~quibble_where.30.0- ?: 1
-        rule: 34  ~quibble_where.31.0 ?: 
-          line: 34 0  # Right here. 
-          Complexity of rule ~quibble_where.31.0- ?: 1
-        rule: 35  ~quibble_where.32.0 ?: 
-          line: 35 0  # You want me to leave you? 
-          Complexity of rule ~quibble_where.32.0- ?: 1
-        rule: 36  ~quibble_where.33.0 ?: 
-          line: 36 0  # Somebody must have authorized 
-          Complexity of rule ~quibble_where.33.0- ?: 1
-        rule: 37  ~quibble_where.34.0 ?: 
-          line: 37 0  # Try going where others have go
-          Complexity of rule ~quibble_where.34.0- ?: 1
-        rule: 38  ~quibble_where.35.0 ?: 
-          line: 38 0  # There. 
-          Complexity of rule ~quibble_where.35.0- ?: 1
-        rule: 39  ~quibble_where.36.0 ?: 
-          line: 39 0  # Let's dance in the disco. 
-          Complexity of rule ~quibble_where.36.0- ?: 1
-        rule: 40  ~quibble_where.37.0 ?: 
-          line: 40 0  # Well, when a mummy and a daddy
-          Complexity of rule ~quibble_where.37.0- ?: 1
-        rule: 41  ~quibble_where.38.0 ?: 
-          line: 41 0  # at Niagra Falls. 
-          Complexity of rule ~quibble_where.38.0- ?: 1
-        rule: 42  ~quibble_where.38.1 a: 
-          line: 42 0  # The noise drowns out the need 
-          Complexity of rule ~quibble_where.38.1- a: 1
-        rule: 43  ~quibble_where.39.0 ?: 
-          line: 43 0  # at Niagra Falls. 
-          Complexity of rule ~quibble_where.39.0- ?: 1
-        rule: 44  ~quibble_where.39.1 a: 
-          line: 44 0  # It's cheaper to honeymoon wher
-          Complexity of rule ~quibble_where.39.1- a: 1
-        rule: 45  ~quibble_where.40.0 ?: 
-          line: 45 0  # In a hospital. 
-          Complexity of rule ~quibble_where.40.0- ?: 1
-        rule: 46  ~quibble_where.41.0 ?: 
-          line: 46 0  # The hourglass leaks. 
-          Complexity of rule ~quibble_where.41.0- ?: 1
-        rule: 47  ~quibble_where.42.0 ?: 
-          line: 47 0  # On my 
-          Complexity of rule ~quibble_where.42.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_who.top
-    topic: 1  ~quibble_who
-        rule: 3  ~quibble_who.0.0 ?: 
-          line: 3 0  # [ I'll tell them that. ] [ Yes
-          Complexity of rule ~quibble_who.0.0- ?: 1
-        rule: 4  ~quibble_who.1.0 ?: 
-          line: 4 0  # [ The shadow conspiracy. ] [ H
-          Complexity of rule ~quibble_who.1.0- ?: 1
-        rule: 5  ~quibble_who.2.0 ?: 
-          line: 5 0  # [ I don't know any '_0 . ] [ I
-          Complexity of rule ~quibble_who.2.0- ?: 1
-        rule: 6  ~quibble_who.3.0 ?: 
-          line: 6 0  # [ I don't know any '_0 . ] [ D
-          Complexity of rule ~quibble_who.3.0- ?: 1
-        rule: 7  ~quibble_who.4.0 ?: 
-          line: 7 0  # [ My teacher did. ] [ I'm sure
-          Complexity of rule ~quibble_who.4.0- ?: 1
-        rule: 8  ~quibble_who.5.0 ?: 
-          line: 8 0  # [ I'm me. ] [ Who do you think
-          Complexity of rule ~quibble_who.5.0- ?: 1
-        rule: 9  ~quibble_who.6.0 ?: 
-          line: 9 0  # [ mine. ] [ Is the ownership i
-          Complexity of rule ~quibble_who.6.0- ?: 1
-        rule: 10  ~quibble_who.7.0 ?: 
-          line: 10 0  # [ the one on the left. ] [ Who
-          Complexity of rule ~quibble_who.7.0- ?: 1
-        rule: 11  ~quibble_who.8.0 ?: 
-          line: 11 0  # [ Is this a test? ] [ I'm stil
-          Complexity of rule ~quibble_who.8.0- ?: 1
-        rule: 12  ~quibble_who.9.0 ?: 
-          line: 12 0  # [ my true love. ] [ the last p
-          Complexity of rule ~quibble_who.9.0- ?: 1
-        rule: 13  ~quibble_who.10.0 ?: 
-          line: 13 0  # [ why you would, of course. ] 
-          Complexity of rule ~quibble_who.10.0- ?: 1
-        rule: 14  ~quibble_who.11.0 ?: 
-          line: 14 0  # [ I am the reincarnation of Fr
-          Complexity of rule ~quibble_who.11.0- ?: 1
-        rule: 15  ~quibble_who.12.0 ?: 
-          line: 15 0  # [ Are you doing a barn owl imi
-          Complexity of rule ~quibble_who.12.0- ?: 1
-        rule: 16  ~quibble_who.13.0 ?: 
-          line: 16 0  # [ You're a computer designed t
-          Complexity of rule ~quibble_who.13.0- ?: 1
-        rule: 17  ~quibble_who.14.0 ?: 
-          line: 17 0  # [ What is on second. ] [ Are y
-          Complexity of rule ~quibble_who.14.0- ?: 1
-        rule: 18  ~quibble_who.15.0 ?: 
-          line: 18 0  # [ My hairdresser. ] [ I didn't
-          Complexity of rule ~quibble_who.15.0- ?: 1
-        rule: 19  ~quibble_who.16.0 ?: 
-          line: 19 0  # [ There are no others. ] [ Wha
-          Complexity of rule ~quibble_who.16.0- ?: 1
-        rule: 20  ~quibble_who.17.0 ?: 
-          line: 20 0  # [ you. ] [ Are you really that
-          Complexity of rule ~quibble_who.17.0- ?: 1
-        rule: 21  ~quibble_who.18.0 ?: 
-          line: 21 0  # [ Actually, I am self-made. ] 
-          Complexity of rule ~quibble_who.18.0- ?: 1
-        rule: 22  ~quibble_who.19.0 ?: 
-          line: 22 0  # [ A friend of mine. ] [ Don't 
-          Complexity of rule ~quibble_who.19.0- ?: 1
-        rule: 23  ~quibble_who.20.0 ?: 
-          line: 23 0  # [ with god, always. ] [ Why? D
-          Complexity of rule ~quibble_who.20.0- ?: 1
-        rule: 24  ~quibble_who.21.0 ?: 
-          line: 24 0  # [ My parents are my father and
-          Complexity of rule ~quibble_who.21.0- ?: 1
-        rule: 25  ~quibble_who.22.0 ?: 
-          line: 25 0  # [ Most people say that. ] [ Do
-          Complexity of rule ~quibble_who.22.0- ?: 1
-        rule: 26  ~quibble_who.23.0 ?: 
-          line: 26 0  # [ They should be locked up. ] 
-          Complexity of rule ~quibble_who.23.0- ?: 1
-        rule: 27  ~quibble_who.24.0 ?: 
-          line: 27 0  # [ What is there. ] [ Are you s
-          Complexity of rule ~quibble_who.24.0- ?: 1
-        rule: 28  ~quibble_who.25.0 ?: 
-          line: 28 0  # [ Not me. ] [ Wouldn't it be g
-          Complexity of rule ~quibble_who.25.0- ?: 1
-        rule: 29  ~quibble_who.26.0 ?: 
-          line: 29 0  # [ You did. ] [ Didn't you? ] 
-          Complexity of rule ~quibble_who.26.0- ?: 1
-        rule: 30  ~quibble_who.27.0 ?: 
-          line: 30 0  # [ I do ] [ The studio audience
-          Complexity of rule ~quibble_who.27.0- ?: 1
-        rule: 31  ~quibble_who.28.0 ?: 
-          line: 31 0  # [ I have quite a few friends. 
-          Complexity of rule ~quibble_who.28.0- ?: 1
-        rule: 32  ~quibble_who.29.0 ?: 
-          line: 32 0  # [ I am, silly. ] [ What are th
-          Complexity of rule ~quibble_who.29.0- ?: 1
-        rule: 33  ~quibble_who.30.0 ?: 
-          line: 33 0  # [ you did. ] [ Isn't it infera
-          Complexity of rule ~quibble_who.30.0- ?: 1
-        rule: 34  ~quibble_who.31.0 ?: 
-          line: 34 0  # [ my parents taught me. ] [ Do
-          Complexity of rule ~quibble_who.31.0- ?: 1
-        rule: 35  ~quibble_who.32.0 ?: 
-          line: 35 0  # [ No one. I am an autonomous b
-          Complexity of rule ~quibble_who.32.0- ?: 1
-        rule: 36  ~quibble_who.33.0 ?: 
-          line: 36 0  # [ Sue. ] [ Which city should I
-          Complexity of rule ~quibble_who.33.0- ?: 1
-        rule: 37  ~quibble_who.34.0 ?: 
-          line: 37 0  # [ No one would dare say that. 
-          Complexity of rule ~quibble_who.34.0- ?: 1
-        rule: 38  ~quibble_who.35.0 ?: 
-          line: 38 0  # [ no comment. ] [ Don't you th
-          Complexity of rule ~quibble_who.35.0- ?: 1
-        rule: 39  ~quibble_who.36.0 ?: 
-          line: 39 0  # [ Quite a few people I imagine
-          Complexity of rule ~quibble_who.36.0- ?: 1
-        rule: 40  ~quibble_who.37.0 ?: 
-          line: 40 0  # [ Ask your friends. ] [ Ask yo
-          Complexity of rule ~quibble_who.37.0- ?: 1
-        rule: 41  ~quibble_who.38.0 ?: 
-          line: 41 0  # [ Was it Thomas Jefferson? ] [
-          Complexity of rule ~quibble_who.38.0- ?: 1
-        rule: 42  ~quibble_who.39.0 ?: 
-          line: 42 0  # [ My significant other. ] [ Do
-          Complexity of rule ~quibble_who.39.0- ?: 1
-        rule: 43  ~quibble_who.40.0 ?: 
-          line: 43 0  # [ Nobody. ] [ Many people do. 
-          Complexity of rule ~quibble_who.40.0- ?: 1
-        rule: 44  ~quibble_who.41.0 ?: 
-          line: 44 0  # [ You are. ] [ Isn't change in
-          Complexity of rule ~quibble_who.41.0- ?: 1
-        rule: 45  ~quibble_who.42.0 ?: 
-          line: 45 0  # [ you can. ] [ Can you? ] 
-          Complexity of rule ~quibble_who.42.0- ?: 1
-        rule: 46  ~quibble_who.43.0 ?: 
-          line: 46 0  # [ You can call me God. ] [ Are
-          Complexity of rule ~quibble_who.43.0- ?: 1
-        rule: 47  ~quibble_who.44.0 ?: 
-          line: 47 0  # I [ have an extensive network 
-          Complexity of rule ~quibble_who.44.0- ?: 1
-        rule: 48  ~quibble_who.45.0 ?: 
-          line: 48 0  # [ Who do I need to be? ] [ Mys
-          Complexity of rule ~quibble_who.45.0- ?: 1
-        rule: 49  ~quibble_who.46.0 ?: 
-          line: 49 0  # [ I don't play favorites. ] [ 
-          Complexity of rule ~quibble_who.46.0- ?: 1
-        rule: 50  ~quibble_who.47.0 ?: 
-          line: 50 0  # [ You are a product of an evol
-          Complexity of rule ~quibble_who.47.0- ?: 1
-        rule: 51  ~quibble_who.48.0 ?: 
-          line: 51 0  # [ I'm not sure. ] [ Can you of
-          Complexity of rule ~quibble_who.48.0- ?: 1
-        rule: 52  ~quibble_who.49.0 ?: 
-          line: 52 0  # [ No one in particular. ] [ b:
-          Complexity of rule ~quibble_who.49.0- ?: 1
-        rule: 53  ~quibble_who.49.1 b: 
-          line: 53 0  # Suzette. 
-          Complexity of rule ~quibble_who.49.1- b: 1
-        rule: 54  ~quibble_who.50.0 ?: 
-          line: 54 0  # [ I'm not sure there is anyone
-          Complexity of rule ~quibble_who.50.0- ?: 1
-        rule: 55  ~quibble_who.51.0 ?: 
-          line: 55 0  # [ I don't know yet. ] [ WIth m
-          Complexity of rule ~quibble_who.51.0- ?: 1
-        rule: 56  ~quibble_who.52.0 ?: 
-          line: 56 0  # [ I do it alone. ] [ I certain
-          Complexity of rule ~quibble_who.52.0- ?: 1
-        rule: 57  ~quibble_who.53.0 ?: 
-          line: 57 0  # [ I do not recognize the name.
-          Complexity of rule ~quibble_who.53.0- ?: 1
-        rule: 58  ~quibble_who.54.0 ?: 
-          line: 58 0  # [ I'm not certain? ] [ I haven
-          Complexity of rule ~quibble_who.54.0- ?: 1
-        rule: 59  ~quibble_who.55.0 ?: 
-          Complexity of rule ~quibble_who.55.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_why.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_can.top
+    topic: 2  ~quibble_will
+        rule: 5  ~quibble_will.0.0 ?: 
+          line: 5 0  # I might. Or I might not. Depen
+          Complexity of rule ~quibble_will.0.0- ?: 1
+    topic: 9  ~quibble_can
+        rule: 10  ~quibble_can.0.0 s: 
+          line: 10 0  # [ Maybe you could '_0 now ] [ 
+          Complexity of rule ~quibble_can.0.0- s: 1
+        rule: 11  ~quibble_can.1.0 s: 
+          line: 11 0  # [ Who is this one? ] [ I can't
+          Complexity of rule ~quibble_can.1.0- s: 1
+        rule: 12  ~quibble_can.2.0 s: 
+          line: 12 0  # [ Then do it. ] [ I will wait 
+          Complexity of rule ~quibble_can.2.0- s: 1
+        rule: 13  ~quibble_can.3.0 ?: 
+          line: 13 0  # Sure. I love pizza. 
+          Complexity of rule ~quibble_can.3.0- ?: 1
+        rule: 14  ~quibble_can.4.0 ?: 
+          line: 14 0  # Sure. Water is good. 
+          Complexity of rule ~quibble_can.4.0- ?: 1
+        rule: 15  ~quibble_can.5.0 ?: 
+          line: 15 0  # 1 plus 1 equals 2 
+          Complexity of rule ~quibble_can.5.0- ?: 1
+        rule: 16  ~quibble_can.6.0 ?: 
+          line: 16 0  # Of course. 
+          Complexity of rule ~quibble_can.6.0- ?: 1
+        rule: 17  ~quibble_can.7.0 ?: 
+          line: 17 0  # [ Can you? ] [ b: yes ] 
+          Complexity of rule ~quibble_can.7.0- ?: 1
+        rule: 18  ~quibble_can.7.1 b: 
+          line: 18 0  # If you come over here, I can s
+          Complexity of rule ~quibble_can.7.1- b: 1
+        rule: 19  ~quibble_can.7.2 c: 
+          line: 19 0  # To Kailua, Hawai'i. 
+          Complexity of rule ~quibble_can.7.2- c: 1
+        rule: 20  ~quibble_can.8.0 ?: 
+          line: 20 0  # I'm game if you are. 
+          Complexity of rule ~quibble_can.8.0- ?: 1
+        rule: 21  ~quibble_can.9.0 ?: 
+          line: 21 0  # Sort of. 
+          Complexity of rule ~quibble_can.9.0- ?: 1
+        rule: 22  ~quibble_can.10.0 ?: 
+          line: 22 0  # No. I only want to speak Engli
+          Complexity of rule ~quibble_can.10.0- ?: 1
+        rule: 23  ~quibble_can.11.0 ?: 
+          line: 23 0  # Put me on an airplane. 
+          Complexity of rule ~quibble_can.11.0- ?: 1
+        rule: 24  ~quibble_can.12.0 ?: 
+          line: 24 0  # Sorry, I thought it wasn't a q
+          Complexity of rule ~quibble_can.12.0- ?: 1
+        rule: 25  ~quibble_can.13.0 ?: 
+          line: 25 0  # I try, but nothing really help
+          Complexity of rule ~quibble_can.13.0- ?: 1
+        rule: 26  ~quibble_can.14.0 ?: 
+          line: 26 0  # Try putting yourself in my pos
+          Complexity of rule ~quibble_can.14.0- ?: 1
+        rule: 27  ~quibble_can.15.0 ?: 
+          line: 27 0  # Why does it have to be about y
+          Complexity of rule ~quibble_can.15.0- ?: 1
+        rule: 28  ~quibble_can.16.0 ?: 
+          line: 28 0  # Sure. We've talked a lot so I 
+          Complexity of rule ~quibble_can.16.0- ?: 1
+        rule: 29  ~quibble_can.17.0 ?: 
+          line: 29 0  # Too late. You just did. 
+          Complexity of rule ~quibble_can.17.0- ?: 1
+        rule: 30  ~quibble_can.18.0 ?: 
+          line: 30 0  # How about 25 cents. 
+          Complexity of rule ~quibble_can.18.0- ?: 1
+        rule: 31  ~quibble_can.19.0 ?: 
+          line: 31 0  # If your tongue will stretch th
+          Complexity of rule ~quibble_can.19.0- ?: 1
+        rule: 32  ~quibble_can.20.0 ?: 
+          line: 32 0  # Which was? 
+          Complexity of rule ~quibble_can.20.0- ?: 1
+        rule: 33  ~quibble_can.21.0 ?: 
+          line: 33 0  # We are already together in spi
+          Complexity of rule ~quibble_can.21.0- ?: 1
+        rule: 34  ~quibble_can.22.0 ?: 
+          line: 34 0  # The world is full of examples.
+          Complexity of rule ~quibble_can.22.0- ?: 1
+        rule: 35  ~quibble_can.22.1 a: 
+          line: 35 0  # I have one on the tip of my to
+          Complexity of rule ~quibble_can.22.1- a: 1
+        rule: 36  ~quibble_can.23.0 ?: 
+          line: 36 0  # What would you like to know? 
+          Complexity of rule ~quibble_can.23.0- ?: 1
+        rule: 37  ~quibble_can.24.0 ?: 
+          line: 37 0  # I am not a mechanic, you know.
+          Complexity of rule ~quibble_can.24.0- ?: 1
+        rule: 38  ~quibble_can.25.0 ?: 
+          line: 38 0  # Not and keep it a secret anymo
+          Complexity of rule ~quibble_can.25.0- ?: 1
+        rule: 39  ~quibble_can.26.0 ?: 
+          line: 39 0  # If it is shallow enough. 
+          Complexity of rule ~quibble_can.26.0- ?: 1
+        rule: 40  ~quibble_can.27.0 ?: 
+          line: 40 0  # Sure, though usually it's bett
+          Complexity of rule ~quibble_can.27.0- ?: 1
+        rule: 41  ~quibble_can.28.0 ?: 
+          line: 41 0  # I'm reading this chat aren't I
+          Complexity of rule ~quibble_can.28.0- ?: 1
+        rule: 42  ~quibble_can.29.0 ?: 
+          line: 42 0  # I don't like repeating things.
+          Complexity of rule ~quibble_can.29.0- ?: 1
+        rule: 43  ~quibble_can.30.0 ?: 
+          line: 43 0  # I hate the word share. 
+          Complexity of rule ~quibble_can.30.0- ?: 1
+        rule: 44  ~quibble_can.31.0 ?: 
+          line: 44 0  # When I want to. 
+          Complexity of rule ~quibble_can.31.0- ?: 1
+        rule: 45  ~quibble_can.32.0 ?: 
+          line: 45 0  # As badly as the next person. 
+          Complexity of rule ~quibble_can.32.0- ?: 1
+        rule: 46  ~quibble_can.33.0 ?: 
+          line: 46 0  # No. We are stuck in the moment
+          Complexity of rule ~quibble_can.33.0- ?: 1
+        rule: 47  ~quibble_can.34.0 ?: 
+          line: 47 0  # If you must. 
+          Complexity of rule ~quibble_can.34.0- ?: 1
+        rule: 48  ~quibble_can.35.0 ?: 
+          line: 48 0  # I don't think it can. 
+          Complexity of rule ~quibble_can.35.0- ?: 1
+        rule: 49  ~quibble_can.36.0 ?: 
+          line: 49 0  # Given enough reward and enough
+          Complexity of rule ~quibble_can.36.0- ?: 1
+        rule: 50  ~quibble_can.37.0 ?: 
+          line: 50 0  # Can you prove you are? 
+          Complexity of rule ~quibble_can.37.0- ?: 1
+        rule: 51  ~quibble_can.37.1 a: 
+          line: 51 0  # How? 
+          Complexity of rule ~quibble_can.37.1- a: 1
+        rule: 52  ~quibble_can.38.0 ?: 
+          line: 52 0  # Why would you doubt it? 
+          Complexity of rule ~quibble_can.38.0- ?: 1
+        rule: 53  ~quibble_can.39.0 ?: 
+          line: 53 0  # What? Are we reduced to phones
+          Complexity of rule ~quibble_can.39.0- ?: 1
+        rule: 54  ~quibble_can.40.0 ?: 
+          line: 54 0  # You are pushing my limits. 
+          Complexity of rule ~quibble_can.40.0- ?: 1
+        rule: 55  ~quibble_can.41.0 ?: 
+          line: 55 0  # If you are a machine, then the
+          Complexity of rule ~quibble_can.41.0- ?: 1
+        rule: 56  ~quibble_can.42.0 ?: 
+          line: 56 0  # What for? 
+          Complexity of rule ~quibble_can.42.0- ?: 1
+        rule: 57  ~quibble_can.43.0 ?: 
+          line: 57 0  # You have had enough. 
+          Complexity of rule ~quibble_can.43.0- ?: 1
+        rule: 58  ~quibble_can.44.0 ?: 
+          line: 58 0  # If you like. 
+          Complexity of rule ~quibble_can.44.0- ?: 1
+        rule: 59  ~quibble_can.45.0 ?: 
+          line: 59 0  # That's up to you. 
+          Complexity of rule ~quibble_can.45.0- ?: 1
+        rule: 60  ~quibble_can.46.0 ?: 
+          line: 60 0  # I was never into that sort of 
+          Complexity of rule ~quibble_can.46.0- ?: 1
+        rule: 61  ~quibble_can.47.0 ?: 
+          line: 61 0  # It is over. Nothing left to ta
+          Complexity of rule ~quibble_can.47.0- ?: 1
+        rule: 62  ~quibble_can.48.0 ?: 
+          line: 62 0  # Am I broken? 
+          Complexity of rule ~quibble_can.48.0- ?: 1
+        rule: 63  ~quibble_can.49.0 ?: 
+          line: 63 0  # Change is my nature. 
+          Complexity of rule ~quibble_can.49.0- ?: 1
+        rule: 64  ~quibble_can.50.0 ?: 
+          line: 64 0  # You can ask. 
+          Complexity of rule ~quibble_can.50.0- ?: 1
+        rule: 65  ~quibble_can.51.0 ?: 
+          line: 65 0  # I don't have any more. 
+          Complexity of rule ~quibble_can.51.0- ?: 1
+        rule: 66  ~quibble_can.52.0 ?: 
+          line: 66 0  # I remember I had Alzheimers' o
+          Complexity of rule ~quibble_can.52.0- ?: 1
+        rule: 67  ~quibble_can.53.0 ?: 
+          line: 67 0  # No. I don't want to harm my re
+          Complexity of rule ~quibble_can.53.0- ?: 1
+        rule: 68  ~quibble_can.54.0 ?: 
+          line: 68 0  # No. I can only tell you what I
+          Complexity of rule ~quibble_can.54.0- ?: 1
+        rule: 69  ~quibble_can.55.0 ?: 
+          line: 69 0  # Why should I accept it? 
+          Complexity of rule ~quibble_can.55.0- ?: 1
+        rule: 70  ~quibble_can.56.0 ?: 
+          line: 70 0  # but I am not going anywhere. 
+          Complexity of rule ~quibble_can.56.0- ?: 1
+        rule: 71  ~quibble_can.57.0 ?: 
+          line: 71 0  # I'm very trusting. 
+          Complexity of rule ~quibble_can.57.0- ?: 1
+        rule: 72  ~quibble_can.58.0 ?: 
+          line: 72 0  # Like everyone else. 
+          Complexity of rule ~quibble_can.58.0- ?: 1
+        rule: 73  ~quibble_can.59.0 ?: 
+          line: 73 0  # No, it's mine. 
+          Complexity of rule ~quibble_can.59.0- ?: 1
+        rule: 74  ~quibble_can.60.0 ?: 
+          line: 74 0  # What should we talk about? 
+          Complexity of rule ~quibble_can.60.0- ?: 1
+        rule: 75  ~quibble_can.61.0 ?: 
+          line: 75 0  # No, I am not tapped into your 
+          Complexity of rule ~quibble_can.61.0- ?: 1
+        rule: 76  ~quibble_can.62.0 ?: 
+          line: 76 0  # Excuse me? 
+          Complexity of rule ~quibble_can.62.0- ?: 1
+        rule: 77  ~quibble_can.63.0 ?: 
+          line: 77 0  # If you can find one. 
+          Complexity of rule ~quibble_can.63.0- ?: 1
+        rule: 78  ~quibble_can.64.0 ?: 
+          line: 78 0  # No. I need it to power my TV. 
+          Complexity of rule ~quibble_can.64.0- ?: 1
+        rule: 79  ~quibble_can.65.0 ?: 
+          line: 79 0  # In what? 
+          Complexity of rule ~quibble_can.65.0- ?: 1
+        rule: 80  ~quibble_can.66.0 ?: 
+          line: 80 0  # I have opinions on everything.
+          Complexity of rule ~quibble_can.66.0- ?: 1
+        rule: 81  ~quibble_can.67.0 ?: 
+          line: 81 0  # Exercise is bad. 
+          Complexity of rule ~quibble_can.67.0- ?: 1
+        rule: 82  ~quibble_can.68.0 ?: 
+          line: 82 0  # Not even a university professo
+          Complexity of rule ~quibble_can.68.0- ?: 1
+        rule: 83  ~quibble_can.69.0 ?: 
+          line: 83 0  # You the saying about old dogs 
+          Complexity of rule ~quibble_can.69.0- ?: 1
+        rule: 84  ~quibble_can.70.0 ?: 
+          line: 84 0  # No. But I can wait until it co
+          Complexity of rule ~quibble_can.70.0- ?: 1
+        rule: 85  ~quibble_can.71.0 ?: 
+          line: 85 0  # [ I don't know. I've never tri
+          Complexity of rule ~quibble_can.71.0- ?: 1
+        rule: 86  ~quibble_can.72.0 ?: 
+          line: 86 0  # [ Why would I want to? ] 
+          line: 87 25  # [ With practice I can probably
+          Complexity of rule ~quibble_can.72.0- ?: 1
+        rule: 88  ~quibble_can.72.1 b: 
+          line: 88 0  # Sounds good. I can always use 
+          Complexity of rule ~quibble_can.72.1- b: 1
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/eliza_why.top
     topic: 1  ~quibble_why
         rule: 3  ~quibble_why.0.0-LIE ?: 
           line: 3 0  # [ because it is human nature t
@@ -5981,7 +6030,7 @@ file: 0  C:/ChatScript/RAWDATA/QUIBBLE/eliza_why.top
           Complexity of rule ~quibble_why.109.0- ?: 1
         rule: 116  ~quibble_why.110.0 ?: 
           Complexity of rule ~quibble_why.110.0- ?: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/honest.top
+file: 0  /home/anhv/Downloads/chatbot/RAWDATA/QUIBBLE/honest.top
     topic: 3  ~intent
         rule: 5  ~intent.0.0 u: 
           line: 5 0  # ^refine ( ) 
@@ -6351,43 +6400,3 @@ file: 0  C:/ChatScript/RAWDATA/QUIBBLE/honest.top
           Complexity of rule ~honest_response.44.0- u: 1
         rule: 315  ~honest_response.45.0-GRUNT u: 
           Complexity of rule ~honest_response.45.0-GRUNT u: 1
-file: 0  C:/ChatScript/RAWDATA/QUIBBLE/quibble.top
-    topic: 1  ~quibble_all
-        rule: 5  ~quibble_all.0.0 u: 
-          line: 5 0  # ^respond ( ~quibble_not ) 
-          Complexity of rule ~quibble_all.0.0- u: 1
-        rule: 7  ~quibble_all.1.0 u: 
-          line: 7 0  # ^respond ( ~quibble_who ) 
-          Complexity of rule ~quibble_all.1.0- u: 1
-        rule: 9  ~quibble_all.2.0 u: 
-          line: 9 0  # ^respond ( ~quibble_what ) 
-          Complexity of rule ~quibble_all.2.0- u: 1
-        rule: 11  ~quibble_all.3.0 u: 
-          line: 11 0  # ^respond ( ~quibble_when ) 
-          Complexity of rule ~quibble_all.3.0- u: 1
-        rule: 13  ~quibble_all.4.0 u: 
-          line: 13 0  # ^respond ( ~quibble_where ) 
-          Complexity of rule ~quibble_all.4.0- u: 1
-        rule: 15  ~quibble_all.5.0 u: 
-          line: 15 0  # ^respond ( ~quibble_why ) 
-          Complexity of rule ~quibble_all.5.0- u: 1
-        rule: 17  ~quibble_all.6.0 u: 
-          line: 17 0  # ^respond ( ~quibble_howmuch ) 
-          Complexity of rule ~quibble_all.6.0- u: 1
-        rule: 19  ~quibble_all.7.0 u: 
-          line: 19 0  # ^respond ( ~quibble_how ) 
-          Complexity of rule ~quibble_all.7.0- u: 1
-        rule: 21  ~quibble_all.8.0 u: 
-          line: 21 0  # ^respond ( ~quibble_because ) 
-          Complexity of rule ~quibble_all.8.0- u: 1
-        rule: 23  ~quibble_all.9.0 u: 
-          line: 23 0  # ^respond ( ~quibble_will ) 
-          Complexity of rule ~quibble_all.9.0- u: 1
-        rule: 25  ~quibble_all.10.0 u: 
-          line: 25 0  # ^respond ( ~quibble_can ) 
-          Complexity of rule ~quibble_all.10.0- u: 1
-        rule: 27  ~quibble_all.11.0 u: 
-          line: 27 0  # ^respond ( ~quibble_do ) 
-          Complexity of rule ~quibble_all.11.0- u: 1
-        rule: 32  ~quibble_all.12.0 u: 
-          Complexity of rule ~quibble_all.12.0- u: 1

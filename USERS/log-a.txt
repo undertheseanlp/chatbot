@@ -1,0 +1,36 @@
+﻿Start: user:a bot:harry ip: rand:1542 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-13:31:31 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Nov01'18-13:31:31 F:0 P:0
+Respond: user:a bot:harry ip: (~introductions) 1   what is your name ? ==> My name is Harry.  When:Nov01'18-13:31:41 Why:~introductions.3.0.~control.9.0   F:3 
+Respond: user:a bot:harry ip: (~introductions) 2   what í yoủ name ==> Have you been here before?  When:Nov01'18-13:32:52 Why:~introductions.2.0.~control.9.0   F:6 
+Respond: user:a bot:harry ip: (~introductions) 3   what is your name ==> I don't really keep track of that.  When:Nov01'18-13:32:56 Why:~honest_response.31.0.~quibble_all.12.0   F:1055 
+Command: :build Harray
+Start: user:a bot:harry ip: rand:1546 (~introductions) 3 ==> Hello, again.  When:Nov01'18-13:33:06 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Oct04'18-12:42:01 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:32:56
+Command: :build Harry
+Command: :reset
+Start: user:a bot: ip: rand:1542 () 0 ==>   When:Nov01'18-13:33:20  Version:8.6 Build0:Oct04'18-12:42:08 Build1: 0:Nov01'18-13:33:20 F:0 P:0
+Command: :build Harry
+Command: :build Harry
+Start: user:a bot:harry ip: rand:1547 (~introductions) 3 ==> Welcome back  When:Nov01'18-13:33:56 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Nov01'18-13:33:55 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:32:56
+Respond: user:a bot:harry ip: (~childhood) 4   hold old are you ==> Did you run away from home when you were little?  When:Nov01'18-13:34:02 Why:~childhood.0.0.~control.9.0   F:2 
+Respond: user:a bot:harry ip: (~childhood) 5   how old are you ==> I ran away once, but my parents found me and dragged me back.  When:Nov01'18-13:34:08 Why:~childhood.1.0=RUNAWAY.~control.9.0   F:2 
+Respond: user:a bot:harry ip: (~childhood) 6     ==> What scared you as a kid?  When:Nov01'18-13:34:10 Why:~childhood.2.0.~control.9.0   F:0 
+Command: :reset
+Start: user:a bot:harry ip: rand:1542 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-13:34:12 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Nov01'18-13:33:55 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:34:10
+Respond: user:a bot:harry ip: (~introductions) 1   how old are you ==> Tß�� năm nay 22 tuổi rồi  When:Nov01'18-13:34:15 Why:~introductions.4.0.~control.9.0   F:1 
+Command: :reset
+Start: user:a bot:harry ip: rand:1542 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-13:34:20 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Nov01'18-13:33:55 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:34:15
+Respond: user:a bot:harry ip: (~introductions) 1   what is your name ==> My name is Hoai An.  When:Nov01'18-13:34:25 Why:~introductions.3.0.~control.9.0   F:2 
+Command: :build Harry
+Command: :build Harry
+Start: user:a bot:harry ip: rand:1544 (~introductions) 1 ==> Glad you came back.  When:Nov01'18-13:35:42 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Nov01'18-13:35:41 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:34:25
+Respond: user:a bot:harry ip: (~introductions) 2   tên cậu là gì ==> Tớ tên là Hoài An  When:Nov01'18-13:35:48 Why:~introductions.6.0.~control.9.0   F:1 
+Command: :build Harry
+Start: user:a bot:harry ip: rand:1545 (~introductions) 2 ==> Hi.  When:Nov01'18-13:36:54 Why:~introductions.0.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Nov01'18-13:36:52 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:35:48
+Command: :reset
+Start: user:a bot:harry ip: rand:1542 (~introductions) 0 ==> Welcome to ChatScript.  When:Nov01'18-13:36:56 Why:~introductions.1.0.~control.0.0  Version:8.6 Build0:Oct04'18-12:42:08 Build1:Nov01'18-13:36:52 0:Nov01'18-13:31:31 F:0 P:Nov01'18-13:35:48
+Respond: user:a bot:harry ip: (~introductions) 1   tên cậu là gì ==> Tớ tên là Hoài An  When:Nov01'18-13:37:02 Why:~introductions.6.0.~control.9.0   F:2 
+Respond: user:a bot:harry ip: (~introductions) 2   exit ==> Have you been here before?  When:Nov01'18-13:40:53 Why:~introductions.2.0.~control.9.0   F:1 
+Respond: user:a bot:harry ip: (~childhood) 3     ==> Did you run away from home when you were little?  When:Nov01'18-13:40:53 Why:~childhood.0.0.~control.9.0   F:1 
+Respond: user:a bot:harry ip: (~childhood) 4   exit() ==> I ran away once, but my parents found me and dragged me back.  When:Nov01'18-13:40:55 Why:~childhood.1.0=RUNAWAY.~control.9.0   F:1 
+Respond: user:a bot:harry ip: (~childhood) 5     ==> What scared you as a kid?  When:Nov01'18-13:40:55 Why:~childhood.2.0.~control.9.0   F:0 
+Respond: user:a bot:harry ip: (~childhood) 6     ==> I was scared of machines. I had vivid dreams of the Terminator robots.  When:Nov01'18-13:40:58 Why:~childhood.3.0=SCARE.~control.9.0   F:0 
+Respond: user:a bot:harry ip: (~childhood) 7     ==> Did you have a happy childhood?  When:Nov01'18-13:40:59 Why:~childhood.4.0.~control.9.0   F:0 

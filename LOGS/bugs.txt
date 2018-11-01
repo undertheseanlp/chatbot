@@ -1,0 +1,64 @@
+﻿No such directory No such file or directory
+
+MinReleaseStackGap 85MB MinHeapAvailable 86MB
+MaxBuffers used 9 of 80
+
+BUG in keywordless.top at 9: ?: ( << what nature of life >>) If you believe in reincarnation, then life is currently just a charity shop of used souls. Error opening utf8writeappend file VERIFY/keywordless-b1.txt: No such file or directory
+
+BUG in introductions.top at 36: u: Tớ tên là Hoài An 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 39: u: Tớ tên là Hoài An 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 42: u: Tớ năm nay 22 tuổi rồi 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 45: u: Tớ năm nay 22 tuổi rồi 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 48: u: tớ là con gái 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 51: u: không. tớ là con gái nhé 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 54: u: tớ sống ở Hà Nội 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 57: u: tớ sống ở Hà Nội 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 60: u: tớ đến từ Hà Nội 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 36: u: Tß�� tên là Hoài An 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 39: u: Tß�� tên là Hoài An 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 42: u: Tß�� năm nay 22 tuổi rồi 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 45: u: Tß�� năm nay 22 tuổi rồi 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 48: u: tß�� là con gái 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 51: u: không. tớ là con gái nhé 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 54: u: tß�� sống ở Hà Nội 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 57: u: tß�� sống ở Hà Nội 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 60: u: tß�� đến từ Hà Nội 
+RULE-3 Missing pattern for responder
+
+BUG in introductions.top at 33: u: Tớ tên là Hoài An 
+RULE-3 Missing pattern for responder
+
