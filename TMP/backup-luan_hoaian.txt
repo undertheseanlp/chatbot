@@ -1,0 +1,29 @@
+﻿USERS/topic_luan_hoaian.txt
+jul2116 Nov04'18-23:43:27 Nov05'18-00:13:07 0 |
+1 2 ~introductions !Mb ug9AJ  DY 0 22 22 0 # start, input#, rejoindertopic,rejoinderid (a:  ( ~yes ) Welcome back! ),checksum
+~introductions #pending
+~introductions + 3 ug9AJ caaaaa 2 0 0 
+#`end topics
+$shutup=1
+$singleresponse=1
+$botprompt=HOAIAN: 
+$userprompt=luan: >
+$cs_control_main=~control
+$cs_token=75726591
+$cs_login=luan
+$cs_bot=Hoaian
+$cs_randindex=1813
+$cs_trace=0
+$cs_time=0
+#`end variables
+0 #set flags
+#`end fact sets
+#`end user facts 0
+#context 
+ may tuoi
+ cau den tu dau
+#`end user
+ Welcome to ChatScript.
+ Don't know.
+ Have you been here before?
+#`end chatbot

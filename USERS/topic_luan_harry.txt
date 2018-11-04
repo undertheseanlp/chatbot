@@ -1,18 +1,18 @@
 USERS/topic_luan_harry.txt
-jul2116 Oct24'18-23:48:38 Nov01'18-00:20:42 1540399859-4.9.0 |
-1 2 ~introductions !Mb Uk?Kk  DY 0 22 22 0 # start, input#, rejoindertopic,rejoinderid (a:  ( ~yes ) Welcome back! ),checksum
+jul2116 Nov04'18-23:10:08 Nov04'18-23:40:12 0 |
+1 1 0 DY 0 22 22 0 # start, input#, no rejoinder, #0topics, #1topics, layer2
 ~introductions #pending
-~introductions + 1 Uk?Kk da 2 0 0 
+~introductions + 1 sQeGOIs*Ok3 ai 1 0 0 
 #`end topics
-$shutup=1
-$singleresponse=1
-$botprompt=HARRY: 
-$userprompt=luan: >
-$cs_control_main=~control
-$cs_token=75726591
-$cs_login=luan
-$cs_bot=Harry
 $cs_randindex=1813
+$cs_bot=Harry
+$cs_login=luan
+$cs_token=75726591
+$cs_control_main=~control
+$userprompt=luan: >
+$botprompt=HARRY: 
+$singleresponse=1
+$shutup=1
 $cs_trace=0
 $cs_time=0
 #`end variables
@@ -20,10 +20,8 @@ $cs_time=0
 #`end fact sets
 #`end user facts 0
 #context 
- what is your name
  how old are you
 #`end user
  Welcome to ChatScript.
- My name is Harry.
- Have you been here before?
+ Tớ năm nay 22 tuổi rồi
 #`end chatbot

@@ -1,0 +1,7 @@
+﻿ ~keywordless.1.0 #! What is the nature of life
+ ~keywordless.2.0 #! yes, if user just says OK or yes or continue, then move along and give control to bot
+ ~keywordless.3.0 #! What is democracy?
+ ~keywordless.3.0 #! What is climate change?
+ ~keywordless.4.0 #! Who is Gandhi
+ ~keywordless.4.0 #! Who is Lyndon Johnson 
+ ~keywordless.4.0 #! Who is Athenian democracy 

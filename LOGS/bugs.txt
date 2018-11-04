@@ -1,0 +1,16 @@
+﻿No such directory No such file or directory
+
+MinReleaseStackGap 85MB MinHeapAvailable 86MB
+MaxBuffers used 4 of 80
+
+BUG in keywordless.top at 9: ?: ( << what nature of life >>) If you believe in reincarnation, then life is currently just a charity shop of used souls. Error opening utf8writeappend file VERIFY/keywordless-b1.txt: No such file or directory
+
+BUG in simplecontrol.top at 6: outputmacro: harry()  # you get harry by default 
+MACRO-3 macro ^harry already defined
+
+BUG in introductions.top at 35: u: ( [*] bß��n [là] tên gì [*] ) Minh ten la Hoai An.  
+PATTERN-45 Can only have variable wildcard * inside ( )
+
+BUG in introductions.top at 35: u: ( [*] bß��n [là] tên gì [*] ) Minh ten la Hoai An.  
+PATTERN-45 Can only have variable wildcard * inside ( )
+
