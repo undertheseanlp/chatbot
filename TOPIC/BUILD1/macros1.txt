@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-﻿^hoaian o 0 0 A( ) $cs_token = 4096 | 255 | 512 | 131072 | 1024 | 2048 | 24576 $cs_token += 67108864 | 65536 | 8388608 ^addtopic ( ~introductions ) $cs_control_main = ~control $userprompt = ^"%user: >" $botprompt = ^"HOAIAN: " $singleresponse = 1 $shutup = 1 `
-=======
-﻿^harry o 0 0 A( ) $cs_token = 4096 | 255 | 512 | 131072 | 1024 | 2048 | 24576 $cs_token += 67108864 | 65536 | 8388608 ^addtopic ( ~introductions ) $cs_control_main = ~control $userprompt = ^"%user: >" $botprompt = ^"HARRY: " $singleresponse = 1 $shutup = 1 `
->>>>>>> 1d58cc9cb5f8ecca4e3e21070ca349971183069d

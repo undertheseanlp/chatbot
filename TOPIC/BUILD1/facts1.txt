@@ -1,8 +1,0 @@
-﻿$cs_trace=0
-$cs_time=0
-#`end variables
-<<<<<<< HEAD
-( hoaian defaultbot defaultbot x100000 )
-=======
-( harry defaultbot defaultbot x100000 )
->>>>>>> 1d58cc9cb5f8ecca4e3e21070ca349971183069d
