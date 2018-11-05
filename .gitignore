@@ -8,3 +8,9 @@ logs
 data
 !data/weather/.gitkeep
 !data/users/.gitkeep
+
+TMP
+USERS
+TOPIC
+LOGS
+VERIFY
