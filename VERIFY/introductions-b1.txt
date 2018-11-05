@@ -4,6 +4,7 @@
      ~introductions.2.1 #! yes
      ~introductions.2.2 #! no
  ~introductions.3.0 #! what is your name 
+
  ~introductions.4.0 #! tớ có thể biết tên cậu không
  ~introductions.5.0 #! tên cậu là gì nhỉ
  ~introductions.6.0 #! tên [là] gì
@@ -17,4 +18,9 @@
  ~introductions.14.0 #! cậu là con gái miền Bắc à 
  ~introductions.15.0 #! cậu sống ở đâu
  ~introductions.16.0 #! que cau o đau
- ~introductions.17.0 #! cau đen tu đau 
+ ~introductions.17.0 #! cau đen tu đau
+
+ ~introductions.4.0 #! how old are you
+ ~introductions.5.0 #! how old are you
+ ~introductions.6.0 #! tớ có thể biết tên cậu không
+
