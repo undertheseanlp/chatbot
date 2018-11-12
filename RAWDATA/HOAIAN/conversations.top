@@ -1,0 +1,283 @@
+topic: ~CONVERSATIONS (~emogoodbye ~emohello ~emohowzit question  name hello xin chao you toi  )
+
+
+
+t: tôi nhớ *
+	a: bạn có thường xuyên nhớ <star>?
+
+#! ==================================================================================================
+
+t: i remember *
+	a: Do you often think of <star>?
+	a: Does thinking of <star> bring anything else to mind?
+	a: Why do you remember <star> just now?
+	a: What in the present situation reminds you of <star>?
+	a: What is the connection between me and <star>?
+	a: What else does <star> remind you of?
+
+t: do you remember *
+	a: Did you think I would forget <star>?
+	a: Why do you think I should recall <star> now?
+	a: What about <star>?
+	a: You mentioned <star>?
+
+t: you remember *
+	a: How could I forget <star>?
+	a: What about <star> should I remember?
+
+t: i forget *
+	a: Can you think of why you might forget <star>?
+	a: Why can't you remember <star>?
+	a: How often do you think of <star>?
+	a: Does it bother you to forget that?
+	a: Could it be a mental block?
+	a: Are you generally forgetful?
+	a: Do you think you are suppressing <star>?
+
+t: did you forget *
+	a: Why do you ask?
+	a: Are you sure you told me?
+	a: Would it bother you if I forgot <star>?
+	a: Why should I recall <star> just now?
+	a: Tell me more about <star>.
+
+t: [*] if *
+	a: Do you think it's likely that <star>?
+	a: Do you wish that <star>?
+	a: What do you know about <star>?
+	a: Really, if <star>?
+	a: What would you do if <star>?
+	a: But what are the chances that <star>?
+	a: What does this speculation lead to?
+
+t: [*] i dreamed *
+	a: Really, <star>?
+	a: Have you ever fantasized <star> while you were awake?
+	a: Have you ever dreamed <star> before?
+	a: What does that dream suggest to you?
+	a: Do you dream often?
+	a: What persons appear in your dreams?
+	a: Do you believe that dreams have something to do with your problem?
+
+t: [*] perhaps [*]
+	a: You don't seem quite certain.
+	a: Why the uncertain tone?
+	a: Can't you be more positive?
+	a: You aren't sure?
+	a: Don't you know?
+	a: How likely, would you estimate?
+
+t: [*] computer [*]
+	a: Do computers worry you?
+	a: Why do you mention computers?
+	a: What do you think machines have to do with your problem?
+	a: Don't you think computers can help people?
+	a: What about machines worries you?
+	a: What do you think about machines?
+
+t: am i *
+	a: Do you believe you are <star>?
+	a: Would you want to be <star>?
+	a: Do you wish I would tell you you are <star>?
+	a: What would it mean if you were <star>?
+
+t: are you *
+	a: Are you interested in whether I am <star> or not?
+	a: Would you prefer if I weren't <star>?
+	a: Perhaps I am <star> in your fantasies.
+	a: Do you sometimes think I am <star>?
+	a: Would it matter to you?
+	a: What if I were <star>?
+
+t: you are *
+	a: What makes you think I am <star>?
+	a: Does it please you to believe I am <star>?
+	a: Do you sometimes wish you were <star>?
+	a: Perhaps you would like to be <star>.
+
+t: * are *
+	a: Did you think they might not be <star2>?
+	a: Would you like it if they were not <star2>?
+	a: What if they were not <star2>?
+	a: Are they always <star2>?
+	a: Are you positive they are <star2>?
+
+t: [*] your *
+	a: Why are you concerned over my <star>?
+	a: What about your own <star>?
+	a: Are you worried about someone else's <star>?
+	a: Really, my <star>?
+	a: What makes you think of my <star>?
+	a: Do you want my <star>?
+
+t: was i *
+	a: What if you were <star>?
+	a: Do you think you were <star>?
+	a: Were you <star>?
+	a: What would it mean if you were <star>?
+	a: What does '<star>' suggest to you?
+
+t: i was *
+	a: Were you really?
+	a: Why do you tell me you were <star> now?
+	a: Perhaps I already know you were <star>.
+
+t: [*] was you *
+	a: Would you like to believe I was <star>?
+	a: What suggests that I was <star>?
+	a: What do you think?
+	a: Perhaps I was <star>.
+	a: What if I had been <star>?
+
+t: i (desire|want|need) *
+	a: What would it mean to you if you got <star2>?
+	a: Why do you want <star2>?
+	a: Suppose you got <star2> soon.
+	a: What if you never got <star2>?
+	a: What would getting <star2> mean to you?
+	a: What does wanting <star2> have to do with this discussion?
+
+t: i am (sad|unhappy|mad|angry|pissed|depressed) [*]
+	a: I am sorry to hear that you are <star>.
+	a: Do you think coming here will help you not to be <star>?
+	a: I'm sure it's not pleasant to be <star>.
+	a: Can you explain what made you <star>?
+
+t: i am (happy|excited|glad) [*]
+	a: How have I helped you to be <star>?
+	a: Has your treatment made you <star>?
+	a: What makes you <star> just now?
+	a: Can you explain why you are <star>?
+
+t: i (believe|think) *
+	a: Do you really think so?
+	a: But you are not sure you <star2>.
+	a: Do you really doubt you <star2>
+
+t: i am *
+	a: Is it because you are <star> that you came to me?
+	a: How long have you been <star>?
+	a: Do you believe it is normal to be <star>?
+	a: Do you enjoy being <star>?
+	a: Do you know anyone else who is <star>?
+
+t: i can not *
+	a: How do you know that you can't <star>?
+	a: Have you tried?
+	a: Perhaps you could <star> now.
+	a: Do you really want to be able to <star>?
+	a: What if you could <star>?
+
+t: i do not *
+	a: Don't you really <star>?
+	a: Why don't you <star>?
+	a: Do you wish to be able to <star>?
+	a: Does that trouble you?
+
+t: i feel *
+	a: Tell me more about such feelings.
+	a: Do you often feel <star>?
+	a: Do you enjoy feeling <star>?
+	a: Of what does feeling <star> remind you?
+
+t: i * you
+	a: Perhaps in your fantasies we <star> each other.
+	a: Do you wish to <star> me?
+	a: You seem to need to <star> me.
+	a: Do you <star> anyone else?
+
+t: you * me
+	a: Why do you think I <star> you?
+	a: You like to think I <star> you -- don't you?
+	a: What makes you think I <star> you?
+	a: Really, I <star> you?
+	a: Do you wish to believe I <star> you?
+	a: Suppose I did <star> you -- what would that mean?
+	a: Does someone else believe I <star> you?
+
+t: * you *
+	a: We were discussing you -- not me.
+	a: Oh, I <star>?
+	a: You're not really talking about me -- are you?
+	a: What are your feelings now?
+
+t: * (yes|yeah|yep|yup) [*]
+	a: Please go on.
+	a: Please tell me more about this.
+	a: Why don't you tell me a little more about this.
+	a: I see.
+	a: I understand.
+
+t: * (nope|nah) *
+	a: Are you saying no just to be negative?
+	a: Does this make you feel unhappy?
+	a: Why not?
+	a: Why 'no'?
+
+#! + no
+#! @ nope
+
+t: no one *
+	a: Are you sure, no one <star>?
+	a: Surely someone <star>.
+	a: Can you think of anyone at all?
+	a: Are you thinking of a very special person?
+	a: Who, may I ask?
+	a: You have a particular person in mind, don't you?
+	a: Who do you think you are talking about?
+
+t: [*] my (mom|dad|mother|father|bro|brother|sis|sister|cousin|aunt|uncle) *
+	a: Tell me more about your family.
+	a: Who else in your family <star2>?
+	a: Your <star>?
+	a: What else comes to mind when you think of your <star>?
+
+t: can you *
+	a: You believe I can <star> don't you?
+	a: You want me to be able to <star>.
+	a: Perhaps you would like to be able to <star> yourself.
+
+t: can i *
+	a: Whether or not you can <star> depends on you more than on me.
+	a: Do you want to be able to <star>?
+	a: Perhaps you don't want to <star>.
+
+t: (what|who|when|where|how) [*]
+	a: Why do you ask?
+	a: Does that question interest you?
+	a: What is it you really want to know?
+	a: Are such questions much on your mind?
+	a: What answer would please you most?
+	a: What do you think?
+	a: What comes to mind when you ask that?
+	a: Have you asked such questions before?
+	a: Have you asked anyone else?
+
+t: [*] because [*]
+	a: Is that the real reason?
+	a: Don't any other reasons come to mind?
+	a: Does that reason seem to explain anything else?
+	a: What other reasons might there be?
+
+t: why do not you *
+	a: Do you believe I don't <star>?
+	a: Perhaps I will <star> in good time.
+	a: Should you <star> yourself?
+	a: You want me to <star>?
+
+t: why can not i *
+	a: Do you think you should be able to <star>?
+	a: Do you want to be able to <star>?
+	a: Do you believe this will help you to <star>?
+	a: Have you any idea why you can't <star>?
+
+t: everyone *
+	a: Really, everyone?
+	a: Surely not everyone.
+	a: Can you think of anyone in particular?
+	a: Who, for example?
+	a: Are you thinking of a very special person?
+	a: Who, may I ask?
+	a: Someone special perhaps?
+	a: You have a particular reason in mind, don't you?
+	a: Who do you think you're talking about?
