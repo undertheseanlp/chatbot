@@ -10,6 +10,7 @@ data
 !data/users/.gitkeep
 
 TMP
-LOGS
-TOPIC
 USERS
+TOPIC
+LOGS
+VERIFY
