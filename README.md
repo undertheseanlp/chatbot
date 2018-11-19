@@ -64,6 +64,18 @@ source activate chatbot
 pip install -r requirements.txt
 ```
 
+## Thiết lập Chatscript 
+
+Để chạy local test thử 
+
+```
+$ BINARIES/LinuxChatScript64 local
+Enter user name: test
+HOAIAN:  I don't know what to say.
+test: > ten gi 
+HOAIAN:  To ten la Hoai An
+```
+
 ## Hướng dẫn sử dụng
 
 Để chạy chatbot, gõ các câu lệnh 
