@@ -30,10 +30,9 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 * [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
 * [Bản quyền](#bản-quyền)
 
-
 ## Giới thiệu về Hoài An 
 
-Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
+Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với 3333mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
 
 Cùng chat với Hoài An tại [đường dẫn này](http://undertheseanlp.com:8000/#!/) nhé.
 
