@@ -37,7 +37,7 @@ HoaiAn.reply("local", ":reset")
 HoaiAn.reply("local", ":trace")
 
 files = [
-    "data/hoaian01/raw/conversation.json",
+    # "data/hoaian01/raw/conversation.json",
     "data/hoaian01/raw/myself.json"
 ]
 for filepath in files:
