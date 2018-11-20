@@ -32,7 +32,7 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 
 ## Giới thiệu về Hoài An 
 
-Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với 3333mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
+Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
 
 Cùng chat với Hoài An tại [đường dẫn này](http://undertheseanlp.com:8000/#!/) nhé.
 
@@ -63,21 +63,16 @@ source activate chatbot
 pip install -r requirements.txt
 ```
 
-## Thiết lập Chatscript 
-
-Để chạy local test thử 
-
-```
-$ BINARIES/LinuxChatScript64 local
-Enter user name: test
-HOAIAN:  I don't know what to say.
-test: > ten gi 
-HOAIAN:  To ten la Hoai An
-```
-
 ## Hướng dẫn sử dụng
 
-Để chạy chatbot, gõ các câu lệnh 
+Bật chatscript server
+
+```
+cd engine/chatscript
+python server.py
+```
+
+Bật web server để chat 
 
 ```
 cd chatbot
