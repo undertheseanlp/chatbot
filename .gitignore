@@ -5,10 +5,6 @@ __pycache__
 logs
 !logs/.gitkeep
 
-data
-!data/weather/.gitkeep
-!data/users/.gitkeep
-
 TMP
 USERS
 TOPIC
