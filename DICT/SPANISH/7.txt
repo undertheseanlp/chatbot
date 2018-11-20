@@ -1,3 +1,0 @@
-﻿ 7 ( ADJECTIVE_NUMBER NOUN_NUMBER ) 
- 7,2I ( ) 
- 7/T.4 ( ) 
