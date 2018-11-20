@@ -6,9 +6,9 @@ chatbot = Chatbot()
 chatbot.response(":build HoaiAn")
 
 chatbot.response(":reset")
-output = chatbot.response("may tuoi")
+output = chatbot.response("hi")
 print(output)
 
 chatbot.response(":reset")
-output = chatbot.response("ten gi")
+output = chatbot.response("tên gi")
 print(output)

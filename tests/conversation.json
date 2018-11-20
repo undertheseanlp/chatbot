@@ -1,0 +1,15 @@
+[
+  {
+    "question": ["tên gì"],
+    "answer": ["Tớ tên là Hoài An"]
+  },
+  {
+    "question": ["tạm biệt", "chào nhé"],
+    "answer": ["Chào cậu. lần khác nói tiếp nhé"]
+  },
+  {
+    "question": ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không", "bạn khỏe không"],
+    "answer": ["Tớ vẫn khỏe, chat chit suốt ngày. hi hi"]
+  }
+]
+

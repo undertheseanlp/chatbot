@@ -2,8 +2,8 @@ from engine.hoaian import HoaiAn
 
 
 def tests():
-    GREETING_HELLO = ["hi"]
-    GREETING_BYE = ["tạm biệt"]
+    GREETING_HELLO = ["tên gì", "hi"]
+    GREETING_BYE = ["tạm biệt", "chào nhé"]
     GREETING_HRU = ["khoe khong", "Bạn có khỏe không", "khỏe không?", "Khoẻ không", "bạn khỏe không"]
     UNKNOWN_ANSWER = [
         "Roger là ai"
@@ -23,6 +23,8 @@ def tests():
     #     TOPIC_FINDING
     # ]
     messages = []
+    HoaiAn.reply("local", ":build HoaiAn")
+    HoaiAn.reply("local", ":reset")
     for collection in COLLECTION:
         messages.extend(collection)
     for message in messages:
