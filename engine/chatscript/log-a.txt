@@ -1,9 +1,0 @@
-﻿No such bot.
-No such bot.
-No such bot.
-No such bot.
-No such bot.
- System startup  Thu Jun 21 15:43:07 2018
-missing build labelSystem startup all Thu Jun 21 15:43:10 2018
-ChatScript Version 8.0  compiled Feb  1 2018 03:26:02
- No such bot.

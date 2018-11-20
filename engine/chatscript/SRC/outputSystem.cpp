@@ -330,22 +330,22 @@ void ReformatString(char starter, char* input,char*& output, FunctionResult& res
 		else if (prior == '\\') // protected special character
 		{
 			++input;
-			if (starter == '"' && *input == 'n') 
+			if ((starter == '"' || starter == '\'') && *input == 'n')
 			{
 				strcpy(output,"\\n");
 				output += 2;
 			}
-			else if (starter == '"' && *input == 't') 
+			else if ((starter == '"' || starter == '\'') && *input == 't')
 			{
 				strcpy(output,"\\t");
 				output += 2;
 			}
-			else if (starter == '"' && *input == 'r') 
+			else if ((starter == '"' || starter == '\'') && *input == 'r')
 			{
 				strcpy(output,"\\r");
 				output += 2;
 			}
-			else if (starter == '"') *output++ = *input; // just pass along the protected char in ^"xxx" strings
+			else if ((starter == '"' || starter == '\'')) *output++ = *input; // just pass along the protected char in ^"xxx" strings
 			else // is ^'xxxx' string - other than our special ' we need, leave all other escapes alone as legal json
 			{
 				if (str) *output++ = *input;  // copy inside a string
@@ -394,6 +394,11 @@ void StdNumber(char* word,char*& buffer,int controls) // text numbers may have s
 
     char c = IsFloat(word, end);
     if (c == 'e') // leave exponent numbers in original form. 
+    {
+        strcpy(buffer, word);
+        return;
+    }
+    if (controls & (ASSIGNMENT | OUTPUT_UNTOUCHEDSTRING)) // make no transformation on assignment
     {
         strcpy(buffer, word);
         return;
@@ -619,7 +624,7 @@ static char* Output_Function(char* word, char* ptr,  char* space,char*& buffer, 
 		if (!once && IsAssignmentOperator(ptr)) ptr = PerformAssignment(word,ptr,buffer,result); 
 		else
 		{
-			char* value = FNVAR(word+1);
+            char* value = FNVAR(word+1);
 			size_t len = strlen(value);
 			size_t size = (buffer - currentOutputBase);
 			if ((size + len) >= (currentOutputLimit-50) ) 
@@ -656,7 +661,7 @@ static char* Output_Function(char* word, char* ptr,  char* space,char*& buffer, 
 		else // we are right side (expression) indirect
 		{
 			Output(word+1,buffer,result,controls); // no leading space  - we now have the variable value from the indirection
-			if (word[1] == USERVAR_PREFIX) // direct retry to avoid json issues
+			if (word[1] == USERVAR_PREFIX && *ptr != '(') // direct retry to avoid json issues (unless function call)
 			{
 				strcpy(word,GetUserVariable(word+1));
 				Output_Dollar(word, "", space,buffer,controls,result,false,false); // allow json processing
@@ -905,6 +910,21 @@ static char* Output_Dollar(char* word, char* ptr, char* space,char*& buffer, uns
 			ptr = PerformAssignment(word,ptr,buffer,result); 
 		else
 		{
+            char* at1 = word;
+            while (*at1 == '_' || *at1 == '$') ++at1;
+            while (*++at1)
+            {
+                if (IsLegalNameCharacter(*++at1) || *at1 == '.' || *at1 == '[' || *at1 == ']'); // find real end of var allowing json references
+                else if ((*at1 == '$') && (*(at1 - 1) == '[' || *(at1 - 1) == '.')) { ; } // allowed variable json ref
+                else break;
+            }
+            if (at1 && *at1)
+            {
+                *at1 = 0;
+                size_t len = at1 - word;
+                ptr = ptr - len;
+            }
+
 			char* value = GetUserVariable(word,nojson);
 			StdNumber(value,buffer,controls);
 			char* at = SkipWhitespace(buffer);

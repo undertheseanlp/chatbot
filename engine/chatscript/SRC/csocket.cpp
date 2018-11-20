@@ -34,17 +34,29 @@ serverFinishedBy is what time the answer must be delivered (1 second before the 
 bool echoServer = false;
 
 char serverIP[100];
+
+
+void LogChat(uint64 starttime, char* user, char* bot, char* IP, int turn, char* input, char* output)
+{
+    struct tm ptm;
+    char* date = GetTimeInfo(&ptm, true) + SKIPWEEKDAY;
+    date[15] = 0;	// suppress year
+    memmove(date + 3, date + 4, 13); // compress out space
+    size_t len = strlen(output);
+    char* why = output + len + HIDDEN_OFFSET; //skip terminator + 2 ctrl z end marker
+    size_t len1 = strlen(why);
+    char* activeTopic = (*why) ? (char*)(why + len1 + 1) : (char*)"";
+    uint64 endtime = ElapsedMilliseconds();
+    char* nl = (LogEndedCleanly()) ? (char*) "" : (char*) "\r\n";
+    if (*input) Log(SERVERLOG, (char*)"%sRespond: user:%s bot:%s ip:%s (%s) %d %s  ==> %s  When:%s %dms %s\r\n", nl, user, bot, IP, activeTopic, turn, input, Purify(output), date, (int)(endtime - starttime), why);
+    else Log(SERVERLOG, (char*)"%sStart: user:%s bot:%s ip:%s (%s) %d ==> %s  When:%s %dms %s Version:%s Build0:%s Build1:%s %s\r\n", nl, user, bot, IP, activeTopic, turn, Purify(output), date, (int)(endtime - starttime), why, version, timeStamp[0], timeStamp[1], why);
+}
+
 #ifndef DISCARDSERVER
 
 #ifdef EVSERVER
 #include "cs_ev.h"
 #include "evserver.h"
-#endif
-
-#ifdef WIN32
-//#define WEBSOCKET 1
-#include "easywclient/easywsclient.hpp"
-#include "easywclient/easywsclient.cpp" 
 #endif
 
 #define DOSOCKETS 1
@@ -274,6 +286,7 @@ void Client(char* login)// test client for a server
     if (!trace) echo = false;
     (*printer)((char*)"%s",(char*)"\r\n\r\n** Client launched\r\n");
     char* from = login;
+    char copy[MAX_WORD_SIZE * 10];
 
 	char* data = AllocateBuffer(); // read from user or file
     char* response = AllocateBuffer(); // returned from chatbot
@@ -289,6 +302,8 @@ void Client(char* login)// test client for a server
     *bot = 0;
     char* botp = bot;
     *data = 0;
+    int count = -1;
+    int skip = 0;
     if (*from == '*') // let user go first.
 	{
 		++from;
@@ -325,6 +340,8 @@ restart: // start with user
     *ptr = 0;
     size_t baselen = ptr - sendbuffer; // length of  message user/bot header not including message
     bool converse = false;
+    bool starts = false;
+    bool raw = false;
     FILE* sourcefile = NULL;
     try
 	{
@@ -343,6 +360,36 @@ SOURCE:
         ReadCompiledWord(ptr + 8, file);
         sourcefile = fopen(file, (char*)"rb");
     }
+    else if (!strncmp(ptr, (char*)":starts ", 8))
+    {
+        char file[SMALL_WORD_SIZE];
+        ptr = ReadCompiledWord(ptr + 8, file);
+        source = fopen(file, (char*)"rb");
+        starts = true;
+        ptr = SkipWhitespace(ptr);
+        char num[100];
+        ptr = ReadCompiledWord(ptr, num);
+        count = atoi(num);
+        if (count == 0) count = 1000000;
+        ptr = ReadCompiledWord(ptr, num);
+        skip = atoi(num);
+        ptr = data;
+    }
+    else if (!strncmp(ptr, (char*)":raw ", 5))
+    {
+        char file[SMALL_WORD_SIZE];
+        ptr = ReadCompiledWord(ptr + 5, file);
+        source = fopen(file, (char*)"rb");
+        raw = true;
+        ptr = SkipWhitespace(ptr);
+        char num[100];
+        ptr = ReadCompiledWord(ptr, num);
+        count = atoi(num);
+        if (count == 0) count = 1000000;
+        ptr = ReadCompiledWord(ptr, num);
+        skip = atoi(num);
+        ptr = data;
+    }
     char* sep = NULL;
     TCPSocket *sock;
     int n = 0;
@@ -352,13 +399,13 @@ SOURCE:
         if (converse) // do a conversation of multiple lines each tagged with user until done
         {
             ptr = data;
-            if (fgets(ptr, 100000 - 100, sourcefile ) == NULL) break;
-            if ((unsigned char)ptr[0] == 0xEF && (unsigned char)ptr[1] == 0xBB && (unsigned char)ptr[2] == 0xBF) memmove(data,data+3,strlen(data+2));// UTF8 BOM
+            if (fgets(ptr, 100000 - 100, sourcefile) == NULL) break;
+            if ((unsigned char)ptr[0] == 0xEF && (unsigned char)ptr[1] == 0xBB && (unsigned char)ptr[2] == 0xBF) memmove(data, data + 3, strlen(data + 2));// UTF8 BOM
             // (*printer)((char*)"Read %s\r\n",  data);
-
+            strcpy(copy, ptr);
             size_t l = strlen(ptr);
             ptr[l - 2] = 0; // remove crlf
-            
+
             // a line is username message
             char* blank = strchr(ptr, '\t'); // user / botname
             if (!blank) continue;
@@ -368,9 +415,9 @@ SOURCE:
             if (!sep) continue;
             *sep = 0; // bot string now there
             strcpy(bot, blank + 1);
+
             botp = bot;
             botlen = strlen(bot);
-
             if (stricmp(ptr, user)) // change over user with null start message
             {
                 strcpy(user, data);
@@ -384,40 +431,138 @@ SOURCE:
                 sendbuffer[baselen] = 0;
                 // (*printer)((char*)"Sent login %s\r\n", data);
                 sock = new TCPSocket(serverIP, (unsigned short)port);
-                sock->send(sendbuffer, baselen+1);
+                sock->send(sendbuffer, baselen + 1);
                 ReadSocket(sock, response);
+                delete(sock);
             }
             msg = sep + 1;
+            ptr = msg;
         }
-
+        else if (starts)
+        {
+            ptr = data;
+            if (fgets(ptr, 100000 - 100, source) == NULL)
+                break;
+            if (--skip > 0) continue;
+            if (--count < 0)
+                break;
+            strcpy(copy, ptr);
+            if ((unsigned char)ptr[0] == 0xEF && (unsigned char)ptr[1] == 0xBB && (unsigned char)ptr[2] == 0xBF) memmove(data, data + 3, strlen(data + 2));// UTF8 BOM
+            char cat[MAX_WORD_SIZE];
+            char spec[MAX_WORD_SIZE];
+            char loc[MAX_WORD_SIZE];
+            size_t l = strlen(ptr);
+            ptr[l - 2] = 0; // remove crlf
+            char output[MAX_WORD_SIZE * 10];
+            // userid, chatid, cat, spec, loc, message, output
+            char* blank = strchr(ptr, '\t'); 
+            if (!blank) continue;
+            *blank = 0;  // user string now there
+            strcpy(user, data);
+            //ptr = blank + 1;
+            //blank = strchr(ptr, '\t'); // end of chatid
+            ptr = blank + 1; // cat
+            blank = strchr(ptr,'\t');
+            *blank = 0;
+            strcpy(cat, ptr);
+            ptr = blank + 1; // spec
+            blank = strchr(ptr, '\t');
+            *blank = 0;
+            strcpy(spec, ptr);
+            ptr = blank + 1; // loc
+            blank = strchr(ptr, '\t'); // end of loc
+            *blank = 0;
+            strcpy(loc, ptr);
+            ptr = blank + 1; // start of message
+            blank = strchr(ptr, '\t'); 
+            if (blank)
+            {
+                strcpy(output, blank + 1);
+                *blank = 0; // mark end of message
+            }
+            else *output = 0;
+            strcpy(sendbuffer, "user1"); // same user here always
+            userlen = strlen(sendbuffer);
+            *bot = 0;
+            botlen = strlen(bot);
+            sendbuffer[userlen + 1] = 0;
+            strcpy(sendbuffer + userlen + 1, bot);
+            sendbuffer[userlen + 1 + botlen + 1] = 0;
+            baselen = userlen + botlen + 2;
+            char* at = sendbuffer + baselen;
+            if (!*loc) sprintf(at , "[ category: %s specialty: %s id: %s expect: \"%s\"]", cat, spec, user,output);
+            else sprintf(at, "[ category: %s specialty: %s id: %s location: %s  expect: \"%s\"]", cat, spec, user,loc,output);
+            sock = new TCPSocket(serverIP, (unsigned short)port);
+            sock->send(sendbuffer, baselen + 1 + strlen(at));
+            ReadSocket(sock, response);
+            delete(sock);
+        }
+        else if (raw)
+        {
+            ptr = data;
+            if (fgets(ptr, 100000 - 100, source) == NULL)
+                break;
+            if (--skip > 0) continue;
+            if (--count < 0)
+                break;
+            strcpy(copy, ptr);
+            if ((unsigned char)ptr[0] == 0xEF && (unsigned char)ptr[1] == 0xBB && (unsigned char)ptr[2] == 0xBF) memmove(data, data + 3, strlen(data + 2));// UTF8 BOM
+            strcpy(user, "user1");
+            strcpy(sendbuffer, user);
+            userlen = strlen(sendbuffer);
+            *bot = 0;
+            botlen = strlen(bot);
+            sendbuffer[userlen + 1] = 0;
+            strcpy(sendbuffer + userlen + 1, bot);
+            sendbuffer[userlen + 1 + botlen + 1] = 0;
+            baselen = userlen + botlen + 2;
+            char* at = sendbuffer + baselen;
+            sprintf(at, "[ category: %s ]", "legal");
+            sock = new TCPSocket(serverIP, (unsigned short)port);
+            sock->send(sendbuffer, baselen + 1 + strlen(at));
+            ReadSocket(sock, response);
+            delete(sock);
+        }
         // send our normal message now
-        msglen = strlen(msg);
-        strncpy(sendbuffer + baselen, msg,msglen+1);
+        msglen = strlen(ptr);
+        strncpy(sendbuffer + baselen, ptr,msglen+1);
 
         size_t len = baselen + msglen + 1;
 		sock = new TCPSocket(serverIP, (unsigned short)port);
 	    sock->send(sendbuffer, len);
-        if (!converse) (*printer)((char*)"Sent %d bytes of data to port %d - %s|%s\r\n",(int)len, port, sendbuffer,msg);
+        if (!converse && !starts && !raw) (*printer)((char*)"Sent %d bytes of data to port %d - %s|%s\r\n",(int)len, port, sendbuffer,msg);
         ReadSocket(sock, response);
-        if (strstr(response, "IGNORE_"))
-        {
-            int xx = 0;
-        }
         if (!trace) echo = !converse;
-		Log(STDTRACELOG,(char*)"%s", response); // chatbot replies this
+		if (!starts && !raw) Log(STDTRACELOG,(char*)"%s", response); // chatbot replies this
         delete(sock);
 
 		// we say that  until :exit
-		if (!converse) (*printer)((char*)"%s",(char*)"\r\n>    ");
+        if (!converse && !starts && !raw)
+        {
+            (*printer)((char*)"%s", response);
+            (*printer)((char*)"%s", (char*)"\r\n>    ");
+        }
+        else if (starts || raw) {}
         else Log(STDTRACELOG, "%s %s %s\r\n", user, bot, response);
-        if (!converse)
+        if (!converse && !starts && !raw)
         {
             if (!ReadALine(data, source, 100000 - 100)) break; // next thing we want to send
             strcat(data, (char*)" "); // never send empty line
             msg = data;
+            ptr = data;
             // special instructions
 		    if (!strnicmp(SkipWhitespace(data),(char*)":quit",5)) break;
 		    else if (!strnicmp(SkipWhitespace(data),(char*)":source",7)) goto SOURCE;
+            else if (!strnicmp(SkipWhitespace(data), (char*)":starts", 7))
+            {
+                ptr = data;
+                goto SOURCE;
+            }
+            else if (!strnicmp(SkipWhitespace(data), (char*)":raw", 4))
+            {
+                ptr = data;
+                goto SOURCE;
+            }
             else if (!converse && !strncmp(data, (char*)":converse ", 9))
             {
                 char file[SMALL_WORD_SIZE];
@@ -446,7 +591,8 @@ SOURCE:
     }
 
 	}
-	catch(SocketException e) { myexit((char*)"failed to connect to server\r\n");}
+	catch(SocketException e) { 
+        myexit((char*)"failed to connect to server\r\n");}
     if (sourceFile) fclose(sourceFile);
 }
 #endif
@@ -590,20 +736,6 @@ void* RegressLoad(void* junk)// test load for a server
 		else msg++;
 	}
 	return 0;
-}
-
-void LogChat(uint64 starttime,char* user,char* bot,char* IP, int turn,char* input,char* output)
-{
-	struct tm ptm;
-	char* date = GetTimeInfo(&ptm,true)+SKIPWEEKDAY;
-	date[15] = 0;	// suppress year
-	memmove(date+3,date+4,13); // compress out space
-	char* why = output + strlen(output) + 3; //skip terminator + 2 ctrl z end marker
-	char* activeTopic = why + strlen(why) + 1;
-	uint64 endtime = ElapsedMilliseconds(); 
-	char* nl = (LogEndedCleanly()) ? (char*) "" : (char*) "\r\n";
-	if (*input) Log(SERVERLOG,(char*)"%sRespond: user:%s bot:%s ip:%s (%s) %d %s  ==> %s  When:%s %dms %s\r\n", nl,user,bot,IP,activeTopic,turn,input,Purify(output),date,(int)(endtime - starttime),why);
-	else Log(SERVERLOG,(char*)"%sStart: user:%s bot:%s ip:%s (%s) %d ==> %s  When:%s %dms Version:%s Build0:%s Build1:%s %s\r\n",nl, user,bot,IP,activeTopic,turn,Purify(output),date,(int)(endtime - starttime),version,timeStamp[0],timeStamp[1],why);
 }
 
 #ifndef EVSERVER // til end of file
@@ -917,39 +1049,23 @@ void handle_message(const std::string & message)
 
 void InternetServer()
 {
-	if (!*websocketParam)
-	{
-		_beginthread((void(__cdecl *)(void *))AcceptSockets, 0, 0);	// the thread that does accepts... spinning off clients
-		MainChatbotServer();  // run the server from the main thread
-		CloseHandle(hChatLockMutex);
-		DeleteCriticalSection(&TestCriticalSection);
-		DeleteCriticalSection(&LogCriticalSection);
-	}
-	else
-	{
-		using easywsclient::WebSocket;
-		WebSocket::pointer ws = WebSocket::from_url(websocketParam); //"ws://localhost:8126/foo"
-		if (!ws) myexit("unable to establish websocket\r\n");
-		assert(ws);
-
-		ws->send("{\"id\" : \"ai0\", \"secret\" : \"abc123\", \"status\":\"register\" }");
-		ws->send("{\"id\" : \"ai0\", \"secret\" : \"abc123\",\"status\":\"roundInformation\" }");
-
-		while (true) {
-			ws->poll(-1);
-			ws->dispatch(handle_message);
-			(*printer)("sent %s\r\n", ourMainOutputBuffer);
-			ws->send(ourMainOutputBuffer);
-		}
-		ws->close();
-		delete ws;
-	}
+	_beginthread((void(__cdecl *)(void *))AcceptSockets, 0, 0);	// the thread that does accepts... spinning off clients
+	MainChatbotServer();  // run the server from the main thread
+	CloseHandle(hChatLockMutex);
+	DeleteCriticalSection(&TestCriticalSection);
+	DeleteCriticalSection(&LogCriticalSection);
 }
 #endif
 
 static void ServerTransferDataToClient()
 {
-    strcpy(clientBuffer+SERVERTRANSERSIZE,ourMainOutputBuffer);
+    size_t len = strlen(ourMainOutputBuffer); // main message
+    char* why = ourMainOutputBuffer + len + 1;
+    size_t len1 = strlen(why); // hidden why
+    char* topic = why + len1 + 1;
+    size_t len2 = strlen(topic); // hidden active topic
+    size_t offset = SERVERTRANSERSIZE;
+    memcpy(clientBuffer+offset,ourMainOutputBuffer,len+len1+len2 + 4);
     clientBuffer[sizeof(int)] = 0; // mark we are done.... 
 #ifndef WIN32
     pendingClients--;
@@ -1176,6 +1292,8 @@ static void* MainChatbotServer()
 		else strcpy(ourMainOutputBuffer,(char*)"Hey, sorry. I forgot what I was thinking about.");
 		ServerTransferDataToClient();
 #endif
+        factThread = NULL;
+        userVariableThreadList = NULL;
 		ResetBuffers(); //   in the event of a trapped bug, return here, we will still own the chatlock
 	}
     chatbotExists = true;   //  if a client can get the chatlock now, he will be happy

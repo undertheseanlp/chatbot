@@ -326,7 +326,7 @@ typedef unsigned int DICTINDEX;	//   indexed ref to a dictionary entry
 
 #define USER_FLAGS			0x000F0000 
 #define SYSTEM_FLAGS		0xFFF0FFF0 // system used top 12 bits and bottom 12
-// unused 0x00004000 
+// FACTBOOT 0x00004000  // FACTBOOT - user created fact migrates to boot declared not visible to script
 // unused 0x00008000
 #define JSON_OBJECT_FACT	0x00002000 // on subject side of triple
 #define JSON_ARRAY_FACT		0x00001000	// on subject side of triple
@@ -561,7 +561,8 @@ typedef unsigned int DICTINDEX;	//   indexed ref to a dictionary entry
 #define SINGULAR 37
 #define ISPROBABLE 38
 #define PLURAL 39
-#define LASTCONTROL PLURAL  // add new ops to optable as well
+#define DUALNOUN 40
+#define LASTCONTROL DUALNOUN  // add new ops to optable as well
 
 #define SKIP 1 // if it matches, move ptr along, if it doesnt DONT
 #define STAY 2
@@ -679,7 +680,7 @@ typedef unsigned int DICTINDEX;	//   indexed ref to a dictionary entry
 #define RESPONSE_NOCONVERTSPECIAL			0x02000000
 #define RESPONSE_CURLYQUOTES				0x04000000
 #define ALL_RESPONSES ( RESPONSE_UPPERSTART | RESPONSE_REMOVESPACEBEFORECOMMA | RESPONSE_ALTERUNDERSCORES | RESPONSE_REMOVETILDE | RESPONSE_NOCONVERTSPECIAL ) 
-
+#define RESPONSE_NOFACTUALIZE               0x08000000
 #define ASSIGNMENT				0x01000000 //used by performassignment
 
 

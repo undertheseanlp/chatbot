@@ -20,7 +20,7 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
 
 #define ILLEGAL_MATCHVARIABLE -1
 
-#define MAX_WILDCARDS 20  // _0 ... _20 inclusive
+#define MAX_WILDCARDS 30  // _0 ... _30 inclusive
 #define WILDCARD_START(x) (x & 0x0000ffff)
 #define WILDCARD_END(x) ( x >> 16)
 extern  unsigned int modifiedTraceVal;
@@ -39,7 +39,8 @@ extern unsigned int tracedFunctionsIndex;
 extern WORDP tracedFunctionsList[MAX_TRACED_FUNCTIONS];
 extern char wildcardSeparator[2];
 extern unsigned int userVariableThreadList;
-extern unsigned int botVariableThreadList;
+
+extern unsigned int botFactThreadList;
 extern unsigned int kernelVariableThreadList;
 // wildcard accessors
 char* GetwildcardText(unsigned int i, bool canon);

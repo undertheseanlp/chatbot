@@ -1,3 +1,4 @@
+ nebuliser nebulizer
  accessorise accessorize
  accessorised accessorized
  accessorises accessorizes
@@ -184,6 +185,7 @@
  carbonised carbonized
  carbonises carbonizes
  carbonising carbonizing
+ carburettor carburetor
  carolled caroled
  carolling caroling
  catalogue catalog
@@ -1137,6 +1139,7 @@
  patronisingly patronizingly
  pedalled pedaled
  pedalling pedaling
+ paycheque paycheck
  pedestrianisation pedestrianization
  pedestrianise pedestrianize
  pedestrianised pedestrianized

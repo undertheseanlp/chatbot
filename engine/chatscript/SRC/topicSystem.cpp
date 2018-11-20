@@ -525,6 +525,24 @@ char* GetTopicData(int topicid)
     return (data+JUMP_OFFSET); //   point past accellerator to the t:
 }
 
+void WalkTopics(char* function, char* buffer)
+{
+    for (int i = 1; i <= numberOfTopics; ++i)
+    {
+        if (!*GetTopicName(i)) continue;
+        topicBlock* block = TI(i);
+        char label[MAX_WORD_SIZE];
+        // skip if current bot cannot access
+        if (block->topicRestriction && !strstr(block->topicRestriction, computerIDwSpace)) continue;
+        
+        FunctionResult result;
+        char word[MAX_WORD_SIZE];
+        sprintf(word, (char*)"( %s )", GetTopicName(i));
+        *buffer = 0;
+        DoFunction(function, word, buffer, result);
+    }
+}
+
 char* GetTopicLocals(int topicid)
 {
     char* data = GetTopicBlockData(topicid); //   predefined topic or user private topic
@@ -1188,11 +1206,10 @@ FunctionResult ProcessRuleOutput(char* rule, unsigned int id,char* buffer,bool r
 	bool oldErase = ruleErased; // allow underling gambits to erase themselves. If they do, we dont have to.
 	ruleErased = false;
 
- #ifndef DISCARDTESTING
     CALLFRAME* frame = GetCallFrame(globalDepth);
     char rulename[200];
     *rulename = 0;
-    char* paren = strchr(frame->label, '(');
+    char* paren = (frame && frame->label) ? strchr(frame->label, '(') : NULL;
     if (paren)
     {
         *paren = '{';
@@ -1204,7 +1221,6 @@ FunctionResult ProcessRuleOutput(char* rule, unsigned int id,char* buffer,bool r
         sprintf(rulename,"%s.%d.%d{}", GetTopicName(currentTopicID), TOPLEVELID(id), REJOINDERID(id)); 
         ChangeDepth(1, rulename, false, ptr);
     }
-#endif
 	Output(ptr,buffer,result);
 	if (*buffer == '`') buffer = strrchr(buffer,'`') + 1; // skip any output already put out
     if (!paren) ChangeDepth(-1, rulename, false, ptr);
@@ -1357,7 +1373,7 @@ retry:
 		Log(STDTRACELOG,(char*)"\r\n");
 	}
 	int whenmatched = 0;
-	if (*ptr == '(') // pattern requirement
+    if (*ptr == '(') // pattern requirement
 	{
 		wildcardIndex = 0;
 		int uppercasem = 0;
@@ -2629,7 +2645,8 @@ void InitKeywords(const char* fname,const char* layer,unsigned int build,bool di
 					else AddProperty(D,NOUN_SINGULAR);
 				}
 			}
-			else if (IsAlphaUTF8(p1[0])) AddSystemFlag(D,PATTERN_WORD); // blocks spell checking to something else
+            // dont protect upper case that has lowercase. spell check will leave it anyway (Children as starter of a title)
+			else if (IsAlphaUTF8(p1[0]) && !FindWord(p1, 0, LOWERCASE_LOOKUP)) AddSystemFlag(D,PATTERN_WORD); // blocks spell checking to something else
 			
 			unsigned int index = Meaning2Index(U);
 			if (index) U = GetMaster(U); // if not currently the master, switch to master
@@ -2654,7 +2671,6 @@ void InitKeywords(const char* fname,const char* layer,unsigned int build,bool di
 				if (D->internalBits & UPPERCASE_HASH)
 				{
 					size_t len = strlen(D->word);
-					if (D->word[len-1] != 's') AddProperty(D,NOUN|NOUN_PROPER_SINGULAR); // could have been plural for all we know
 					char* underscore = strchr(D->word,'_');
 					if (underscore) 
 					{
@@ -2680,7 +2696,7 @@ void InitKeywords(const char* fname,const char* layer,unsigned int build,bool di
                 if (space && underscore) { ; }
                 else if (space) sep = ' ';
                 else sep = '_';
-                if (sep)
+                if (sep && !(D->internalBits & UPPERCASE_HASH))
                 {
                     char word[MAX_WORD_SIZE];
                     strcpy(word, D->word);
@@ -2689,7 +2705,9 @@ void InitKeywords(const char* fname,const char* layer,unsigned int build,bool di
                     while ((at = strchr(at, sep))) // break apart into pieces.
                     {
                         *at++ = 0;
-                        InsureSafeSpellcheck(old);
+                        size_t len = strlen(old);
+                        if (IsAlphaUTF8DigitNumeric(old[len - 1])) // no ending punctuation
+                            InsureSafeSpellcheck(old);
                         old = at;
                     }
                     if (*old) InsureSafeSpellcheck(old);

@@ -1,6 +1,6 @@
 # ChatScript JSON Manual
 © Bruce Wilcox, mailto:gowilcox@gmail.com www.brilligunderstanding.com
-<br>Revision 6/9/2018 cs8.3
+<br>Revision 10/4/2018 cs8.6
 
 # Real World JSON
 
@@ -97,8 +97,24 @@ $_response = ^jsonopen(transient POST $_url $_data $_header $_userAgent)
 
 Routines that will create facts for JSON will by default create them as transients (they die at end of
 volley unless you work to save them). You can override this default by saying
-`permanent` or `transient`. This applies to `^jsonopen`, `^jsonparse`, `^jsoncreate`,
+`permanent` or `transient` or `boot`. This applies to `^jsonopen`, `^jsonparse`, `^jsoncreate`,
 `^jsonobjectinsert`, `^jsonarrayinsert`, `^jsoncopy`.
+
+JsonArrays all start with the name 'ja-' and jsonobjects all start with the name 
+'jo-'.  The next letter indicates the storage media. 't' means transient and the
+structure dies at the end of the volley. 'b' means boot and the data moves to the boot
+later at the end of the volley. Anything else (e.g. an immediate digit) means the structure
+is permanent and is stored in the user's topic file.
+
+Any facts moved to the boot layer will be lost if the server restarts, unless you have a 
+command line parameter `recordboot`, in which case the json facts with boot 
+media will be written to a top-level file `bootfacts.txt` at the same time they are copied to boot layer.
+You will probably then also want to write a boot function that uses ^importfact to read 
+back these facts on server startup.
+
+Changing the content of boot json facts (e.g. `$data.value += 1) may create
+abandoned data in the boot layer (the old value of $data.value) and do 
+this often enough and you may run out of memory since there is no way to reclaim it.
 
 You can also add a flag `safe` to `^jsonparse`, `^jsonobjectinsert`, `^jsonarraydelete`. 
 You can also add a flag `unique` to `^jsonarrayinsert`.
@@ -199,6 +215,11 @@ Note: There is a limit to how much JSON you can pass as OOB data
 nominally, because it is considered a single token. 
 You can bypass this limit by asking the tokenizer to directly process OOB data, returning the JSON structure name instead of all the content. Just enable `#JSON_DIRECT_FROM_OOB`  on the `$cs_token` value and if it finds OOB data that is entirely JSON, it will parse it and return something like `jo-t1` or `ja-t1` in its place. Eg.
 `[ { "key": "value} ]` will return tokenized as `[jo-t1]`.
+
+```
+u: GIVEN_JSON(< \[  _* \] ^JsonKind('_0)) $$json = '_0 # tokenizer returns transient JSON as object name
+```
+then you can do $$json.field directly.
 
 Note: `^jsonparse` autoconverts backslash-unnnn into corresponding the utf8 characters.
 

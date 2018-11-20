@@ -1,6 +1,6 @@
 # ChatScript Advanced User's Manual
 © Bruce Wilcox, gowilcox@gmail.com www.brilligunderstanding.com<br>
-<br>Revision 6/9/2018 cs8.3
+<br>Revision 8/23/2018 cs8.5
 
 * [Review](ChatScript-Advanced-User-Manual.md#review-overview-of-how-cs-works)
 * [Advanced Tokenization](ChatScript-Advanced-User-Manual.md#advanced-tokenization)
@@ -121,6 +121,31 @@ User variables also come in permanent and transient forms.
 | transient    | `$$transientvar` | start with `$$` and completely disappear when a user interaction happens (are not saved to disk). You can see and alter their value from anywhere.
 | local        | `$_localvar`     |  (described later) start with `$_` and completely disappear when a user interaction happens (are not saved to disk). You can see and alter their value only within the topic or outputmacro they are used.
 
+### System variables
+
+System variables begin with %. Normally these are simply read-only data,
+but it is legal to assign to them as well, with certain consequences.
+```
+%response = 5
+```
+
+The first consequence is that the change is global, across all bots and users, whether
+the system is stand-alone or a server.
+
+The other consequence is that usually the change is locked in permanently until you
+tell the system to release it by assigning a dot to it.
+```
+%response = .  # release current override and use the normal value again
+```
+
+Some assignments are not locking. %input is one of those.
+
+In addition to overriding system variables, if "regression" via
+```
+%regression = 1
+```
+is turned on, some variables return fixed values. Things like date and time have a constant
+value so as not to interfere with regression testing.
 
 ### Facts 
 
@@ -336,9 +361,15 @@ Note: the system has two kinds of concepts.
 
 * _Enumerated_ concepts are ones formed from an explicit list of members. Stuff in definitions of `concept: ~xxx()` are that. 
 
-* There are also _internal_ concepts marked by the system. These include part of speech of a word (requires using the pos-tagger to decide from the input what part of speech it was of possibly several), grammatical roles, words from infinite sets like `~number` and `~placenumber` and `~weburl`, and so forth.  
+* There are also _internal_ concepts (dynamic concepts) marked by the system. These include part of speech of a word (requires using the pos-tagger to decide from the input what part of speech it was of possibly several), grammatical roles, words from infinite sets like `~number` and `~placenumber` and `~weburl`, and so forth.  
 
-In a pattern of some kind, if you are referencing a sentence location using a match variable, you can match both kinds of concepts. But if you are not tied to a location in  a sentence, you can't match internally computed ones. So something like
+The ? operator has two forms. `xxx?~yyy` will look for actual membership in the set whereas
+`_n?~yyy` will only see if the location of match detection of _n is the same as a 
+corresponding match location for the concept. If the concept has not been marked, then 
+obviously no match is found.
+
+In a pattern of some kind, if you are referencing a sentence location using a match variable, you can match both kinds enumerated and dynamic concepts. 
+But if you are not tied to a location in  a sentence, you can't match internally computed ones. So something like
 
     if ( pattern 23?~number )
 
@@ -349,7 +380,6 @@ will fail. Even
 will fail given that deciding practical is an adjective (it could also be a noun) hasn't been performed by pos-tagging.
 
 All internal concepts are members of the concept `~internal_concepts`.
-
 
 
 # ADVANCED TOPICS
@@ -1526,6 +1556,12 @@ You may make references to outputmacros before they are defined, EXCEPT when the
 is directly or indirectly referenced from a table. Tables immediately execute as they
 are compiled, and you will get an error if a function it tries to use is not defined.
 
+## Indirect function calls
+
+You can store an outputmacro name on a variable and then call that indirectly.
+```
+^$_xx(value1)  if $_xx holds a function name
+```
 
 ## Sharing function definitions
 
@@ -2047,9 +2083,17 @@ suppress those messages with `:build filename nosubstitution`
 
 ## Files
 
-When you name a file or directory, :build will ignore files that end in ~ or .bak (the
-common backup names from editors on Windows and Linux).
-
+When you name a file or directory, :build will ignore files that do not end in .top or .tbl .
+When you name a directory, it walks all the files in that directory, but does not
+recurse into subdirectories unless you explicitly ask it to by adding a second slash after the
+directory name. If the contents of your filesxxx build file had this:
+```
+topic.top
+subdirectory1/
+subdirectory2//
+```
+then it would compile topic.top, all files within subdirectory1 non-recursively,
+and all files recursively in subdirectory2.
 
 ## Trace
 
@@ -2505,7 +2549,7 @@ Similarly, if a rule uses `^refine()`, the actual output will come from a `rejoi
 These can never erase themselves directly, so the erasure will again rebound to the caller.
 
 Note that a topic declared system NEVER erases its rules, neither gambits nor responders,
-even if you put ^erase() on a rule.
+even if you put ^disable(RULE ~) on a rule.
 
     u: (~emogoodbye)
 

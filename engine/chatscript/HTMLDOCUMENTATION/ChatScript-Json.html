@@ -46,7 +46,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 <body>
 <h1 id="chatscript-json-manual">ChatScript JSON Manual</h1>
-<p>© Bruce Wilcox, mailto:gowilcox@gmail.com www.brilligunderstanding.com <br>Revision 6/9/2018 cs8.3</p>
+<p>© Bruce Wilcox, mailto:gowilcox@gmail.com www.brilligunderstanding.com <br>Revision 10/4/2018 cs8.6</p>
 <h1 id="real-world-json">Real World JSON</h1>
 <p>JSON (JavaScript Object Notation) is an open standard format using human-readable text to transmit data objects over the web. It is a common standard largely replacing XML which is too wordy and hard to read. JSON has two datatypes that represents collections of values, the array and the object. A JSON array is a list of JSON entities separated by commas and placed within <code>[]</code>, e.g.,</p>
 <pre><code>[ A 2 [ help life] [] ]</code></pre>
@@ -103,7 +103,10 @@ $_header = ^&quot; ~Accept: application/json
                   ~Content-Type: application/json &quot;
 $_response = ^jsonopen(transient POST $_url $_data $_header $_userAgent) </code></pre>
 <h2 id="jsonflags---optional-1st-arg-to-some-json-routines">JSONFLAGS - Optional 1st arg to some JSON routines</h2>
-<p>Routines that will create facts for JSON will by default create them as transients (they die at end of volley unless you work to save them). You can override this default by saying <code>permanent</code> or <code>transient</code>. This applies to <code>^jsonopen</code>, <code>^jsonparse</code>, <code>^jsoncreate</code>, <code>^jsonobjectinsert</code>, <code>^jsonarrayinsert</code>, <code>^jsoncopy</code>.</p>
+<p>Routines that will create facts for JSON will by default create them as transients (they die at end of volley unless you work to save them). You can override this default by saying <code>permanent</code> or <code>transient</code> or <code>boot</code>. This applies to <code>^jsonopen</code>, <code>^jsonparse</code>, <code>^jsoncreate</code>, <code>^jsonobjectinsert</code>, <code>^jsonarrayinsert</code>, <code>^jsoncopy</code>.</p>
+<p>JsonArrays all start with the name 'ja-' and jsonobjects all start with the name 'jo-'. The next letter indicates the storage media. 't' means transient and the structure dies at the end of the volley. 'b' means boot and the data moves to the boot later at the end of the volley. Anything else (e.g. an immediate digit) means the structure is permanent and is stored in the user's topic file.</p>
+<p>Any facts moved to the boot layer will be lost if the server restarts, unless you have a command line parameter <code>recordboot</code>, in which case the json facts with boot media will be written to a top-level file <code>bootfacts.txt</code> at the same time they are copied to boot layer. You will probably then also want to write a boot function that uses ^importfact to read back these facts on server startup.</p>
+<p>Changing the content of boot json facts (e.g. `$data.value += 1) may create abandoned data in the boot layer (the old value of $data.value) and do this often enough and you may run out of memory since there is no way to reclaim it.</p>
 <p>You can also add a flag <code>safe</code> to <code>^jsonparse</code>, <code>^jsonobjectinsert</code>, <code>^jsonarraydelete</code>. You can also add a flag <code>unique</code> to <code>^jsonarrayinsert</code>. You can also add <code>duplicate</code> to ^jsonobjectinsert.</p>
 <p>When multiple flags are desired, put them into a simple string, <code>&quot;DUPLICATE PERMANENT&quot;</code>. Case doesn't matter.</p>
 <p>When you want to add a reference to a normal factid (as is returned by ^createfact) you can add the flag <code>AUTODELETE</code></p>
@@ -140,6 +143,8 @@ $_response = ^jsonopen(transient POST $_url $_data $_header $_userAgent) </code>
 <pre><code>[ {&quot;token&quot;: &quot;myid&quot;, &quot;accounts&quot;: [&quot;whatever&quot;]}]  User message</code></pre>
 <p>and then have a pattern to grab the OOB data and call <code>jsonparse</code> with it (using SAFE as a parameter). OOB input is not subject to human tokenization behavior, spellchecking, etc.</p>
 <p>Note: There is a limit to how much JSON you can pass as OOB data nominally, because it is considered a single token. You can bypass this limit by asking the tokenizer to directly process OOB data, returning the JSON structure name instead of all the content. Just enable <code>#JSON_DIRECT_FROM_OOB</code> on the <code>$cs_token</code> value and if it finds OOB data that is entirely JSON, it will parse it and return something like <code>jo-t1</code> or <code>ja-t1</code> in its place. Eg. <code>[ { &quot;key&quot;: &quot;value} ]</code> will return tokenized as <code>[jo-t1]</code>.</p>
+<pre><code>u: GIVEN_JSON(&lt; \[  _* \] ^JsonKind(&#39;_0)) $$json = &#39;_0 # tokenizer returns transient JSON as object name</code></pre>
+<p>then you can do $$json.field directly.</p>
 <p>Note: <code>^jsonparse</code> autoconverts backslash-unnnn into corresponding the utf8 characters.</p>
 <h2 id="jsonformatstring"><code>jsonformat</code>(string)</h2>
 <p>Because technically JSON requires you put quotes around field names (though various places ignore that requirement) and because CS doesn't, the function takes in a slack json text string and outputs a strict one.</p>

@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1 id="chatscript-advanced-users-manual">ChatScript Advanced User's Manual</h1>
-<p>© Bruce Wilcox, gowilcox@gmail.com www.brilligunderstanding.com<br> <br>Revision 6/9/2018 cs8.3</p>
+<p>© Bruce Wilcox, gowilcox@gmail.com www.brilligunderstanding.com<br> <br>Revision 8/23/2018 cs8.5</p>
 <ul>
 <li><a href="ChatScript-Advanced-User-Manual.html#review-overview-of-how-cs-works">Review</a></li>
 <li><a href="ChatScript-Advanced-User-Manual.html#advanced-tokenization">Advanced Tokenization</a></li>
@@ -89,6 +89,16 @@
 </tr>
 </tbody>
 </table>
+<h3 id="system-variables">System variables</h3>
+<p>System variables begin with %. Normally these are simply read-only data, but it is legal to assign to them as well, with certain consequences.</p>
+<pre><code>%response = 5</code></pre>
+<p>The first consequence is that the change is global, across all bots and users, whether the system is stand-alone or a server.</p>
+<p>The other consequence is that usually the change is locked in permanently until you tell the system to release it by assigning a dot to it.</p>
+<pre><code>%response = .  # release current override and use the normal value again</code></pre>
+<p>Some assignments are not locking. %input is one of those.</p>
+<p>In addition to overriding system variables, if &quot;regression&quot; via</p>
+<pre><code>%regression = 1</code></pre>
+<p>is turned on, some variables return fixed values. Things like date and time have a constant value so as not to interfere with regression testing.</p>
 <h3 id="facts">Facts</h3>
 <p>ChatScript supports structured triples of data called facts, which can be found by querying for them. The 3 fields of a fact are either text strings or fact references to other facts. So you might have a fact like</p>
 <pre><code>(I eat &quot;meat-loving plants&quot;)</code></pre>
@@ -167,9 +177,10 @@ concept: ~active_verbs ONLY_NONE (sleep)</code></pre>
 <p>Note: the system has two kinds of concepts.</p>
 <ul>
 <li><p><em>Enumerated</em> concepts are ones formed from an explicit list of members. Stuff in definitions of <code>concept: ~xxx()</code> are that.</p></li>
-<li><p>There are also <em>internal</em> concepts marked by the system. These include part of speech of a word (requires using the pos-tagger to decide from the input what part of speech it was of possibly several), grammatical roles, words from infinite sets like <code>~number</code> and <code>~placenumber</code> and <code>~weburl</code>, and so forth.</p></li>
+<li><p>There are also <em>internal</em> concepts (dynamic concepts) marked by the system. These include part of speech of a word (requires using the pos-tagger to decide from the input what part of speech it was of possibly several), grammatical roles, words from infinite sets like <code>~number</code> and <code>~placenumber</code> and <code>~weburl</code>, and so forth.</p></li>
 </ul>
-<p>In a pattern of some kind, if you are referencing a sentence location using a match variable, you can match both kinds of concepts. But if you are not tied to a location in a sentence, you can't match internally computed ones. So something like</p>
+<p>The ? operator has two forms. <code>xxx?~yyy</code> will look for actual membership in the set whereas <code>_n?~yyy</code> will only see if the location of match detection of _n is the same as a corresponding match location for the concept. If the concept has not been marked, then obviously no match is found.</p>
+<p>In a pattern of some kind, if you are referencing a sentence location using a match variable, you can match both kinds enumerated and dynamic concepts. But if you are not tied to a location in a sentence, you can't match internally computed ones. So something like</p>
 <pre><code>if ( pattern 23?~number )</code></pre>
 <p>will fail. Even</p>
 <pre><code>if ( pattern practical?~adjective )</code></pre>
@@ -717,6 +728,9 @@ u: ( &lt;&lt; what time &gt;&gt; ) $test = ^mymac() join(ok $test)</code></pre>
 <p>However, it is clearer and cleaner if you are returning data to be stored somewhere else (not to be merely immediately sent to the user), to use <code>^return(&quot;tested here&quot;)</code>. This both creates the result, and ends the function immediately even if other code follows.</p>
 <p><strong>Note - calls to macros use &quot;pass by reference&quot;, so the actual value of the <code>^variable</code> is the name of what was passed in, and it is generally (but not always) evaluated on use.</strong></p>
 <p>You may make references to outputmacros before they are defined, EXCEPT when the Function is directly or indirectly referenced from a table. Tables immediately execute as they are compiled, and you will get an error if a function it tries to use is not defined.</p>
+<h2 id="indirect-function-calls">Indirect function calls</h2>
+<p>You can store an outputmacro name on a variable and then call that indirectly.</p>
+<pre><code>^$_xx(value1)  if $_xx holds a function name</code></pre>
 <h2 id="sharing-function-definitions">Sharing function definitions</h2>
 <p>ChatScript requires that a function be defined before use. When you use that function from multiple files, you may have trouble ordering the files for compilation if you merely name the folder in <code>filesxxx.txt</code> since you cannot guarantee compilation order unless you explicitly name the files. But you can also just put your functions in a top level file and then have your other files in folders, and name it and then them in your <code>filesxxx.txt</code> file.</p>
 <h2 id="save-restore-locals">Save-Restore locals</h2>
@@ -948,7 +962,11 @@ u: () ^&quot;[oob data] Here is user message</code></pre>
 <pre><code>topic: ~mytopic (cheese cheese~n)</code></pre>
 <p>Since you have accepted all forms of cheese, you don't need to name <code>cheese~n</code>. <code>:build</code> also warns you about various substitutions that might affect your patterns. You can suppress those messages with <code>:build filename nosubstitution</code></p>
 <h2 id="files">Files</h2>
-<p>When you name a file or directory, :build will ignore files that end in ~ or .bak (the common backup names from editors on Windows and Linux).</p>
+<p>When you name a file or directory, :build will ignore files that do not end in .top or .tbl . When you name a directory, it walks all the files in that directory, but does not recurse into subdirectories unless you explicitly ask it to by adding a second slash after the directory name. If the contents of your filesxxx build file had this:</p>
+<pre><code>topic.top
+subdirectory1/
+subdirectory2//</code></pre>
+<p>then it would compile topic.top, all files within subdirectory1 non-recursively, and all files recursively in subdirectory2.</p>
 <h2 id="trace">Trace</h2>
 <p>Sometimes you might fail to place a paren properly, swallow a whole lot of input and crash. Finding where the problem is may be hard. You can therefore turn on a trace which will show you all the rules it successfully completes.</p>
 <pre><code>:build harry trace</code></pre>
@@ -1188,7 +1206,7 @@ I like $var1</code></pre>
 <p>The system's default behavior is to erase rules that put output into the output stream, so they won't repeat themselves later. You can explicitly make a rule erase with <code>^erase()</code> and not erase with <code>^keep()</code> and you can make the topic not allow responders to erase with keep as a topic flag.</p>
 <p>So, if a rule generates output, it will try to erase itself. If a rule uses <code>^reuse()</code>, then the rule that actually generated the output will be the called rule. If for some reason it cannot erase itself, then the erasure will rebound to the caller, who will try to erase himself.</p>
 <p>Similarly, if a rule uses <code>^refine()</code>, the actual output will come from a <code>rejoinder()</code>. These can never erase themselves directly, so the erasure will again rebound to the caller.</p>
-<p>Note that a topic declared system NEVER erases its rules, neither gambits nor responders, even if you put ^erase() on a rule.</p>
+<p>Note that a topic declared system NEVER erases its rules, neither gambits nor responders, even if you put ^disable(RULE ~) on a rule.</p>
 <pre><code>u: (~emogoodbye)</code></pre>
 <p><strong><em>How can I get the original input when I have a pattern like <code>u: (~emogoodbye)</code> ?</em></strong></p>
 <p>To get the original input, you need to do the following:</p>

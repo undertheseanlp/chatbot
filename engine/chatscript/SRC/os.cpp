@@ -293,7 +293,7 @@ void FreeStackHeap()
 	}
 }
 
-char* AllocateStack(char* word, size_t len,bool localvar,bool align4) // call with (0,len) to get a buffer
+char* AllocateStack(char* word, size_t len,bool localvar,int align) // call with (0,len) to get a buffer
 {
 	if (infiniteStack) 
 		ReportBug("Allocating stack while InfiniteStack in progress from %s\r\n",infiniteCaller);
@@ -302,13 +302,20 @@ char* AllocateStack(char* word, size_t len,bool localvar,bool align4) // call wi
 		if (!word ) return NULL;
 		len = strlen(word);
 	}
-	if (align4)
+	if (align == 1 || align == 4) // 1 is old true value
 	{
 		stackFree += 3;
 		uint64 x = (uint64)stackFree;
 		x &= 0xfffffffffffffffc;
 		stackFree = (char*)x;
 	}
+    else if (align == 8) 
+    {
+        stackFree += 7;
+        uint64 x = (uint64)stackFree;
+        x &= 0xfffffffffffffff8;
+        stackFree = (char*)x;
+    }
 
 	if ((stackFree + len + 1) >= heapFree - 30000000) // dont get close
 	{
@@ -395,8 +402,8 @@ char* InfiniteStack64(char*& limit,char* caller)
 	infiniteCaller = caller;
 	infiniteStack = true;
 	limit = heapFree - 5000; // leave safe margin of error
-	uint64 base = (uint64) (stackFree+63);
-	base &= 0xFFFFFFFFFFFFFFC0ULL;
+	uint64 base = (uint64) (stackFree+7);
+	base &= 0xFFFFFFFFFFFFFFF8ULL;
 	return (char*) base; // slop may be lost when allocated finally, but it can be reclaimed later
 }
 
@@ -506,19 +513,19 @@ Allocations happen during volley processing as
  	if (bytes > 4) // force 64bit alignment alignment
 	{
 		uint64 base = (uint64) heapFree;
-		base &= 0xFFFFFFFFFFFFFFC0ULL;
+		base &= 0xFFFFFFFFFFFFFFF8ULL;  // 8 byte align
 		heapFree = (char*) base;
 	}
  	else if (bytes == 4) // force 32bit alignment alignment
 	{
 		uint64 base = (uint64) heapFree;
-		base &= 0xFFFFFFFFFFFFFFF0ULL;
+		base &= 0xFFFFFFFFFFFFFFFCULL;  // 4 byte align
 		heapFree = (char*) base;
 	}
  	else if (bytes == 2) // force 16bit alignment alignment
 	{
 		uint64 base = (uint64) heapFree;
-		base &= 0xFFFFFFFFFFFFFFF8ULL;
+		base &= 0xFFFFFFFFFFFFFFFEULL; // 2 byte align
 		heapFree = (char*) base;
 	}
 	else if (bytes != 1) 
@@ -1058,6 +1065,7 @@ void WalkDirectory(char* directory,FILEWALK function, uint64 flags,bool recursiv
     {
         if (FindFileData.dwFileAttributes  & FILE_ATTRIBUTE_DIRECTORY)
         {
+            size_t len = strlen(FindFileData.cFileName);
             if (recursive) seendirs = true;
         }
         else
@@ -1121,13 +1129,13 @@ void WalkDirectory(char* directory,FILEWALK function, uint64 flags,bool recursiv
 	for (unsigned int i = 0;i < files.size();i++) 
 	{
 		const char* file = files[i].c_str();
-		if (*file != '.' && stricmp(file,(char*)"bugs.txt")) 
+        size_t len = strlen(file);
+		if (*file != '.') 
 		{
 			sprintf(name,(char*)"%s/%s",directory,file);
-			(*function)(name,flags);
+			(*function)(name,flags); // fails if directory
+            if (recursive && isDirectory(xname)) seendirs = true;
 		}
-        sprintf(xname, "%s/%s", directory, file);
-        if (isDirectory(xname)) seendirs = true;
      }
 
     if (!seendirs) return;
@@ -1605,7 +1613,7 @@ void BugBacktrace(FILE* out)
         CALLFRAME* priorframe = GetCallFrame(i - 1);
 		fprintf(out,"Finished %d: heapusedOnEntry: %d heapUsedNow: %d buffers:%d stackused: %d stackusedNow:%d %s ",
 			i,frame->heapDepth,(int)(heapBase-heapFree),frame->memindex,(int)(heapFree - (char*)releaseStackDepth[i]), (int)(stackFree-stackStart),frame->label);
-		if (!TraceFunctionArgs(out, frame->label, (i > 0) ? priorframe->argumentStartIndex: 0, frame->argumentStartIndex)) fprintf(out, " - %s", rule);
+		if (priorframe && !TraceFunctionArgs(out, frame->label, (i > 0) ? priorframe->argumentStartIndex: 0, frame->argumentStartIndex)) fprintf(out, " - %s", rule);
 		fprintf(out, "\r\n");
 	}
 	while (--i > 1) 
@@ -1666,7 +1674,7 @@ CALLFRAME* ChangeDepth(int value,char* name,bool nostackCutback, char* code)
     }
 	else // value > 0
 	{
-        stackFree = (char*)(((uint64)stackFree + 63) & 0xFFFFFFFFFFFFFFC0ULL);
+        stackFree = (char*)(((uint64)stackFree + 7) & 0xFFFFFFFFFFFFFFF8ULL);
         CALLFRAME* frame = (CALLFRAME*) stackFree;
         stackFree += sizeof(CALLFRAME);
         memset(frame, 0, sizeof(CALLFRAME));

@@ -26,6 +26,7 @@ FunctionResult JSONLabelCode(char* buffer) ;
 FunctionResult JSONUndecodeStringCode(char* buffer) ;
 FunctionResult JSONWriteCode(char* buffer);
 FunctionResult JSONParseCode(char* buffer);
+FunctionResult JSONTextCode(char* buffer);
 FunctionResult JSONArrayDeleteCode(char* buffer);
 FunctionResult JSONArraySizeCode(char* buffer);
 FunctionResult JSONGatherCode(char* buffer);
@@ -41,11 +42,12 @@ void JsonRenumber(FACT* F);
 void jkillfact(WORDP D);
 void InitJSONNames();
 char* jwrite(char* buffer, WORDP D, int subject);
+FunctionResult InitCurl();
+void CurlShutdown();
 
 #ifndef DISCARDJSONOPEN
 char* UrlEncodePiece(char* input);
 FunctionResult JSONOpenCode(char* buffer);
-void CurlShutdown();
 #endif
 
 #endif

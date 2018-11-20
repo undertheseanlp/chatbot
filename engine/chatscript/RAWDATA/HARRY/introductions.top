@@ -18,5 +18,18 @@ t: Have you been here before?
 	#! no
 	a: (~no) Then welcome to your first time.
 
+
 #! what is your name 
-u: ( what is your name ) My name is harry.
+u: ( what is your name ) My name is Hoai An.
+
+#! how old are you
+u: ( how old are you ) Tớ năm nay 22 tuổi rồi
+
+
+#! how old are you
+u: ( how old are you ) Tớ năm nay 22 tuổi rồi
+
+#! tớ có thể biết tên cậu không
+u: ( tên cậu là gì ) Tớ tên là Hoài An
+
+

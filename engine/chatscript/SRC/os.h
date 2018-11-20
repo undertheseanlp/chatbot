@@ -66,8 +66,6 @@ typedef struct WORDENTRY //   a dictionary entry  - starred items are written to
 #endif
 } WORDENTRY;
 
-
-
 typedef struct CALLFRAME
 {
     char* label;
@@ -93,6 +91,7 @@ typedef struct CALLFRAME
     }x;
 
 }CALLFRAME;
+
 // EXCEPTION/ERROR
 // error recovery
 #define SERVER_RECOVERY 4
@@ -144,7 +143,7 @@ void ResetBuffers();
 char* AllocateBuffer(char*name = "");
 void FreeBuffer(char*name = "");
 void CloseBuffers();
-char* AllocateStack(char* word, size_t len = 0, bool localvar = false, bool align4 = false);
+char* AllocateStack(char* word, size_t len = 0, bool localvar = false, int align = 0);
 void ReleaseInfiniteStack();
 void ReleaseStack(char* word);
 char* InfiniteStack(char*& limit,char* caller);

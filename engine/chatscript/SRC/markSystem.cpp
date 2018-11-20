@@ -485,12 +485,17 @@ void MarkMeaningAndImplications(int depth, int exactWord,MEANING M,int start, in
 	}
 }
 
-static void HuntMatch(bool canonical, char* word,bool strict,int start, int end, unsigned int& usetrace)
+static void HuntMatch(int canonical, char* word,bool strict,int start, int end, unsigned int& usetrace)
 {
 	WORDP set[20];
 	WORDP D;
 	int oldtrace = trace;
-	int i = GetWords(word,set,strict); // words in any case and with mixed underscore and spaces
+    // if user typed upper case specifically, trust him
+    if (start == end && start != 1 && IsUpperCase(word[0]))
+    {
+        if (!IsUpperCase(word[1])) strict = true;
+    }
+    int i = GetWords(word,set,strict); // words in any case and with mixed underscore and spaces
 	while (i) 
 	{
 		D = set[--i];
@@ -498,7 +503,7 @@ static void HuntMatch(bool canonical, char* word,bool strict,int start, int end,
 		// dont redo effort
 		if (D->internalBits & BEEN_HERE) continue;	// huntmatch already covered this
 		D->internalBits |= BEEN_HERE;
-		int* chunk = (int*)AllocateStack(NULL, 8, false, true);
+		int* chunk = (int*)AllocateStack(NULL, 8, false, 4);
 		chunk[0] = wordlist;
 		chunk[1] = Word2Index(D);
 		wordlist = Stack2Index((char*)chunk);
@@ -513,6 +518,18 @@ static void HuntMatch(bool canonical, char* word,bool strict,int start, int end,
 			}
 			if (!F) continue;
 		}
+        // not allowed to detect uppercase when user input 
+        // is form is conjugated (fitted != Fit) except
+        // for Plural noun
+        if (start == end && IsUpperCase(*D->word) && canonical == 2){ ; }
+        else if (start == end && IsUpperCase(*D->word) &&
+            stricmp(D->word, wordStarts[start]))
+        {
+           // size_t len = strlen(wordStarts[start]);
+            //if (wordStarts[start][len-1] != 's') // too uncommon, dont want fits to match
+                continue;
+        }
+        if (canonical == 2) canonical = 0;
 		trace = (D->subjectHead || D->systemFlags & PATTERN_WORD || D->properties & PART_OF_SPEECH)  ? usetrace : 0; // being a subject head means belongs to some set. being a marked word means used as a keyword
 		if ((*D->word == 'I' || *D->word == 'i'  ) && !D->word[1]){;} // dont follow out this I or i word
 		else  MarkMeaningAndImplications(0, 0,MakeMeaning(D),start,end, canonical,true);
@@ -603,9 +620,9 @@ static void SetSequenceStamp() //   mark words in sequence, original and canonic
 		}
 		
 		// scan interesting initial words (spaced, underscored, capitalized) but we need to recognize bots in lower case, so try all cases here as well
-		HuntMatch(false,rawbuffer,(tokenControl & STRICT_CASING) ? true : false,i,i,usetrace);
-		HuntMatch(true,canonbuffer,(tokenControl & STRICT_CASING) ? true : false,i,i,usetrace);
-		HuntMatch(false,originalbuffer,(tokenControl & STRICT_CASING) ? true : false,i,i,usetrace);
+		HuntMatch(0,rawbuffer,(tokenControl & STRICT_CASING) ? true : false,i,i,usetrace);
+		HuntMatch(1,canonbuffer,(tokenControl & STRICT_CASING) ? true : false,i,i,usetrace);
+		HuntMatch(2,originalbuffer,(tokenControl & STRICT_CASING) ? true : false,i,i,usetrace);
 
 		//   fan out for addon pieces
 		int k = 0;
@@ -900,6 +917,7 @@ void MarkAllImpliedWords()
 		{
 			CU = FindWord(original,0,UPPERCASE_LOOKUP);	// try to find an upper to go with it, in case we can use that, but not as a human name
 			if (OU){;} // it was originally uppercase or there is no lower case meaning
+			else if (finalPosValues[i] & IDIOM){;}	// keep if idiom
 			else if (CU && CU->properties & (NOUN_FIRSTNAME|NOUN_HUMAN)) CU = NULL;	// remove accidental names 
 			else if (CU && !CU->properties && !(CU->systemFlags & PATTERN_WORD)) CU = NULL; // there is no use for this (maybe only a sequence head)
 		}
@@ -1013,7 +1031,8 @@ void MarkAllImpliedWords()
 		D = (CL) ? CL : CU; //   best recognition
 		if (!D) D = StoreWord(original); // just so we can't fail later
 		char* last;
-		if ( D->properties & NOUN && !(D->internalBits & UPPERCASE_HASH) && (last = strrchr(D->word,'_')) && finalPosValues[i] & NOUN) StdMark(MakeMeaning(FindWord(last+1,0)), i, i,true); //   composite noun, store last word as referenced also
+		if (!(tokenControl & NO_WITHIN) && D->properties & NOUN && !(D->internalBits & UPPERCASE_HASH) && (last = strrchr(D->word,'_')) && finalPosValues[i] & NOUN)
+            StdMark(MakeMeaning(FindWord(last+1,0)), i, i,true); //   composite noun, store last word as referenced also
 
 		// ALL Foreign words detectable by utf8 char
 		D = (OL) ? OL : OU;

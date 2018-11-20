@@ -171,12 +171,12 @@ char* HandleIf(char* ptr, char* buffer,FunctionResult& result)
 
 		if (*ptr == '(') // old format - std if internals
 		{
-			endptr = strchr(ptr,'{') - 3; // offset to jump past pattern
+			endptr = strchr(ptr,'{') - ACCELLSIZE; // offset to jump past pattern
 		}
 		else // new format, can use std if or pattern match
 		{
 			endptr = ptr + Decode(ptr);
-			ptr += 3; // skip jump to end of pattern and point to pattern
+			ptr += ACCELLSIZE; // skip jump to end of pattern and point to pattern
 		}
 
 		//   Perform TEST condition
@@ -235,8 +235,8 @@ char* HandleIf(char* ptr, char* buffer,FunctionResult& result)
 			executed = true;
             ptr += 5;
 
-            CALLFRAME* frame = ChangeDepth(0, "If{}", false, ptr);
-            frame->code = ptr;
+            CALLFRAME* frameptr = ChangeDepth(0, "If{}", false, ptr);
+            frameptr->code = ptr;
             ptr = Output(ptr,buffer,result); //   skip accelerator-3 and space and { and space - returns on next useful token
 			ptr += Decode(ptr);	//   offset to end of if entirely
 			if (*(ptr-1) == 0)  --ptr;// no space after?
@@ -395,19 +395,19 @@ FunctionResult HandleRelation(char* word1,char* op, char* word2,bool output,int&
 		if (*word1 == '_') // use only precomputed match from memorization
 		{
 			unsigned int index = GetWildcardID(word1);
-			index = WILDCARD_START(wildcardPosition[index]);
-			D = FindWord(val2); // as is
-			WORDP D2 = NULL;
-			if (index && D)
+			unsigned int begin = WILDCARD_START(wildcardPosition[index]);
+            unsigned int finish = WILDCARD_END(wildcardPosition[index]);
+            D = FindWord(val2); // as is
+			if (begin && D)
 			{
 				int start, end;
-				if (GetNextSpot(D,index-1,start,end) == index) result = NOPROBLEM_BIT; // otherwise failed and we would have known
+				if (GetNextSpot(D, begin -1,start,end) == begin && (unsigned int) end == finish) result = NOPROBLEM_BIT; // otherwise failed and we would have known
 			}
 			if (*op == '!') result = (result != NOPROBLEM_BIT) ? NOPROBLEM_BIT : FAILRULE_BIT;
 		}
 		else if (!strnicmp(val2, "ja-", 3)) // is it in array?
 		{
-			WORDP D = FindWord(val1);
+			D = FindWord(val1);
 			if (!D) return FAILRULE_BIT;
 			MEANING M = MakeMeaning(D);
 
@@ -446,6 +446,8 @@ FunctionResult HandleRelation(char* word1,char* op, char* word2,bool output,int&
 		char* currency2;
 		unsigned char* cur1 = GetCurrency((unsigned char*) val1, currency1);
 		unsigned char* cur2 = GetCurrency((unsigned char*) val2, currency2); // use text string comparison though isdigitword calls it a number
+        char* end1 = val1 + strlen(val1);
+        char* end2 = val2 + strlen(val2);
 
 		if (*val1 == '#' || !IsDigitWord(val1,AMERICAN_NUMBERS,true) || *val2 == '#' ||  !IsDigitWord(val2,AMERICAN_NUMBERS,true) || 
             strchr(val1, ':') || strchr(val2, ':') || 
@@ -483,7 +485,7 @@ FunctionResult HandleRelation(char* word1,char* op, char* word2,bool output,int&
 			else result = FAILRULE_BIT;
 		}
 		//   handle double ops
-		else if ((strchr(val1,'.') && val1[1]) || (strchr(val2,'.') && val2[1])) // at least one arg is float
+		else if (IsFloat(val1, end1, numberStyle) || IsFloat(val2, end2, numberStyle)) // at least one arg is float
 		{
 			char* comma = 0; 
 			while ((comma = strchr(val1,',')))  memmove(comma,comma+1,strlen(comma)); // remove embedded commas

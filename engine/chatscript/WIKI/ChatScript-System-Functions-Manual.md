@@ -1,6 +1,6 @@
 # ChatScript System Functions Manual
 © Bruce Wilcox, gowilcox@gmail.com www.brilligunderstanding.com
-<br>Revision 6/9/2018 cs8.3
+<br>Revision 10/4/2018 cs8.6
 
 * [Topic Functions](ChatScript-System-Functions-Manual.md#topic-functions)
 * [Marking Functions](ChatScript-System-Functions-Manual.md#marking-functions)
@@ -89,6 +89,13 @@ will be a keyword of some topic to pick. E.g.,
 
     ^gambit(~ PENDING ~mygeneraltopic FAIL)
 
+
+### `^findrule ( label )`
+
+On the assumption that you only have one occurence of a rule label in your script,
+if you provide that label to this function, it will find the corresponding rule anywhere
+in your script and return the rule tag corresponding to it. If you have more than one such labelled Rule
+it merely returns the first one it finds (which will be earliest rule in earliest compiled topic).
 
 ### `^getrule ( what label )`
 
@@ -747,6 +754,7 @@ These flags apply to output as it is sent to the user:
 | `RESPONSE_REMOVETILDE`            | remove leading ~ on class names               |
 | `RESPONSE_NOCONVERTSPECIAL`    | don't convert ecaped n, r, and t into ascii direct characters  |
 | `RESPONSE_CURLYQUOTES`    | change simple quotes to curly quotes (starting and ending)  |
+| `RESPONSE_NOFACTUALIZE`    | suppresses building bot output facts (for postprocessing)  |
 
 
 ### `^preprint ( stream )`
@@ -1085,6 +1093,9 @@ rule. This has a 5 volley context and are used in normal rule patterns.
 
     u: (^incontext(PLAYTENNIS) why) because it was fun.
 
+### `^stats ( FACTS )`
+
+FACTS: Returns how many free facts remain.
 
 # External Access Functions
 
@@ -1977,10 +1988,21 @@ Instead call it from `^csboot` during startup. For example, in LIVEDATA interjec
  You can do this to nouns, adjectives, adverbs.
 
 
-### `^walkdictionary ( 'function )` 
+### `^walkdictionary ( '^function )` 
 
 calls the named output macro from every word in the dictionary. 
 The function should have 1 argument, the word.
+
+### `^walktopics ( '^function )` 
+
+calls the named output macro for every topic the current bot can access.
+The function should have 1 argument, the topic name.
+
+### `^walkvariables ( '^function )` 
+
+calls the named output macro for every global permanent user variable currently non-null.
+The function should have 1 argument, the topic name. It does not involve
+$$ or $_ variables, or bot variables.
 
 
 ### `^Iterator ( ? member ~concept )`
@@ -2074,14 +2096,17 @@ The fact id returned can be used with ^field or you can use something like $resu
 
 ### `^reset ( what ? )`
 
-What can be user or topic or factset. 
+What can be user or topic or factset or VARIABLES or FACTS or HISTORY. 
 
 If what is user, the system drops all history and starts the user afresh from first meeting 
 (launching a new conversation), having erased the user topic file. 
 
 If what is a factset, the "next" pointer for walking the set is reset back to the beginning. 
 If what is a topic, all rules are re-enabled and all last accessed values are reset to 0.
-
+If what is VARIABLES then it sets all global user variables to NULL, leaving alone  
+    $$, $_ and bot variables.
+If what is FACTS, it kills all permanent user facts
+If what is HISTORY it forgets what was said previously.
 
 # FACT FUNCTIONS
 

@@ -4,6 +4,8 @@ extern int ignoreRule;
 static bool down_is = true;
 
 static int downcount = 0;
+static int volleyCounter = 0;
+static int relevantVolleyCounter = 0;
 
 bool VerifyAuthorization(FILE* in) //   is he allowed to use :commands
 {
@@ -79,6 +81,7 @@ static bool keepname = false;
 
 static short int stepOver[MAX_GLOBAL];
 static char stepOut[MAX_GLOBAL];
+static void TrimIt(char* name, uint64 flag);
 
 #define ABSTRACT_SPELL 1
 #define ABSTRACT_SET_MEMBER 2
@@ -88,7 +91,8 @@ static char stepOut[MAX_GLOBAL];
 #define ABSTRACT_NOCODE 32
 #define ABSTRACT_STORY 64
 #define ABSTRACT_RESPONDER 128
-#define ABSTRACT_RESTRICTIONS (ABSTRACT_SPELL|ABSTRACT_SET_MEMBER|ABSTRACT_CANONICAL|ABSTRACT_PRETTY|ABSTRACT_VP )
+#define ABSTRACT_RESTRICTIONS (ABSTRACT_SPELL|ABSTRACT_SET_MEMBER|ABSTRACT_CANONICAL|ABSTRACT_VP )
+#define ABSTRACT_COVERAGE 256
 
 static bool fromScript = false;
 
@@ -476,7 +480,6 @@ static void C_Tokenize(char* input)
 {
     uint64 oldToken = tokenControl;
     input = SkipWhitespace(input);
-    static bool prepass = true;
     char word[MAX_WORD_SIZE];
     if (*input == USERVAR_PREFIX) // set token control to this
     {
@@ -491,17 +494,9 @@ static void C_Tokenize(char* input)
         }
     }
     input = SkipWhitespace(input);
-    if (!strnicmp(input, (char*)"NOPREPASS", 9) || !strnicmp(input, (char*)"PREPASS", 7))
-    {
-        prepass = strnicmp(input, (char*)"NOPREPASS", 9) ? true : false;
-        input = ReadCompiledWord(input, word);
-    }
-
     if (!*input) prepareMode = (prepareMode == TOKENIZE_MODE) ? NO_MODE : TOKENIZE_MODE;
     else
     {
-        char prepassTopic[MAX_WORD_SIZE];
-        strcpy(prepassTopic, GetUserVariable((char*)"$cs_prepass"));
         unsigned int oldtrace = trace;
         unsigned int oldtiming = timing;
         nextInput = input;
@@ -509,11 +504,9 @@ static void C_Tokenize(char* input)
         while (*nextInput)
         {
             prepareMode = TOKENIZE_MODE;
-            if (*prepassTopic) Log(STDTRACELOG, (char*)"Prepass: %s\r\n", prepass ? (char*)"ON" : (char*)"OFF");
             PrepareSentence(nextInput, true, true, false, oobstart);
             oobstart = false;
             prepareMode = NO_MODE;
-            if (prepass && PrepassSentence(prepassTopic)) continue;
         }
         trace = (modifiedTrace) ? modifiedTraceVal : oldtrace;
         timing = (modifiedTiming) ? modifiedTimingVal : oldtiming;
@@ -2194,7 +2187,7 @@ static void C_CheckList(char* file)
 	(*printer)("done\r\n");
 }
 
-static void C_TrimField(char* file)
+static void C_JA2Starts(char* file)
 {
 	FILE* out = FopenUTF8Write("tmp/tmp.txt");
 	FILE* in = FopenReadOnly(file);
@@ -2204,10 +2197,12 @@ static void C_TrimField(char* file)
 		return;
 	}
     int n = 0;
-    char old[MAX_WORD_SIZE];
+    char old[MAX_WORD_SIZE * 10];
+    char copy[MAX_WORD_SIZE * 10];
 	while (fgets(readBuffer, 10000000, in) != NULL)
 	{
 		if (!*readBuffer) break;
+        strcpy(copy, readBuffer);
         ++n;
 		//VA-51382515	legal	family		I have a friend who has a half brother. His father won't let him see his brother. Does my friend have any rights in this matter?
 		char* at = strchr(readBuffer, '\t'); // to cat
@@ -2217,28 +2212,27 @@ static void C_TrimField(char* file)
 			return;
 		}
 		at = strchr(at+1, '\t'); // to spec
-        if (!at)
-        {
-            int xx = 0;
-        }
+        if (!at) continue;
 		at = strchr(at + 1, '\t'); // to loc
-        if (!at)
-        {
-            int xx = 0;
-        }
+        if (!at) continue;
+#ifndef LOCATIONIFY
+        memmove(at + 1, at, strlen(at)+1);
+        *at = '\t';
+#endif
         at = strchr(at + 1, '\t'); // to input
-        if (!at)
+        if (!at) continue;
+        char* end = strchr(at + 1, '\t'); // to output
+        if (!end) strcat(at, "\t");
+        else
         {
-            int xx = 0;
+            char* at = end + 1; // start of output, remove any quotes
+            while ((at = strchr(at, '"'))) 
+                *at = ' ';
         }
-        if (!at[1])
-        {
-            int xx = 0;
-        }
-        strncpy(old, readBuffer, MAX_WORD_SIZE - 3);
-        old[MAX_WORD_SIZE - 3] = 0;
-        if (strlen(at+1) < 50) continue;  // nominal 5 words
-		fprintf(out, "%s", readBuffer);
+        
+        strncpy(old, readBuffer, (MAX_WORD_SIZE * 10) - 3);
+        old[(MAX_WORD_SIZE*10) - 3] = 0;
+		fprintf(out, "%s", old);
 		*readBuffer = 0;
 	}
 	fclose(out);
@@ -2265,7 +2259,7 @@ static void C_RemoveCRLF(char* file)
     fclose(in);
 }
 
-static void C_Field2Source(char* file)
+static void C_JA2Source(char* file)
 {
     FILE* out = FopenUTF8Write("tmp/tmp.txt");
     FILE* in = FopenReadOnly(file);
@@ -2280,12 +2274,14 @@ static void C_Field2Source(char* file)
     char specialty[MAX_WORD_SIZE];
     char location[MAX_WORD_SIZE];
     char input[MAX_WORD_SIZE * 10];
+    char copy[MAX_WORD_SIZE * 10];
     while (fgets(readBuffer, 10000000, in) != NULL)
     {
         if (!*readBuffer) break;
+        strcpy(copy, readBuffer);
         ++n;
         //VA-51382515	legal	family	alberta 	I have a friend who has a half brother. His father won't let him see his brother. Does my friend have any rights in this matter?
-        char* at = strchr(readBuffer, '\t'); // to cat
+        char* at = strchr(readBuffer, '\t'); // to category
         if (!at)
         {
             (*printer)("not found delimiter %s\r\n", readBuffer);
@@ -2295,19 +2291,20 @@ static void C_Field2Source(char* file)
         *at = 0;
         strcpy(id, readBuffer);
         char* start = at + 1;
-        at = strchr(start, '\t'); // to spec
+        at = strchr(start, '\t'); // to specialty
         *at = 0;
         strcpy(category, start);
-
         start = at + 1; 
-        at = strchr(start, '\t'); // to loc
+        at = strchr(start, '\t'); // to loc or beyond
         *at = 0;
         strcpy(specialty, start); 
-
+        *location = 0;
+#ifdef LOCALIZE
         start = at + 1; 
         at = strchr(start, '\t'); // to input
         *at = 0;
         strcpy(location, start);
+#endif
         strcpy(input, at + 1);
 
         if (!*specialty) strcpy(specialty, "NULL");
@@ -5362,6 +5359,40 @@ static void C_VerifySentence(char* input)
 	}
 }
 
+#include <map>
+using namespace std;
+extern std::map <WORDP, int> countData; // per volley index into heap space
+static void C_CountWords(char* input)
+{
+    FILE* in = FopenReadOnly(input);
+    if (!in)
+    {
+        (*printer)("no such file");
+        return;
+    }
+    while (ReadALine(readBuffer, in) >= 0)
+    {
+        char word[MAX_WORD_SIZE];
+        char* ptr = readBuffer;
+        while (1)
+        {
+            ptr = ReadCompiledWord(ptr,word);
+            if (!*word) break;
+            WORDP D = StoreWord(word);
+            countData[D] += 1;
+        }
+    }
+    fclose(in);
+    FILE* out = FopenUTF8Write("tmp/out.txt");
+    // show content:
+    for (std::map<WORDP, int>::iterator it = countData.begin(); it != countData.end(); ++it)
+    {
+        fprintf(out,"%6.6d %s\r\n",it->second,it->first->word);
+    }
+    fclose(out);
+    printf("done\r\n");
+}
+
 static void C_WordDump(char* input)
 {
 	WalkDictionary(WordDump,0);
@@ -5983,7 +6014,11 @@ Respond: user:37224444 bot:Pearl ip:184.106.28.86 (~consumer_electronics_expert)
         ReadCompiledWord(userp + 5, user);
         char* botp = strstr(readBuffer, "bot:");
         if (!botp) continue;
-        ReadCompiledWord(botp + 4, bot);
+        if (botp[4] == ' ') // default bot
+        {
+            *bot = 0;
+        }
+        else ReadCompiledWord(botp + 4, bot);
         char* oob = strchr(readBuffer, '[');
         char* when = strstr(readBuffer, "When:");
         char* output = strstr(readBuffer, "==>");
@@ -6000,7 +6035,9 @@ Respond: user:37224444 bot:Pearl ip:184.106.28.86 (~consumer_electronics_expert)
         }
         else continue;
         printf("%d\r\n", n++);
-        PerformChat(user, bot, message, NULL, ourMainOutputBuffer); 
+        uint64 starttime = ElapsedMilliseconds();
+        PerformChat(user, bot, message, "x", ourMainOutputBuffer);
+        LogChat(starttime, user, bot, "x", volleyCount, message, ourMainOutputBuffer);
     }
     fclose(in);
     uint64 endtime = ElapsedMilliseconds();
@@ -6022,7 +6059,7 @@ static void C_AllMembers(char* input)
     follown = 0;
     if (!D)
     {
-        printf("%s not found\r\n");
+        printf("%s not found\r\n",concept);
         return;
     }
 
@@ -6063,7 +6100,8 @@ static void C_Dedupe(char* input)
 	while (ReadALine(readBuffer, in) >= 0)
 	{
 		if (!*readBuffer) continue;
-		char* comment = readBuffer;
+        char* line = TrimSpaces(readBuffer); // remove leading/trailing spaces
+		char* comment = line;
 		while ((comment = strchr(comment, '#')))
 		{
 			if (comment[1] == ' ' && *(comment - 1) == ' ')
@@ -7814,12 +7852,12 @@ void C_Why(char* buffer)
 		int topic = responseData[order].topic;
 		int id;
 		char* rest = GetRuleIDFromText(responseData[order].id,id);
-		Log(STDTRACELOG,(char*)"%s%s  %s\r\n",GetTopicName(topic),responseData[order].id,ShowRule(GetRule(topic,id)));
+		Log(STDTRACELOG,(char*)"%s.%d.%d  %s\r\n",GetTopicName(topic), TOPLEVELID(id), REJOINDERID(id),ShowRule(GetRule(topic,id)));
 		if (*rest) // format will be ~topic.3.0.5.3.3  where last 3 are the via rule info
 		{
 			topic = atoi(rest+1);
-			GetRuleIDFromText(rest+1,id);
-			Log(STDTRACELOG,(char*)" via %s%s  %s\r\n",GetTopicName(topic),rest,ShowRule(GetRule(topic,id)));
+			rest = GetRuleIDFromText(rest+1,id);
+			Log(STDTRACELOG,(char*)" via %s.%d.%d %s\r\n",GetTopicName(topic), TOPLEVELID(id), REJOINDERID(id),ShowRule(GetRule(topic,id)));
 		}
 	}
 }
@@ -8285,7 +8323,7 @@ static void DisplayTables(char* topicid)
 	Callback(FindWord(GetUserVariable((char*)"$cs_abstract")),args,false,true);
 }
 
-static void DoHeader(int count,char* basic,FILE* in,int id,unsigned int spelling)
+static void DoHeader(int count,char* basic,FILE* in,int id,unsigned int spelling,int ruleid, int rejoinderid,int topicID)
 {
 	if (*abstractBuffer == 0) 	// no more verification data for this topic
 	{
@@ -8293,7 +8331,11 @@ static void DoHeader(int count,char* basic,FILE* in,int id,unsigned int spelling
 		if (!lineLimit)	
 		{
 			TabInset(count,false);
-			Log(STDTRACELOG,(char*)"%s",basic); 
+            char label[MAX_WORD_SIZE];
+            sprintf(label, (char*)"R-%s-%s.%d.%d", computerID, GetTopicName(topicID), ruleid, rejoinderid);
+            WORDP D = FindWord(label, AS_IS);
+            if (D) Log(STDTRACELOG, (char*)"(%d) ", statistics[D->word] = statistics[D->word]);
+            Log(STDTRACELOG, (char*)"%s", basic);
 		}
 		return;
 	}
@@ -8344,6 +8386,11 @@ retry:
 	if (!lineLimit)	
 	{
 		TabInset(count,false);
+
+        char label[MAX_WORD_SIZE];
+        sprintf(label, (char*)"R-%s-%s.%d.%d", computerID, GetTopicName(topicID),ruleid,rejoinderid);
+        WORDP D = FindWord(label, AS_IS);
+        if (D) Log(STDTRACELOG, (char*)"(%d) ", statistics[D->word] = statistics[D->word]);
 		Log(STDTRACELOG,(char*)"%s",basic); 
 	}
 
@@ -8354,67 +8401,86 @@ retry:
 	}
 }
 
-static void DisplayTopic(char* name,int spelling)
+static void TopicHeader(int spelling, int topicID)
 {
-	int topicID = FindTopicIDByName(name,true);
+    if (spelling & ABSTRACT_PRETTY)
+    {
+        int count = 0;
+        char label[MAX_WORD_SIZE];
+        sprintf(label, (char*)"T-%s-%s", computerID, GetTopicName(topicID));
+        WORDP E = FindWord(label, AS_IS);
+        if (E) count = statistics[E->word];
+
+        unsigned int lineSize = 0;
+        if (count) Log(STDTRACELOG, (char*)"\r\n(%d) TOPIC: %s", count,GetTopicName(topicID));
+        else Log(STDTRACELOG, (char*)"\r\nTOPIC: %s", GetTopicName(topicID));
+
+        unsigned int flags = GetTopicFlags(topicID);
+        if (flags & TOPIC_SYSTEM) Log(STDTRACELOG, " SYSTEM");
+        if (flags & TOPIC_KEEP) Log(STDTRACELOG, " KEEP");
+        if (flags & TOPIC_REPEAT) Log(STDTRACELOG, " REPEAT");
+        if (flags & TOPIC_RANDOM) Log(STDTRACELOG, " RANDOM");
+        if (flags & TOPIC_NOSTAY) Log(STDTRACELOG, " NOSTAY");
+        if (flags & TOPIC_PRIORITY) Log(STDTRACELOG, " PRIORITY");
+        if (flags & TOPIC_LOWPRIORITY) Log(STDTRACELOG, " DEPRIORITIZE");
+        if (flags & TOPIC_NOBLOCKING) Log(STDTRACELOG, " NOBLOCKING");
+        if (flags & TOPIC_NOPATTERNS) Log(STDTRACELOG, " NOPATTERNS");
+        if (flags & TOPIC_NOGAMBITS) Log(STDTRACELOG, " NOGAMBITS");
+        if (flags & TOPIC_NOSAMPLES) Log(STDTRACELOG, " NOSAMPLES");
+        if (flags & TOPIC_NOKEYS) Log(STDTRACELOG, " NOKEYS");
+        if (flags & TOPIC_SAFE) Log(STDTRACELOG, " SAFE");
+        if (flags & TOPIC_SHARE) Log(STDTRACELOG, " SHARE");
+        Log(STDTRACELOG, " (");
+        WORDP D = FindWord(GetTopicName(topicID));
+        FACT* F = GetObjectNondeadHead(D);
+        char* word = AllocateStack(NULL, MAX_BUFFER_SIZE);
+        while (F)  // keywords of topic
+        {
+            if (F->verb == Mmember || F->verb == Mexclude)
+            {
+                if (F->flags & ORIGINAL_ONLY) sprintf(word, (char*)"'%s ", WriteMeaning(F->subject));
+                else sprintf(word, (char*)"%s ", WriteMeaning(F->subject));
+                if (F->verb == Mexclude) Log(STDTRACELOG, (char*)"!");
+                size_t wlen = strlen(word);
+                lineSize += wlen;
+                Log(STDTRACELOG, "%s", word);
+                if (lineSize > 500) // avoid long lines
+                {
+                    Log(STDTRACELOG, (char*)"\r\n     ");
+                    lineSize = 0;
+                }
+            }
+            F = GetObjectNondeadNext(F);
+        }
+        ReleaseStack(word);
+        Log(STDTRACELOG, (char*)")\r\n\r\n");
+    }
+    else
+    {
+        Log(STDTRACELOG, (char*)"\r\n****** TOPIC: %s", GetTopicName(topicID));
+
+        char label[MAX_WORD_SIZE];
+        sprintf(label, (char*)"T-%s-%s", computerID, GetTopicName(topicID));
+        WORDP D = FindWord(label, AS_IS);
+        if (D && statistics[D->word]) // from spelling == 10 coverage
+        {
+            Log(STDTRACELOG, (char*)" (%d) ", statistics[D->word]);
+        }
+        topicBlock* block = TI(topicID);
+        if (block && block->topicRestriction) Log(STDTRACELOG, (char*)"  restricted to: %s\r\n", block->topicRestriction);
+        Log(STDTRACELOG, (char*)"\r\n");
+    }
+}
+static void DisplayTopic(char* name,int topicID,int spelling)
+{
+	if (!topicID) topicID = FindTopicIDByName(name,true);
 	if (!topicID) return;
 	char* rule = GetTopicData(topicID); 
 	if (!rule) return;
 	if (spelling & ABSTRACT_STORY && !GAMBIT_MAX(TI(topicID)->topicMaxRule)) return; // has no gambits
 	
 	*abstractBuffer = 1;	// buffer started for new topic
-	if (spelling & ABSTRACT_PRETTY)
-	{
-		unsigned int lineSize = 0;
-		Log(STDTRACELOG,(char*)"\r\nTOPIC: %s",name);
-		unsigned int flags = GetTopicFlags(topicID);
-		if (flags & TOPIC_SYSTEM) Log(STDTRACELOG,(char*)" SYSTEM");
-		if (flags & TOPIC_KEEP) Log(STDTRACELOG,(char*)" KEEP");
-		if (flags & TOPIC_REPEAT) Log(STDTRACELOG,(char*)" REPEAT");
-		if (flags & TOPIC_RANDOM) Log(STDTRACELOG,(char*)" RANDOM");
-		if (flags & TOPIC_NOSTAY) Log(STDTRACELOG,(char*)" NOSTAY");
-		if (flags & TOPIC_PRIORITY) Log(STDTRACELOG,(char*)" PRIORITY");
-		if (flags & TOPIC_LOWPRIORITY) Log(STDTRACELOG,(char*)" DEPRIORITIZE");
-		if (flags & TOPIC_NOBLOCKING) Log(STDTRACELOG,(char*)" NOBLOCKING");
-		if (flags & TOPIC_NOPATTERNS) Log(STDTRACELOG,(char*)" NOPATTERNS");
-		if (flags & TOPIC_NOGAMBITS) Log(STDTRACELOG,(char*)" NOGAMBITS");
-		if (flags & TOPIC_NOSAMPLES) Log(STDTRACELOG,(char*)" NOSAMPLES");
-		if (flags & TOPIC_NOKEYS) Log(STDTRACELOG,(char*)" NOKEYS");
-		if (flags & TOPIC_SAFE) Log(STDTRACELOG,(char*)" SAFE");
-		if (flags & TOPIC_SHARE) Log(STDTRACELOG,(char*)" SHARE");
-		Log(STDTRACELOG,(char*)" ((char*)");
-		WORDP D = FindWord(name);
-		FACT* F = GetObjectNondeadHead(D);
-		char* word = AllocateStack(NULL,MAX_BUFFER_SIZE);
-		while (F) 
-		{
-			if (F->verb == Mmember|| F->verb == Mexclude)
-			{
-				if (F->flags & ORIGINAL_ONLY) sprintf(word,(char*)"'%s ",WriteMeaning(F->subject));
-				else sprintf(word,(char*)"%s ",WriteMeaning(F->subject));
-				if (F->verb == Mexclude) Log(STDTRACELOG,(char*)"!");
-				size_t wlen = strlen(word);
-				lineSize += wlen;
-				Log(STDTRACELOG,(char*)"%s",word);
-				if (lineSize > 500) // avoid long lines
-				{
-					Log(STDTRACELOG,(char*)"\r\n     ");
-					lineSize = 0;
-				}
-			}
-			F = GetObjectNondeadNext(F);
-		}
-		ReleaseStack(word);
-		Log(STDTRACELOG,(char*)")\r\n\r\n");
-	}
-	else 
-	{
-		Log(STDTRACELOG,(char*)"\r\n****** TOPIC: %s",name);
-		topicBlock* block = TI(topicID);
-		if (block->topicRestriction) Log(STDTRACELOG,(char*)"  restricted to: %s\r\n",block->topicRestriction);
-		Log(STDTRACELOG,(char*)"\r\n");
-	}
-
+    TopicHeader(spelling,topicID);
 	WORDP D = FindWord(name);
 	char word[MAX_WORD_SIZE];
 	char fname[MAX_WORD_SIZE];
@@ -8430,6 +8496,8 @@ static void DisplayTopic(char* name,int spelling)
 	char basic[MAX_BUFFER_SIZE];
 	int id = 0;
 	char bodyKind[100];
+    int ruleid = 0;
+    int rejoinderid = 0;
 
 	while (rule && *rule) // for each rule
 	{
@@ -8440,6 +8508,12 @@ static void DisplayTopic(char* name,int spelling)
 		if (!*output || *output == ENDUNIT || norule) 
 		{
 			rule = FindNextRule(NEXTRULE,rule,id);
+            if (TopLevelRule(rule))
+            {
+                ++ruleid = 0;
+                rejoinderid = 0;
+            }
+            else ++rejoinderid;
 			continue;
 		}
 		if (spelling & ABSTRACT_STORY)
@@ -8478,11 +8552,11 @@ static void DisplayTopic(char* name,int spelling)
 			*tmpBuffer = 0;
 			char word[MAX_WORD_SIZE];
 			char* pbase = pattern;
-			if (*label) 
-			{
-				strcat(tmpBuffer,label);
-				strcat(tmpBuffer,(char*)" ");
-			}
+			//if (*label) 
+			//{
+				//strcat(tmpBuffer,label);
+				//strcat(tmpBuffer,(char*)" ");
+			//}
 			while (pbase && *pbase)
 			{
 				pbase = ReadCompiledWord(pbase,word);
@@ -8565,7 +8639,7 @@ static void DisplayTopic(char* name,int spelling)
 		bool badspell = false;
 		int hasBody = 0;
 		end = strchr(output,ENDUNIT);
-		*end = 0;
+ 		*end = 0;
 		bool badWord = false;
 		bool multipleOutput = false;
 		int level = 0;
@@ -8573,6 +8647,7 @@ static void DisplayTopic(char* name,int spelling)
 		levelMark[0] = 0;
 		char* prior = "";
 		char* prior2 = "";
+        if (spelling & ABSTRACT_NOCODE) output = NULL;
 		while (output && *output && *output != ' ') // read output until end of rule
 		{
 			if (spelling & ABSTRACT_PRETTY) // line by line neatened output
@@ -8580,7 +8655,12 @@ static void DisplayTopic(char* name,int spelling)
 				prior2 = prior;
 				prior = output;
 				output = ReadDisplayOutput(output,word);
-				if (!*word) break;	// nothing left
+                if (!stricmp(word, "^if ")) 
+                    output += ACCELLSIZE; // skip accelerator into if
+                if (!stricmp(word, "else ") && *output != '(')
+                    output += ACCELLSIZE; // skip accelerator into else
+
+                if (!*word) break;	// nothing left
 				if (*word == '}') 
 				{
 					--level;
@@ -8589,12 +8669,13 @@ static void DisplayTopic(char* name,int spelling)
 				}
 				// for ^if testing zone, remove accelerator
 				if (word[3] == '{' && word[4] == ' ' && !word[5]) strcpy(word,(char*)"{ ");
-				if (word[0] && word[1] && word[2] && word[3] == ' ' && !word[4]) // possible accelerator
+				if (*word != '^' && *word != '$' && word[0] && word[1] && word[2] && (word[3] == ' ' || word[3] == '(') && !word[4]) // possible accelerator
 				{
 					if (!strnicmp(prior2,(char*)"^^if",4)) continue;	// ignore accelerator after iftest to skip to next test
 					if (!strnicmp(prior2,(char*)"^^loop",6)) continue;	// ignore accelerator at start of loop to skip
 					if (!strnicmp(prior2,(char*)"} ",2) && levelMark[level+1] == 'i') continue;	 // ignore jump after if branch to end of whole if
-				}
+                    if (!strnicmp(prior2, (char*)") ", 2) && levelMark[level + 1] == 'i') continue;	 // ignore jump after if branch to end of whole if
+                }
 				
 				if (multipleOutput) for (unsigned int j = 0; j < (indent + (level * 2) + 4); ++j) 
 				{
@@ -8604,7 +8685,7 @@ static void DisplayTopic(char* name,int spelling)
 				if (*word == '^' && word[1] == '^') memmove(word,word+1,strlen(word));	// ^^if and ^^loop make normal user written
 				sprintf(outputPtr,(char*)"%s\r\n",word); // abstract puts lf after EACH item
 				outputPtr += strlen(outputPtr);
-				multipleOutput = true;
+                multipleOutput = true;
 				if (*word == '{' ) 
 				{
 					++level;
@@ -8843,7 +8924,7 @@ static void DisplayTopic(char* name,int spelling)
 
 		if (headit && !(spelling & ABSTRACT_RESTRICTIONS)) 
 		{
-			DoHeader(indent,basic,in,id,spelling); 
+			DoHeader(indent,basic,in,id,spelling,ruleid, rejoinderid, topicID);
 			if (lineLimit) // check for sections between \n that are too long.
 			{
 				char* esc;
@@ -8898,6 +8979,12 @@ static void DisplayTopic(char* name,int spelling)
 		}
 		*end = ENDUNIT;
 		rule = FindNextRule(NEXTRULE,rule,id);
+        if (TopLevelRule(rule))
+        {
+            ++ruleid;
+            rejoinderid = 0;
+        }
+        else ++rejoinderid;
 	}
 	FClose(in);
 	FreeBuffer();
@@ -9011,6 +9098,8 @@ static void C_ShowCoverage(char* input)
 static void C_Abstract(char* input)
 {
 	int spelling = 0;
+    volleyCounter = 0;
+    relevantVolleyCounter = 0;
 	lineLimit = 0;
 	longLines = 0;
 	if (IsDigit(*input)) input = ReadInt(input,lineLimit); // line length limit
@@ -9033,12 +9122,23 @@ static void C_Abstract(char* input)
 		else if (!stricmp(word,(char*)"vp")) spelling |= ABSTRACT_VP;
 		else if (!stricmp(word,(char*)"story")) spelling |= ABSTRACT_STORY;
 		else if (!stricmp(word,(char*)"responder")) spelling |= ABSTRACT_RESPONDER;
-		else if (!stricmp(input,(char*)"nocode")) spelling |= ABSTRACT_NOCODE;
-		else if (!stricmp(input,(char*)"story")) spelling |= ABSTRACT_STORY;
-		input = SkipWhitespace(input);
+		else if (!stricmp(word,(char*)"nocode")) spelling |= ABSTRACT_NOCODE;
+        else if (!stricmp(word, (char*)"coverage"))
+        {
+            spelling |= ABSTRACT_COVERAGE | ABSTRACT_PRETTY;
+            input = SkipWhitespace(input);
+            input = ReadCompiledWord(input, word);
+        }
+        else break; // not recognized, might be filename
+        input = SkipWhitespace(input);
 	}
 	input = SkipWhitespace(input);
 
+    if (spelling & ABSTRACT_COVERAGE)
+    {
+        TrimIt(word, 10); // mark usage of log
+        Log(STDTRACELOG, (char*)"Volleys processed: %d Relevant: %d \r\n", volleyCounter, relevantVolleyCounter);
+    }
 	abstractBuffer = AllocateBuffer();
 
 	size_t len = 0;
@@ -9053,17 +9153,18 @@ static void C_Abstract(char* input)
 		while (input && *input)
 		{
 			input = ReadCompiledWord(input,word);
-			DisplayTopic(word,spelling);
+ 			DisplayTopic(word,0,spelling);
 			DisplayTables(word);
 		}
 	}
-	else if (*input && *input != '~') // from topic file
+    // named a file to display all topics from
+	else if (*input && *input != '~' && !(spelling & ABSTRACT_COVERAGE)) // from topic file
 	{
 		char filename[SMALL_WORD_SIZE];
 		ReadCompiledWord(input,filename);
 		for (int i = 1; i <= numberOfTopics; ++i) 
 		{
-			if (!stricmp(GetTopicFile(i),filename)) DisplayTopic(GetTopicName(i),spelling);
+ 			if (!stricmp(GetTopicFile(i),filename)) DisplayTopic(GetTopicName(i),0,spelling);
 		}
 	}
 	// otherwise do all
@@ -9072,16 +9173,28 @@ static void C_Abstract(char* input)
 		for (int i = 1; i <= numberOfTopics; ++i) 
 		{
 			if (!*GetTopicName(i)) continue;
+            if (*input == '~' && stricmp(input, GetTopicName(i))) continue; // only do named topic
+            topicBlock* block = TI(i);
+            char label[MAX_WORD_SIZE];
+            if (spelling & ABSTRACT_COVERAGE)
+            {
+                if (true || block->topicRestriction)
+                {
+                    sprintf(label, (char*)"T-%s-%s", computerID, GetTopicName(i));
+                    WORDP D = FindWord(label, AS_IS);
+                    if (!D) continue; // not used in coverage
+                }
+                if (block->topicRestriction && !strstr(block->topicRestriction, computerIDwSpace)) continue;
+            }
+
 			if (len && strnicmp(GetTopicName(i),input,len)) continue;
-			DisplayTopic(GetTopicName(i),spelling);
+			DisplayTopic(GetTopicName(i),i,spelling);
 		}
 		DisplayTables((char*)"*");
 	}
 	FreeBuffer();
 	if (lineLimit) Log(STDTRACELOG,(char*)"%d lines were over length %d\r\n",longLines,lineLimit);
 }
-
-
 
 static void C_Diff(char* input)
 {
@@ -9312,7 +9425,7 @@ static void C_Medtable(char* file)
     (*printer)("done\r\n");
 }
 
-static void C_Rewrite(char* file) // single line test inputs
+static void C_RewriteConverse(char* file) // single line test inputs
 {
     char name[MAX_WORD_SIZE];
     char* output = AllocateBuffer();
@@ -9332,15 +9445,14 @@ static void C_Rewrite(char* file) // single line test inputs
          char* chaid = strchr(readBuffer, '\t'); 
         *chaid = 0; // user id at readbuffer
         char* cat = strchr(chaid + 1, '\t');
-        cat = strchr(cat + 1, '\t');
-        *cat++ = 0;
+        cat = chaid + 1;
         char* spec = strchr(cat + 1, '\t');
         *spec++ = 0;
         char* loc = strchr(spec, '\t');
         *loc++ = 0;
         char* input = strchr(loc, '\t');
         *input++ = 0;
-        char* endinput = strchr(input + 1, '\t');
+        char* endinput = strchr(input + 1, '\r');
         *endinput = 0;
 
         if (stricmp(user, readBuffer)) // change of user
@@ -9359,10 +9471,21 @@ static void C_Rewrite(char* file) // single line test inputs
     (*printer)("done\r\n");
 }
 
+//RunTest	Suite	Comment	Name	Category	Specialty	Location	ChatType	Source	 OOB for first message	WelcomeMessage	1stMessage	1stResponse	2ndMessage	2ndResponse	3rdMessage	3rdResponse	4thMessage	4thResponse	5thMessage	5thResponse	6thMessage	6thResponse	7thMessage	7thResponse	8thMessage	8thResponse	9thMessage	9thResponse	10thMessage	10thResponse	11thMessage	11thResponse	12thMessage	12thResponse	13thMessage	13thResponse	14thMessage	14thResponse	15thMessage	15thResponse	16thMessage	16thResponse	17thMessage	17thResponse	18thMessage	18thResponse	19thMessage	19thResponse	20thMessage	20thResponse
+// Yes	smoke	Guardianship_Incapacity		legal	family		FunnelQuestion	sip	[{"deviceCategory":"desktop","intent":"Guardianship","confidence":"0.90"}]	Welcome! How can I help with your family law question?	incapacitate	What's the full extent of the incapacity? Have there been any expert medical opinions?	No	Was an advanced directive or living will signed before the incapacity?	No	Anything else you want the lawyer to know before I connect you?	No	OK. Got it. I'm sending you to a secure page on JustAnswer so you can place the $5 fully-refundable deposit now. While you're filling out that form, I'll tell the Family Lawyer about your situation and then connect you two.																																
+
 static void C_Rewrite1(char* file) // single line test inputs
 {
+    int uid = 0;
+#ifdef JUNK
     char name[MAX_WORD_SIZE];
     char* output = AllocateBuffer();
+    char category[MAX_WORD_SIZE];
+    char source[MAX_WORD_SIZE];
+    char oob[MAX_WORD_SIZE * 4];
+    char specialty[MAX_WORD_SIZE];
+    char location[MAX_WORD_SIZE];
+    char type[MAX_WORD_SIZE];
     sprintf(name, "%s/tmp.txt", tmp);
     FILE* in = fopen(file, "rb");
     if (!in)
@@ -9371,29 +9494,64 @@ static void C_Rewrite1(char* file) // single line test inputs
         return;
     }
     FILE* out = FopenUTF8Write(name);
+    char user[100];
+    *user = 0;
+    char* secondary;
     while (fgets(readBuffer, 10000, in) != NULL)
-    {// VAChat_SKEY	VAMessage_SKEY	RowInsertTime	CategoryName	SubCategoryName	LocationName	Message	BotResponse	chatQuestionsPosted
+    {
+        char* ptr = strchr(readBuffer,'\t'); // start of smoke
+        ptr = strchr(ptr+1, '\t'); // start of suite
+        ptr = strchr(ptr + 1, '\t'); // start of comment
+        ptr = strchr(ptr + 1, '\t'); // start of name
+        ptr = strchr(ptr + 1, '\t'); // start of category
+        ReadCompiledWord(ptr + 1, category);
 
-       // char* chaid = strchr(readBuffer, '\t'); 
-       // *chaid = 0;
-        char* cat = strchr(readBuffer + 1, '\t');
-        *cat++ = 0;
-        char* spec = strchr(cat + 1, '\t');
-        *spec++ = 0;
-        char* loc = strchr(spec, '\t'); 
-        *loc++ = 0;
-        char* input = strchr(loc , '\t');
-        *input++ = 0;
-        if (!stricmp(loc,"Null"))  sprintf(output, "%s\t\t[ category: %s specialty: %s ]\r\n", readBuffer, cat, spec);
-        else sprintf(output, "%s\t\t[ category: %s specialty: %s location: %s ]\r\n", readBuffer, cat,  spec, loc);
+        ptr = strchr(ptr + 1, '\t'); // start of specialty
+        secondary = strchr(ptr + 1, '\t');
+        *secondary = 0;
+        strcpy(specialty, ptr + 1);
+        ptr = secondary;
+
+        ptr = strchr(ptr + 1, '\t'); // start of location
+        secondary = strchr(ptr + 1, '\t');
+        *secondary = 0;
+        strcpy(location, ptr + 1);
+        ptr = secondary;
+
+        ptr = strchr(ptr + 1, '\t'); // start of type
+        ReadCompiledWord(ptr + 1, type);
+        ptr = strchr(ptr + 1, '\t'); // start of source
+        ReadCompiledWord(ptr + 1, source);
+        ptr = strchr(ptr + 1, '\t'); // start of oob 1st msg
+        secondary = strchr(ptr + 1, '\t');
+        *secondary = 0;
+        strcpy(oob, ptr + 1);
+        ptr = secondary;
+        ptr = strchr(ptr + 1, '\t'); // start of welcome
+        ptr = strchr(ptr + 1, '\t'); // start of 1st user message
+
+        ++uid;
+
+        if (!stricmp(location, "Null"))  sprintf(output, "x%d\t\t[ category: %s specialty: %s ]\r\n", uid, category, specialty);
+        else sprintf(output, "x%d\t\t[ category: %s specialty: %s location: %s ]\r\n", uid, category, specialty, location);
         fprintf(out, "%s", output);
-        sprintf(output, "%s\t\t%s", readBuffer, input);
-        fprintf(out, "%s", output);
+
+        while (1)
+        {
+            secondary = strchr(ptr + 1, '\t'); // start of user response
+            *secondary = 0;
+            char* end = strchr(secondary+1,)
+            sprintf(output, "%s\r\n", ptr);
+            fprintf(out, "%s", output);
+
+        }
+    
     }
     fclose(in);
     fclose(out);
     FreeBuffer();
     (*printer)("done\r\n");
+#endif
 }
 
 static void C_QuoteLines(char* file)
@@ -9407,13 +9565,13 @@ static void C_QuoteLines(char* file)
 		return;
 	}
 	FILE* out = FopenUTF8Write(name);
-	// format is  word  `lemma` POSes
 	char word[MAX_WORD_SIZE];
 	word[0] = '"';
 	while (ReadALine(readBuffer, in) >= 0)
 	{
 		char* ptr = SkipWhitespace(readBuffer);
 		if (!*ptr) continue;
+       
 		strcpy(word+1, ptr);
 		size_t len = strlen(word);
 		if (word[len - 1] == ' ') --len;
@@ -9502,6 +9660,50 @@ static void BuildForeign(char* input)
 	myexit("end foreign build");
 }
 
+static void Stats(char* bot,char* why)
+{
+    if (stricmp(bot, computerID)) // only do this bot
+        return;
+    ++relevantVolleyCounter;
+    while (*why == '~') // do each tag
+    {
+        char tag[MAX_WORD_SIZE];
+        why = ReadCompiledWord(why, tag); // get tag  which is topic.x.y=name or topic.x.y<topic.a.b (reuse) and optional label which is whytag
+        char* dot;
+        dot = strchr(tag, '.'); // split of primary topic from rest of tag
+        int topicidx = 0;
+        *dot = 0;
+        strcpy(topic, tag); // get the primary topic of the tag
+        *dot = '.';
+        char label[MAX_WORD_SIZE];
+        sprintf(label, (char*)"T-%s-%s",bot,topic);
+        WORDP D = StoreWord(label, AS_IS);
+        statistics[D->word] = statistics[D->word] + 1; // tally hits on topic itself
+        dot = strchr(dot + 1, '.'); // 2nd dot
+        while (IsDigit(*++dot)) { ; }
+        char c = *dot;
+        *dot = 0;
+        sprintf(label, (char*)"R-%s-%s",bot, tag);
+        D = StoreWord(label, AS_IS);
+        statistics[D->word] = statistics[D->word] + 1; // tally hits on topic itself
+        *dot = c;
+
+        char* rest = strchr(dot, '~'); // 2ndary rule?
+        if (rest) // look at indirection rule
+        {
+            char* dot1 = strchr(rest, '.');
+            dot1 = strchr(dot1 + 1, '.'); // 2nd dot
+            while (IsDigit(*++dot1)) { ; }
+            char c1 = *dot1;
+            *dot1 = 0;
+            sprintf(label, (char*)"R-%s-%s",bot, rest);
+            D = StoreWord(label, AS_IS);
+            statistics[D->word] = statistics[D->word] + 1; // tally hits on topic itself
+            *dot1 = c1;
+        }
+    }
+}
+
 static void TrimIt(char* name,uint64 flag) 
 {
 	//  0 = user->bot
@@ -9546,8 +9748,10 @@ static void TrimIt(char* name,uint64 flag)
 		char copy[MAX_BUFFER_SIZE];
 		strcpy(copy,readBuffer);
 
-		// fields in log file are: type, user, bot, ip, resulting topic, (current volley id),  input,  output, dateinfo, possible f:,  followed by rule tags for each issued output.
-		
+        // fields in log file are: type, user, bot, ip, rand, resulting topic, (current volley id),  input,  output, dateinfo (when), possible f:,  followed by rule tags for each issued output.
+        //Start: user:dat bot : pearl ip : rand:2366 (~introductions) 0 == >[why = ~introductions.1.0.~control.6.0 | v = 36.0]`Hello, I'm Pearl Wilson, the Expert's Assistant on JustAnswer.How can I help ? When : Sep14'18-12:02:49 Why:~xpostprocess.4.0=OOBRESULT.~control.4.0 ~introductions.1.0.~control.6.0  Version:8.5 Build0:Sep10'18 - 07 : 32 : 40 Build1 : Sep13'18-13:55:30 0:Sep14'18 - 12 : 02 : 49 F : 0 P : 0
+        //Respond : user : dat bot : pearl ip : () 1   test me == >[alarm = 0 | loopback = 0 | why = ~phase2.8.0 = MAINCONTROL.~phase2.7.0 | v = 36.0]`What can I say ? When : Sep14'18-12:04:48 Why:~xpostprocess.4.0=OOBRESULT.~control.10.3 ~phase2.8.0=MAINCONTROL.~phase2.7.0   F:4932 
+
 		// fields in regress file are: Start: user:test bot:rose rand:3089 (resulting topic), volleyid,  input:  output: Good morning. 
 		// Respond: user:test bot:rose (resulting topic), volleyid input output 
 
@@ -9561,21 +9765,11 @@ static void TrimIt(char* name,uint64 flag)
 		else ptr = ReadCompiledWord(ptr,user);
 
 		char bot[MAX_WORD_SIZE];
-		ptr = ReadCompiledWord(ptr+4,bot); // skip "bot:"
-
-		if (!strncmp(readBuffer,(char*)"Start:",6)) 
-		{
-			if (flag == 9)
-			{
-				char file[SMALL_WORD_SIZE];
-				sprintf(file,(char*)"%s/log-%s.txt",users,user);
-				FILE* out1 = FopenUTF8WriteAppend(file);
-				fprintf(out1,(char*)"%s\r\n",copy);
-				FClose(out1);
-			}
-			// other things you could do with start line here
-			continue;
-		}
+        if (ptr[4] == ' ')
+        {
+            strcpy(bot, computerID); // default bot
+        }
+		else ptr = ReadCompiledWord(ptr+4,bot); // skip "bot:"
 
 		char ip[MAX_WORD_SIZE];
 		*ip = 0;
@@ -9594,12 +9788,12 @@ static void TrimIt(char* name,uint64 flag)
 		char volley[MAX_WORD_SIZE];
 		at = ReadCompiledWord(end+1,volley); 
 		char* input = SkipWhitespace(at); // now points to user input start
-
-		char* output = strstr(at,(char*)" ==> ");
+		char* output = strstr(at,(char*)"==> ");
 		if (!output) continue;
+        ++volleyCounter;
 		*output++ = 0;	// end of input
 		*output = 0;	// end of input just in case of null input
-		output += 4;
+		output += 3;
 		output = SkipWhitespace(output);  // start of output
 
 		char* when = strstr(output,(char*)"When:");
@@ -9629,6 +9823,21 @@ static void TrimIt(char* name,uint64 flag)
 		// trim any oob
 		if (nooob & 1) input = SkipOOB(input);
 		if (nooob & 2) output = SkipOOB(output);
+
+        if (!strncmp(readBuffer, (char*)"Start:", 6))
+        {
+            if (flag == 9)
+            {
+                char file[SMALL_WORD_SIZE];
+                sprintf(file, (char*)"%s/log-%s.txt", users, user);
+                FILE* out1 = FopenUTF8WriteAppend(file);
+                fprintf(out1, (char*)"%s\r\n", copy);
+                FClose(out1);
+            }
+            // other things you could do with start line here
+            if (flag == 10)  Stats(bot,why); 
+            continue;
+        }
 
 		if (flag == 0) sprintf(display,(char*)"\r\n%s   =>   %s\r\n",input,output); //  showing both as pair, user first
 		else if (flag == 1)  sprintf(display,(char*)"\r\n%s   =>   %s\r\n",prior,input);  // pair, bot first
@@ -9716,41 +9925,7 @@ static void TrimIt(char* name,uint64 flag)
 		}
 		else if (flag == 10) // build stats
 		{
-			while (*why == '~') // do each tag
-			{
-				char tag[MAX_WORD_SIZE];
-				why = ReadCompiledWord(why,tag); // get tag  which is topic.x.y=name or topic.x.y<topic.a.b (reuse) and optional label which is whytag
-				char* dot;
-				dot = strchr(tag,'.'); // split of primary topic from rest of tag
-				int topicidx = 0;
-				*dot = 0;
-				strcpy(topic,tag); // get the primary topic of the tag
-				*dot = '.';
-				char label[MAX_WORD_SIZE];
-				sprintf(label,(char*)"T-%s",topic);
-				WORDP D = StoreWord(label,AS_IS); 
-				statistics[D->word] = statistics[D->word] + 1; // tally hits on topic itself
-				dot = strchr(dot+1,'.'); // 2nd dot
-				while (IsDigit(*++dot)) {;}
-				char c = *dot;
-				*dot = 0;
-				sprintf(label,(char*)"R-%s",tag);
-				D = StoreWord(label,AS_IS); 
-				*dot = c;
-
-				char* rest = strchr(dot,'~'); // 2ndary rule?
-				if (rest) // look at indirection rule
-				{
-					char* dot1 = strchr(rest,'.');
-					dot1 = strchr(dot1+1,'.'); // 2nd dot
-					while (IsDigit(*++dot1)) {;}
-					char c1 = *dot1;
-					*dot1 = 0;
-					sprintf(label,(char*)"R-%s",rest);
-					D = StoreWord(label,AS_IS); 
-					*dot1 = c1;
-				}
-			}
+            Stats(bot,why);
 		}
 		else if (flag == 11)  sprintf(display, (char*)"\r\n%s  %s\r\n\t%s\r\n", when, input, output); //  timeline, user first
 		else if (flag == 12 || flag == 13) // 12 skips initial oob reason  13 doesnt
@@ -9990,8 +10165,8 @@ CommandInfo commandSet[] = // NEW
 	{ (char*)":trim",C_Trim,(char*)"Strip excess off chatlog file to make simple file TMP/tmp.txt"}, 
 	
     { (char*)":removecrlf",C_RemoveCRLF,(char*)"echo file  to TMP/tmp.txt with no crlf " },
-    { (char*)":field2source",C_Field2Source,(char*)"echo csv  to TMP/tmp.txt reformatting to source " },
-    { (char*)":trimfield",C_TrimField,(char*)"echo file to TMP/tmp.txt minus short line in column" },
+    { (char*)":ja2source",C_JA2Source,(char*)"JA echo csv  to TMP/tmp.txt reformatting to source " },
+    { (char*)":ja2starts",C_JA2Starts,(char*)"JA echo file to TMP/tmp.txt minus short line in column" },
 	{ (char*)":trimdown",C_TrimDown,(char*)"echo  to TMP/tmp.txt single word entries from a :down list" },
 	{ (char*)":checklist",C_CheckList,(char*)"echo  to TMP/tmp.txt words in file list that can be verbs" },
 
@@ -10001,12 +10176,13 @@ CommandInfo commandSet[] = // NEW
     { (char*)":dedupe",C_Dedupe,(char*)"echo input file to TMP/tmp.txt without duplicate lines)" },
 	{ (char*)":topicdump",C_TopicDump,(char*)"Dump topic data suitable for inclusion as extra topics into TMP/tmp.txt (:extratopic or PerformChatGivenTopic)"},
 	{ (char*)":builddict",BuildDictionary,(char*)" basic, layer0, layer1, foreign, or wordnet are options instead of default full"}, 
-	{ (char*)":buildforeign",BuildForeign,(char*)"regenerate foreign language dictionary"}, 
+	{ (char*)":buildforeign",BuildForeign,(char*)"regenerate foreign language dictionary given name of language"}, 
 	{ (char*)":clean",C_Clean,(char*)"Convert source files to NL instead of CR/LF for unix"},
     { (char*)":medtable",C_Medtable,(char*)"Read lines from file, add quotes around them, write to tmp/tmp.txt" },
-    { (char*)":rewrite",C_Rewrite,(char*)"Read lines from file, reformat,  write to tmp/tmp.txt" },
+    { (char*)":rewriteconverse",C_RewriteConverse,(char*)"Read lines from file, reformat as conversation,  write to tmp/tmp.txt" },
+    { (char*)":rewrite1",C_Rewrite1,(char*)"Read lines from file, reformat,  write to tmp/tmp.txt" },
     { (char*)":quotelines",C_QuoteLines,(char*)"Read lines from file, add quotes around them, write to tmp/tmp.txt" },
-	{ (char*)":striplog",C_StripLog,(char*)"Read lines from a server log file, reducing them to normal inputs for :source, write to tmp/tmp.txt" },
+    { (char*)":striplog",C_StripLog,(char*)"Read lines from a server log file, reducing them to normal inputs for :source, write to tmp/tmp.txt" },
 #ifndef DISCARDPOSTGRES
 	{ (char*)":endpguser",C_EndPGUser,(char*)"Switch from postgres user topic to file system"},
 #endif
@@ -10025,6 +10201,7 @@ CommandInfo commandSet[] = // NEW
 	{ (char*)":worddump",C_WordDump,(char*)"show words via hardcoded test"}, 
 	{ (char*)":verifySentence",C_VerifySentence,(char*)"verification data"}, 
     { (char*)":timelog",C_TimeLog,(char*)"avg min and max of a log named" },
+    { (char*)":countwords",C_CountWords,(char*)"generate counts of words listed in file" },
 
 #ifdef PRIVATE_CODE
 #include "../privatecode/privatetestingtable.cpp"
