@@ -1,0 +1,6 @@
+# this is the topic for anything that has no obvious topic.
+# it is called directly from the control script when everything else fails.
+
+topic: ~keywordless nostay()
+
+u: (< say _*) :bukeep() repeat() '_0

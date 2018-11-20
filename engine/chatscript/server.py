@@ -7,5 +7,5 @@ class ChatScriptServer:
 
 import os
 
-os.system("BINARIES/LinuxChatScript64")
+os.system("BINARIES/LinuxChatScript64 language=VIETNAMESE")
 print(0)

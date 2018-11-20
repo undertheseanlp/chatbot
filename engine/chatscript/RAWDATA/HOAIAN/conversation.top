@@ -1,6 +1,6 @@
-topic: ~CONVERSATION keep repeat (ten hi nữ khỏe)
+topic: ~CONVERSATION keep repeat (ten hi khỏe)
 
-u: ([cau gi]) tớ tên là Hoài An
+u: ([ten]) tớ tên là Hoài An
 
 u: (hello) to chao cau
 
@@ -12,5 +12,4 @@ u: ([(tạm biệt) (chào nhé)])
 	[chào cậu. lần khác nói tiếp nhé]
 	[tạm biệt. hẹn gặp lại nhé]
 
-u: ([khỏe khoe] không)
-	tớ vẫn khỏe, chat chit suốt ngày. hi hi
+u: ([khoe khỏe]) tớ vẫn khỏe, chat chit suốt ngày. hi hi

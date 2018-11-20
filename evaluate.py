@@ -18,13 +18,15 @@ def evaluate(filepath):
         for question in questions:
             count["question"] += 1
             bot_answer = HoaiAn.reply("local", question)
+            if not bot_answer:
+                bot_answer = ""
             bleu = sentence_bleu([answer.lower().split()], bot_answer.lower().split(), smoothing_function=SmoothingFunction().method4)
             scores.append(bleu)
             if bleu < 0.8:
-                print("\nQuestion    :", question)
-                print("Correct :", answer)
-                print("Actual  :", bot_answer)
-                print("Bleu    : ", bleu)
+                print("\nQuestion :", question)
+                print("Correct  :", answer)
+                print("Actual   :", bot_answer)
+                print("Bleu     : ", bleu)
                 print()
     print("Count:", count)
     print("Score:", np.mean(scores))
@@ -32,6 +34,7 @@ def evaluate(filepath):
 
 HoaiAn.reply("local", ":build HoaiAn")
 HoaiAn.reply("local", ":reset")
+HoaiAn.reply("local", ":trace")
 
 files = [
     "data/hoaian01/raw/conversation.json",
