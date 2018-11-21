@@ -26,7 +26,7 @@ def evaluate(filepath):
                 print("\nQuestion :", question)
                 print("Correct  :", answer)
                 print("Actual   :", bot_answer)
-                print("Bleu     : ", bleu)
+                print("Bl1eu     : ", bleu)
                 print()
     print("Count:", count)
     print("Score:", np.mean(scores))
