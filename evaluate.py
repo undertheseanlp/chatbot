@@ -1,4 +1,7 @@
 import json
+from os import listdir
+from os.path import join
+
 from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from engine.hoaian import HoaiAn
 import numpy as np
@@ -43,10 +46,14 @@ HoaiAn.reply("local", ":build HoaiAn")
 HoaiAn.reply("local", ":reset")
 HoaiAn.reply("local", ":trace")
 
-files = [
-    "data/hoaian01/raw/conversation.json",
-    "data/hoaian01/raw/myself.json"
-]
+TEST_FOLDER = "data/hoaian01/raw"
+files = []
+for file in listdir(TEST_FOLDER):
+    files.append(join(TEST_FOLDER, file))
+# files = [
+#     "data/hoaian01/raw/conversation.json",
+#     "data/hoaian01/raw/myself.json"
+# ]
 for filepath in files:
     print("")
     print(filepath)

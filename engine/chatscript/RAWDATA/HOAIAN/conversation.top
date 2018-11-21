@@ -1,15 +1,15 @@
-topic: ~CONVERSATION keep repeat (ten hi khỏe tạm biệt)
+topic: ~conversation keep repeat (ten hi khỏe tạm_biệt chào)
 
-u: ([ten]) tớ tên là Hoài An
-
-u: (hello) to chao cau
-
-u: (tuoi) tớ 20 tuổi
+u: (hello) chào cậu
 
 u: (hi) chào cậu
 
-u: ([(tạm biệt) (chào nhé)])
+u: (chào >) chào cậu
+
+u: ([(tạm biệt) ("chào nhé")])
 	[chào cậu. lần khác nói tiếp nhé]
 	[tạm biệt. hẹn gặp lại nhé]
 
-u: ([khoe khỏe]) tớ vẫn khỏe, chat chit suốt ngày. hi hi
+u: ([khỏe]) tớ vẫn khỏe, chat chit suốt ngày. hi hi
+
+t: cậu có vui không?
