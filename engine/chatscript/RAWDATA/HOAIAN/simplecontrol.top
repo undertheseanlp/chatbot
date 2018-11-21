@@ -2,8 +2,8 @@
 # When you see this "#", anything after this is a comment, it is not code that is executed. 
 # For example, this line is a comment.
 
-# this function is executed once for every new user chatting with harry
-outputmacro: hoaian()  # you get harry by default
+# this function is executed once for every new user chatting with hoaian
+outputmacro: hoaian()  # you get hoaian by default
 # The $cs_token is set to a variety of features I want for tokenizing inpu.
 # $cs_token = #DO_INTERJECTION_SPLITTING  | #DO_SUBSTITUTE_SYSTEM   | #DO_NUMBER_MERGE | #DO_DATE_MERGE  | #DO_PROPERNAME_MERGE  | #DO_SPELLCHECK  | #DO_PARSE
 # $cs_token += #SPLIT_QUOTE | #NO_WITHIN | #STRICT_CASING
@@ -38,7 +38,7 @@ topic: ~control system ()
 
 # on startup, do introduction.  It takes the user input which starts a new conversation and looks for a response in  ~introductions
 u: ( %input<%userfirstline)
-	gambit(~introductions)
+	gambit(~conversation)
 
 # if the user says shut up anywhere in the response, set the variable $shutup to 1, which is used later to stop using the talk output in windows
 u: (< shut up >) $shutup = 1
