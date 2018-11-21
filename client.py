@@ -31,7 +31,7 @@ class Chatbot:
                 chunk = s.recv(1024)
                 if chunk == b'':
                     break
-                msg = msg + chunk.decode("utf-8")
+                msg = msg + chunk.decode("utf-8", errors="ignore")
             s.close()
             return msg
         except Exception as e:

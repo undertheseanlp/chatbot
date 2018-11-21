@@ -19,6 +19,7 @@ def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
                 break
             msg = msg + chunk.decode("utf-8", errors="ignore")
         s.close()
+        print(msg)
         return msg
     except Exception as e:
         print(e)
@@ -42,5 +43,5 @@ class HoaiAn:
 
 if __name__ == '__main__':
     HoaiAn.init()
-    response = HoaiAn.reply("a", "tên")
+    response = HoaiAn.reply("a", "mấy tuổi")
     print(response)
