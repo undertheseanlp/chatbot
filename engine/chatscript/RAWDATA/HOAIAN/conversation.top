@@ -1,10 +1,10 @@
-topic: ~conversation keep repeat (ten hi khỏe tạm_biệt chào)
+topic: ~conversation keep repeat (ten hi khỏe "tạm biệt" chào)
 
 u: (hello) chào cậu
 
 u: (hi) chào cậu
 
-u: (chào >) chào cậu
+u: (chào !nhé) chào cậu
 
 u: ([(tạm biệt) ("chào nhé")])
 	[chào cậu. lần khác nói tiếp nhé]
