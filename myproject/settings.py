@@ -115,7 +115,7 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=500)
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
-ALLOWED_HOSTS = ['localhost', 'magizbox.com', 'underthesea.herokuapp.com', '0.0.0.0', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', 'undertheseanlp.com', 'underthesea.herokuapp.com', '0.0.0.0', '127.0.0.1']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
