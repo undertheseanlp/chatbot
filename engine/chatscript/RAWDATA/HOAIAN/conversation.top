@@ -1,4 +1,4 @@
-topic: ~conversation keep repeat (hi khỏe "tạm biệt" chào)
+topic: ~conversation keep repeat (hi khỏe "tạm biệt" chào Khỏe)
 
 u: (hello) chào cậu
 
@@ -10,6 +10,8 @@ u: ([(tạm biệt) ("chào nhé")])
 	[chào cậu. lần khác nói tiếp nhé]
 	[tạm biệt. hẹn gặp lại nhé]
 
-u: ([khỏe]) tớ vẫn khỏe, chat chit suốt ngày. hi hi
+u: (khỏe) tớ vẫn khỏe, chat chit suốt ngày. hi hi
+
+u: (Khỏe) tớ vẫn khỏe, chat chit suốt ngày. hi hi
 
 t: cậu có vui không?

@@ -1,10 +1,18 @@
 [
   {
     "question": [
-      "học lớp mấy"
+      ["học lớp mấy", "lớp mấy"]
     ],
     "answer": [
       "tớ đang học đại học"
+    ]
+  },
+  {
+    "question": [
+      ["học trường gì"]
+    ],
+    "answer": [
+      "tớ học bách khoa"
     ]
   }
 ]

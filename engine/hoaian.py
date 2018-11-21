@@ -5,8 +5,8 @@ import socket
 def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
     try:
         user = "anhv"
-        botname = "Hoaian"
-        msgToSend = u'%s\u0000%s\u0000%s\u0000' % (user, botname, text)
+        botname = "hoaian"
+        msgToSend = '%s\u0000%s\u0000%s\u0000' % (user, botname, text)
         msgToSend = str.encode(msgToSend)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(timeout)  # timeout in secs
@@ -19,7 +19,6 @@ def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
                 break
             msg = msg + chunk.decode("utf-8", errors="ignore")
         s.close()
-        print(msg)
         return msg
     except Exception as e:
         print(e)

@@ -1,93 +1,200 @@
-# Chatbot tiếng Việt
+# Status
+The former repository of ChatScript was at https://github.com/bwilcox-1234/ChatScript, however, I lost
+access to this repository (2 factor authentication lost that I didn't want in the first place and I could not convince
+github to restore my access). So it is no longer maintained. But the global user ChatScript 
+became available, and is a better name anyway.
 
-![](https://img.shields.io/badge/made%20with-%E2%9D%A4-red.svg)
-![](https://img.shields.io/badge/opensource-vietnamese-blue.svg)
-![](https://img.shields.io/badge/build-passing-green.svg)
-![](https://img.shields.io/badge/powered%20by-chatscript-blue.svg)
+# ChatScript
+Natural Language tool/dialog manager
 
-Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, được phát triển bởi nhóm nghiên cứu xử lý ngôn ngữ tự nhiên tiếng Việt - [underthesea](https://github.com/undertheseanlp). Chứa mã nguồn các thử nghiệm cho việc xây dựng một chatbot đơn giản, tích hợp với django và có thể triển khai dưới dạng một ứng dụng Web.
+ChatScript is the next generation chatbot engine that has won the Loebner's 4 times and is the basis for natural language company for a variety of tech startups.
 
-**Nhóm tác giả**
-
-* Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
-* Cao Thanh Tùng ([caothanhtungst@gmail.com](caothanhtungst@gmail.com))
-* Hồ Thanh Luân ([hothanhluan1996@gmail.com](hothanhluan1996@gmail.com))
-* Nguyễn Thị Hậu ([nguyenhau1996mta@gmail.com](nguyenhau1996mta@gmail.com))
-
-**Live Demo**: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
-
-**Tham gia đóng góp**
-
- Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
- 
-Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm phát triển với vai trò là [Developer](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor), xin hãy đọc kỹ [Hướng dẫn tham gia đóng góp](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor).
-
-## Mục lục
-
-* [Giới thiệu về Hoài An](#giới-thiệu-về-hoài-an)
-* [Yêu cầu hệ thống](#yêu-cầu-hệ-thống)
-* [Thiết lập môi trường](#thiết-lập-môi-trường)
-* [Hướng dẫn sử dụng](#hướng-dẫn-sử-dụng)
-* [Bản quyền](#bản-quyền)
-
-
-## Giới thiệu về Hoài An 
-
-Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
-
-Cùng chat với Hoài An tại [đường dẫn này](http://undertheseanlp.com:8000/#!/) nhé.
-
-![](images/chatlog.png)
-
-## Yêu cầu hệ thống
-
-* `Operating Systems: Linux (Ubuntu, CentOS), Mac`
-* `Python 3.5+`
-* `conda 4+`
-* `Django==1.11.1`
-* `rivescript==1.14.9`
-
-## Thiết lập môi trường
-
-Tải project bằng cách sử dụng lệnh `git clone`
-
+ChatScript is a rule-based engine, where rules are created by humans writers in program scripts through a process called dialog flow scripting. These use a scripting metalanguage (simply called a "script") as their source code. 
+Here what a ChatScript script file looks like:
 ```
-$ git clone https://github.com/undertheseanlp/chatbot.git
+#
+# file: food.top
+#
+topic: ~food []
+
+#! I like spinach
+s: ( I like spinach ) Are you a fan of the Popeye cartoons?
+	
+	a: ( ~yes )  I used to watch him as a child. Did you lust after Olive Oyl?
+    	    b: ( ~no ) Me neither. She was too skinny.
+    	    b: ( yes ) You probably like skinny models.
+	
+	a: ( ~no ) What cartoons do you watch?
+     		b: ( none ) You lead a deprived life.
+     		b: ( Mickey Mouse ) The Disney icon.
+
+#! I often eat chicken
+u: ( ![ not never rarely ] I * ~ingest * ~meat ) You eat meat.
+
+#! I really love chicken
+u: ( !~negativeWords I * ~like * ~meat ) You like meat.
+
+#! do you eat bacon?
+?: ( do you eat _ [ ham eggs bacon] ) I eat '_0
+
+#! do you like eggs or sushi?
+?: ( do you like _* or _* ) I don't like '_0 so I guess that means I prefer '_1.
+
+#! I adore kiwi.
+s: ( ~like ~fruit ![~animal _bear] )  Vegan, you too...
+
+#! do you eat steak?
+?: ( do you eat _~meat ) No, I hate _0.
+
+#! I eat fish.
+s: ( I eat _*1 > ) 
+  $food = '_0 
+  I eat oysters.
 ```
 
-Tạo môi trường mới và cài đặt các gói liên quan
+Above example mentioned in article [How to build your first chatbot using ChatScript](https://medium.freecodecamp.com/chatscript-for-beginners-chatbots-developers-c58bb591da8#.2qdxjuyvs).
 
+
+## Basic Features
+
+* Powerful pattern matching aimed at detecting meaning.
+* Simple rule layout combined with C-style general scripting.
+* Built-in WordNet dictionary for ontology and spell-checking.
+* Extensive extensible ontology of nouns, verbs, adjectives, adverbs.
+* Data as fact triples enables inferencing and supports JSON representation.
+* Rules can examine and alter engine and script behavior.
+* Remembers user interactions across conversations.
+* Document mode allows you to scan documents for content.
+* Ability to control local machines via popen/tcpopen/jsonopen.
+* Ability to read structured JSON data from websites.
+* Built in english pos-tagging and parsing
+* [Postgres](https://www.postgresql.org/) and [Mongo](https://www.mongodb.com/) databases support for big data or large-user-volume chatbots.
+
+## OS Features
+
+* Runs on Windows or Linux or Mac or iOS or Android
+* Fast server performance supports a thousand simultaneous users.
+* Multiple bots can cohabit on the same server.
+
+## Support Features
+
+* Mature technology in use by various parties around the world.
+* Integrated tools to support maintaining and testing large systems.
+* UTF8 support allows scripts written in any language
+* User support forum on [chatbots.org](https://www.chatbots.org/ai_zone/viewforum/44/) 
+* Issues or bugs on this [repo](https://github.com/bwilcox-1234/ChatScript/issues)
+
+
+# Getting started
+
+## Installation
+
+Take this project and put it into some directory on your machine (typically we call the directory ChatScript, but you can name it whatever). That takes care of installation.
+
+    git clone https://github.com/ChatScript/ChatScript
+
+
+## Standalone mode - run locally on a console (for developement/test)
+
+From your ChatScript home directory, go to the BINARIES directory: 
+```bash
+cd BINARIES
 ```
-cd chatbot
-conda create -n chatbot python=3.6
-source activate chatbot
-pip install -r requirements.txt
+And run the ChatScript engine
+
+### Windows
+```bash
+ChatScript
 ```
 
-## Thiết lập Chatscript 
-
-Để chạy local test thử 
-
+### Linux
+```bash
+./LinuxChatScript64 local
 ```
-$ BINARIES/LinuxChatScript64 local
-Enter user name: test
-HOAIAN:  I don't know what to say.
-test: > ten gi 
-HOAIAN:  To ten la Hoai An
-```
+Note: to set the file executable: `chmod a+x ./LinuxChatScript64`
 
-## Hướng dẫn sử dụng
-
-Để chạy chatbot, gõ các câu lệnh 
-
-```
-cd chatbot
-source activate chatbot
-python manage.py runserver 0.0.0.0:8000
+### MacOS
+```bash
+./MacChatScript local
 ```
 
-Sau đó, mở trình duyệt, vào đường dẫn http://localhost:8000 để bắt đầu chat với bot 
+This will cause ChatScript to load and ask you for a username. Enter whatever you want. 
+You are then talking to the default demo bot `Harry`.
 
-## Bản quyền
+## Server Mode (for production)
+From your ChatScript home directory, go to the BINARIES directory and run the ChatScript engine as server
+### Run the server on Windows
+```bash
+ChatScript port=1024
+```
+### Run the server on Linux
+```bash
+./LinuxChatScript64
+```
+### Run the server on MacOS
+```bash
+./MacChatScript
+```
 
-Mã nguồn của dự án được phân phối theo giấy phép [GPL-3.0](LICENSE.txt).
+This will cause ChatScript to load as a server.  
+But you also need a client (to test client-server communication). 
+You can run a separate command window and go to the BINARIES directory and type 
+
+### Run a client (test) on Windows
+```bash
+ChatScript client=localhost:1024 
+```
+
+### Run a client (test) on Linux
+```bash
+./LinuxChatScript64 client=localhost:1024
+```
+
+### Run a client (test) on MacOS
+```bash
+./MacChatScript client=localhost:1024
+```
+
+This will cause ChatScript to load as a client and you can talk to the server. 
+
+
+## How to build a bot
+Run ChatScript locally. From the ChatScript command prompt, type 
+
+    :build Harry
+
+or whatever other preinstalled bot exists. If you have revised basic data, you can first:
+
+    :build 0
+
+## How to compile the engine.
+On windows if you have Visual Studio installed, launch `VS2010/chatscript.sln` or `VS2015/chatscript.sln` and do a build. 
+The result will go in the `BINARIES` directory.
+
+On Linux, go stand in the SRC directory and type `make server` (assuming you have make and g++ installed). This creates BINARIES/ChatScript, which can run as a server or locally. There are other make choices for installing PostGres or Mongo.
+
+
+# Full Documentation
+
+[ChatScript Wiki (user guides, tutorials, papers)](/WIKI/README.md)
+
+
+# Contributing
+
+1. Fork it
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
+
+
+# Last releases
+
+[changes.md](/changes.md)
+
+
+# Author 
+
+* Bruce Wilcox
+  * home website: [BrilligUnderstanding.com](http://www.brilligunderstanding.com)
+  * mail:  [gowilcox@gmail.com](mailto:gowilcox@gmail.com )  
