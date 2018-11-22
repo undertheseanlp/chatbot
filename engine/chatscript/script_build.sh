@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python build.py
+source activate chatbot; python build.py
