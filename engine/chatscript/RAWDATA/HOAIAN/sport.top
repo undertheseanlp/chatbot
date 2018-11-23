@@ -1,0 +1,12 @@
+concept: ~môn_thể_thao [bóng "bóng đá" "bóng bàn" "bơi" tennis "cầu lông"]
+
+topic: ~sport keep repeat [~môn_thể_thao]
+
+u: (có thích * _~môn_thể_thao không) tớ không thích _0 lắm
+
+t: cậu thích môn thể thao nào?
+
+t: cậu thích đá bóng không?
+
+t: cậu thích cầu thủ nào?
+
