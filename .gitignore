@@ -3,7 +3,6 @@
 __pycache__
 
 logs
-!logs/.gitkeep
 
 TMP
 USERS
