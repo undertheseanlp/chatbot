@@ -1,10 +1,14 @@
-topic: ~entertainment keep repeat ("ca sỹ" nhạc phim đàn hát)
+topic: ~entertainment keep repeat priority ("ca sỹ" nhạc phim đàn hát)
 
 u: (có thích nghe nhạc) có
 
 u: (có [thích biết]) có
 
-u: (phim) hay đấy
+u: (phim !gì) hay đấy
+
+u: (hát) Mình hợp nhau đến như vậy, thế nhưng không phải là yêu ♪♪♪
+
+u: (phim * gì) Avengers: Infinity War
 
 t: cậu thích ca sỹ nào?
 
