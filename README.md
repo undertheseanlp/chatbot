@@ -43,10 +43,8 @@ Cùng chat với Hoài An tại [đường dẫn này](http://undertheseanlp.com
 ## Yêu cầu hệ thống
 
 * `Operating Systems: Linux (Ubuntu, CentOS), Mac`
-* `Python 3.5+`
-* `conda 4+`
+* `Python 3.6+`, `Anaconda 4+`
 * `Django==1.11.1`
-* `rivescript==1.14.9`
 
 ## Thiết lập môi trường
 
