@@ -10,9 +10,11 @@ Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, đ�
 **Nhóm tác giả**
 
 * Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
+* Nguyễn Thị Hậu ([nguyenhau1996mta@gmail.com](nguyenhau1996mta@gmail.com))
+* Trương Thị Huyên ([huyenth2110@gmail.com](huyenth2110@gmail.com))
 * Cao Thanh Tùng ([caothanhtungst@gmail.com](caothanhtungst@gmail.com))
 * Hồ Thanh Luân ([hothanhluan1996@gmail.com](hothanhluan1996@gmail.com))
-* Nguyễn Thị Hậu ([nguyenhau1996mta@gmail.com](nguyenhau1996mta@gmail.com))
+
 
 **Live Demo**: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
 
@@ -68,16 +70,22 @@ pip install -r requirements.txt
 Bật chatscript server
 
 ```
-cd engine/chatscript
-python server.py
+cd chatbot/engine/chatscript
+./script_server.sh
+```
+
+Mở một cửa sổ khác, build chatbot
+
+``` 
+cd chatbot/engine/chatscript
+./script_build.sh
 ```
 
 Bật web server để chat 
 
 ```
 cd chatbot
-source activate chatbot
-python manage.py runserver 0.0.0.0:8000
+./run.sh
 ```
 
 Sau đó, mở trình duyệt, vào đường dẫn http://localhost:8000 để bắt đầu chat với bot 
