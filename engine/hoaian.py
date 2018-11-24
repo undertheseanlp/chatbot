@@ -1,10 +1,10 @@
 import socket
 
+defaultUser = "anhv"
 
 
-def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
+def sendAndReceiveChatScript(text, user=defaultUser, server='127.0.0.1', port=1024, timeout=10):
     try:
-        user = "anhv"
         botname = "hoaian"
         msgToSend = '%s\u0000%s\u0000%s\u0000' % (user, botname, text)
         msgToSend = str.encode(msgToSend)
@@ -27,10 +27,10 @@ def sendAndReceiveChatScript(text, server='127.0.0.1', port=1024, timeout=10):
 
 class HoaiAn:
     @staticmethod
-    def reply(uid, text):
+    def reply(text, user=defaultUser):
         server = "127.0.0.1"
         port = 1024
-        response = sendAndReceiveChatScript(text, server=server, port=port)
+        response = sendAndReceiveChatScript(text, user, server=server, port=port)
         return response
 
     @staticmethod
@@ -42,5 +42,5 @@ class HoaiAn:
 
 if __name__ == '__main__':
     HoaiAn.init()
-    response = HoaiAn.reply("a", "mấy tuổi")
+    response = HoaiAn.reply("mấy tuổi", user="test2")
     print(response)

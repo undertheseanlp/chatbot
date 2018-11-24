@@ -1,28 +1,46 @@
 app.controller("ChatbotCtrl", function ($scope) {
   $scope.sentences = [];
-  function generateUUID() { // Public Domain/MIT
-    var d = new Date().getTime();
-    if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
+  var User = {
+    get: function () {
+      var user, date;
+      // load or create new session
+      if (!localStorage.getItem("user") | !localStorage.getItem("date")) {
+        User.create();
+      }
+      // handle timeout
+      var registerDate = new Date(localStorage.getItem("date"));
+      var now = new Date();
+      var timeout = 1000 * 60 * 60 * 2; // 2 hours
+      if (now - registerDate > timeout) {
+        User.create();
+      }
+      user = localStorage.getItem("user");
+      return user;
+    },
+
+    create: function () {
+      user = User.generateUID();
+      date = new Date();
+      localStorage.setItem("user", user);
+      localStorage.setItem("date", date);
+    },
+
+    generateUID: function () {
+      var d = new Date().getTime();
+      if (typeof performance !== 'undefined' && typeof performance.now === 'function') {
         d += performance.now(); //use high-precision timer if available
-    }
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      }
+      return 'xxxxxxyy'.replace(/[xy]/g, function (c) {
         var r = (d + Math.random() * 16) % 16 | 0;
         d = Math.floor(d / 16);
         return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-    });
-}
-  $scope.init = function(){
-    console.log("Chào bạn. Hehe");
-    var uid;
-    // load or create new session
-    if(!localStorage.getItem("uid")){
-      uid = generateUUID();
-      localStorage.setItem("uid", uid);
+      });
     }
-    uid = localStorage.getItem("uid");
-    console.log(uid);
-    $scope.uid = uid;
+  };
 
+  $scope.init = function () {
+    console.log("Chào bạn. Hehe");
+    $scope.user = User.get();
   };
 
   $scope.init();
@@ -39,7 +57,7 @@ app.controller("ChatbotCtrl", function ($scope) {
     $.ajax({
       type: "POST",
       url: "./chatbot",
-      data: JSON.stringify({"text": message, "uid": $scope.uid}),
+      data: JSON.stringify({"text": message, "user": $scope.user}),
       contentType: 'application/json'
     }).done(function (data) {
       try {

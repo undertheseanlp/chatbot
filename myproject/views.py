@@ -27,12 +27,12 @@ def chatbot(request):
     try:
         data = json.loads(request.body.decode("utf-8"))
         text = data["text"]
-        uid = data["uid"]
+        user = data["user"]
         ip = request.META["REMOTE_ADDR"]
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
         log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)
-        response_message = HoaiAn.reply("uid", text)
+        response_message = HoaiAn.reply(text, user)
         log_text = "{} {} {} {}".format(ip, time, "BOT:", response_message)
         log(log_text)
         result["output"] = response_message
