@@ -1,0 +1,31 @@
+concept: ~sad [buồn bùn sầu huhu hu sad]
+concept: ~yes [ừ vâng uh ừm]
+concept: ~no [không "chẳng có gì"]
+concept: ~love [yêu "thất tình"]
+concept: ~friends [bạn]
+concept: ~job ["công việc" "công ty" "sếp" "đồng nghiệp"]
+concept: ~family [bố mẹ "gia đình" "nhà"]
+concept: ~not_done [chưa "vẫn còn"]
+concept: ~done [ok "rồi" "ổn" "hết rồi" đỡ]
+
+topic: ~emotionhappy keep repeat random (~sad)
+
+u: (~sad)
+    [^reuse(ASK_IS_SAD)]
+    [^reuse(ASK_WHY_SAD)]
+
+t: ASK_IS_SAD () cậu đang buồn à
+    a: (~yes) ^reuse(ASK_WHY_SAD)
+    a: (~no) phù!! Cậu làm mình lo quá :D
+
+t: ASK_WHY_SAD () [Sao cậu buồn, kể cho mình nghe đi] [Sao cậu buồn]
+    a: (~love) Thôi đừng buồn, sẽ có người khác tốt hơn thôi. Tớ chẳng hạn <3 <3
+    a: (~friends) Ôi, cái đám bạn thân, thân ai nấy lo. Có gì mà phải buồn
+    a: (~job) Công việc chỉ là phù du, thầy u mới là tất cả.
+    a: (~family) Bố mẹ chỉ muốn mình tốt hơn thôi.
+    a: () Để mình giúp cậu hết buồn nhé. Đi xem video hài đi. Hi hi
+
+t: ASK_DONE_SAD () Cậu đã hết buồn chưa?
+    a: (~not_done) Cho cậu mượn bờ vai mình để khóc nè, mượn rồi nhớ trả
+    a: (~done) Hi hi. Cảm ơn mình đi, từ sau có gì phải nói với mình nha
+    a: () Đời thật ngắn ngủi cớ sao phải buồn
