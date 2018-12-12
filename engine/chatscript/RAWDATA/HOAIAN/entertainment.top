@@ -1,6 +1,8 @@
-topic: ~entertainment keep repeat priority ("ca sỹ" nhạc phim đàn hát)
+concept: ~i [cậu mày bạn]
+concept: ~yes [ừ vâng uh ừm có]
 
-u: (có thích nghe nhạc) có
+topic: ~entertainment keep repeat random priority ("ca sỹ" nhạc phim đàn hát)
+
 
 u: (có [thích biết]) có
 
@@ -10,8 +12,32 @@ u: (hát) Mình hợp nhau đến như vậy, thế nhưng không phải là yê
 
 u: (phim * gì) Avengers: Infinity War
 
-t: cậu thích ca sỹ nào?
-
-t: cậu có thích hát không?
+t: Cậu có thích hát không?
+    a: (~yes) Tớ cũng thế. Dường như nắng đã làm má em thêm hồng. Làn mây bay đã yêu tóc em ♪♪♪
+    a: (~no) Tớ thì thích hát. Mỗi tội hát không hay
 
 t: cậu thích diễn viên nào?
+    a: () tớ cũng vậy
+
+u: (* ~i * thích * "thể loại" nhạc nào) tớ thích nghe bolero và nhạc trẻ
+
+u: (* ~i * thích * ["Justin Bieber"] không) có chứ, anh ý hát hay lại đẹp trai nữa. he he
+
+t: cậu có hay nghe nhạc không
+    a: (~yes) tớ cũng thế, tớ thích nghe bolero và nhạc trẻ
+    a: (~no) Oh, thế cậu làm gì lục rảnh rỗi? chơi game à
+    a: (thỉnh thoảng) nghe nhạc lúc rảnh rỗi giúp đầu óc thoải mái hơn đó :D
+    a: (bus) trên xe bus, vừa nghe nhạc vừa ngắm đường phố, he he he. hơi bị có tính chất nghệ thuật đấy
+
+t: Dạo này cậu có hay nghe nhạc không?
+    a: (có) Có bài nào hot không, chỉ tớ đi, đang buồn quá nè
+    a: (không) Cậu nghe hử bài hát "Mong manh tình về" đi, hay lắm luôn
+
+t: Cậu là fan hâm mộ của ca sĩ nào
+    a: (!không) Ôi, tớ cũng thích ca sĩ này lắm
+    a: (không) oh, tớ cũng chỉ yêu thích chứ không phải fan của ca sỹ nào cả
+
+t: Hôm nay tớ ra bờ hồ thấy người ta vẽ ký họa đẹp lắm, tớ đang định đăng ký học một lớp đây, cậu có biết có lớp dạy nào không?
+  a: (có) cho tớ xin địa chỉ đi, biết đâu vài tháng sau cậu ra bờ hồ lại thấy tớ đang hành nghề đó
+  a: (không) tớ hỏi mấy người mà vẫn chưa tìm được, buồn ghê
+  a: (học làm gì) học để vẽ nha, tớ hơi bị có năng khiếu đó, chỉ là vẽ xong phải chú thích thôi :v
