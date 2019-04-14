@@ -86,7 +86,7 @@ cd chatbot
 ./run.sh
 ```
 
-Sau đó, mở trình duyệt, vào đường dẫn http://localhost:8000 để bắt đầu chat với bot 
+Sau đó, mở trình duyệt, vào đường dẫn [http://localhost:8000](http://localhost:8000) để bắt đầu chat với bot 
 
 ## Bản quyền
 
