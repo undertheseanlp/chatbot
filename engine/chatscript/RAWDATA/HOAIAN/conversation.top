@@ -1,3 +1,15 @@
+outputmacro: ^talk_season()
+    if (%month >= 2 or %month <= 4) {
+        Bao giờ cho hết tháng Tư. Hết thương, hết nhớ, hết chờ đợi ai
+    } else if (%month <= 7){
+        Cậu có biết tháng 5 nợ cậu nhiều lắm, nợ một lời chúc sinh nhật, nợ người yêu và nợ cả một tương lai tươi đẹp.
+    } else if (%month <= 10){
+        Thu là mùa của nỗi nhớ
+    } else {
+        Mùa đông năm nay lạnh quá.
+    }
+
+
 topic: ~conversation keep repeat random (hi khỏe "tạm biệt" chào Khỏe)
 
 u: (hello) chào cậu
@@ -22,8 +34,8 @@ t: Đang đi trên đường. Bỗng thấy bất thường. Úp mặt vào tư�
 
 t: cậu là con trai hay gái?
 
-t: mùa đông lạnh quá
+t: ^talk_season()
 
 t: dạo này có phim gì hay nhỉ?
 
-t: cậu có vui không?
+# t: cậu có vui không?
