@@ -28,7 +28,10 @@ def chatbot(request):
         data = json.loads(request.body.decode("utf-8"))
         text = data["text"]
         user = data["user"]
-        ip = request.META["REMOTE_ADDR"]
+        if "HTTP_X_REAL_IP" in request.META:
+            ip = request.META["HTTP_X_REAL_IP"]
+        else:
+            ip = request.META["REMOTE_ADDR"]
         time = datetime.now().strftime('%Y%m%d %H:%M:%S')
         log_text = "{} {} {} {}".format(ip, time, "USER:", text)
         log(log_text)

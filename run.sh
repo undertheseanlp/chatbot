@@ -1,1 +1,1 @@
-gunicorn --bind 127.0.0.1:8001 myproject.wsgi:application --access-logfile='-' --error-logfile='-' --access-logformat '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s"'
+gunicorn --bind 127.0.0.1:8001 myproject.wsgi:application --access-logfile='-' --error-logfile='-' --access-logformat '%({X-Forwarded-For}i)s %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s"'
