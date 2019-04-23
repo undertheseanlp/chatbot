@@ -111,7 +111,7 @@ chatbot server web
 
 **Hoàn thành!!!**
 
-Sau đó, mở trình duyệt, vào đường dẫn [http://localhost:8000](http://localhost:8000) để bắt đầu chat với bot 
+Sau đó, mở trình duyệt, vào đường dẫn [http://127.0.0.1:8001](http://127.0.0.1:8001) để bắt đầu chat với bot 
 
 ### Thử nghiệm chatbot trên terminal
 
