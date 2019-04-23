@@ -65,28 +65,68 @@ pip install -r requirements.txt
 
 ## Hướng dẫn sử dụng
 
-Bật chatscript server
+### Chạy chương trình chatbot trên trình duyệt 
+ 
+Kích hoạt môi trường 
 
 ```
-cd chatbot/engine/chatscript
-./script_server.sh
+$ cd chatbot
+$ source chatbot-env.sh
 ```
 
-Mở một cửa sổ khác, build chatbot
+Lệnh `chatbot` đã sẵn sàng
+
+```
+$ chabot  
+
+  Console script for chatbot
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  log     Log handling
+  server  Server handling
+```
+
+
+**Bước 1: Bật chatscript server**
+
+```
+chatbot server cs
+```
+
+**Bước 2: Build chatbot**
 
 ``` 
 cd chatbot/engine/chatscript
 ./script_build.sh
 ```
 
-Bật web server để chat 
+**Bước 3: Bật web server**
 
 ```
-cd chatbot
-./run.sh
+chatbot server web 
 ```
+
+**Hoàn thành!!!**
 
 Sau đó, mở trình duyệt, vào đường dẫn [http://localhost:8000](http://localhost:8000) để bắt đầu chat với bot 
+
+### Thử nghiệm chatbot trên terminal
+
+Kích hoạt môi trường 
+
+```
+$ cd chatbot
+$ source chatbot-env.sh
+```
+
+Chạy chatbot trên terminal
+
+```
+$ chatbot server cs-local 
+```
 
 ## Bản quyền
 

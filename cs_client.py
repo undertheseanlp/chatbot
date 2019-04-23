@@ -37,7 +37,11 @@ class Chatbot:
             return None
 
 
-if __name__ == '__main__':
+def build_chatbot_engine():
     bot = Chatbot()
     bot.response(":build HoaiAn")
     bot.response(":reset")
+
+
+if __name__ == '__main__':
+    print("Chat Script client")
