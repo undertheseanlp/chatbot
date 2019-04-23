@@ -1,0 +1,1 @@
+cd engine/chatscript; BINARIES/LinuxChatScript64 language=VIETNAMESE
