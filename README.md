@@ -99,8 +99,7 @@ chatbot server cs
 **Bước 2: Build chatbot**
 
 ``` 
-cd chatbot/engine/chatscript
-./script_build.sh
+chatbot build
 ```
 
 **Bước 3: Bật web server**
