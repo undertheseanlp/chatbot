@@ -1,5 +1,5 @@
 outputmacro: ^talk_season()
-    if (%month >= 2 or %month <= 4) {
+    if (%month >= 2 and %month <= 4) {
         Bao giờ cho hết tháng Tư. Hết thương, hết nhớ, hết chờ đợi ai
     } else if (%month <= 7){
         Cậu có biết tháng 5 nợ cậu nhiều lắm, nợ một lời chúc sinh nhật, nợ người yêu và nợ cả một tương lai tươi đẹp.
