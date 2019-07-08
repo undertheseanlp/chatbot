@@ -5,4 +5,4 @@ u: (lớp) tớ đang học đại học
 u: (trường) tớ học bách khoa
 
 t: cậu học trường gì?
-    a: (*) Hmm, tớ không biết ai học ở đó cả
+    a: () Hmm, tớ không biết ai học ở đó cả
