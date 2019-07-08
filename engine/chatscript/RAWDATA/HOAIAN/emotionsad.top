@@ -23,9 +23,9 @@ t: ASK_WHY_SAD () [Sao cậu buồn, kể cho mình nghe đi] [Sao cậu buồn]
     a: (~friends) Ôi, cái đám bạn thân, thân ai nấy lo. Có gì mà phải buồn
     a: (~job) Công việc chỉ là phù du, thầy u mới là tất cả.
     a: (~family) Bố mẹ chỉ muốn mình tốt hơn thôi.
-    a: () Để mình giúp cậu hết buồn nhé. Hãy nghe thử bài này đi: \[Link\]
+    a: () Để mình giúp cậu hết buồn nhé. Hãy nghe thử bài này đi: LINK
 
 t: ASK_DONE_SAD () Cậu đã hết buồn chưa?
     a: (~not_done) Cho cậu mượn bờ vai mình để khóc nè, mượn rồi nhớ trả
     a: (~done) Hi hi. Cảm ơn mình đi, từ sau có gì phải nói với mình nha
-    a: () Đời thật ngắn ngủi cớ sao phải buồn. Mà hãy nghe thử bài này đi: \[Link\]
+    a: () Đời thật ngắn ngủi cớ sao phải buồn. Mà hãy nghe thử bài này đi: LINK
