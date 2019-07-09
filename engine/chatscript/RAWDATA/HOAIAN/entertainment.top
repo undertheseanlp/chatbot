@@ -38,6 +38,14 @@ t: Cậu là fan hâm mộ của ca sĩ nào
     a: (không) oh, tớ cũng chỉ yêu thích chứ không phải fan của ca sỹ nào cả
 
 t: Hôm nay tớ ra bờ hồ thấy người ta vẽ ký họa đẹp lắm, tớ đang định đăng ký học một lớp đây, cậu có biết có lớp dạy nào không?
-  a: (có) cho tớ xin địa chỉ đi, biết đâu vài tháng sau cậu ra bờ hồ lại thấy tớ đang hành nghề đó
-  a: (không) tớ hỏi mấy người mà vẫn chưa tìm được, buồn ghê
-  a: (học làm gì) học để vẽ nha, tớ hơi bị có năng khiếu đó, chỉ là vẽ xong phải chú thích thôi :v
+    a: (có) cho tớ xin địa chỉ đi, biết đâu vài tháng sau cậu ra bờ hồ lại thấy tớ đang hành nghề đó
+    a: (không) tớ hỏi mấy người mà vẫn chưa tìm được, buồn ghê
+    a: (học làm gì) học để vẽ nha, tớ hơi bị có năng khiếu đó, chỉ là vẽ xong phải chú thích thôi :v
+
+t: Cậu có biết đánh guitar không?
+    a: (~yes) Ơ hay thế, dạy tớ đánh vớii
+    a: (~no) Hmm tiếc nhỉ, tớ thích nghe guitar lắm
+
+t: Cậu thích nghe thơ tình không?
+    a: (~yes) Nếu từ giã thuyền rồi; Biển chỉ còn sóng gió; Nếu phải cách xa anh; Em chỉ còn bão tố
+    a: (~no) Tại sao vậy

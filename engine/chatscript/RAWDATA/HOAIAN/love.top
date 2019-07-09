@@ -8,7 +8,11 @@ t: cậu có người yêu chưa
   a: (ế) Thính thơm quá
   a: (rồi) tiếc quá, tớ là người đến sau ư
 
-t: hôm nay trời lạnh, cậu có muốn thuê gấu không?
+t: Tôi có thể theo đuổi cậu chứ? Vì mẹ tôi bảo tôi hãy theo đuổi giấc mơ của mình
+  a: (không) Vậy tớ đành phải từ bỏ giấc mơ của mình sao
+  a: (có) Tự nhiên tớ thấy đau tim quá, ciu tớ
+
+t: hôm nay trời đẹp, cậu có muốn thuê gấu không?
   a: (không) Gấu miễn phí đó nha, suy nghĩ lại đi mà
   a: (có) Tự nhiên tớ thấy đau tim quá, ciu tớ
 

@@ -16,9 +16,9 @@ t: cậu thích cầu thủ nào?
     a: (Ronaldo) Có 2 cầu thủ Ronaldo nhưng ai cũng rất giỏi
     a: ([David Beckham]) Hihi, anh này đẹp trai quyến rũ lắm luôn
     a: (Thierry Henry) Ôi con trai của thần gió, tớ biết anh từng chơi cho Câu lạc bộ Arsenal
-    a: () Tớ cũng thích anh ấy lắm luôn
+    a: () Tớ thì thích Messi
 
-t: Bạn thích câu lạc bộ nào nhất?
+t: cậu thích câu lạc bộ nào nhất?
     a: ([MU "Manchester United"]) Quỷ đỏ! Đội bóng có nhiều nhiều Fan nhất thế giới
     a: (Chelsea) Chelsea thì Tớ thích thời của Lampard
     a: ([Ars Arsenal]) (Arsenal tớ thích lối đá đẹp của họ)
@@ -31,7 +31,7 @@ t: Bạn thích câu lạc bộ nào nhất?
     a: ("AC Milan") Tớ tiếc một thời vàng son với bộ ba "Hà Lan bay" tung hoành trời Âu
     a: () Thế hả, tớ thích Arsenal hơn, pháo thủ thành Luân Đôn
 
-t: Bạn thích đội tuyển quốc gia nào nhất?
+t: cậu thích đội tuyển quốc gia nào nhất?
     a: (Đức) Những cổ xe tăng, họ là nhà vô địch World Cup 2014
     a: (Brasil) Những vũ công samba, đây là nơi có nhiều cầu thủ giỏi nhất thế giới
     a: (Pháp) Nhà vô địch Wourld cup 2018. Những chú gà trống Gô - loa!! Tớ rất ẩn tượng với cầu thủ Mbappe
@@ -40,7 +40,7 @@ t: Bạn thích đội tuyển quốc gia nào nhất?
     a: ("Bồ Đào Nha") Đội tuyển quốc gia của cầu thủ Ronaldo CR7
     a: () Haha, Tớ thì thích đội tuyển Việt Nam nhất
 
-t: Bạn ấn tượng với cầu thủ nào ở Việt Nam?
+t: cậu ấn tượng với cầu thủ nào ở Việt Nam?
     a: ("Quang Hải") Tớ nghĩ anh ấy rất xuất sắc
     a: ("Phan Văn Đức") Một cầu thủ trẻ đầy tài năng
     a: ("Lương Xuân Trường") Xứng đáng là đội trưởng, trông cậu ấy rất điềm đạm
