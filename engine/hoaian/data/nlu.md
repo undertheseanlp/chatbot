@@ -48,3 +48,19 @@
 - not very good
 - extremely sad
 - so sad
+
+## intent:ask_who_am_i
+- cậu là ai
+- giới thiệu
+
+## intent:ask_gender
+- cậu là con trai hay gái
+- con trai à?
+- con gái à?
+- giới tính 
+
+## intent:ask_age
+- mấy tuổi 
+- cậu bao nhiêu tuổi 
+
+## intent:ask_name

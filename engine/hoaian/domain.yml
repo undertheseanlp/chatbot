@@ -5,6 +5,8 @@ intents:
 - deny
 - mood_great
 - mood_unhappy
+- ask_who_am_i
+- ask_gender
 templates:
   utter_greet:
   - text: Hey! How are you?
@@ -17,9 +19,15 @@ templates:
   - text: Great carry on!
   utter_goodbye:
   - text: Bye
+  utter_intro:
+  - text: Tớ là Hoài An
+  utter_gender:
+  - text: tớ là con gái
 actions:
 - utter_greet
 - utter_cheer_up
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
+- utter_intro
+- utter_gender
