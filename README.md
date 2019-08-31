@@ -29,7 +29,6 @@ Cùng chat với Hoài An tại [đường dẫn này](http://undertheseanlp.com
 
 * `Operating Systems: Linux (Ubuntu, CentOS), Mac`
 * `Python 3.6+`, `Anaconda 4+`
-* `Django==1.11.1`
 
 ## Thiết lập môi trường
 
@@ -50,66 +49,30 @@ pip install -r requirements.txt
 
 ## Hướng dẫn sử dụng
 
-### Chạy chương trình chatbot trên trình duyệt 
- 
-Kích hoạt môi trường 
+Cài đặt Rasa 
 
 ```
-$ cd chatbot
-$ source chatbot-env.sh
+pip install rasa-x --extra-index-url https://pypi.rasa.com/simple
 ```
 
-Lệnh `chatbot` đã sẵn sàng
+Chạy rasa
 
 ```
-$ chabot  
-
-  Console script for chatbot
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  log     Log handling
-  server  Server handling
+$ rasa shell
+2019-08-31 11:58:11 INFO     root  - Connecting to channel 'cmdline' which was specified by the '--connector' argument. Any other channels will be ignored. To connect to all given channels, omit the '--connector' argument.
+2019-08-31 11:58:11 INFO     root  - Starting Rasa server on http://localhost:5005
+Bot loaded. Type a message and press enter (use '/stop' to exit):
 ```
 
-
-**Bước 1: Bật chatscript server**
-
-```
-chatbot server cs
-```
-
-**Bước 2: Build chatbot**
-
-``` 
-chatbot build
-```
-
-**Bước 3: Bật web server**
+Chatbot với Hoài An 
 
 ```
-chatbot server web 
-```
-
-**Hoàn thành!!!**
-
-Sau đó, mở trình duyệt, vào đường dẫn [http://127.0.0.1:8001](http://127.0.0.1:8001) để bắt đầu chat với bot 
-
-### Thử nghiệm chatbot trên terminal
-
-Kích hoạt môi trường 
-
-```
-$ cd chatbot
-$ source chatbot-env.sh
-```
-
-Chạy chatbot trên terminal
-
-```
-$ chatbot server cs-local 
+Your input ->  hello
+Hey! How are you?
+Your input ->  i'm good
+Great carry on!
+Your input ->  bye
+Bye 
 ```
 
 ## Bản quyền
