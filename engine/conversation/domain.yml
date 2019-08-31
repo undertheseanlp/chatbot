@@ -1,0 +1,23 @@
+intents:
+- whoami
+- whatisversion
+- greet
+- bye
+- howareyou
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+  utter_greet:
+  - text: chào cậu
+  utter_bye:
+  - text: chào cậu. lần khác nói tiếp nhé
+  utter_say_fine:
+  - text: Tớ vẫn khỏe, chat chit suốt ngày. hi hi
+actions:
+- utter_whoami
+- utter_whatisversion
+- utter_greet
+- utter_bye
+- utter_say_fine
