@@ -1,0 +1,11 @@
+intents:
+- whoami
+- whatisversion
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+actions:
+- utter_whoami
+- utter_whatisversion
