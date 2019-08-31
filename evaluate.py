@@ -2,8 +2,8 @@ import json
 from os import listdir
 from os.path import join
 import pandas as pd
-from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
-from engine.hoaian import HoaiAn
+from nltk.translate.bleu_score import sentence_bleu
+from hoaian import HoaiAn
 import numpy as np
 import warnings
 

@@ -1,4 +1,4 @@
-from engine.hoaian import HoaiAn
+from hoaian import HoaiAn
 
 HoaiAn.reply(":build HoaiAn", "local")
 HoaiAn.reply(":reset", "local")
