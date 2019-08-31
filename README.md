@@ -7,22 +7,7 @@
 
 Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, được phát triển bởi nhóm nghiên cứu xử lý ngôn ngữ tự nhiên tiếng Việt - [underthesea](https://github.com/undertheseanlp). Chứa mã nguồn các thử nghiệm cho việc xây dựng một chatbot đơn giản, tích hợp với django và có thể triển khai dưới dạng một ứng dụng Web.
 
-**Nhóm tác giả**
-
-* Vũ Anh ([anhv.ict91@gmail.com](anhv.ict91@gmail.com))
-* Nguyễn Thị Hậu ([nguyenhau1996mta@gmail.com](nguyenhau1996mta@gmail.com))
-* Trương Thị Huyên ([huyenth2110@gmail.com](huyenth2110@gmail.com))
-* Cao Thanh Tùng ([caothanhtungst@gmail.com](caothanhtungst@gmail.com))
-* Hồ Thanh Luân ([hothanhluan1996@gmail.com](hothanhluan1996@gmail.com))
-
-
 **Live Demo**: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
-
-**Tham gia đóng góp**
-
- Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
- 
-Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm phát triển với vai trò là [Developer](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor), xin hãy đọc kỹ [Hướng dẫn tham gia đóng góp](https://github.com/undertheseanlp/underthesea/wiki/H%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-%C4%91%C3%B3ng-g%C3%B3p#developercontributor).
 
 ## Mục lục
 
