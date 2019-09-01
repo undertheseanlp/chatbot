@@ -1,0 +1,48 @@
+intents:
+- whoami
+- whatisversion
+- emotion_disgust
+- emotion_laugh
+- emotion_sad
+- answer_yes
+- answer_no
+- talk_sad_family
+- talk_sad_friend
+- talk_sad_love
+- talk_sad_job
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+  utter_emotion_disgust:
+  - text: nếu cậu nghĩ tớ ngu, thì đi chỗ khác chơi nhé
+  utter_emotion_laugh:
+  - text: hi hi
+  utter_ask_is_sad:
+  - text: cậu đang buồn à
+    edited_since_last_training: false
+  utter_ask_why_sad:
+  - text: Sao cậu buồn, kể cho mình nghe đi
+  utter_sad_said_ok:
+  - text: phù!! Cậu làm mình lo quá :D
+  utter_sad_love_fine:
+  - text: Thôi đừng buồn, sẽ có người khác tốt hơn thôi. Tớ chẳng hạn <3 <3
+  utter_sad_friend_fine:
+  - text: Ôi, cái đám bạn thân, thân ai nấy lo. Có gì mà phải buồn
+  utter_sad_family_fine:
+  - text: Bố mẹ chỉ muốn mình tốt hơn thôi.
+  utter_sad_job_fine:
+  - text: Công việc chỉ là phù du, thầy u mới là tất cả.
+actions:
+- utter_whoami
+- utter_whatisversion
+- utter_emotion_disgust
+- utter_emotion_laugh
+- utter_ask_is_sad
+- utter_ask_why_sad
+- utter_sad_said_ok
+- utter_sad_love_fine
+- utter_sad_friend_fine
+- utter_sad_family_fine
+- utter_sad_job_fine
