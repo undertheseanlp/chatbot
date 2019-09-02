@@ -1,0 +1,31 @@
+intents:
+- whoami
+- whatisversion
+- ask_has_love
+- ask_require_love
+- talk_has_love
+- task_no
+- talk_yes
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+  utter_no_love:
+  - text: tớ vẫn đang đi tìm
+  utter_love_deny:
+  - text: tớ còn nhỏ lắm, để tớ lớn đã nhé
+  utter_require_love:
+  - text: ' Thế cho tớ làm em gái mưa nhá, hay em gái nuôi cũng được hết'
+  utter_sad:
+  - text: buồn quá
+  utter_happy:
+  - text: hôm nay sẽ là ngày tuyệt vời nhất đời em
+actions:
+- utter_whoami
+- utter_whatisversion
+- utter_no_love
+- utter_love_deny
+- utter_require_love
+- utter_sad
+- utter_happy
