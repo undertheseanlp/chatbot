@@ -1,0 +1,58 @@
+intents:
+- whoami
+- whatisversion
+- ask_like_sport
+- talk_no
+- talk_sport_name
+- talk_team_name
+- talk_yes
+- talk_position
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+  utter_like_sport:
+  - text: Tớ có. Tớ thích bóng đá.
+    edited_since_last_training: true
+  utter_ask_like_soccer:
+  - text: Cậu có thích bóng đá không?
+    edited_since_last_training: false
+  utter_ask_favorite_team:
+  - text: Cậu thích câu lạc bộ nào?
+  utter_ask_play_soccer:
+  - text: Cậu có chơi bóng không?
+  utter_favorite_team:
+  - text: Tớ thích Barcelona. Họ có lối chơi rất tuyệt.
+  utter_ask_position:
+  - text: Cậu chơi ở vị trí nào?
+  utter_amaze:
+  - text: Vậy à? Nghe thật thú vị
+  utter_not_play_soccer:
+  - text: Tớ cũng không biết chơi bóng
+  utter_yes:
+  - text: Tớ có
+  - text: Có
+  utter_ask_what_sport:
+  - text: Cậu thích môn thể thao nào?
+  utter_no:
+  - text: Không
+  - text: Tớ không
+  utter_suggest_play:
+  - text: Nó rất vui. Cậu nên thử vào lúc nào đó.
+actions:
+- utter_whoami
+- utter_whatisversion
+- utter_like_sport
+- utter_ask_like_soccer
+- utter_ask _like_soccer
+- utter_ask_favorite_team
+- utter_ask_play_soccer
+- utter_favorite_team
+- utter_ask_position
+- utter_amaze
+- utter_not_play_soccer
+- utter_yes
+- utter_ask_what_sport
+- utter_no
+- utter_suggest_play
