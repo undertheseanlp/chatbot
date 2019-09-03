@@ -1,11 +1,23 @@
 intents:
 - whoami
 - whatisversion
+- history_ask_birthday
+entities:
+- people
 templates:
   utter_whoami:
   - text: Hoai An v1.0
   utter_whatisversion:
   - text: v1.0
+  utter_no_answer:
+  - text: Tớ dốt lịch sử lắm
+  utter_show_nt_birthday:
+  - text: Nguyễn Trãi sinh năm 1380
+  utter_show_hcm_birthday:
+  - text: Người sinh năm 1890
 actions:
 - utter_whoami
 - utter_whatisversion
+- utter_no_answer
+- utter_show_nt_birthday
+- utter_show_hcm_birthday
