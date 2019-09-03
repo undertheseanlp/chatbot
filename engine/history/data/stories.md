@@ -17,18 +17,3 @@
 ## history_ask_birthday_2
 * history_ask_birthday{"people":"Hồ Chí Minh"}
   - utter_show_hcm_birthday
-
-## New Story 1
-
-* history_ask_birthday{"people":"Nguyễn Trãi"}
-  - utter_show_nt_birthday
-
-## New Story 2
-
-* history_ask_birthday{"people":"Hồ Chí Minh"}
-  - utter_show_hcm_birthday
-
-## New Story 3
-
-* history_ask_birthday{"people":"Nguyễn Trãi"}
-  - utter_show_nt_birthday
