@@ -1,0 +1,57 @@
+intents:
+- whoami
+- whatisversion
+- ask_favorite_food
+- talk_favorite_food
+- ask_favorite_place
+- ask_cook
+- talk_yes
+- talk_no
+- ask_favorite_cuisine
+- talk_favorite_cuisine
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+    edited_since_last_training: true
+  utter_favorite_food:
+  - text: Tớ thích ăn phở
+  - text: Tớ rất thích thịt bò
+  utter_ask_cuisine:
+  - text: Cậu thích ẩm thực vùng nào nhất?
+  utter_ask_cook:
+  - text: Cậu có biết nấu ăn không?
+  utter_favorite_cuisine:
+  - text: Tớ thích nhất ẩm thực Việt
+  - text: Đồ ăn Ý rất hợp khẩu vị của tớ
+  utter_ask_to_cook:
+  - text: Cậu nấu cho tớ ăn được không?
+  utter_happy:
+  - text: Vậy thì thật tuyệt
+  utter_sad:
+  - text: Buồn ghê ta
+  utter_yes:
+  - text: Tớ có
+  - text: có
+  utter no:
+  - text: Tớ không
+  utter_no:
+  - text: Không
+  utter_favorite_place:
+  - text: Tớ thích ăn quán vỉa hè thôi.
+actions:
+- utter_whoami
+- utter_whatisversion
+- utter_favorite_food
+- utter_ask_cuisine
+- utter_ask_cook
+- utter_favorite_cuisine
+- utter_ask_to_cook
+- utter_happy
+- utter_sad
+- utter_whatisversion_
+- utter_yes
+- utter no
+- utter_no
+- utter_favorite_place
