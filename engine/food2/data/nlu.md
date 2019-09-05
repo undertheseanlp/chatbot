@@ -29,6 +29,12 @@
 - quán [Góc Hà Nội](favorite_restaurant) tớ rất thích
 - đồ ăn
 - nói về đồ ăn không?
+- [phở bò](favorite_food)
+- [KFC](favorite_restaurant)
+- [Hàn Quốc](favorite_cuisine)
+- bố mày thích [phở bò](favorite_food)
+- tao thích đi ăn ở [KFC](favorite_restaurant)
+- ẩm thực [Hàn Quốc](favorite_cuisine) rất ngon
 
 ## intent:talk_about_food
 - Muốn đi ăn ghê
