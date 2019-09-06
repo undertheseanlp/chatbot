@@ -25,3 +25,18 @@
 #         dispatcher.utter_message("Hello World!")
 #
 #         return []
+from rasa_sdk.forms import FormAction
+
+
+class FoodForm(FormAction):
+
+    def name(self):  # type: () -> Text
+        return "food_form"
+
+    @staticmethod
+    def required_slots(tracker):  # type: (Tracker) -> List[Text]
+        return ["favorite_food", "favorite_restaurant", "favorite_cuisine"]
+
+    def submit(self, dispatcher, tracker, domain):
+        dispatcher.utter_template('utter_submit', tracker)
+        return []

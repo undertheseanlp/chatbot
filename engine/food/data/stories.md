@@ -76,3 +76,22 @@
     - utter_favorite_cuisine
 * ask_favorite_food
     - utter_favorite_food
+
+
+## happy path
+* talk_about_food
+    - food_form
+    - form{"name": "food_form"}
+    - form{"name": null}
+    - utter_food_hobbies
+* affirm
+    - utter_happy
+    
+## chitchat
+* talk_about_food
+    - food_form
+    - form{"name": "food_form"}
+* chitchat
+    - utter_chitchat
+    - food_form
+    - form{"name":null}
