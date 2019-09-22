@@ -26,6 +26,8 @@
 #
 #         return []
 from rasa_sdk.forms import FormAction
+from rasa_sdk import Action
+from rasa_sdk.events import SlotSet
 
 
 class FoodForm(FormAction):
@@ -35,8 +37,25 @@ class FoodForm(FormAction):
 
     @staticmethod
     def required_slots(tracker):  # type: (Tracker) -> List[Text]
-        return ["favorite_food", "favorite_restaurant", "favorite_cuisine"]
+        return ["favorite_cuisine", "favorite_food", "favorite_restaurant"]
 
     def submit(self, dispatcher, tracker, domain):
         dispatcher.utter_template('utter_submit', tracker)
         return []
+
+
+class ActionCheckRestaurants(Action):
+    def name(self):  # type: () -> Text
+        return "action_check_restaurants"
+
+    def run(
+            self,
+            dispatcher,  # type: CollectingDispatcher
+            tracker,  # type: Tracker
+            domain,  # type:  Dict[Text, Any]
+    ):  # type: (...) -> List[Dict[Text, Any]]
+        cuisine = tracker.get_slot('favorite_cuisine')
+        print(cuisine)
+        results = ['KFC', 'Gogi', 'Góc Hà Nội']
+        dispatcher.utter_message("Blah Blah Blah")
+        return [SlotSet("found_restaurants", results)]
