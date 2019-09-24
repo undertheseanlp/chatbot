@@ -1,0 +1,130 @@
+intents:
+- whoami
+- whatisversion
+- ask_favorite_food
+- ask_favorite_cuisine
+- ask_favorite_restaurant
+- ask_cook
+- talk_favorite_food
+- talk_favorite_cuisine
+- affirm
+- deny
+- ask_check_restaurant
+- greet:
+    triggers: utter_greet
+- goodbye:
+    triggers: utter_goodbye
+- inform_food
+- inform_restaurant
+- inform_cuisine
+- thankyou
+- chitchat
+- talk_about_food
+- ask_favorite_place
+- ask_like_cuisine
+entities:
+- favorite_cuisine
+- favorite_food
+- favorite_restaurant
+- cuisine
+- food
+slots:
+  favorite_cuisine:
+    type: unfeaturized
+    auto_fill: false
+  favorite_food:
+    type: unfeaturized
+    auto_fill: false
+  favorite_restaurant:
+    type: unfeaturized
+    auto_fill: false
+  found_restaurants:
+    type: unfeaturized
+    auto_fill: false
+  requested_slot:
+    type: unfeaturized
+templates:
+  utter_whoami:
+  - text: Hoai An v1.0
+  utter_whatisversion:
+  - text: v1.0
+    edited_since_last_training: true
+  utter_favorite_food:
+  - text: Tớ thích ăn phở
+  - text: Tớ rất thích thịt bò
+  utter_favorite_cuisine:
+  - text: Tớ thích nhất ẩm thực Việt
+  - text: Đồ ăn Ý rất hợp khẩu vị của tớ
+  utter_favorite_place:
+  - text: Tớ thích ăn quán vỉa hè thôi.
+  utter_ask_favorite_cuisine:
+  - text: Cậu thích ẩm thực vùng nào?
+  utter_ask_favorite_food:
+  - text: Món ăn yêu thích của cậu là gì?
+  - text: Cậu thích ăn món gì nhất?
+  utter_ask_favorite_restaurant:
+  - text: Có nhà hàng nào mà cậu yêu thích không?
+  - text: Cậu thích ăn ở đâu nhất?
+  utter_ask_cook:
+  - text: Cậu có biết nấu ăn không?
+  utter_ask_to_cook:
+  - text: Cậu nấu cho tớ ăn được không?
+  utter_happy:
+  - text: Vậy thì thật tuyệt
+  - text: Tớ rất vui
+  - text: Vui ghê
+  utter_sad:
+  - text: Buồn ghê ta
+  utter_affirm:
+  - text: Tớ có
+  - text: có
+  utter_deny:
+  - text: Tớ không
+  - text: Không
+  utter_submit:
+  - text: Okay nha, lúc nào đó tớ sẽ mời cậu đi ăn
+  utter_food_hobbies:
+  - text: "Tóm lược sơ sơ về sở thích của cậu thế này:\n - Loại ẩm thực yêu thích:\
+      \ {favorite_cuisine}\n - Món ăn yêu thích: {favorite_food}\n - Nhà hàng yêu\
+      \ thích: {favorite_restaurant}\n"
+  utter_default:
+  - text: Tớ chưa hiểu ý cậu. Cậu nói rõ hơn được không?
+  utter_chitchat:
+  - text: chitchat
+  utter_greet:
+  - text: Chào cậu
+  utter_goodbye:
+  - text: Tạm biệt
+  - text: Hẹn gặp lại cậu
+  utter_start_food_form:
+  - text: Hỏi về sở thích của cậu chút nhé
+  utter_acknowledge:
+  - text: Vậy hả
+  - text: Ừm
+  - text: Thế à
+actions:
+- utter_whoami
+- utter_whatisversion
+- utter_favorite_food
+- utter_favorite_cuisine
+- utter_happy
+- utter_sad
+- utter_favorite_place
+- utter_chitchat
+- utter_food_hobbies
+- utter_default
+- utter_submit
+- utter_ask_cook
+- utter_ask_to_cook
+- utter_ask_favorite_cuisine
+- utter_ask_favorite_food
+- utter_ask_favorite_restaurant
+- utter_affirm
+- utter_greet
+- utter_start_food_form
+- utter_deny
+- utter_goodbye
+- utter_acknowledge
+- action_check_restaurants
+forms:
+- food_form
