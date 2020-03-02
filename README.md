@@ -15,9 +15,6 @@ Dự án nghiên cứu về bài toán xây dựng *chatbot tiếng Việt*, đ�
 * Cao Thanh Tùng ([caothanhtungst@gmail.com](caothanhtungst@gmail.com))
 * Hồ Thanh Luân ([hothanhluan1996@gmail.com](hothanhluan1996@gmail.com))
 
-
-**Live Demo**: [http://undertheseanlp.com:8000](http://undertheseanlp.com:8000/#!/)
-
 **Tham gia đóng góp**
 
  Mọi ý kiến đóng góp hoặc yêu cầu trợ giúp xin gửi vào mục [Issues](../../issues) của dự án. Các thảo luận được khuyến khích **sử dụng tiếng Việt** để dễ dàng trong quá trình trao đổi. 
@@ -35,8 +32,6 @@ Nếu bạn có kinh nghiệm trong bài toán này, muốn tham gia vào nhóm 
 ## Giới thiệu về Hoài An 
 
 Sản phẩm đầu tiên của dự án là chatbot Hoài An. Với mục tiêu là một chat-chit bot (bot để trò chuyện tán ngẫu), Hoài An được xây dựng như là một cô gái 20 tuổi, sống ở Hà Nội, thích trò chuyện với mọi người.
-
-Cùng chat với Hoài An tại [đường dẫn này](http://undertheseanlp.com:8000/#!/) nhé.
 
 ![](images/chatlog.png)
 
